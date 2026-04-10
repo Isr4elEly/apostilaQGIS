@@ -48,6 +48,8 @@ GPS e SIG formando o conjunto de "Geotecnologias". A imagem pode exibir
 três círculos interligados com ícones representando satélites,
 receptores GNSS e computadores com mapas.\]
 :::
+
+![diagrama-sig-gps](image/diagrama_sig.png)
 :::
 
 ::: {#geoprocessamento .section}
