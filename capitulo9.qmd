@@ -1,0 +1,298 @@
+
+::: {#cap9 .section}
+# Layout Cartográfico e Modelos de Impressão no QGIS
+
+::: {#introducao-cap9 .section}
+## Introdução
+
+O **Layout de Impressão** do QGIS é o ambiente onde você transforma seus
+dados geográficos em mapas prontos para relatório, impressão ou
+exportação em PDF. \[web:80\]\[web:81\]\[web:84\]
+
+Neste capítulo, vamos criar um layout completo usando, como exemplo, os
+mapas de uso do solo, relevo, declividade e APP integradas, e ao final
+veremos as vantagens e o uso prático de **modelos de impressão**
+(templates) para ganhar tempo e padronizar produtos.
+\[web:80\]\[web:81\]\[web:85\]\[web:88\]\[web:91\]
+
+::: {.callout-note}
+\[IMAGEM 1: Janela do Layout de Impressão do QGIS com um mapa central,
+título, legenda, escala gráfica, norte e logo institucional montados em
+uma folha A4.\]
+:::
+:::
+
+::: {#abrir-layout .section}
+## Criando um Novo Layout de Impressão
+
+O Layout de Impressão é uma janela separada do QGIS, onde você organiza
+a folha (A4, A3 etc.) e adiciona elementos gráficos como mapa, legenda,
+barras de escala e textos. \[web:80\]\[web:81\]
+
+### Passo a passo para criar o layout
+
+1.  Com o projeto já configurado e os mapas prontos (uso do solo,
+    relevo, declividade, APP), vá ao menu **"Projeto"** \> **"Novo
+    Layout de Impressão"**. \[web:80\]\[web:81\]
+2.  Digite um nome para o layout (por exemplo, *Mapa_ambiental_A4*) e
+    clique em **OK**.
+3.  Será aberta a janela do Layout de Impressão, mostrando uma **folha
+    em branco** (por padrão, A4 na vertical). \[web:80\]\[web:81\]
+
+::: {.callout-note}
+\[IMAGEM 2: Tela do QGIS com o menu "Projeto \> Novo Layout de
+Impressão" aberto e, ao lado, a nova janela de layout com uma página A4
+em branco.\]
+:::
+:::
+
+::: {#config-pagina .section}
+## Configurando Tamanho e Orientação da Página
+
+Antes de adicionar os elementos, é importante definir o tamanho da folha
+e a orientação (retrato ou paisagem) de acordo com o tipo de mapa que
+você quer produzir. \[web:80\]\[web:81\]
+
+###  Definindo página e margens
+
+1.  Na janela do Layout, selecione o item **"Página"** clicando na folha
+    (ou usando o painel de "Propriedades da Página").
+    \[web:80\]\[web:81\]
+2.  Em **"Tamanho"**, selecione o formato desejado (por exemplo, A4 ou
+    A3).
+3.  Em **"Orientação"**, escolha "Retrato" (vertical) ou "Paisagem"
+    (horizontal), conforme o formato do seu mapa (área mais larga ou
+    mais alta). \[web:81\]
+4.  Opcionalmente, defina margens internas usando guias ou a grade
+    (ativando "Mostrar Grade" no menu "Ver"). \[web:88\]
+
+::: {.callout-note}
+\[IMAGEM 3: Propriedades da página no Layout do QGIS, com seleção de A4
+na orientação paisagem e grade visível na folha para ajudar no
+alinhamento.\]
+:::
+:::
+
+::: {#adicionar-mapa-layout .section}
+## Adicionando o Mapa Principal
+
+O elemento mais importante do layout é a **janela de mapa**, que mostra
+a área de interesse com a mesma visualização configurada na janela
+principal do QGIS. \[web:80\]\[web:81\]\[web:84\]
+
+### Inserindo o mapa
+
+1.  Na barra de ferramentas à esquerda da janela de layout, clique no
+    ícone **"Adicionar Mapa"**.
+2.  Clique e arraste sobre a folha para desenhar um retângulo onde o
+    mapa será exibido (por exemplo, ocupando a parte central da página).
+    \[web:80\]\[web:81\]
+3.  Ao soltar o mouse, o QGIS exibirá a visualização do mapa atual
+    (conforme a tela principal) dentro da moldura desenhada.
+4.  No painel de **Propriedades do Item**, você pode ajustar:
+    -   Escala do mapa (fixa ou aproximar/afastar com "Atualizar
+        vista").
+    -   Extensão (definindo manualmente ou sincronizando com a vista
+        atual do projeto).
+    -   Qual camada será usada como "referência" para o enquadramento
+        (caso existam outras janelas de mapa). \[web:80\]\[web:81\]
+
+::: {.callout-note}
+\[IMAGEM 4: Layout com uma janela de mapa central mostrando o mapa de
+uso do solo sobre o relevo, e painel de propriedades do mapa à direita
+com campos de escala e extensão.\]
+:::
+:::
+
+::: {#elementos-basicos .section}
+## Elementos Cartográficos Básicos
+
+Todo mapa temático deve conter alguns elementos mínimos: **título,
+legenda, escala gráfica, orientação (seta norte) e fonte**.
+\[web:80\]\[web:84\]
+
+### Título e textos
+
+1.  Para o título, use o botão **"Adicionar Etiqueta" (Texto)** na barra
+    de ferramentas do layout.
+2.  Clique na parte superior da página e digite, por exemplo, *"Mapa de
+    Uso do Solo, Relevo, Declividade e APP"*.
+3.  No painel de propriedades, ajuste fonte, tamanho, alinhamento e, se
+    desejado, uma moldura ou fundo. \[web:80\]\[web:81\]
+4.  Use etiquetas menores para incluir informações como "Fonte de
+    dados", "Sistema de Coordenadas", "Autor" e "Data".
+
+::: {.callout-note}
+\[IMAGEM 5: Layout com um título centralizado na parte superior e textos
+de fonte e autor na parte inferior da página.\]
+:::
+
+### Legenda
+
+1.  Clique em **"Adicionar Legenda"** na barra de ferramentas do layout.
+2.  Clique em um espaço lateral da página (por exemplo, à direita do
+    mapa). \[web:80\]\[web:81\]
+3.  O QGIS irá montar automaticamente uma legenda com todas as camadas
+    visíveis do projeto.
+4.  No painel de propriedades da legenda, ajuste:
+    -   Quais camadas devem aparecer (removendo, por exemplo, camadas de
+        apoio como MDE bruto).
+    -   Texto dos rótulos de legenda (renomeando "uso_solo" para "Uso do
+        solo", "Declividade_class" para "Declividade (%)", etc.).
+    -   Organização em grupos (por exemplo, "Camadas de base", "Camadas
+        de análise"). \[web:80\]\[web:81\]
+
+::: {.callout-note}
+\[IMAGEM 6: Layout mostrando uma legenda organizada com grupos "Base"
+(imagem/hillshade) e "Temáticos" (uso do solo, declividade, APP), com
+textos amigáveis.\]
+:::
+
+### Escala gráfica e norte
+
+1.  Para a escala gráfica, clique em **"Adicionar Barra de Escala"** e
+    posicione abaixo do mapa ou próximo à legenda. \[web:80\]\[web:84\]
+2.  No painel de propriedades, escolha o estilo (barra simples, com
+    subdivisões), unidade (metros, km) e rótulos.
+3.  Para a seta norte, clique em **"Adicionar Imagem"** e selecione um
+    símbolo de norte do próprio QGIS ou um arquivo de imagem
+    personalizado. \[web:80\]\[web:84\]
+4.  Posicione a seta norte em um canto do mapa, evitando sobrepor áreas
+    importantes.
+
+::: {.callout-note}
+\[IMAGEM 7: Parte inferior do layout com barra de escala em quilômetros
+e seta norte discreta no canto superior direito do mapa.\]
+:::
+:::
+
+::: {#combinar-mapas-layout .section}
+## Combinação de Diferentes Mapas no Mesmo Layout
+
+Em alguns casos, é útil apresentar mais de um mapa na mesma folha, por
+exemplo, mapa de uso do solo ao lado de mapa de declividade ou APP.
+\[web:80\]\[web:86\]
+
+Isso pode ser feito adicionando **múltiplas janelas de mapa** no layout
+e configurando cada uma com sua própria extensão e escala.
+\[web:80\]\[web:81\]
+
+### Adicionando um segundo mapa (ex.: declividade)
+
+1.  Crie uma nova janela de mapa com o botão "Adicionar Mapa",
+    posicionando-a, por exemplo, ao lado do mapa principal (metade
+    direita da página).
+2.  No painel de propriedades, altere a **extensão** para focar a mesma
+    área, mas altere a **camada ativa/visível** no projeto (por exemplo,
+    destacando apenas a camada de declividade). \[web:80\]\[web:81\]
+3.  Se necessário, use temas de mapa (salvos no projeto) para controlar
+    quais camadas aparecem em cada janela de mapa. \[web:86\]
+
+::: {.callout-note}
+\[IMAGEM 8: Layout com dois mapas lado a lado: à esquerda, uso do solo;
+à direita, declividade, ambos com legendas específicas e mesma área
+geográfica.\]
+:::
+:::
+
+::: {#exportar .section}
+## Exportando o Layout (PDF, Imagem)
+
+Após ajustar todos os elementos, o layout pode ser exportado como PDF,
+imagem (PNG, JPEG) ou impresso diretamente. \[web:80\]\[web:84\]
+
+### Exportar para PDF
+
+1.  Na barra superior da janela de layout, clique em **"Exportar como
+    PDF"**.
+2.  Escolha o local e o nome do arquivo, por exemplo,
+    *Mapa_ambiental.pdf*.
+3.  Verifique as opções de resolução e inclusão de metadados, se
+    disponíveis.
+4.  Clique em **Salvar** e aguarde a geração do arquivo.
+    \[web:80\]\[web:84\]
+
+::: {.callout-note}
+\[IMAGEM 9: Janela de exportação para PDF do QGIS com nome de arquivo
+definido e opções padrão, ao lado da visualização de um PDF aberto com o
+mapa final.\]
+:::
+:::
+
+::: {#modelos-layout .section}
+## Modelos de Impressão (Templates): Vantagens e Como Usar
+
+Criar um layout do zero consome tempo, principalmente se você precisar
+produzir vários mapas com o mesmo padrão gráfico (título, logomarca,
+legenda, escala, posição do mapa). \[web:82\]\[web:85\]\[web:88\]
+
+Para agilizar e padronizar, o QGIS permite salvar o layout como **modelo
+de impressão (template)** e reutilizá-lo em outros projetos, mantendo a
+estrutura do mapa, legendas e elementos fixos.
+\[web:82\]\[web:85\]\[web:88\]
+
+::: {.callout-note}
+\[IMAGEM 10: Exemplo de um layout de mapa com logotipo institucional,
+título padrão e quadro de dados configurado, acompanhado de uma janela
+mostrando o salvamento como template.\]
+:::
+
+### Vantagens de usar modelos de layout
+
+-   **Padronização visual**: todos os mapas seguem o mesmo padrão de
+    cores, fontes, logotipos e organização. \[web:82\]\[web:85\]
+-   **Economia de tempo**: evita redesenhar títulos, legendas, quadros e
+    margens em cada novo projeto. \[web:82\]\[web:88\]
+-   **Redução de erros**: minimiza esquecimentos (por exemplo, esquecer
+    de incluir escala ou fonte), pois o modelo já inclui todos os
+    elementos obrigatórios. \[web:82\]\[web:85\]
+-   **Ideal para séries de mapas**: especialmente útil quando se
+    produzem muitos mapas para diferentes áreas, propriedades ou
+    períodos (por exemplo, usando Atlas). \[web:85\]\[web:91\]
+
+### Como salvar um modelo de impressão
+
+1.  Com o layout já pronto e revisado, acesse o menu do layout
+    (geralmente "Layout" ou "Compositor", dependendo da versão do QGIS).
+    \[web:80\]\[web:88\]
+2.  Selecione a opção **"Salvar como Modelo"** (Save as Template).
+3.  Escolha um local para guardar o arquivo de modelo (por exemplo,
+    pasta "Modelos_Layout_QGIS") e dê um nome descritivo (ex.:
+    *modelo_mapa_ambiental_A4.qpt*). \[web:88\]
+4.  Confirme o salvamento.
+
+::: {.callout-note}
+\[IMAGEM 11: Menu do layout com a opção "Salvar como modelo" destacada,
+e janela de diálogo para salvar o arquivo .qpt.\]
+:::
+
+### Como usar um modelo de impressão em outro projeto
+
+1.  Abrir um novo projeto QGIS com as camadas desejadas (por exemplo,
+    mapas de outra fazenda ou de outro município).
+2.  Ir em **"Projeto"** \> **"Novo Layout de Impressão"** e definir um
+    nome para o layout. \[web:80\]\[web:81\]
+3.  Na janela do layout, acessar o menu **"Layout/Compositor"** e
+    escolher **"Carregar itens de modelo"** ou "Carregar de template".
+    \[web:79\]\[web:88\]
+4.  Selecionar o arquivo de modelo *.qpt* que você salvou anteriormente.
+5.  A folha será preenchida automaticamente com a estrutura do modelo
+    (posições de mapa, legenda, textos, logotipos); basta atualizar:
+    -   A área exibida na(s) janela(s) de mapa (ajustar
+        extensão/escala).
+    -   Textos específicos como título, data, escala textual e eventuais
+        campos de identificação (nome da propriedade, município etc.).
+        \[web:85\]\[web:88\]
+
+::: {.callout-note}
+\[IMAGEM 12: Janela de layout inicialmente em branco sendo preenchida
+automaticamente após carregar um template, mostrando o novo mapa já no
+modelo padrão.\]
+:::
+
+Em projetos com muitos mapas (por exemplo, um mapa por propriedade), é
+possível combinar o uso de modelos de layout com o **Atlas** do QGIS
+para automatizar a geração de séries de mapas, mantendo o mesmo
+template. \[web:86\]\[web:89\]\[web:91\]
+:::
+:::

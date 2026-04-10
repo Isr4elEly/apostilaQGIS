@@ -1,0 +1,113 @@
+
+::: {#referencias-abnt .section}
+# Referências (Lista Avulsa com Códigos)
+
+-   [\[ABNT geral -- sem código específico\]]{.codigo}\
+    ABNT -- ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 14166:
+    Representação de terreno com curvas de nível.** Rio de Janeiro,
+    1998.
+-   [\[Lei -- sem código específico\]]{.codigo}\
+    BRASIL. **Lei n.º 12.651, de 25 de maio de 2012.** Dispõe sobre a
+    proteção da vegetação nativa. Diário Oficial da União, Brasília, DF,
+    28 maio 2012.
+-   [\[Embrapa geral -- sem código específico\]]{.codigo}\
+    EMBRAPA -- EMPRESA BRASILEIRA DE PESQUISA AGROPECUÁRIA.
+    **Classificação de declividades para uso agrícola.** Documentos
+    técnicos diversos, Brasília, s.d.
+-   [\[web:97\]]{.codigo}\
+    EMPRAPA FLORESTAS. **Reserva Legal e Área de Preservação Permanente
+    (dicas para a Região Sul): RL e APP.** Colombo: Embrapa
+    Florestas, 2014. Disponível em:
+    \<https://www.infoteca.cnptia.embrapa.br/handle/doc/1003109\>.
+    Acesso em: 27 mar. 2026.
+-   [\[web:103\]]{.codigo}\
+    IBGE -- INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Manual
+    Técnico em Geociências.** Rio de Janeiro: IBGE, 2025. Disponível em:
+    \<https://www.ibge.gov.br/geociencias/informacoes-ambientais/geologia/15826-manual-tecnico-em-geociencias.html\>.
+    Acesso em: 27 mar. 2026.
+-   [\[web:93\]]{.codigo}\
+    IBGE -- INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Folhas
+    topográficas.** Rio de Janeiro: IBGE, 2022. Disponível em:
+    \<https://www.ibge.gov.br/geociencias/cartas-e-mapas/folhas-topograficas.html\>.
+    Acesso em: 27 mar. 2026.
+-   [\[web:94\]]{.codigo}\
+    IBGE -- INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Normas
+    Técnicas da Cartografia Nacional -- Decreto nº 89.817/1984.** Rio de
+    Janeiro: IBGE, 1984. Disponível em:
+    \<https://geoftp.ibge.gov.br/metodos_e_outros_documentos_de_referencia/normas/legislacao/legisla_decreto_89817_d.pdf\>.
+    Acesso em: 27 mar. 2026.
+-   [\[web:99\]\[web:101\]]{.codigo}\
+    IBGE -- INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Base
+    Cartográfica Contínua do Brasil e Curvas de Nível.** Rio de Janeiro:
+    IBGE, 2016--2018. Disponível em:
+    \<https://geoftp.ibge.gov.br/cartas_e_mapas/bases_cartograficas_continuas/\>.
+    Acesso em: 27 mar. 2026.
+-   [\[web:96\]]{.codigo}\
+    ANA -- AGÊNCIA NACIONAL DE ÁGUAS E SANEAMENTO BÁSICO. **Curvas de
+    nível -- Catálogo de Metadados da ANA.** Brasília: ANA, 2016.
+    Disponível em: \<https://metadados.snirh.gov.br/\>. Acesso em: 27
+    mar. 2026.
+-   [\[web:64\]]{.codigo}\
+    DEFESA CIVIL DO ESPÍRITO SANTO. **Análise espacial com QGIS e
+    GEObases.** Vitória: CEPDEC/ES, 2024. Disponível em:
+    \<https://defesacivil.es.gov.br/Media/DefesaCivil/Cursos%20CEPDEC/ANALISE%20ESPACIAL%20COM%20QGIS%20E%20GEOBASES.pdf\>.
+    Acesso em: 27 mar. 2026.
+-   [\[web:70\]]{.codigo}\
+    EMBRAPA. **Conheça quais são as Áreas de Preservação Permanente
+    (APP).** Brasília: Embrapa, 2011. Disponível em:
+    \<https://www.embrapa.br/codigo-florestal/entenda-o-codigo-florestal/area-de-preservacao-permanente/detalhe-area-pp\>.
+    Acesso em: 27 mar. 2026.
+-   [\[web:50\]]{.codigo}\
+    SÁ, Narcélio. **Cálculos de declividade no QGIS: veja como
+    fazer.** 2014. Disponível em:
+    \<https://narceliodesa.com/calculando-declividade-qgis/\>. Acesso
+    em: 27 mar. 2026.
+-   [\[web:52\]\[web:55\]]{.codigo}\
+    EMBRAPA. **Classificação de Declividade -- Tabela Embrapa.** 1979 e
+    atualizações posteriores. Documento técnico.
+-   [\[web:80\]\[web:81\]\[web:85\]]{.codigo}\
+    QGIS PROJECT. **Documentação do QGIS -- Layout de Impressão e Design
+    de Mapas.** 2014--2024. Disponível em: \<https://docs.qgis.org/\>.
+    Acesso em: 27 mar. 2026.
+-   [\[web:62\]\[web:72\]\[web:106\]]{.codigo}\
+    QGIS PROJECT. **Gentle Introduction to GIS e Training Manuals --
+    Vector Spatial Analysis.** 2014--2024. Disponível em:
+    \<https://docs.qgis.org/\>. Acesso em: 27 mar. 2026.
+-   [\[web:91\]]{.codigo}\
+    QGIS PROJECT. **Automating Map Creation with Print Layout Atlas
+    (QGIS3).** 2018. Disponível em:
+    \<https://www.qgistutorials.com/en/docs/3/automating_map_creation.html\>.
+    Acesso em: 27 mar. 2026.
+-   [\[web:104\]\[web:100\]]{.codigo}\
+    GEOACADEMY. **Buffer, clip and intersect vector data; Buffer
+    operations --- QGIS 3.10.** 2019--2025. Disponível em:
+    \<https://portal.geoacademy.eu/\> e
+    \<https://qgis3-10-geoanalysis-un.readthedocs.io/\>. Acesso em: 27
+    mar. 2026.
+-   [\[web:78\]]{.codigo}\
+    UNIVERSO GIS. **Modelos de Layout QGIS: Como criar mapas
+    profissionais em 5 minutos.** 2025. Disponível em:
+    \<https://universogis.com.br/modelos-de-layout-qgis-download/\>.
+    Acesso em: 27 mar. 2026.
+-   [\[web:88\]]{.codigo}\
+    TETRIX ECOLOGY. **How to create a print template in QGIS.** 2017.
+    Disponível em:
+    \<https://www.tetrixecology.com/single-post/how-to-create-a-print-template-in-qgis\>.
+    Acesso em: 27 mar. 2026.
+-   [\[web:108\]\[web:111\]\[web:113\]]{.codigo}\
+    DIVERSOS AUTORES. **Recolha de dados com QField e Mobile GIS com
+    QGIS + QField.** 2020--2026. Materiais de apresentação e divulgação
+    sobre QField e Mobile GIS. \[web:108\]\[web:111\]\[web:113\]
+-   [\[web:109\]\[web:110\]]{.codigo}\
+    QFIELD COMMUNITY. **Tópicos de suporte sobre QFieldSync e
+    QFieldCloud (edição offline e sincronização com PostGIS).** 2025.
+    Disponível em: \<https://community.qfield.org/\>. Acesso em: 27 mar.
+    2026.
+-   [\[file:46\]]{.codigo}\
+    AUTOR(A) DA APOSTILA. **ROTEIRO -- DICAS E FÓRMULAS (EXER-03):
+    Relevo, Curvas de Nível, Declividade e APP.** Documento
+    interno, 2026. Arquivo de referência utilizado na estruturação dos
+    capítulos de relevo, declividade, classificação de declividade e
+    restrição ambiental.
+:::
+:::

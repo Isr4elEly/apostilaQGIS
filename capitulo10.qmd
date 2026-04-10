@@ -1,0 +1,265 @@
+
+::: {#cap10 .section}
+# QField: Coleta e Edição de Dados em Campo Integrada ao QGIS
+
+::: {#introducao-qfield .section}
+## Introdução
+
+O **QField** é um aplicativo móvel baseado no QGIS, desenvolvido para
+permitir a coleta e edição de dados geográficos diretamente em campo,
+utilizando tablets e smartphones, mesmo em modo offline.
+\[web:108\]\[web:111\]
+
+Com ele, é possível levar para o campo projetos preparados no QGIS
+(camadas, formulários de atributos, estilos de mapa), coletar novos
+pontos, linhas e polígonos, registrar fotos e observações, e depois
+sincronizar de volta com o projeto de escritório.
+\[web:108\]\[web:110\]\[web:113\]
+
+::: {.callout-note}
+\[IMAGEM QF-1: Foto ou ilustração de um técnico em campo utilizando um
+tablet ou smartphone com QField aberto, exibindo um mapa com pontos de
+coleta.\]
+:::
+:::
+
+::: {#qfield-funcao .section}
+## Função do QField no Fluxo de Trabalho com QGIS
+
+O QField funciona como uma "versão de campo" do QGIS: você prepara o
+projeto no computador, exporta para o dispositivo móvel, realiza as
+coletas ou edições em campo e, em seguida, traz as alterações de volta
+para o projeto original. \[web:108\]\[web:110\]
+
+Esse fluxo reduz o uso de papel, diminui erros de digitação e permite
+registrar informações com precisão de GPS, fotos georreferenciadas e
+formulários personalizados, alinhados às necessidades de cada
+levantamento. \[web:108\]\[web:111\]
+
+::: {.callout-note}
+\[IMAGEM QF-2: Diagrama simples mostrando o fluxo: QGIS (escritório) →
+Exportar projeto → QField (campo) → Sincronizar de volta → QGIS
+(análise).\]
+:::
+:::
+
+::: {#qfield-preparacao-qgis .section}
+## Preparando o Projeto no QGIS para uso no QField
+
+Antes de usar o QField, é necessário preparar um projeto no QGIS com as
+camadas e formulários de atributos organizados. A forma mais comum é
+utilizar o plugin de sincronização/exportação do QField para criar um
+pacote de projeto pronto para o dispositivo móvel.
+\[web:108\]\[web:110\]
+
+### Organização das camadas e caminhos
+
+1.  No QGIS, organize o projeto com as camadas que serão utilizadas em
+    campo (por exemplo: propriedades, talhões, pontos de coleta,
+    drenagem, APP).
+2.  Verifique se os caminhos dos arquivos são **relativos** ao projeto
+    (Menu "Projeto" \> "Propriedades" \> "Caminhos" \> "Salvar caminhos
+    relativos"). \[web:110\]
+3.  Se houver camadas em banco de dados (PostGIS), avalie se será
+    necessário trabalhar com cópias offline em GeoPackage ou se usará
+    QFieldCloud para sincronizar diretamente com o banco.
+    \[web:109\]\[web:110\]
+
+### Configurando formulários de atributos
+
+1.  Nas propriedades de cada camada editável, configure os **formulários
+    de atributos** (aba "Formulário de Atributos"), definindo ordem dos
+    campos, tipos de widget (lista, caixa de texto, data, foto), valores
+    padrão e listas de domínio. \[web:108\]
+2.  Campos como "tipo de uso do solo", "estado de conservação", "classe
+    de declividade" ou "observações" podem ser listas pré-definidas,
+    agilizando a coleta e minimizando erros.
+3.  Teste o preenchimento dos formulários no QGIS antes de exportar,
+    garantindo que a interface esteja clara para o uso em campo.
+
+::: {.callout-note}
+\[IMAGEM QF-3: Captura de tela do QGIS mostrando a configuração de um
+formulário de atributos para uma camada de pontos de coleta, com campos
+de texto, listas e campo de foto.\]
+:::
+:::
+
+::: {#qfield-exportacao .section}
+## Exportando o Projeto para QField
+
+A exportação do projeto é feita, em geral, por meio de um plugin no QGIS
+(como o QFieldSync), que cria uma pasta ou pacote contendo o projeto e
+os dados necessários para uso no dispositivo móvel.
+\[web:108\]\[web:110\]
+
+### Passo a passo (fluxo clássico com QFieldSync)
+
+1.  No QGIS, instale e ative o plugin **QFieldSync**, se ainda não
+    estiver instalado.
+2.  Abra o plugin e selecione o projeto atual.
+3.  Configure quais camadas serão:
+    -   Somente leitura (camadas base como imagens e MDE).
+    -   Editáveis em campo (camadas vetoriais de
+        pontos/linhas/polígonos).
+    -   Convertidas para formato **offline** (GeoPackage) para evitar
+        dependência de banco de dados remoto. \[web:110\]
+4.  Defina a pasta de saída (por exemplo, diretório que será copiado
+    para o dispositivo Android).
+5.  Clique em **"Exportar"**; o plugin criará uma cópia do projeto e dos
+    dados preparada para o QField.
+6.  Transfira essa pasta para o dispositivo móvel (via cabo USB, nuvem
+    etc.).
+
+::: {.callout-note}
+\[IMAGEM QF-4: Tela do plugin QFieldSync no QGIS, com uma lista de
+camadas e colunas indicando se são offline, somente leitura ou
+editáveis.\]
+:::
+:::
+
+::: {#qfield-uso-campo .section}
+## Uso do QField em Campo
+
+Com o projeto exportado para o dispositivo móvel, o QField permite
+navegar pelo mapa, coletar novas feições, editar atributos e registrar
+fotos, mesmo sem conexão com a internet.
+\[web:108\]\[web:111\]\[web:113\]
+
+### Abertura do projeto e navegação
+
+1.  No dispositivo (Android, por exemplo), abra o aplicativo **QField**.
+2.  Navegue até a pasta onde o projeto foi copiado e selecione o arquivo
+    de projeto (\*.qgz ou \*.qgs).
+3.  Use zoom, pan e, se disponível, localização por GPS para posicionar
+    o mapa na área de trabalho.
+
+### Coleta e edição de feições
+
+1.  Selecione a camada editável (por exemplo, "Pontos de amostragem",
+    "Talhões", "Pontos de APP").
+2.  Use a ferramenta de adicionar feição (ponto, linha ou polígono) e
+    posicione no mapa, preferencialmente com apoio do GPS.
+    \[web:108\]\[web:111\]
+3.  Ao criar a feição, o QField abrirá automaticamente o formulário de
+    atributos; preencha os campos (tipo, código, observações etc.).
+4.  Se houver campo de foto, use a câmera do dispositivo para registrar
+    imagens vinculadas à feição.
+5.  Repita o processo para todas as feições desejadas, salvando
+    periodicamente as edições.
+
+::: {.callout-note}
+\[IMAGEM QF-5: Tela do QField em um smartphone mostrando o mapa, um
+ponto recém-adicionado e o formulário de atributos aberto com campos de
+texto e botão de câmera.\]
+:::
+:::
+
+::: {#qfield-sincronizacao .section}
+## Sincronizando as Edições de Volta ao QGIS
+
+Após o trabalho de campo, é necessário sincronizar as edições realizadas
+no QField com o projeto original no QGIS, atualizando camadas e bancos
+de dados. \[web:109\]\[web:110\]
+
+### Fluxo com QFieldSync (projeto local/offline)
+
+1.  Copie de volta, para o computador, a pasta do projeto que foi
+    utilizada no QField.
+2.  No QGIS, abra o projeto original (aquele que foi usado para
+    exportar).
+3.  Abra o plugin **QFieldSync** e escolha a opção de **"Sincronizar de
+    volta"** com a pasta do projeto de campo. \[web:110\]
+4.  O plugin aplicará as alterações (novas feições, edições de
+    atributos) nas camadas de origem (GeoPackage ou PostGIS).
+5.  Verifique no mapa e na tabela de atributos se as novas feições e
+    fotos foram incorporadas corretamente.
+
+::: {.callout-note}
+\[IMAGEM QF-6: Captura de tela do QGIS mostrando a janela do QFieldSync
+com um "job" de sincronização concluído e novos pontos aparecendo no
+mapa.\]
+:::
+
+### Fluxo com QFieldCloud (projetos com sincronização na nuvem)
+
+Para equipes maiores e projetos conectados a bancos de dados (como
+PostGIS), é possível utilizar o **QFieldCloud**, que gerencia pacotes de
+projeto, deltas de edição e aplicação de alterações diretamente no
+servidor. \[web:107\]\[web:109\]
+
+1.  Configurar o projeto no QGIS para uso com QFieldCloud, criando o
+    pacote e carregando para a nuvem.
+2.  No QField, baixar o projeto via QFieldCloud, editar e sincronizar as
+    mudanças com a nuvem.
+3.  Acompanhar os "jobs" de aplicação de deltas no painel do QFieldCloud
+    e verificar se as edições foram aplicadas com sucesso ao banco
+    PostGIS. \[web:109\]
+
+::: {.callout-note}
+\[IMAGEM QF-7: Interface web do QFieldCloud mostrando um projeto com
+status de sincronização verde e um job de "delta apply" concluído.\]
+:::
+:::
+
+::: {#qfield-vantagens-limites .section}
+## Vantagens e Limitações do Uso do QField
+
+O QField traz diversas vantagens para projetos de geoprocessamento
+aplicados: reduz tempo de processamento de dados, melhora a qualidade
+das informações de campo e facilita o trabalho colaborativo entre equipe
+de campo e escritório. \[web:108\]\[web:111\]\[web:113\]
+
+### Principais vantagens
+
+-   **Integração nativa com QGIS**: reaproveita estilos, formulários e
+    estrutura de projeto já montados no desktop.
+-   **Trabalho offline**: ideal para áreas rurais/remotas sem
+    conectividade constante.
+-   **Coleta enriquecida**: permite registrar fotos, notas, códigos,
+    classes de uso e atributos detalhados. \[web:108\]\[web:111\]
+-   **Escalabilidade**: com QFieldCloud, facilita trabalho simultâneo de
+    vários coletores e sincronização com bancos centrais.
+    \[web:107\]\[web:109\]
+
+### Cuidados e limitações
+
+-   Planejamento do projeto é essencial: formulários mal configurados ou
+    caminhos incorretos podem gerar falhas de sincronização.
+    \[web:109\]\[web:110\]
+-   Necessidade de testes antes do trabalho real em campo, especialmente
+    em fluxos com PostGIS e QFieldCloud.
+-   Acurácia da posição depende do receptor GNSS do dispositivo (ou de
+    receptores externos integrados).
+
+::: {.callout-note}
+\[IMAGEM QF-8: Tabela ou diagrama listando "Vantagens" de um lado e
+"Cuidados" do outro, com ícones ilustrativos (check e alerta).\]
+:::
+:::
+
+::: {#qfield-roteiro .section}
+## Roteiro Prático Resumido -- QGIS + QField
+
+A seguir, um roteiro resumido para integrar QGIS e QField em um fluxo de
+coleta de dados em campo. \[web:108\]\[web:109\]\[web:110\]
+
+1.  Preparar o projeto no QGIS (camadas, SRC, formulários de atributos
+    configurados).
+2.  Definir quais camadas serão editadas em campo e quais serão apenas
+    base.
+3.  Usar o plugin QFieldSync (ou fluxo QFieldCloud) para exportar o
+    projeto para uma pasta ou para a nuvem.
+4.  Abrir o projeto no QField, navegar com apoio de GPS e coletar/editar
+    feições, preenchendo os formulários.
+5.  Ao retornar, sincronizar as edições com o projeto original no QGIS
+    (pasta offline ou QFieldCloud + PostGIS).
+6.  Revisar, ajustar simbologia, gerar mapas e relatórios com base nos
+    dados atualizados.
+
+::: {.callout-note}
+\[IMAGEM QF-9: Fluxograma completo do processo QGIS ↔ QField, com ícones
+de computador, nuvem e dispositivo móvel, indicando cada uma das etapas
+do roteiro.\]
+:::
+:::
+:::

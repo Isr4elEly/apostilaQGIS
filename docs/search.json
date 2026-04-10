@@ -1,0 +1,852 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField",
+    "section": "",
+    "text": "Prefácio\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Prefácio"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html",
+    "href": "capitulo1.html",
+    "title": "1  Introdução e Conceitos Básicos",
+    "section": "",
+    "text": "Este primeiro capítulo tem como objetivo apresentar os conceitos fundamentais que formam a base do geoprocessamento. Antes de mergulhar nas ferramentas e práticas aplicadas, é essencial compreender as ideias que sustentam o uso de dados geográficos, a integração entre diferentes tecnologias e o papel dos Sistemas de Informações Geográficas (SIG) no apoio à tomada de decisão em diversas áreas como agricultura, meio ambiente, urbanismo e gestão territorial.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução e Conceitos Básicos</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#geotecnologias",
+    "href": "capitulo1.html#geotecnologias",
+    "title": "1  Introdução e Conceitos Básicos",
+    "section": "1.1 Geotecnologias",
+    "text": "1.1 Geotecnologias\nO termo geotecnologias agrupa o conjunto de tecnologias voltadas para a coleta, processamento, análise e apresentação de informações geográficas. São ferramentas indispensáveis para analisar o espaço e compreender padrões e relações em fenômenos naturais e humanos. (EMBRAPA 2011)\nAs principais geotecnologias incluem:\n\nSensoriamento Remoto: uso de satélites e drones para captar imagens e dados da superfície terrestre.\nSistemas de Posicionamento Global (GPS/GNSS): determinação precisa de coordenadas geográficas.\nSistemas de Informações Geográficas (SIG): integração, manipulação e análise de dados espaciais em ambiente computacional.\nCartografia Digital: representação visual das informações espaciais em mapas digitais.\n\nEm conjunto, essas tecnologias permitem criar diagnósticos territoriais, planejar intervenções e monitorar transformações ambientais e urbanas. (EMBRAPA 2011)\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 2: Diagrama mostrando a integração entre Sensoriamento Remoto, GPS e SIG formando o conjunto de “Geotecnologias”. A imagem pode exibir três círculos interligados com ícones representando satélites, receptores GNSS e computadores com mapas.]",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução e Conceitos Básicos</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#geoprocessamento",
+    "href": "capitulo1.html#geoprocessamento",
+    "title": "1  Introdução e Conceitos Básicos",
+    "section": "1.2 Geoprocessamento",
+    "text": "1.2 Geoprocessamento\nO geoprocessamento é o conjunto de técnicas e métodos computacionais usados para manipular e analisar informações geográficas. Ele combina dados espaciais (como mapas, imagens de satélite, pontos de GPS) e dados descritivos (como tabelas com atributos sobre o território) para gerar novos conhecimentos. (EMBRAPA 2011)\nCom o geoprocessamento, é possível responder perguntas como:\n\nOnde estão localizadas as áreas de maior declividade?\nQuais propriedades rurais estão dentro de uma Área de Preservação Permanente (APP)?\nComo o uso do solo mudou nos últimos 10 anos?\n\nO geoprocessamento é amplamente aplicado em estudos ambientais, planejamento rural, zoneamento urbano, gestão de recursos hídricos e inúmeras outras áreas que envolvem o espaço geográfico. (EMBRAPA 2011)\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 3: Exemplo ilustrativo de um mapa temático gerado por geoprocessamento, com diferentes cores representando tipos de vegetação, áreas urbanas e hidrografia. A legenda à direita ajuda o leitor a entender a simbologia utilizada.]",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução e Conceitos Básicos</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#sistema-de-informações-geográficas-sig",
+    "href": "capitulo1.html#sistema-de-informações-geográficas-sig",
+    "title": "1  Introdução e Conceitos Básicos",
+    "section": "1.3 Sistema de Informações Geográficas (SIG)",
+    "text": "1.3 Sistema de Informações Geográficas (SIG)\nO Sistema de Informações Geográficas (SIG) é o principal ambiente de operação das geotecnologias. Trata-se de um conjunto integrado de software, hardware, dados e pessoas voltado à coleta, armazenamento, análise e exibição de informações espaciais. [web:8]\nUm SIG permite visualizar o território em forma de camadas, onde cada camada representa um tema (por exemplo: relevo, uso do solo, rede hidrográfica, limites de propriedades). A combinação dessas camadas possibilita realizar análises complexas e gerar mapas temáticos de grande valor informativo. (EMBRAPA 2011)\nExemplos de softwares SIG populares incluem QGIS (gratuito e de código aberto) e ArcGIS (comercial). No ambiente SIG, o usuário pode:\n\nImportar e visualizar dados vetoriais e raster;\nExecutar análises espaciais (proximidade, sobreposição, buffer, entre outras);\nGerar mapas temáticos e relatórios cartográficos;\nIntegrar dados de GPS e imagens de satélite de forma prática.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 4: Captura de tela (ou ilustração simulada) de um software SIG (ex: QGIS) mostrando várias camadas sobrepostas – base de satélite, vetores de rios, limites e áreas agrícolas – e uma janela de atributos aberta.]\n\n\n\n\n\n\n\n\nWarning\n\n\n\nMaterial didático elaborado para introdução à área de Geoprocessamento. Este conteúdo pode ser usado como referência em cursos técnicos e de capacitação.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução e Conceitos Básicos</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo2.html",
+    "href": "capitulo2.html",
+    "title": "2  Dados Geográficos e Estruturas de Armazenamento",
+    "section": "",
+    "text": "Para trabalhar com geoprocessamento é essencial compreender o que são dados geográficos. De forma simples, um dado geográfico é qualquer informação que possui uma localização na superfície terrestre, ou seja, pode ser associada a coordenadas (latitude e longitude, ou outro sistema de referência). [web:7]\nEsses dados combinam duas partes principais: a informação sobre onde algo está (componente espacial) e a informação sobre o que é esse algo (componente descritiva ou temática, normalmente armazenada em tabelas de atributos). [web:7]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Esquema mostrando um mapa com pontos representando cidades e uma tabela ao lado com os atributos de cada cidade (nome, população, área). A imagem destaca a ligação entre o ponto no mapa e a linha correspondente na tabela de atributos.]\n\n\n\n\n\nNos Sistemas de Informações Geográficas, os dados espaciais são representados principalmente em dois modelos: o modelo vetorial e o modelo raster. [web:1][web:4][web:7]\n\n\nOs dados vetoriais representam o espaço por meio de pontos, linhas e polígonos. [web:7][web:13] Cada um desses elementos possui coordenadas precisas e pode ter diversos atributos associados em tabela.\n\nPontos: usados para localizar objetos como poços, árvores amostrais, escolas, torres etc.\nLinhas: representam feições alongadas, como rios, estradas, linhas de transmissão.\nPolígonos: delimitam áreas, como talhões agrícolas, lagos, municípios, propriedades rurais.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 2: Ilustração simples com três quadros lado a lado: 1) um mapa com pontos marcando cidades; 2) um mapa com linhas representando uma rede de estradas; 3) um mapa com polígonos coloridos representando limites de municípios.]\n\n\n\n\n\nOs dados raster representam o espaço em forma de uma grade de células (pixels), onde cada célula possui um valor. [web:4][web:8] Esse tipo de dado é muito utilizado para representar imagens de satélite, modelos de elevação, mapas de temperatura, entre outros.\nCada célula da grade possui um valor numérico que pode indicar, por exemplo, o tipo de cobertura do solo, a altitude ou a intensidade de um fenômeno. Quanto menor o tamanho da célula, maior a resolução da imagem e mais detalhada será a representação. [web:4]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 3: Zoom em uma imagem de satélite onde, ao aproximar, a figura vai ficando “quadriculada”, evidenciando os pixels. Cada pixel é mostrado com um valor numérico simplificado para ilustrar o conceito de dados raster.]\n\n\n\n\n\nEm termos gerais, dados vetoriais são mais adequados para feições com limites bem definidos (como propriedades, rios, estradas), enquanto dados raster são ideais para fenômenos contínuos (como relevo, temperatura, umidade). [web:1][web:5]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 4: Quadro comparativo visual com duas colunas: “Vetor” (mostrando polígonos de talhões bem definidos) e “Raster” (mostrando um gradiente de cores representando altitude). Abaixo, algumas palavras-chave como “limites nítidos” para vetor e “fenômeno contínuo” para raster.]\n\n\n\n\n\n\n\n\n\nOs dados geográficos podem ser armazenados em diferentes formatos e estruturas de arquivo. É importante conhecer os principais formatos para organizar seus projetos e facilitar a troca de dados entre softwares SIG. [web:6][web:8][web:10]\n\n\nUm dos formatos vetoriais mais utilizados é o Shapefile, composto por um conjunto de arquivos que trabalham juntos (por exemplo: .shp, .shx, .dbf). [web:6] O arquivo .shp guarda a geometria (pontos, linhas ou polígonos) e o arquivo .dbf guarda a tabela de atributos.\nAlém do Shapefile, existem outros formatos vetoriais, como GeoPackage (GPKG), arquivos KML/KMZ (usados no Google Earth) e camadas dentro de geodatabases. [web:6]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 5: Captura de tela simulada de uma pasta do sistema operacional mostrando os arquivos de um mesmo shapefile (ex.: rios.shp, rios.shx, rios.dbf) e setas indicando que todos compõem o mesmo dado vetorial “rios”.]\n\n\n\n\n\nDados raster podem ser armazenados em formatos como GeoTIFF, IMG e outros. [web:4][web:8] Esses arquivos incluem, além dos valores de cada célula, informações sobre localização, tamanho do pixel e sistema de referência.\nImagens de satélite, modelos digitais de elevação e mapas de uso e cobertura da terra são exemplos comuns de dados armazenados em formato raster. [web:4]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 6: Exemplo de um arquivo GeoTIFF representado por um ícone de arquivo, acompanhado de um pequeno mapa colorido ao lado, simbolizando que o arquivo contém uma imagem georreferenciada da área.]\n\n\n\n\n\nÀ medida que os projetos de geoprocessamento se tornam mais complexos, torna-se vantajoso armazenar os dados em estruturas mais robustas, como geodatabases e bancos de dados espaciais. [web:8][web:10][web:11]\nNessas estruturas, é possível guardar múltiplas camadas vetoriais e raster, tabelas e relacionamentos, com melhor organização, segurança e desempenho. Exemplos incluem File Geodatabase, PostGIS (extensão espacial do PostgreSQL) e outros. [web:6]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 7: Diagrama mostrando um “banco de dados espacial” ao centro, com várias camadas (pontos, linhas, polígonos e rasters) armazenadas dentro dele, e setas indicando que diferentes usuários/softwares podem acessar essas camadas simultaneamente.]\n\n\n\n\n\n\n\n\nTodo dado geográfico possui, de forma geral, três tipos de componentes: geometria, atributos e topologia. [web:7][web:9][web:11][web:13]\n\nGeometria: define a forma e a localização do objeto (ponto, linha, polígono ou célula raster).\nAtributos: informações descritivas associadas à geometria (ex.: nome, área, uso do solo, código da propriedade).\nTopologia: descreve as relações espaciais entre os objetos (vizinho de, toca, contém, cruza, etc.).\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 8: Exemplo de três polígonos contíguos representando propriedades rurais. Setas e rótulos indicam a geometria (forma de cada polígono), os atributos (tabela com nome do proprietário, área, código) e relações topológicas como “compartilha limite com” entre propriedades vizinhas.]\n\n\n\n\n\n\n\nA seguir, um pequeno roteiro prático para que você possa visualizar na prática os conceitos de dados vetoriais e raster em um software SIG (como o QGIS). [web:36][web:44]\n\n\n\nAbrir o QGIS.\nNo painel “Camadas”, clique em “Adicionar Camada” &gt; “Adicionar Camada Vetorial”.\nSelecione o arquivo .shp de sua preferência (por exemplo, limites de municípios ou propriedades).\nClique em “Adicionar” para visualizar a camada no mapa.\nClique com o botão direito na camada e selecione “Abrir Tabela de Atributos” para ver a relação entre geometria e atributos. [web:36]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 9: Captura de tela simulada do QGIS com uma camada vetorial de municípios carregada e a tabela de atributos aberta, destacando a seleção de um município no mapa e a linha correspondente na tabela.]\n\n\n\n\n\n\nNo QGIS, clique em “Camadas” &gt; “Adicionar Camada Raster”.\nEscolha um arquivo raster (por exemplo, um modelo de elevação ou uma imagem de satélite em formato GeoTIFF).\nClique em “Adicionar” para carregar a camada.\nUse a ferramenta de identificação para clicar em um pixel e visualizar o valor associado àquela célula. [web:36]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 10: Captura de tela simulada do QGIS com uma camada raster de relevo (em tons de cor) e a ferramenta de identificação mostrando, em uma janela, o valor de altitude do pixel clicado.]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Dados Geográficos e Estruturas de Armazenamento</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo2.html#introdução-aos-dados-geográficos",
+    "href": "capitulo2.html#introdução-aos-dados-geográficos",
+    "title": "2  Dados Geográficos e Estruturas de Armazenamento",
+    "section": "",
+    "text": "Para trabalhar com geoprocessamento é essencial compreender o que são dados geográficos. De forma simples, um dado geográfico é qualquer informação que possui uma localização na superfície terrestre, ou seja, pode ser associada a coordenadas (latitude e longitude, ou outro sistema de referência). [web:7]\nEsses dados combinam duas partes principais: a informação sobre onde algo está (componente espacial) e a informação sobre o que é esse algo (componente descritiva ou temática, normalmente armazenada em tabelas de atributos). [web:7]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Esquema mostrando um mapa com pontos representando cidades e uma tabela ao lado com os atributos de cada cidade (nome, população, área). A imagem destaca a ligação entre o ponto no mapa e a linha correspondente na tabela de atributos.]\n\n\n\n\n\nNos Sistemas de Informações Geográficas, os dados espaciais são representados principalmente em dois modelos: o modelo vetorial e o modelo raster. [web:1][web:4][web:7]\n\n\nOs dados vetoriais representam o espaço por meio de pontos, linhas e polígonos. [web:7][web:13] Cada um desses elementos possui coordenadas precisas e pode ter diversos atributos associados em tabela.\n\nPontos: usados para localizar objetos como poços, árvores amostrais, escolas, torres etc.\nLinhas: representam feições alongadas, como rios, estradas, linhas de transmissão.\nPolígonos: delimitam áreas, como talhões agrícolas, lagos, municípios, propriedades rurais.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 2: Ilustração simples com três quadros lado a lado: 1) um mapa com pontos marcando cidades; 2) um mapa com linhas representando uma rede de estradas; 3) um mapa com polígonos coloridos representando limites de municípios.]\n\n\n\n\n\nOs dados raster representam o espaço em forma de uma grade de células (pixels), onde cada célula possui um valor. [web:4][web:8] Esse tipo de dado é muito utilizado para representar imagens de satélite, modelos de elevação, mapas de temperatura, entre outros.\nCada célula da grade possui um valor numérico que pode indicar, por exemplo, o tipo de cobertura do solo, a altitude ou a intensidade de um fenômeno. Quanto menor o tamanho da célula, maior a resolução da imagem e mais detalhada será a representação. [web:4]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 3: Zoom em uma imagem de satélite onde, ao aproximar, a figura vai ficando “quadriculada”, evidenciando os pixels. Cada pixel é mostrado com um valor numérico simplificado para ilustrar o conceito de dados raster.]\n\n\n\n\n\nEm termos gerais, dados vetoriais são mais adequados para feições com limites bem definidos (como propriedades, rios, estradas), enquanto dados raster são ideais para fenômenos contínuos (como relevo, temperatura, umidade). [web:1][web:5]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 4: Quadro comparativo visual com duas colunas: “Vetor” (mostrando polígonos de talhões bem definidos) e “Raster” (mostrando um gradiente de cores representando altitude). Abaixo, algumas palavras-chave como “limites nítidos” para vetor e “fenômeno contínuo” para raster.]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Dados Geográficos e Estruturas de Armazenamento</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo2.html#estruturas-de-armazenamento-de-dados-geográficos",
+    "href": "capitulo2.html#estruturas-de-armazenamento-de-dados-geográficos",
+    "title": "2  Dados Geográficos e Estruturas de Armazenamento",
+    "section": "",
+    "text": "Os dados geográficos podem ser armazenados em diferentes formatos e estruturas de arquivo. É importante conhecer os principais formatos para organizar seus projetos e facilitar a troca de dados entre softwares SIG. [web:6][web:8][web:10]\n\n\nUm dos formatos vetoriais mais utilizados é o Shapefile, composto por um conjunto de arquivos que trabalham juntos (por exemplo: .shp, .shx, .dbf). [web:6] O arquivo .shp guarda a geometria (pontos, linhas ou polígonos) e o arquivo .dbf guarda a tabela de atributos.\nAlém do Shapefile, existem outros formatos vetoriais, como GeoPackage (GPKG), arquivos KML/KMZ (usados no Google Earth) e camadas dentro de geodatabases. [web:6]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 5: Captura de tela simulada de uma pasta do sistema operacional mostrando os arquivos de um mesmo shapefile (ex.: rios.shp, rios.shx, rios.dbf) e setas indicando que todos compõem o mesmo dado vetorial “rios”.]\n\n\n\n\n\nDados raster podem ser armazenados em formatos como GeoTIFF, IMG e outros. [web:4][web:8] Esses arquivos incluem, além dos valores de cada célula, informações sobre localização, tamanho do pixel e sistema de referência.\nImagens de satélite, modelos digitais de elevação e mapas de uso e cobertura da terra são exemplos comuns de dados armazenados em formato raster. [web:4]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 6: Exemplo de um arquivo GeoTIFF representado por um ícone de arquivo, acompanhado de um pequeno mapa colorido ao lado, simbolizando que o arquivo contém uma imagem georreferenciada da área.]\n\n\n\n\n\nÀ medida que os projetos de geoprocessamento se tornam mais complexos, torna-se vantajoso armazenar os dados em estruturas mais robustas, como geodatabases e bancos de dados espaciais. [web:8][web:10][web:11]\nNessas estruturas, é possível guardar múltiplas camadas vetoriais e raster, tabelas e relacionamentos, com melhor organização, segurança e desempenho. Exemplos incluem File Geodatabase, PostGIS (extensão espacial do PostgreSQL) e outros. [web:6]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 7: Diagrama mostrando um “banco de dados espacial” ao centro, com várias camadas (pontos, linhas, polígonos e rasters) armazenadas dentro dele, e setas indicando que diferentes usuários/softwares podem acessar essas camadas simultaneamente.]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Dados Geográficos e Estruturas de Armazenamento</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo2.html#componentes-dos-dados-geográficos-geometria-atributos-e-topologia",
+    "href": "capitulo2.html#componentes-dos-dados-geográficos-geometria-atributos-e-topologia",
+    "title": "2  Dados Geográficos e Estruturas de Armazenamento",
+    "section": "",
+    "text": "Todo dado geográfico possui, de forma geral, três tipos de componentes: geometria, atributos e topologia. [web:7][web:9][web:11][web:13]\n\nGeometria: define a forma e a localização do objeto (ponto, linha, polígono ou célula raster).\nAtributos: informações descritivas associadas à geometria (ex.: nome, área, uso do solo, código da propriedade).\nTopologia: descreve as relações espaciais entre os objetos (vizinho de, toca, contém, cruza, etc.).\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 8: Exemplo de três polígonos contíguos representando propriedades rurais. Setas e rótulos indicam a geometria (forma de cada polígono), os atributos (tabela com nome do proprietário, área, código) e relações topológicas como “compartilha limite com” entre propriedades vizinhas.]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Dados Geográficos e Estruturas de Armazenamento</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo2.html#roteiro-prático-no-sig-exemplo-em-qgis",
+    "href": "capitulo2.html#roteiro-prático-no-sig-exemplo-em-qgis",
+    "title": "2  Dados Geográficos e Estruturas de Armazenamento",
+    "section": "",
+    "text": "A seguir, um pequeno roteiro prático para que você possa visualizar na prática os conceitos de dados vetoriais e raster em um software SIG (como o QGIS). [web:36][web:44]\n\n\n\nAbrir o QGIS.\nNo painel “Camadas”, clique em “Adicionar Camada” &gt; “Adicionar Camada Vetorial”.\nSelecione o arquivo .shp de sua preferência (por exemplo, limites de municípios ou propriedades).\nClique em “Adicionar” para visualizar a camada no mapa.\nClique com o botão direito na camada e selecione “Abrir Tabela de Atributos” para ver a relação entre geometria e atributos. [web:36]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 9: Captura de tela simulada do QGIS com uma camada vetorial de municípios carregada e a tabela de atributos aberta, destacando a seleção de um município no mapa e a linha correspondente na tabela.]\n\n\n\n\n\n\nNo QGIS, clique em “Camadas” &gt; “Adicionar Camada Raster”.\nEscolha um arquivo raster (por exemplo, um modelo de elevação ou uma imagem de satélite em formato GeoTIFF).\nClique em “Adicionar” para carregar a camada.\nUse a ferramenta de identificação para clicar em um pixel e visualizar o valor associado àquela célula. [web:36]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 10: Captura de tela simulada do QGIS com uma camada raster de relevo (em tons de cor) e a ferramenta de identificação mostrando, em uma janela, o valor de altitude do pixel clicado.]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Dados Geográficos e Estruturas de Armazenamento</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo3.html",
+    "href": "capitulo3.html",
+    "title": "3  Projeções Cartográficas e Sistemas de Coordenadas",
+    "section": "",
+    "text": "Ao trabalhar com mapas e dados geográficos em um SIG, é fundamental entender como a superfície curva da Terra é representada em um plano e como a posição de cada ponto é descrita numericamente. [web:18][web:20][web:30]\nNeste capítulo, vamos apresentar, de forma simples, os conceitos de projeções cartográficas e sistemas de coordenadas, com foco nas aplicações mais comuns em geoprocessamento, especialmente na realidade brasileira. [web:20][web:21][web:28]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Ilustração mostrando um globo terrestre ao lado de um mapa plano. Setas indicam que o globo está sendo “projetado” sobre o mapa, simbolizando o processo de projeção cartográfica.]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projeções Cartográficas e Sistemas de Coordenadas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo3.html#introdução",
+    "href": "capitulo3.html#introdução",
+    "title": "3  Projeções Cartográficas e Sistemas de Coordenadas",
+    "section": "",
+    "text": "Ao trabalhar com mapas e dados geográficos em um SIG, é fundamental entender como a superfície curva da Terra é representada em um plano e como a posição de cada ponto é descrita numericamente. [web:18][web:20][web:30]\nNeste capítulo, vamos apresentar, de forma simples, os conceitos de projeções cartográficas e sistemas de coordenadas, com foco nas aplicações mais comuns em geoprocessamento, especialmente na realidade brasileira. [web:20][web:21][web:28]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Ilustração mostrando um globo terrestre ao lado de um mapa plano. Setas indicam que o globo está sendo “projetado” sobre o mapa, simbolizando o processo de projeção cartográfica.]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projeções Cartográficas e Sistemas de Coordenadas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo3.html#o-que-são-projeções-cartográficas",
+    "href": "capitulo3.html#o-que-são-projeções-cartográficas",
+    "title": "3  Projeções Cartográficas e Sistemas de Coordenadas",
+    "section": "3.2 O que são Projeções Cartográficas?",
+    "text": "3.2 O que são Projeções Cartográficas?\nUma projeção cartográfica é um conjunto de métodos matemáticos usados para “achatar” a superfície curva da Terra em um plano, permitindo desenhar mapas. [web:20][web:28]\nEsse processo sempre provoca algum tipo de distorção, pois é impossível representar uma esfera ou elipsoide em um plano sem alterar área, forma, distância ou direção. [web:20][web:26]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 2: Comparação entre o globo e três pequenos mapas com formas diferentes (um preservando forma, outro área e outro distâncias). Rótulos indicam “distorção de área”, “distorção de forma”, etc.]\n\n\n\n3.2.1 Tipos de Superfícies de Projeção\nDe forma didática, costuma-se explicar as projeções cartográficas a partir de três tipos de superfícies geométricas: cilíndrica, cônica e azimutal (plana). [web:17][web:20]\n\nCilíndrica: imagina-se um cilindro envolvendo a Terra, depois o cilindro é “aberto” em um plano.\nCônica: usa-se um cone apoiado sobre a Terra, que depois é desenrolado em um plano.\nAzimutal: projeta-se a superfície da Terra diretamente em um plano tangente.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 3: Três desenhos lado a lado: 1) um cilindro envolvendo o globo; 2) um cone apoiado sobre o globo; 3) um plano tocando o globo em um ponto. Cada desenho com rótulos “cilíndrica”, “cônica” e “azimutal”.]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projeções Cartográficas e Sistemas de Coordenadas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo3.html#sistemas-de-coordenadas-geográficas-e-projetadas",
+    "href": "capitulo3.html#sistemas-de-coordenadas-geográficas-e-projetadas",
+    "title": "3  Projeções Cartográficas e Sistemas de Coordenadas",
+    "section": "3.3 Sistemas de Coordenadas: Geográficas e Projetadas",
+    "text": "3.3 Sistemas de Coordenadas: Geográficas e Projetadas\nPara localizar um ponto na superfície terrestre, usamos sistemas de coordenadas. Os dois tipos mais importantes para o usuário de SIG são: coordenadas geográficas e coordenadas projetadas. [web:21][web:24][web:29]\n\n3.3.1 Coordenadas Geográficas (Latitude e Longitude)\nAs coordenadas geográficas utilizam ângulos para definir a posição dos pontos: latitude e longitude. [web:21][web:24][web:30]\n\nLatitude: medida em graus ao norte ou ao sul do Equador (de 0° a 90° N ou S).\nLongitude: medida em graus a leste ou oeste do Meridiano de Greenwich (de 0° a 180° E ou W).\n\nEsse sistema é muito usado para localização global, em GPS, Google Earth e serviços de mapas online, pois representa diretamente a posição sobre o globo. [web:21][web:24]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 4: Globo com linhas de paralelos (latitudes) e meridianos (longitudes) bem marcadas, destacando um ponto qualquer com seus valores de latitude e longitude.]\n\n\n\n\n3.3.2 Coordenadas Projetadas (Planas)\nJá as coordenadas projetadas representam os pontos em um plano cartesiano (eixos X e Y), normalmente com unidade em metros. [web:21][web:24]\nEssas coordenadas são geradas a partir de uma projeção cartográfica específica e são muito úteis para medições de distâncias e áreas em escalas regionais ou locais, como no sistema UTM. [web:22][web:25][web:29]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 5: Um plano cartesiano com eixos X (leste-oeste) e Y (norte-sul), mostrando alguns pontos com coordenadas em metros (por exemplo, 300000 m E, 8200000 m N).]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projeções Cartográficas e Sistemas de Coordenadas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo3.html#sistema-utm-universal-transversa-de-mercator",
+    "href": "capitulo3.html#sistema-utm-universal-transversa-de-mercator",
+    "title": "3  Projeções Cartográficas e Sistemas de Coordenadas",
+    "section": "3.4 Sistema UTM (Universal Transversa de Mercator)",
+    "text": "3.4 Sistema UTM (Universal Transversa de Mercator)\nO Sistema UTM é um sistema de coordenadas projetadas muito utilizado no mundo e é o padrão em grande parte dos mapas oficiais no Brasil. [web:18][web:20][web:22][web:25][web:30]\nEle se baseia na projeção cilíndrica Transversa de Mercator e divide a Terra em 60 faixas verticais chamadas fusos, cada um com 6° de largura em longitude. [web:20][web:22][web:25]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 6: Mapa do mundo “recortado” em 60 fusos UTM numerados de 1 a 60, com destaque visual para os fusos que cobrem o Brasil.]\n\n\n\n3.4.1 Conceitos Básicos do Sistema UTM\n\nA Terra é dividida em 60 fusos, numerados de 1 a 60, de oeste para leste a partir do antimeridiano de Greenwich. [web:22][web:25]\nCada fuso tem um meridiano central, usado como referência para as coordenadas naquele fuso. [web:20][web:25]\nAs coordenadas são expressas em metros (Easting e Northing), facilitando o cálculo de distâncias e áreas. [web:22][web:25]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 7: Detalhe ampliado de alguns fusos UTM, com setas indicando o meridiano central, valores de Easting (X) crescendo para leste e Northing (Y) crescendo para norte.]\n\n\n\n\n3.4.2 UTM no Brasil (visão simplificada)\nO território brasileiro ocupa vários fusos UTM, aproximadamente do fuso 18 ao fuso 25, o que significa que diferentes regiões do país utilizam fusos distintos. [web:20][web:25][web:30]\nEm trabalhos de geoprocessamento, é importante configurar corretamente o fuso UTM e o datum adequado (por exemplo, SIRGAS 2000) para garantir que os dados se sobreponham corretamente. [web:24][web:29][web:30]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 8: Mapa do Brasil com linhas verticais indicando os fusos UTM que o cobrem, com rótulos dos números dos fusos e uma legenda simples.]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projeções Cartográficas e Sistemas de Coordenadas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo3.html#datum-geodésico-visão-introdutória",
+    "href": "capitulo3.html#datum-geodésico-visão-introdutória",
+    "title": "3  Projeções Cartográficas e Sistemas de Coordenadas",
+    "section": "3.5 Datum Geodésico (Visão Introdutória)",
+    "text": "3.5 Datum Geodésico (Visão Introdutória)\nAlém da projeção e do sistema de coordenadas, existe ainda o conceito de datum geodésico, que define o modelo matemático da Terra usado como referência (esfera ou elipsoide) e sua posição em relação ao planeta real. [web:24][web:26][web:27]\nNo Brasil, um datum muito utilizado é o SIRGAS 2000, que substituiu gradualmente o datum SAD69 em muitos produtos cartográficos; isso é importante porque dados em datums diferentes podem não coincidir exatamente. [web:24][web:26][web:27][web:30]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 9: Esquema simples mostrando dois elipsoides ligeiramente deslocados, um representando SAD69 e outro SIRGAS 2000, com uma seta indicando que há diferença de posição entre eles.]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projeções Cartográficas e Sistemas de Coordenadas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo3.html#roteiro-prático-conferindo-projeção-e-sistema-de-coordenadas-no-qgis",
+    "href": "capitulo3.html#roteiro-prático-conferindo-projeção-e-sistema-de-coordenadas-no-qgis",
+    "title": "3  Projeções Cartográficas e Sistemas de Coordenadas",
+    "section": "3.6 Roteiro Prático: Conferindo Projeção e Sistema de Coordenadas no QGIS",
+    "text": "3.6 Roteiro Prático: Conferindo Projeção e Sistema de Coordenadas no QGIS\nA seguir, um roteiro prático para visualizar e ajustar projeções e sistemas de coordenadas em um projeto SIG utilizando o QGIS. [web:29]\n\n3.6.1 Verificando o SRC do Projeto\n\nAbrir o QGIS e carregar uma camada (vetorial ou raster) de sua preferência.\nOlhar no canto inferior direito da tela: será exibido o Sistema de Referência de Coordenadas (SRC) do projeto.\nClicar no código do SRC (por exemplo, “EPSG:31983”) para abrir a janela de configuração.\nNa lista, observar o nome do sistema (por exemplo, “SIRGAS 2000 / UTM zone 23S”).\nClicar em “OK” para confirmar ou selecionar outro SRC adequado ao seu dado. [web:39]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 10: Captura de tela simulada do QGIS destacando, em círculo, o código EPSG no canto inferior direito e a janela de seleção de SRC aberta, com um exemplo de sistema UTM selecionado.]\n\n\n\n\n3.6.2 Definindo/Reprojetando uma Camada\n\nNo painel de Camadas, clique com o botão direito sobre a camada desejada.\nSelecione “Exportar” &gt; “Salvar feições como...” (para vetores) ou opção equivalente para raster.\nNa janela que abrir, no campo de SRC, escolha o sistema de coordenadas de destino (por exemplo, SIRGAS 2000 / UTM fuso adequado).\nDefina o nome e local do novo arquivo.\nClique em “OK” para criar uma nova camada já reprojetada. [web:50]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 11: Captura de tela simulada do QGIS mostrando a janela “Salvar feições como...”, com o campo de SRC destacado e exemplo de seleção de um sistema UTM SIRGAS 2000.]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projeções Cartográficas e Sistemas de Coordenadas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo4.html",
+    "href": "capitulo4.html",
+    "title": "4  Introdução ao QGIS: Interface e Primeiro Projeto",
+    "section": "",
+    "text": "O QGIS é um software de Sistema de Informações Geográficas (SIG) gratuito e de código aberto, amplamente utilizado em projetos de geoprocessamento no mundo todo. [web:32][web:35]\nNeste capítulo, vamos conhecer a interface básica do QGIS e realizar um primeiro projeto simples: criar um projeto, adicionar camadas vetoriais e raster e salvar o trabalho. [web:32][web:33][web:36]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Captura de tela geral da interface do QGIS aberta, com destaque visual para as principais áreas: barras de menus, barras de ferramentas, painel de camadas e área de mapa.]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução ao QGIS: Interface e Primeiro Projeto</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo4.html#introdução",
+    "href": "capitulo4.html#introdução",
+    "title": "4  Introdução ao QGIS: Interface e Primeiro Projeto",
+    "section": "",
+    "text": "O QGIS é um software de Sistema de Informações Geográficas (SIG) gratuito e de código aberto, amplamente utilizado em projetos de geoprocessamento no mundo todo. [web:32][web:35]\nNeste capítulo, vamos conhecer a interface básica do QGIS e realizar um primeiro projeto simples: criar um projeto, adicionar camadas vetoriais e raster e salvar o trabalho. [web:32][web:33][web:36]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Captura de tela geral da interface do QGIS aberta, com destaque visual para as principais áreas: barras de menus, barras de ferramentas, painel de camadas e área de mapa.]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução ao QGIS: Interface e Primeiro Projeto</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo4.html#conhecendo-a-interface-do-qgis",
+    "href": "capitulo4.html#conhecendo-a-interface-do-qgis",
+    "title": "4  Introdução ao QGIS: Interface e Primeiro Projeto",
+    "section": "4.2 Conhecendo a Interface do QGIS",
+    "text": "4.2 Conhecendo a Interface do QGIS\nAo abrir o QGIS, a tela inicial é composta por diferentes partes, cada uma com uma função específica. [web:32][web:33]\n\nBarra de menus (topo): onde ficam os menus “Projeto”, “Camada”, “Configurações”, “Plugins”, etc.\nBarras de ferramentas: conjuntos de ícones que permitem acesso rápido às principais funções (zoom, seleção, adicionar camada, etc.).\nPainel de camadas (geralmente à esquerda): lista todas as camadas do projeto, permitindo ligá-las, desligá-las e organizar a ordem.\nÁrea de mapa: onde os dados geográficos são visualizados.\nBarra de status (parte inferior): mostra informações como o SRC do projeto e a coordenada do ponteiro do mouse. [web:33]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 2: Versão anotada da interface do QGIS, com caixas e setas nomeando “Barra de menus”, “Barras de ferramentas”, “Painel de camadas”, “Área de mapa” e “Barra de status”.]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução ao QGIS: Interface e Primeiro Projeto</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo4.html#criando-um-novo-projeto",
+    "href": "capitulo4.html#criando-um-novo-projeto",
+    "title": "4  Introdução ao QGIS: Interface e Primeiro Projeto",
+    "section": "4.3 Criando um Novo Projeto",
+    "text": "4.3 Criando um Novo Projeto\nO primeiro passo para trabalhar no QGIS é criar um projeto, que irá guardar a organização de camadas, SRC e configurações de visualização. [web:35][web:36]\n\n4.3.1 Passo a passo\n\nAbrir o QGIS.\nNo menu superior, clicar em “Projeto” &gt; “Novo” para iniciar um projeto em branco. [web:36]\nOpcionalmente, salvar o projeto logo no início: em “Projeto” &gt; “Salvar Como...”, escolher uma pasta e um nome (por exemplo, projeto_introducao.qgz).\nVerificar, na barra de status (canto inferior direito), qual é o SRC atual do projeto (por exemplo, “EPSG:4326”).\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 3: Captura de tela mostrando o menu “Projeto” aberto e a opção “Novo” destacada, além da barra de status com o SRC indicado no canto inferior direito.]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução ao QGIS: Interface e Primeiro Projeto</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo4.html#ajustando-o-sistema-de-referência-de-coordenadas-src-do-projeto",
+    "href": "capitulo4.html#ajustando-o-sistema-de-referência-de-coordenadas-src-do-projeto",
+    "title": "4  Introdução ao QGIS: Interface e Primeiro Projeto",
+    "section": "4.4 Ajustando o Sistema de Referência de Coordenadas (SRC) do Projeto",
+    "text": "4.4 Ajustando o Sistema de Referência de Coordenadas (SRC) do Projeto\nConfigurar corretamente o SRC do projeto é essencial para que as camadas sejam exibidas na posição correta. [web:37][web:39]\n\n4.4.1 Definindo o SRC do Projeto\n\nNa barra de status, clique sobre o código EPSG exibido (por exemplo, “EPSG:4326”). [web:39]\nSerá aberta a janela de configurações do SRC do projeto.\nNa lista, procurar e selecionar o sistema desejado (por exemplo, “SIRGAS 2000 / UTM zone 23S – EPSG:31983”, se apropriado à área de estudo). [web:37][web:41]\nClicar em “OK” para aplicar a configuração.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 4: Captura de tela simulada da janela de configuração de SRC do projeto, com um sistema UTM SIRGAS 2000 selecionado e o código EPSG destacado.]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução ao QGIS: Interface e Primeiro Projeto</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo4.html#adicionando-uma-camada-vetorial",
+    "href": "capitulo4.html#adicionando-uma-camada-vetorial",
+    "title": "4  Introdução ao QGIS: Interface e Primeiro Projeto",
+    "section": "4.5 Adicionando uma Camada Vetorial",
+    "text": "4.5 Adicionando uma Camada Vetorial\nUma das tarefas mais comuns no QGIS é carregar arquivos vetoriais (como shapefiles ou geopackages) para visualização e análise. [web:36][web:38][web:44]\n\n4.5.1 Passo a passo para adicionar vetores\n\nCom o projeto aberto, acessar o menu “Camada” &gt; “Adicionar Camada” &gt; “Adicionar Camada Vetorial...”. [web:36][web:44]\nNa janela que abrir, clicar em “Explorar” ou “Procurar” para localizar o arquivo (por exemplo, um shapefile de limites municipais).\nSelecionar o arquivo desejado (ex.: municipios.shp) e clicar em “Abrir”.\nConferir o SRC da camada (caso o QGIS pergunte) e confirmar.\nClicar em “Adicionar”. A camada aparecerá no painel de camadas e será exibida na área de mapa. [web:36]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 5: Captura de tela da janela “Adicionar Camada Vetorial” no QGIS, mostrando a seleção de um arquivo shapefile e o painel de camadas com a nova camada listada.]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução ao QGIS: Interface e Primeiro Projeto</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo4.html#adicionando-uma-camada-raster",
+    "href": "capitulo4.html#adicionando-uma-camada-raster",
+    "title": "4  Introdução ao QGIS: Interface e Primeiro Projeto",
+    "section": "4.6 Adicionando uma Camada Raster",
+    "text": "4.6 Adicionando uma Camada Raster\nAlém de vetores, o QGIS permite carregar facilmente dados raster, como imagens de satélite ou modelos de elevação. [web:36][web:38][web:45]\n\n4.6.1 4.5.1. Passo a passo para adicionar raster\n\nNo menu superior, clicar em “Camada” &gt; “Adicionar Camada” &gt; “Adicionar Camada Raster...”. [web:36]\nClicar em “Explorar” para localizar o arquivo raster (por exemplo, um GeoTIFF de relevo).\nSelecionar o arquivo desejado e clicar em “Abrir”.\nConferir as informações do SRC, se solicitado, e confirmar.\nClicar em “Adicionar”. A camada raster será exibida no mapa, geralmente abaixo das camadas vetoriais. [web:36][web:38]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 6: Captura de tela da janela “Adicionar Camada Raster” no QGIS, e a área de mapa mostrando uma imagem de relevo colorida com uma camada vetorial sobreposta.]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução ao QGIS: Interface e Primeiro Projeto</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo4.html#navegação-e-visualização-básica",
+    "href": "capitulo4.html#navegação-e-visualização-básica",
+    "title": "4  Introdução ao QGIS: Interface e Primeiro Projeto",
+    "section": "4.7 Navegação e Visualização Básica",
+    "text": "4.7 Navegação e Visualização Básica\nDepois de adicionar as camadas, é importante saber navegar pelo mapa e ajustar o modo de visualização. [web:32][web:33]\n\nZoom in / Zoom out: usar a roda do mouse ou os ícones de lupa na barra de ferramentas.\nDeslocar mapa (pan): usar a ferramenta de “mão” para arrastar o mapa.\nZoom para a extensão da camada: clicar com o botão direito na camada no painel de camadas e escolher “Zoom para a camada”.\nLigar/desligar camadas: marcar ou desmarcar a caixa ao lado do nome da camada no painel de camadas.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 7: Interface do QGIS com ícones de zoom e pan destacados, e o painel de camadas mostrando a alternância de visibilidade em algumas camadas.]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução ao QGIS: Interface e Primeiro Projeto</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo4.html#salvando-o-projeto",
+    "href": "capitulo4.html#salvando-o-projeto",
+    "title": "4  Introdução ao QGIS: Interface e Primeiro Projeto",
+    "section": "4.8 Salvando o Projeto",
+    "text": "4.8 Salvando o Projeto\nO projeto QGIS guarda apenas as referências às camadas (caminho dos arquivos, SRC, estilo de visualização), e não uma cópia dos dados. Por isso, é importante organizar seus arquivos em pastas e salvar o projeto regularmente. [web:35]\n\n4.8.1 Passo a passo para salvar\n\nNo menu superior, clicar em “Projeto” &gt; “Salvar” ou “Salvar Como...”.\nEscolher uma pasta organizada para seu trabalho (por exemplo, uma pasta com subpastas “vetor”, “raster”, “projeto”).\nDefinir um nome significativo para o arquivo de projeto (ex.: exemplo_cap4.qgz).\nClicar em “Salvar”.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 8: Janela de salvar arquivo do sistema operacional, mostrando um nome de projeto QGIS e uma estrutura de pastas organizada (“dados_vetoriais”, “dados_raster”, “projetos”).]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução ao QGIS: Interface e Primeiro Projeto</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo4.html#roteiro-resumido-primeiro-projeto-no-qgis",
+    "href": "capitulo4.html#roteiro-resumido-primeiro-projeto-no-qgis",
+    "title": "4  Introdução ao QGIS: Interface e Primeiro Projeto",
+    "section": "4.9 Roteiro Resumido: Primeiro Projeto no QGIS",
+    "text": "4.9 Roteiro Resumido: Primeiro Projeto no QGIS\nPara recapitular, veja um roteiro simples que pode ser seguido por um iniciante para criar seu primeiro projeto no QGIS. [web:36][web:38]\n\nAbrir o QGIS e criar um novo projeto.\nAjustar o SRC do projeto conforme a área de estudo (por exemplo, SIRGAS 2000 / UTM fuso adequado).\nAdicionar uma camada vetorial (shapefile ou geopackage) com os limites da área de estudo.\nAdicionar uma camada raster (imagem de satélite ou MDE) para servir de base visual.\nAjustar a ordem das camadas e praticar zoom, pan e visualização.\nSalvar o projeto em uma pasta organizada.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 9: Tela do QGIS com um exemplo de projeto simples: camada raster de fundo, camada vetorial de limites por cima, painel de camadas organizado e o projeto já salvo.]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução ao QGIS: Interface e Primeiro Projeto</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo5.html",
+    "href": "capitulo5.html",
+    "title": "5  Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo",
+    "section": "",
+    "text": "Depois de aprender a criar camadas vetoriais a partir de arquivos, um próximo passo importante é criar e editar seus próprios dados vetoriais no QGIS. [web:36][web:44]\nNeste capítulo, usaremos um exemplo prático: a criação de um mapa de uso e ocupação do solo de uma área de estudo, desenhando polígonos (talhões) e preenchendo uma tabela de atributos com o tipo de uso (por exemplo, “PAS” – Pastagem, “LAV” – Lavoura, “MATA” – Mata ciliar). [web:33][web:36][web:38]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Captura de tela do QGIS com uma imagem de satélite ao fundo e alguns polígonos sendo desenhados sobre ela, representando diferentes usos do solo (pasto, lavoura, mata, área urbana).]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo5.html#introdução",
+    "href": "capitulo5.html#introdução",
+    "title": "5  Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo",
+    "section": "",
+    "text": "Depois de aprender a criar camadas vetoriais a partir de arquivos, um próximo passo importante é criar e editar seus próprios dados vetoriais no QGIS. [web:36][web:44]\nNeste capítulo, usaremos um exemplo prático: a criação de um mapa de uso e ocupação do solo de uma área de estudo, desenhando polígonos (talhões) e preenchendo uma tabela de atributos com o tipo de uso (por exemplo, “PAS” – Pastagem, “LAV” – Lavoura, “MATA” – Mata ciliar). [web:33][web:36][web:38]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Captura de tela do QGIS com uma imagem de satélite ao fundo e alguns polígonos sendo desenhados sobre ela, representando diferentes usos do solo (pasto, lavoura, mata, área urbana).]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo5.html#preparando-o-projeto",
+    "href": "capitulo5.html#preparando-o-projeto",
+    "title": "5  Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo",
+    "section": "5.2 Preparando o Projeto",
+    "text": "5.2 Preparando o Projeto\nAntes de começar a desenhar, é importante ter um projeto pronto com fundo de imagem (raster) e SRC adequado à área de estudo. [web:36][web:37]\n\n5.2.1 Passo a passo\n\nAbrir um projeto existente ou criar um novo.\nCarregar uma camada raster de fundo (imagem de satélite ou MDE) conforme o Capítulo 4.\nVerificar e ajustar o SRC do projeto, se necessário, para o sistema apropriado ao seu estado/município (por exemplo, SIRGAS 2000 / UTM). [web:37][web:39]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 2: Projeto no QGIS com imagem de satélite no fundo, painel de camadas mostrando a camada raster, e o SRC configurado em um sistema UTM SIRGAS 2000.]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo5.html#criando-uma-nova-camada-vetorial-polígono",
+    "href": "capitulo5.html#criando-uma-nova-camada-vetorial-polígono",
+    "title": "5  Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo",
+    "section": "5.3 Criando uma Nova Camada Vetorial (Polígono)",
+    "text": "5.3 Criando uma Nova Camada Vetorial (Polígono)\nPara registrar o uso do solo, criaremos uma camada vetorial do tipo polígono, que permitirá desenhar áreas de diferentes usos. [web:37][web:44]\n\n5.3.1 Criando a camada de uso do solo\n\nNo menu superior, vá em “Camada” &gt; “Criar Camada” &gt; “Camada Shapefile Novo...”. [web:44]\nNa janela que abrir:\n\nDefina nome (ex.: uso_solo.shp).\nSelecione tipo de geometria como “Polígono”.\nVerifique se o SRC está correto (normalmente “Usar SRC do projeto” já deve selecionar o SRC definido anteriormente). [web:37]\n\nNa seção de atributos, clique em “Adicionar Campo” e crie pelo menos dois campos:\n\nid (tipo inteiro).\nuso (tipo texto/string).\n\nClique em “OK” e salve o arquivo em uma pasta de seu projeto.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 3: Janela “Shapefile Novo” no QGIS, com “Geom. Tipo: Polígono”, SRC corretamente carregado e dois campos na tabela de atributos: “id” e “uso”.]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo5.html#ativando-o-modo-de-edição",
+    "href": "capitulo5.html#ativando-o-modo-de-edição",
+    "title": "5  Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo",
+    "section": "5.4 Ativando o Modo de Edição",
+    "text": "5.4 Ativando o Modo de Edição\nPara desenhar os polígonos de uso do solo, é necessário ativar o modo de edição da camada vetorial. [web:37][web:44]\n\n5.4.1 Passo a passo\n\nNo painel de camadas, clique sobre a camada recém-criada (uso_solo).\nClique no ícone de alternar edição na barra de ferramentas (ícone de lápis) ou vá em “Camada” &gt; “Alternar Edição”. [web:37][web:44]\nAo final dos trabalhos de edição, lembre-se de salvar as mudanças e desativar o modo de edição.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 4: Barra de ferramentas do QGIS com o ícone de lápis destacado, indicando o modo de edição ativo.]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo5.html#desenhando-polígonos-de-uso-do-solo",
+    "href": "capitulo5.html#desenhando-polígonos-de-uso-do-solo",
+    "title": "5  Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo",
+    "section": "5.5 Desenhando Polígonos de Uso do Solo",
+    "text": "5.5 Desenhando Polígonos de Uso do Solo\nAgora que a camada está em modo de edição, você pode desenhar os polígonos que representam diferentes usos do solo na área de estudo. [web:37][web:38]\n\n5.5.1 Passo a passo para desenhar um polígono\n\nNa barra de ferramentas de edição, clique na ferramenta “Adicionar feição de polígono” (ícone de polígono).\nClique, no mapa, sobre o fundo de imagem, definindo os vértices do polígono ao longo dos limites de cada talhão/uso. [web:37][web:38]\nEncerre o desenho:\n\nVolte ao primeiro vértice e clique nele, ou\nUse o botão direito do mouse para fechar o polígono.\n\nUma janela de atributos abrirá automaticamente.\nNo campo uso, digite o tipo de uso (ex.: “PAS”, “LAV”, “MATA”, “URB”).\nClique em “OK” para salvar a feição.\nRepita o processo para outros polígonos, cobrindo toda a área de interesse.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 5: Mapa com imagem de satélite ao fundo e vários polígonos sendo desenhados, com setas indicando vértices e fechamento do polígono.]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo5.html#visualizando-o-mapa-de-uso-do-solo-simbologia-básica",
+    "href": "capitulo5.html#visualizando-o-mapa-de-uso-do-solo-simbologia-básica",
+    "title": "5  Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo",
+    "section": "5.6 Visualizando o Mapa de Uso do Solo (Simbologia Básica)",
+    "text": "5.6 Visualizando o Mapa de Uso do Solo (Simbologia Básica)\nDepois de criar vários polígonos com diferentes usos, o próximo passo é organizar a simbologia para que o mapa fique didático. [web:33][web:37]\n\n5.6.1 Configurando uma simbologia por categoria\n\nNo painel de camadas, clique com o botão direito sobre a camada uso_solo e escolha “Propriedades”.\nVá até a aba “Simbologia”.\nMude o tipo de simbologia para “Categoria” e escolha o campo uso como valor.\nClique em “Classificar”; o QGIS criará uma entrada para cada valor distinto (PAS, LAV, MATA, etc.). [web:37]\nPara cada categoria, escolha uma cor diferente (ex.: verde claro para pastagem, verde escuro para mata, amarelo para lavoura).\nClique em “Aplicar” e depois em “OK”.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 6: Janela de simbologia do QGIS com o campo “uso” selecionado, mostrando três categorias (PAS, LAV, MATA) com cores diferentes definidas e o mapa ao fundo exibindo os polígonos coloridos.]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo5.html#salvando-as-edições",
+    "href": "capitulo5.html#salvando-as-edições",
+    "title": "5  Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo",
+    "section": "5.7 Salvando as Edições",
+    "text": "5.7 Salvando as Edições\nToda vez que você cria ou altera feições, o QGIS precisa salvar essas mudanças explicitamente. [web:37][web:44]\n\n5.7.1 Passo a passo\n\nCom a camada uso_solo ainda em modo de edição, clique no ícone de “Salvar Mudanças” na barra de ferramentas de edição (disquete).\nApós salvar, desative o modo de edição clicando novamente no ícone de lápis (ou “Alternar Edição”).\nSalve também o projeto principal em “Projeto” &gt; “Salvar”.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 7: Barra de ferramentas de edição com o ícone de disquete destacado, e a janela de projeto salvando o arquivo após as edições.]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo5.html#roteiro-prático-criando-um-mapa-de-uso-do-solo",
+    "href": "capitulo5.html#roteiro-prático-criando-um-mapa-de-uso-do-solo",
+    "title": "5  Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo",
+    "section": "5.8 Roteiro Prático: Criando um Mapa de Uso do Solo",
+    "text": "5.8 Roteiro Prático: Criando um Mapa de Uso do Solo\nPara ajudar na fixação, segue um roteiro claro que você pode seguir para criar um mapa de uso e ocupação do solo desde o início. [web:36][web:37][web:38]\n\nCriar ou abrir um projeto no QGIS com SRC apropriado ao seu estado/município.\nAdicionar uma imagem de satélite ou MDE como camada raster de fundo.\nCriar uma nova camada vetorial do tipo polígono chamada uso_solo, com os campos id e uso.\nAtivar o modo de edição dessa camada.\nUsar a ferramenta de polígono para desenhar as áreas de diferentes usos, preenchendo o campo uso em cada polígono.\nOrganizar a simbologia por categoria, usando cores distintas para cada tipo de uso.\nSalvar as edições da camada vetorial e o projeto.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 8: Mapa final com camada raster de fundo, polígonos de uso do solo coloridos, legenda simples ao lado indicando cores e usos, e painel de camadas organizado.]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo6.html",
+    "href": "capitulo6.html",
+    "title": "6  Mapa de Relevo e Curvas de Nível",
+    "section": "",
+    "text": "Mapas de relevo e curvas de nível são fundamentais para entender a forma do terreno, apoiar o planejamento rural, análise ambiental, obras de engenharia e zoneamentos diversos. [file:46]\nNeste capítulo, vamos partir de um Modelo Digital de Elevação (MDE/DEM) para gerar um mapa de relevo sombreado e curvas de nível no QGIS, usando um roteiro semelhante ao seu material de dicas e fórmulas. [file:46]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Exemplo de mapa de relevo com sombreamento (hillshade) e curvas de nível sobrepostas, mostrando visualmente as formas do terreno em uma bacia hidrográfica.]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mapa de Relevo e Curvas de Nível</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo6.html#introdução",
+    "href": "capitulo6.html#introdução",
+    "title": "6  Mapa de Relevo e Curvas de Nível",
+    "section": "",
+    "text": "Mapas de relevo e curvas de nível são fundamentais para entender a forma do terreno, apoiar o planejamento rural, análise ambiental, obras de engenharia e zoneamentos diversos. [file:46]\nNeste capítulo, vamos partir de um Modelo Digital de Elevação (MDE/DEM) para gerar um mapa de relevo sombreado e curvas de nível no QGIS, usando um roteiro semelhante ao seu material de dicas e fórmulas. [file:46]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Exemplo de mapa de relevo com sombreamento (hillshade) e curvas de nível sobrepostas, mostrando visualmente as formas do terreno em uma bacia hidrográfica.]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mapa de Relevo e Curvas de Nível</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo6.html#fonte-de-dados-de-relevo-mdedem",
+    "href": "capitulo6.html#fonte-de-dados-de-relevo-mdedem",
+    "title": "6  Mapa de Relevo e Curvas de Nível",
+    "section": "6.2 Fonte de Dados de Relevo (MDE/DEM)",
+    "text": "6.2 Fonte de Dados de Relevo (MDE/DEM)\nExistem diversas fontes gratuitas de MDE, como SRTM, Copernicus e produtos WorldDEM/TanDEM-X, acessíveis via serviços como o portal OpenTopography ou outros repositórios. [file:46]\nEm muitos fluxos de trabalho, utiliza-se o complemento OpenTopography DEM no QGIS para baixar o MDE da área de interesse, configurando o modelo desejado e o recorte da área. [file:46]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 2: Captura de tela simulada do QGIS com o complemento OpenTopography DEM aberto, mostrando a escolha do modelo (SRTM/Copernicus) e a área de recorte.]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mapa de Relevo e Curvas de Nível</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo6.html#preparando-o-modelo-de-elevação-reprojeção-e-corte",
+    "href": "capitulo6.html#preparando-o-modelo-de-elevação-reprojeção-e-corte",
+    "title": "6  Mapa de Relevo e Curvas de Nível",
+    "section": "6.3 Preparando o Modelo de Elevação (Reprojeção e Corte)",
+    "text": "6.3 Preparando o Modelo de Elevação (Reprojeção e Corte)\nApós o download do MDE, é recomendado reprojetar o raster para um sistema de coordenadas projetadas (por exemplo, SIRGAS 2000 / UTM) e ajustar o tamanho do pixel, para facilitar medições e geração de curvas de nível. [file:46]\n\n6.3.1 Reprojetar o MDE no QGIS\n\nNo menu “Raster” &gt; “Projeções” &gt; “Reprojetar” (ou equivalente). [file:46]\nEscolher o MDE original como camada de entrada (por exemplo, em EPSG:4326).\nDefinir o SRC de destino como um sistema UTM adequado (ex.: EPSG:31982 – SIRGAS 2000 / UTM fuso 22S, conforme sua região). [file:46]\nOpcionalmente, definir o tamanho de pixel (por exemplo, 5 m x 5 m) para um detalhamento adequado.\nEscolher um nome para o novo arquivo GeoTIFF reprojetado.\nClicar em “Executar”.\n\nO comando equivalente via GDAL também pode ser usado:\n\ngdalwarp -overwrite -s_srs EPSG:4326 -t_srs EPSG:31982 -tr 5.0 5.0 -r cubicspline -of GTiff\n[file:46]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 3: Janela de “Reprojetar Raster” no QGIS, com MDE de entrada em EPSG:4326 e saída configurada para um EPSG UTM local, além de parâmetros de tamanho de pixel.]\n\n\n\n\n6.3.2 Cortando o MDE pelo Perímetro\nPara focar a análise apenas na área de estudo, é comum recortar o MDE usando um perímetro (polígono) com buffer equivalente a algumas larguras de pixel. [file:46]\n\nCriar ou carregar a camada vetorial do perímetro da área de estudo.\nAplicar um buffer no perímetro com aproximadamente o triplo da largura do pixel do MDE (por exemplo, 3 × 5 m = 15 m), para evitar bordas abruptas. [file:46]\nEm “Raster” &gt; “Extração” &gt; “Recortar raster pela camada de máscara”, selecionar:\n\nMDE reprojetado como raster de entrada;\nPerímetro (com buffer) como máscara de recorte.\n\nExecutar e salvar o MDE já recortado pela área de interesse.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 4: Mapa mostrando o MDE antes e depois do recorte pelo perímetro com buffer, destacando a área de estudo delimitada.]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mapa de Relevo e Curvas de Nível</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo6.html#criando-curvas-de-nível-a-partir-do-mde",
+    "href": "capitulo6.html#criando-curvas-de-nível-a-partir-do-mde",
+    "title": "6  Mapa de Relevo e Curvas de Nível",
+    "section": "6.4 Criando Curvas de Nível a partir do MDE",
+    "text": "6.4 Criando Curvas de Nível a partir do MDE\nAs curvas de nível são linhas que ligam pontos de mesma altitude, representando a forma do relevo em planta. A escolha da equidistância entre curvas deve respeitar a escala do mapa e o objetivo do trabalho. [file:46]\n\n6.4.1 Escolha da Equidistância (Exemplos)\nA tabela abaixo, baseada em materiais técnicos (IBGE, DSG, ABNT), apresenta exemplos de equidistância recomendada conforme a escala do mapa. [file:46]\n\n\n\n\n\n\n\n\n\nEscala\nDenominação\nEquidistância (m)\nUso comum\n\n\n\n\n1:500\nMuito grande escala\n1 m\nProjetos de engenharia, plantas urbanas\n\n\n1:1.000\nGrande escala\n2 m\nLevantamentos urbanos detalhados\n\n\n1:2.000\nGrande escala\n2 ou 5 m\nPlanejamento urbano, loteamentos\n\n\n1:5.000\nMédia escala\n5 ou 10 m\nPlanejamento municipal, projetos rurais\n\n\n1:10.000\nMédia escala\n10 m\nCartas topográficas municipais\n\n\n1:25.000\nMédia escala\n10 ou 20 m\nUso agrícola, zoneamento, gestão ambiental\n\n\n1:50.000\nPequena escala\n20 ou 25 m\nCartas topográficas regionais (IBGE)\n\n\n1:100.000\nPequena escala\n40 m\nCartografia regional\n\n\n1:250.000\nMuito pequena escala\n50 ou 100 m\nMapas temáticos regionais ou nacionais\n\n\n1:1.000.000\nMuito pequena escala\n100 a 200 m\nVisão geral de grandes regiões/países\n\n\n\n\n\n6.4.2 6.3.2. Gerando as Curvas de Nível no QGIS\n\nCom o MDE recortado carregado, vá em “Raster” &gt; “Extração” &gt; “Curvas de nível” (ou use o menu de processamento correspondente). [file:46]\nEscolha o MDE como raster de entrada.\nDefina a equidistância (por exemplo, 5 m ou 10 m, conforme a escala desejada).\nDefina o nome do campo de atributo para as cotas (por exemplo, ELEV).\nSelecione o formato de saída (por exemplo, GeoPackage ou Shapefile).\nExecute o processo para gerar a camada vetorial de curvas de nível.\n\nEm linha de comando, é equivalente ao uso de gdal_contour, por exemplo:\n\ngdal_contour -b 1 -a ELEV -i 5.0 -f \"GPKG\" saida_curvas.gpkg\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 5: Propriedades da ferramenta de “Curvas de nível” no QGIS mostrando MDE de entrada, equidistância definida e campo de atributo “ELEV”, ao lado do mapa com as curvas geradas.]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mapa de Relevo e Curvas de Nível</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo6.html#estilo-e-rotulagem-das-curvas-de-nível",
+    "href": "capitulo6.html#estilo-e-rotulagem-das-curvas-de-nível",
+    "title": "6  Mapa de Relevo e Curvas de Nível",
+    "section": "6.5 Estilo e Rotulagem das Curvas de Nível",
+    "text": "6.5 Estilo e Rotulagem das Curvas de Nível\nPara deixar o mapa mais legível, é recomendável diferenciar linhas mestres (curvas em múltiplos de, por exemplo, 25 m) das curvas intermediárias, bem como rotular algumas cotas. [file:46]\n\n6.5.1 Criando linhas mestres e intermediárias\n\nAbra as Propriedades da camada de curvas de nível.\nNa aba “Simbologia”, escolha um estilo categorizado com base em uma expressão. [file:46]\nUse uma expressão baseada em módulo (resto da divisão) para separar linhas mestres de intermediárias, por exemplo:\n\"ELEV\" % 25 = 0 para destacar curvas a cada 25 m. [file:46]\nDefina um estilo de linha mais grossa e cor mais escura para as linhas mestres, e linha mais fina para as intermediárias.\n\n\n\n6.5.2 Rotulando curvas selecionadas\n\nNa aba “Rótulos”, selecione “Rotular com” e escolha o campo ELEV.\nUse “Rótulos baseados em regra” para rotular apenas algumas curvas, por exemplo:\nRegra com filtro \"ELEV\" % 50 = 0, valor: \"ELEV\" || ' m'. [file:46]\nAtive um buffer nos rótulos e posicione-os “na linha”, ajustando a distância (por exemplo, 10 mm) para melhor leitura. [file:46]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 6: Propriedades de simbologia e rótulos da camada de curvas de nível, mostrando regra para linhas mestres (ELEV % 25 = 0) e rótulos aplicados a cada 50 m, bem distribuídos no mapa.]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mapa de Relevo e Curvas de Nível</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo6.html#criando-um-mapa-de-relevo-sombreado-hillshade",
+    "href": "capitulo6.html#criando-um-mapa-de-relevo-sombreado-hillshade",
+    "title": "6  Mapa de Relevo e Curvas de Nível",
+    "section": "6.6 Criando um Mapa de Relevo Sombreado (Hillshade)",
+    "text": "6.6 Criando um Mapa de Relevo Sombreado (Hillshade)\nPara dar sensação de tridimensionalidade, é comum gerar um hillshade a partir do MDE e usar essa camada como fundo do mapa, combinando com as curvas de nível. [file:46]\n\n6.6.1 Passos para gerar o hillshade\n\nCom o MDE recortado, vá em “Raster” &gt; “Análise de Terreno” &gt; “Sombreamento (Hillshade)” (ou ferramenta equivalente).\nSelecione o MDE como entrada, mantendo valores padrão de azimute e altura solar, ou ajustando conforme necessidade.\nDefina o nome do arquivo de saída.\nExecute para gerar a camada de relevo sombreado.\nColoque a camada de hillshade abaixo das curvas de nível, ajustando transparência se necessário.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 7: Comparação lado a lado do MDE simples e do hillshade, com o segundo mostrando claramente encostas, vales e cristas, e curvas de nível sobrepostas.]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mapa de Relevo e Curvas de Nível</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo6.html#roteiro-prático-mapa-de-relevo-e-curvas-de-nível",
+    "href": "capitulo6.html#roteiro-prático-mapa-de-relevo-e-curvas-de-nível",
+    "title": "6  Mapa de Relevo e Curvas de Nível",
+    "section": "6.7 Roteiro Prático: Mapa de Relevo e Curvas de Nível",
+    "text": "6.7 Roteiro Prático: Mapa de Relevo e Curvas de Nível\nSegue um roteiro resumido para produzir um mapa de relevo com curvas de nível, baseado no fluxo de trabalho do seu roteiro de dicas. [file:46]\n\nObter o MDE (via complemento OpenTopography ou outra fonte) para a área de estudo.\nReprojetar o MDE para um sistema UTM adequado, definindo tamanho de pixel apropriado.\nCortar o MDE pelo perímetro (com buffer de algumas larguras de pixel) usando “Recortar raster pela camada de máscara”.\nGerar as curvas de nível a partir do MDE recortado, escolhendo equidistância conforme a escala do mapa.\nConfigurar simbologia categorizada para curvas, destacando linhas mestres (por exemplo, ELEV % 25 = 0) e intermediárias.\nConfigurar rótulos por regra (por exemplo, rotular apenas curvas em múltiplos de 50 m com “ELEV || ' m'”).\nCriar um hillshade a partir do MDE e usá-lo como fundo, com curvas de nível sobrepostas.\nSalvar o projeto e preparar, em capítulo posterior, o layout de impressão com legenda, escala gráfica e norte.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 8: Mapa final de relevo com hillshade e curvas de nível estilizadas, acompanhado de uma legenda simples indicando equidistância e unidades em metros.]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mapa de Relevo e Curvas de Nível</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo7.html",
+    "href": "capitulo7.html",
+    "title": "7  Mapa de Declividade a partir do MDE",
+    "section": "",
+    "text": "A análise de declividade a partir de um Modelo Digital de Elevação (MDE) é uma etapa essencial em estudos de uso do solo, planejamento ambiental e avaliação de aptidão agrícola. [file:46][web:50][web:57]\nNeste capítulo, vamos usar o mesmo MDE preparado no capítulo de relevo para gerar um mapa de declividade, classificar em faixas (incluindo as classes da Embrapa) e montar um produto cartográfico pronto para uso em diagnósticos e restrições ambientais. [file:46][web:50][web:52][web:55]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Mapa de declividade em cores graduadas (do plano ao escarpado) sobre a mesma área usada no mapa de relevo, com legenda de classes e percentuais.]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Mapa de Declividade a partir do MDE</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo7.html#introdução",
+    "href": "capitulo7.html#introdução",
+    "title": "7  Mapa de Declividade a partir do MDE",
+    "section": "",
+    "text": "A análise de declividade a partir de um Modelo Digital de Elevação (MDE) é uma etapa essencial em estudos de uso do solo, planejamento ambiental e avaliação de aptidão agrícola. [file:46][web:50][web:57]\nNeste capítulo, vamos usar o mesmo MDE preparado no capítulo de relevo para gerar um mapa de declividade, classificar em faixas (incluindo as classes da Embrapa) e montar um produto cartográfico pronto para uso em diagnósticos e restrições ambientais. [file:46][web:50][web:52][web:55]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Mapa de declividade em cores graduadas (do plano ao escarpado) sobre a mesma área usada no mapa de relevo, com legenda de classes e percentuais.]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Mapa de Declividade a partir do MDE</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo7.html#base-de-dados-mde-já-reprojetado-e-recortado",
+    "href": "capitulo7.html#base-de-dados-mde-já-reprojetado-e-recortado",
+    "title": "7  Mapa de Declividade a partir do MDE",
+    "section": "7.2 Base de Dados: MDE já Reprojetado e Recortado",
+    "text": "7.2 Base de Dados: MDE já Reprojetado e Recortado\nAssumimos que você já possui um MDE reprojetado para UTM, com tamanho de pixel adequado e recortado pelo perímetro de estudo, conforme o capítulo anterior de relevo. [file:46][web:50]\nCertifique-se de que este MDE seja a camada ativa e que o SRC do projeto esteja coerente com o sistema de coordenadas usado (por exemplo, SIRGAS 2000 / UTM fuso local). [file:46][web:50]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 2: Tela do QGIS mostrando o MDE recortado da área de estudo, painel de camadas com o MDE selecionado e SRC do projeto configurado corretamente.]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Mapa de Declividade a partir do MDE</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo7.html#calculando-a-declividade-a-partir-do-mde",
+    "href": "capitulo7.html#calculando-a-declividade-a-partir-do-mde",
+    "title": "7  Mapa de Declividade a partir do MDE",
+    "section": "7.3 Calculando a Declividade a partir do MDE",
+    "text": "7.3 Calculando a Declividade a partir do MDE\nO QGIS permite derivar um raster de declividade diretamente do MDE, em graus ou porcentagem, usando ferramentas de análise de terreno. [file:46][web:50][web:54]\n\n7.3.1 Declividade via ferramenta MDE (QGIS)\n\nNo menu superior, vá em “Raster” &gt; “Análise” &gt; “MDE (Modelo Digital de Elevação)” ou equivalente (dependendo da versão). [web:50]\nSelecione o MDE reprojetado como arquivo de entrada.\nEscolha o modo Declividade.\nDefina se a declividade será calculada em graus ou porcentagem (conforme a interface da versão QGIS). [web:50][web:54]\nEscolha um nome para o arquivo de saída (por exemplo, Declividade_graus.tif ou Declividade_percent.tif).\nExecute a ferramenta e aguarde a geração do raster de declividade.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 3: Janela da ferramenta “MDE (Modelo Digital de Elevação)” no QGIS com campos preenchidos: MDE de entrada, opção “Declividade” selecionada, escolha entre graus e porcentagem e nome do arquivo de saída.]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Mapa de Declividade a partir do MDE</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo7.html#classes-de-declividade-embrapa-e-outras-referências",
+    "href": "capitulo7.html#classes-de-declividade-embrapa-e-outras-referências",
+    "title": "7  Mapa de Declividade a partir do MDE",
+    "section": "7.4 Classes de Declividade (Embrapa e Outras Referências)",
+    "text": "7.4 Classes de Declividade (Embrapa e Outras Referências)\nUm modo muito utilizado de interpretar a declividade é reclassificar o raster em faixas, como as classes de relevo adotadas pela Embrapa (plano, suave ondulado, ondulado etc.). [file:46][web:52][web:55]\nSeu roteiro já traz essas classes tanto em porcentagem quanto em equivalentes em graus, além de exemplos de classificações para restrição ambiental por declividade. [file:46][web:52]\n\n7.4.1 Exemplo de classes Embrapa (em porcentagem)\nExemplo de classificação de relevo em porcentagem (síntese baseada Embrapa): [file:46][web:52][web:55]\n\n\n\nClasse\nFaixa de declividade (%)\nDescrição\n\n\n\n\n1\n0 – 3\nPlano\n\n\n2\n3 – 8\nSuave ondulado\n\n\n3\n8 – 20\nOndulado\n\n\n4\n20 – 45\nForte ondulado\n\n\n5\n45 – 75\nMontanhoso\n\n\n6\n&gt; 75\nEscarpado / forte-montanhoso\n\n\n\n\n\n7.4.2 Equivalentes aproximados em graus\nSeu roteiro também traz faixas aproximadas em graus com pontos de transição importantes, como 1,1458°, 2,8624°, 5,7106°, 8,5358°, 23,5759° e 34,9920°, que correspondem às quebras das classes em porcentagem. [file:46]\nEsses valores podem ser usados para reclassificar diretamente um raster de declividade calculado em graus, mantendo compatibilidade com a classificação em porcentagem. [file:46]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 4: Gráfico ou esquema mostrando o eixo de declividade em graus com marcações nas quebras (1,1458°, 2,8624°, 5,7106°, etc.), indicando a correspondência com as classes de relevo.]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Mapa de Declividade a partir do MDE</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo7.html#reclassificando-o-raster-de-declividade-qgis-calculadora-raster",
+    "href": "capitulo7.html#reclassificando-o-raster-de-declividade-qgis-calculadora-raster",
+    "title": "7  Mapa de Declividade a partir do MDE",
+    "section": "7.5 Reclassificando o Raster de Declividade (QGIS – Calculadora Raster)",
+    "text": "7.5 Reclassificando o Raster de Declividade (QGIS – Calculadora Raster)\nUma forma simples de classificar a declividade é usar a Calculadora Raster no QGIS, atribuindo valores inteiros (1 a 7, por exemplo) para cada faixa de declividade. [file:46][web:50][web:57]\n\n7.5.1 Expressão exemplo – classes em porcentagem\nSuponha que o raster de declividade em porcentagem se chame \"Declividade@1\". Uma expressão baseada no seu roteiro seria: [file:46]\n(\"Declividade@1\" &lt;= 2) +\n((\"Declividade@1\" &gt; 2 AND \"Declividade@1\" &lt;= 5) * 2) +\n((\"Declividade@1\" &gt; 5 AND \"Declividade@1\" &lt;= 10) * 3) +\n((\"Declividade@1\" &gt; 10 AND \"Declividade@1\" &lt;= 15) * 4) +\n((\"Declividade@1\" &gt; 15 AND \"Declividade@1\" &lt;= 45) * 5) +\n((\"Declividade@1\" &gt; 45 AND \"Declividade@1\" &lt;= 70) * 6) +\n((\"Declividade@1\" &gt; 70) * 7)\nO resultado será um raster com valores de 1 a 7, representando classes de declividade (plano até escarpado). [file:46]\n\n\n7.5.2 Expressão exemplo – classes em graus\nUsando os limiares em graus do roteiro: [file:46]\n (\"Declividade@1\" &lt;= 1.1458) +\n((\"Declividade@1\" &gt; 1.1458 AND \"Declividade@1\" &lt;= 2.8624) * 2) +\n((\"Declividade@1\" &gt; 2.8624 AND \"Declividade@1\" &lt;= 5.7106) * 3) +\n((\"Declividade@1\" &gt; 5.7106 AND \"Declividade@1\" &lt;= 8.5358) * 4) +\n((\"Declividade@1\" &gt; 8.5358 AND \"Declividade@1\" &lt;= 23.5759) * 5) +\n((\"Declividade@1\" &gt; 23.5759 AND \"Declividade@1\" &lt;= 34.9920) * 6) +\n((\"Declividade@1\" &gt; 34.9920) * 7)\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 5: Tela da Calculadora Raster no QGIS com a expressão de reclassificação preenchida e o raster de declividade como entrada, ao lado do resultado classificado em 7 cores.]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Mapa de Declividade a partir do MDE</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo7.html#declividade-e-restrição-ambiental",
+    "href": "capitulo7.html#declividade-e-restrição-ambiental",
+    "title": "7  Mapa de Declividade a partir do MDE",
+    "section": "7.6 Declividade e Restrição Ambiental",
+    "text": "7.6 Declividade e Restrição Ambiental\nSeu roteiro também traz uma classificação simplificada para restrição ambiental por declividade, com três classes: sem restrição, uso restrito e preservação permanente, tanto em graus como em porcentagem. [file:46][web:56][web:60]\n\n7.6.1 Exemplo em graus\nClasses de restrição (graus): [file:46]\n\n\n\nClasse\nFaixa (graus)\nDescrição\n\n\n\n\n1\n0 – 25\nSem restrição (0–47% aproximadamente)\n\n\n2\n25 – 45\nÁreas de uso restrito (47–100%)\n\n\n3\n&gt; 45\nPreservação permanente (&gt; 100%)\n\n\n\nExpressão equivalente na Calculadora Raster (graus): [file:46]\n (\"Declividade@1\" &lt;= 25) +\n((\"Declividade@1\" &gt; 25 AND \"Declividade@1\" &lt;= 45) * 2) +\n((\"Declividade@1\" &gt; 45) * 3)\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 6: Mapa de declividade reclassificado em três classes (verde = sem restrição, amarelo = uso restrito, vermelho = APP por declividade), com legenda clara e foco em uma microbacia.]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Mapa de Declividade a partir do MDE</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo7.html#simbologia-mapas-de-cores-e-legenda",
+    "href": "capitulo7.html#simbologia-mapas-de-cores-e-legenda",
+    "title": "7  Mapa de Declividade a partir do MDE",
+    "section": "7.7 Simbologia, Mapas de Cores e Legenda",
+    "text": "7.7 Simbologia, Mapas de Cores e Legenda\nSeu roteiro sugere o uso de arquivos externos de mapa de cores (por exemplo, MapaCoresDeclividadeRasterGraus.txt) para padronizar as representações de declividade em QGIS e facilitar a leitura dos mapas. [file:46]\nTambém é proposta a criação de uma legenda mais detalhada com valores de área (ha) e porcentagem por classe, usando união com um CSV (por exemplo, LEG_DECLIVE.csv) e um campo de texto formatado. [file:46]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 7: Propriedades de simbologia da camada de declividade, mostrando o carregamento de um arquivo de mapa de cores, e janela de união com LEG_DECLIVE.csv para compor uma legenda descritiva com classes, hectares e porcentagem.]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Mapa de Declividade a partir do MDE</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo7.html#roteiro-prático-resumido-mapa-de-declividade",
+    "href": "capitulo7.html#roteiro-prático-resumido-mapa-de-declividade",
+    "title": "7  Mapa de Declividade a partir do MDE",
+    "section": "7.8 Roteiro Prático Resumido – Mapa de Declividade",
+    "text": "7.8 Roteiro Prático Resumido – Mapa de Declividade\nA seguir, um roteiro consolidado, alinhado ao seu arquivo de dicas, para produção de um mapa de declividade a partir do MDE. [file:46][web:50][web:55]\n\nGarantir que o MDE esteja reprojetado e recortado pela área de estudo.\nCalcular a declividade em graus ou porcentagem usando a ferramenta de MDE do QGIS.\nReclassificar o raster de declividade na Calculadora Raster, usando expressões com limites de classes (Embrapa ou outras normas adotadas).\nAplicar simbologia com cores padronizadas (carregar arquivo de mapa de cores, se disponível).\nOpcional: gerar mapa simplificado de restrição ambiental por declividade (3 classes) para uso em zoneamentos.\nPreparar a legenda (classes, área em ha e porcentagem) utilizando uniões com tabela auxiliar e campo de texto formatado, conforme sua fórmula de concatenação.\nGuardar o resultado para uso em capítulo posterior de layout cartográfico e relatórios.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 8: Composição final: mapa de declividade classificada, legenda detalhada com classes Embrapa e quadro com resumo de áreas (ha e %), pronto para ser enviado ao layout de impressão.]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Mapa de Declividade a partir do MDE</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo8.html",
+    "href": "capitulo8.html",
+    "title": "8  Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios",
+    "section": "",
+    "text": "As ferramentas de análise espacial do QGIS permitem combinar dados vetoriais e raster para gerar produtos como zonas de proteção, áreas de conflito de uso e delimitação de Áreas de Preservação Permanente (APP). [web:62][web:72]\nNeste capítulo, vamos trabalhar com três grupos de operações: buffers (APP por distância de rios), interseções (APP dentro de propriedades, por exemplo) e APP por declividade, usando como base os mapas de declividade e drenagem já produzidos em capítulos anteriores. [web:62][web:64][web:68][web:70][web:73]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Mapa-resumo mostrando APP por rios (faixas em azul claro ao longo da drenagem) e APP por declividade (áreas em vermelho em encostas íngremes), sobre um fundo de uso do solo.]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo8.html#introdução",
+    "href": "capitulo8.html#introdução",
+    "title": "8  Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios",
+    "section": "",
+    "text": "As ferramentas de análise espacial do QGIS permitem combinar dados vetoriais e raster para gerar produtos como zonas de proteção, áreas de conflito de uso e delimitação de Áreas de Preservação Permanente (APP). [web:62][web:72]\nNeste capítulo, vamos trabalhar com três grupos de operações: buffers (APP por distância de rios), interseções (APP dentro de propriedades, por exemplo) e APP por declividade, usando como base os mapas de declividade e drenagem já produzidos em capítulos anteriores. [web:62][web:64][web:68][web:70][web:73]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Mapa-resumo mostrando APP por rios (faixas em azul claro ao longo da drenagem) e APP por declividade (áreas em vermelho em encostas íngremes), sobre um fundo de uso do solo.]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo8.html#pré-requisitos-de-dados",
+    "href": "capitulo8.html#pré-requisitos-de-dados",
+    "title": "8  Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios",
+    "section": "8.2 Pré-requisitos de Dados",
+    "text": "8.2 Pré-requisitos de Dados\nPara seguir os roteiros deste capítulo, é importante já ter disponíveis, no QGIS: [web:64]\n\nCamada vetorial de drenagem (rios e córregos) da área de estudo.\nCamada raster de declividade (em graus ou porcentagem), derivada do MDE conforme capítulo anterior.\nCamada vetorial de perímetro ou propriedades (opcional, para cruzar APP com imóveis ou talhões).\nProjeto configurado com SRC adequado (por exemplo, SIRGAS 2000 / UTM local).\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 2: Tela do QGIS com três camadas carregadas: drenagem (linhas azuis), perímetro/propriedades (polígonos) e declividade (raster em tons de cor).]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo8.html#buffer-conceito-e-uso-básico",
+    "href": "capitulo8.html#buffer-conceito-e-uso-básico",
+    "title": "8  Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios",
+    "section": "8.3 Buffer: Conceito e Uso Básico",
+    "text": "8.3 Buffer: Conceito e Uso Básico\nO buffer (ou “borda”/zona de influência) cria uma área ao redor de feições pontuais, lineares ou poligonais, a uma distância definida em unidades do SRC (por exemplo, metros). [web:62][web:68][web:71]\nNo contexto ambiental, o buffer é amplamente usado para delimitar APP ao longo de cursos d’água, ao redor de nascentes e em torno de outros alvos que exigem faixa de proteção. [web:62][web:70]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 3: Exemplo simples de buffer: linha de rio ao centro e faixa contínua ao redor (polígono) representando uma APP de 30 m para cada lado.]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo8.html#app-por-distância-de-rios-largura-fixa",
+    "href": "capitulo8.html#app-por-distância-de-rios-largura-fixa",
+    "title": "8  Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios",
+    "section": "8.4 APP por Distância de Rios (Largura Fixa)",
+    "text": "8.4 APP por Distância de Rios (Largura Fixa)\nO Código Florestal brasileiro estabelece faixas mínimas de APP ao longo de cursos d’água, que podem ser representadas por buffers de largura fixa ou variável conforme a largura do rio. [web:70][web:73]\n\n8.4.1 Exemplo simplificado: faixa fixa de 30 m\nPara fins didáticos, vamos considerar uma APP de 30 metros para cursos d’água pequenos (por exemplo, rios com largura até 10 m). [web:70]\n\nNo menu “Vetores” &gt; “Ferramentas de Geoprocessamento” &gt; “Buffer” (ou via Caixa de Processamento). [web:62]\nSelecione a camada de drenagem como camada de entrada.\nDefina a distância do buffer como 30 (unidades em metros, se o SRC estiver em UTM).\nMarque a opção “Dissolver resultado” para unir buffers de segmentos conectados em um único polígono de APP, evitando sobreposições internas. [web:62][web:71]\nEscolha um nome para a camada de saída (por exemplo, APP_rio_30m.gpkg).\nClique em “Executar”.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 4: Janela da ferramenta “Buffer” no QGIS configurada com camada de drenagem, distância 30 m, opção “dissolver” marcada e resultado mostrando uma faixa contínua ao longo dos rios.]\n\n\n\n\n8.4.2 Tabela de faixas de APP por largura do curso d’água (referência legal)\nDe forma simplificada (Lei 12.651/2012), as faixas mínimas de APP ao longo de rios variam conforme a largura do curso d’água: [web:70][web:73]\n\n\n\nLargura do curso d’água (m)\nFaixa mínima de APP (m)\n\n\n\n\nAté 10\n30\n\n\n10 – 50\n50\n\n\n50 – 200\n100\n\n\n200 – 600\n200\n\n\n&gt; 600\n500\n\n\n\nEm projetos reais, essa tabela pode ser incorporada em um campo da tabela de atributos (por exemplo, “app_largura”) para gerar buffers de largura variável, mas isso será mencionado apenas como extensão, já que o foco aqui é o fluxo básico. [web:68][web:71]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 5: Esquema ilustrando rios com diferentes larguras e faixas de APP proporcionais, com valores de 30, 50, 100 m etc.]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo8.html#interseção-app-dentro-de-propriedades-ou-talhões",
+    "href": "capitulo8.html#interseção-app-dentro-de-propriedades-ou-talhões",
+    "title": "8  Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios",
+    "section": "8.5 Interseção: APP dentro de Propriedades ou Talhões",
+    "text": "8.5 Interseção: APP dentro de Propriedades ou Talhões\nDepois de gerar as áreas de APP por buffer, é comum cruzá-las com camadas de propriedades ou talhões para quantificar quanto de cada imóvel está em área de preservação. [web:62][web:66]\nPara isso, usamos operações de overlay vetorial, em especial a Interseção, que recorta as áreas onde duas camadas se sobrepõem. [web:62]\n\n8.5.1 Passo a passo da interseção\n\nNo menu “Vetores” &gt; “Ferramentas de Geoprocessamento” &gt; “Interseção”.\nEscolher como Camada de entrada a camada de propriedades (ou talhões).\nEscolher como Camada de sobreposição a camada de APP de rios (buffer gerado anteriormente).\nDefinir o nome do arquivo de saída (por exemplo, Propriedades_APP_rio.gpkg).\nExecutar a ferramenta. O resultado conterá apenas as áreas de propriedades que caem dentro da APP de rios. [web:62]\nCaso deseje, calcular a área (em ha) dessas interseções usando um campo novo com a expressão area($geometry)/10000.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 6: Mapa mostrando propriedades rurais e a camada de APP de rios; ao lado, camada resultante da interseção, destacando apenas as partes das propriedades que estão dentro da APP.]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo8.html#app-por-declividade-encostas-45",
+    "href": "capitulo8.html#app-por-declividade-encostas-45",
+    "title": "8  Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios",
+    "section": "8.6 APP por Declividade (Encostas > 45°)",
+    "text": "8.6 APP por Declividade (Encostas &gt; 45°)\nO Código Florestal considera como APP as encostas ou partes destas com declividade superior a 45°, equivalente a 100% na linha de maior declive, o que pode ser derivado diretamente do mapa de declividade em graus. [web:67][web:70][web:73]\nA partir do raster de declividade em graus (gerado no Capítulo 7), é possível identificar e mapear as áreas com declividade acima de 45° e, em seguida, converter essas áreas em vetores para integrar às demais camadas de APP. [file:46][web:64][web:73]\n\n8.6.1 Selecionando áreas com declividade &gt; 45°\n\nAbra a Calculadora Raster no QGIS.\nConsidere o raster de declividade em graus como \"Declividade@1\".\nUse uma expressão binária para criar um raster onde 1 = APP por declividade e 0 = demais áreas, por exemplo:\n(\"Declividade@1\" &gt; 45). [file:46][web:50]\nDefina o nome do raster de saída, por exemplo, APP_declividade_bin.tif.\nExecute a operação.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 7: Tela da Calculadora Raster com expressão (\"Declividade@1\" &gt; 45) e mapa resultante em duas cores (1 = APP por declividade, 0 = não APP).]\n\n\n\n\n8.6.2 Converter raster em vetor e recortar pelo perímetro\n\nUsar a ferramenta de conversão raster–vetor (por exemplo, “Raster para Vetor (polígono)”):\n\nRaster de entrada: APP_declividade_bin.tif.\nSelecionar a opção de usar os valores do raster como categorias, para separar o valor 1 em polígonos distintos. [file:46]\n\nApós gerar o vetor, utilizar “Selecionar por expressão” para manter apenas os polígonos com valor = 1 (APP por declividade) e salvar como nova camada. [file:46]\nOpcionalmente, recortar essa camada de APP por declividade pelo perímetro da área de estudo usando a ferramenta “Recortar” em Vetores. [file:46][web:64]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 8: Mapa mostrando polígonos de APP por declividade (&gt;45°) derivados do raster, recortados pelo perímetro de estudo.]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo8.html#combinando-app-de-rios-e-app-por-declividade",
+    "href": "capitulo8.html#combinando-app-de-rios-e-app-por-declividade",
+    "title": "8  Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios",
+    "section": "8.7 Combinando APP de Rios e APP por Declividade",
+    "text": "8.7 Combinando APP de Rios e APP por Declividade\nUma etapa importante é combinar diferentes tipos de APP (rios, declividade, nascentes, topo de morro) em uma camada integrada, para facilitar o diagnóstico e o cálculo de áreas totais de preservação. [web:67][web:73][web:76]\nAqui, vamos ilustrar a combinação de APP de rios (buffer) com APP por declividade (&gt;45°) usando operações de união ou fusão de camadas. [web:62][web:64]\n\n8.7.1 União e dissolução\n\nGarantir que APP de rios e APP por declividade estejam em formato vetorial (polígonos), preferencialmente com um campo indicando o tipo (por exemplo, “tipo_app” = “rio” ou “decliv”).\nUsar a ferramenta “Mesclar camadas vetoriais” ou “União”:\n\nEntrada: APP de rios e APP por declividade.\nSaída: camada única com todos os polígonos de APP. [web:62]\n\nAplicar “Dissolver” sobre o campo “tipo_app” ou sem campo, conforme interesse (unir todas as APP em um único polígono ou manter diferentes tipos separados). [web:62]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 9: Mapa com camada integrada de APP, onde áreas de rios e encostas íngremes aparecem em cores diferentes, com sobreposição dissolvida.]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo8.html#roteiro-prático-resumido-app-por-distância-e-declividade",
+    "href": "capitulo8.html#roteiro-prático-resumido-app-por-distância-e-declividade",
+    "title": "8  Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios",
+    "section": "8.8 Roteiro Prático Resumido – APP por Distância e Declividade",
+    "text": "8.8 Roteiro Prático Resumido – APP por Distância e Declividade\nAbaixo, um roteiro consolidado para gerar produtos de buffer, interseção e APP por declividade/distância de rios usando o QGIS. [web:62][web:64][web:68][web:71][web:73]\n\nPreparar dados: MDE, declividade, drenagem e propriedades/talhões em SRC projetado.\nGerar APP de rios por buffer (largura fixa ou variável) a partir da camada de drenagem, usando distâncias conforme o Código Florestal.\nCruzar APP de rios com propriedades por meio da ferramenta de Interseção, obtendo áreas de APP dentro de cada imóvel.\nA partir do raster de declividade em graus, selecionar áreas com declividade &gt; 45° (APP por encosta), gerar raster binário e converter para vetor.\nRecortar APP por declividade pelo perímetro da área de estudo, se necessário.\nMesclar APP de rios e APP por declividade em uma camada integrada, usando Uniões e Dissolver.\nCalcular áreas (ha) e percentuais por tipo de APP, preparando dados para relatórios e mapas temáticos.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 10: Composição final com mapa de APPs integradas (rios + declividade), propriedades rurais, legenda com tipos de APP e quadro de áreas por classe, pronto para ser enviado ao layout de impressão.]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo9.html",
+    "href": "capitulo9.html",
+    "title": "9  Layout Cartográfico e Modelos de Impressão no QGIS",
+    "section": "",
+    "text": "O Layout de Impressão do QGIS é o ambiente onde você transforma seus dados geográficos em mapas prontos para relatório, impressão ou exportação em PDF. [web:80][web:81][web:84]\nNeste capítulo, vamos criar um layout completo usando, como exemplo, os mapas de uso do solo, relevo, declividade e APP integradas, e ao final veremos as vantagens e o uso prático de modelos de impressão (templates) para ganhar tempo e padronizar produtos. [web:80][web:81][web:85][web:88][web:91]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Janela do Layout de Impressão do QGIS com um mapa central, título, legenda, escala gráfica, norte e logo institucional montados em uma folha A4.]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Layout Cartográfico e Modelos de Impressão no QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo9.html#introdução",
+    "href": "capitulo9.html#introdução",
+    "title": "9  Layout Cartográfico e Modelos de Impressão no QGIS",
+    "section": "",
+    "text": "O Layout de Impressão do QGIS é o ambiente onde você transforma seus dados geográficos em mapas prontos para relatório, impressão ou exportação em PDF. [web:80][web:81][web:84]\nNeste capítulo, vamos criar um layout completo usando, como exemplo, os mapas de uso do solo, relevo, declividade e APP integradas, e ao final veremos as vantagens e o uso prático de modelos de impressão (templates) para ganhar tempo e padronizar produtos. [web:80][web:81][web:85][web:88][web:91]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Janela do Layout de Impressão do QGIS com um mapa central, título, legenda, escala gráfica, norte e logo institucional montados em uma folha A4.]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Layout Cartográfico e Modelos de Impressão no QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo9.html#criando-um-novo-layout-de-impressão",
+    "href": "capitulo9.html#criando-um-novo-layout-de-impressão",
+    "title": "9  Layout Cartográfico e Modelos de Impressão no QGIS",
+    "section": "9.2 Criando um Novo Layout de Impressão",
+    "text": "9.2 Criando um Novo Layout de Impressão\nO Layout de Impressão é uma janela separada do QGIS, onde você organiza a folha (A4, A3 etc.) e adiciona elementos gráficos como mapa, legenda, barras de escala e textos. [web:80][web:81]\n\n9.2.1 Passo a passo para criar o layout\n\nCom o projeto já configurado e os mapas prontos (uso do solo, relevo, declividade, APP), vá ao menu “Projeto” &gt; “Novo Layout de Impressão”. [web:80][web:81]\nDigite um nome para o layout (por exemplo, Mapa_ambiental_A4) e clique em OK.\nSerá aberta a janela do Layout de Impressão, mostrando uma folha em branco (por padrão, A4 na vertical). [web:80][web:81]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 2: Tela do QGIS com o menu “Projeto &gt; Novo Layout de Impressão” aberto e, ao lado, a nova janela de layout com uma página A4 em branco.]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Layout Cartográfico e Modelos de Impressão no QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo9.html#configurando-tamanho-e-orientação-da-página",
+    "href": "capitulo9.html#configurando-tamanho-e-orientação-da-página",
+    "title": "9  Layout Cartográfico e Modelos de Impressão no QGIS",
+    "section": "9.3 Configurando Tamanho e Orientação da Página",
+    "text": "9.3 Configurando Tamanho e Orientação da Página\nAntes de adicionar os elementos, é importante definir o tamanho da folha e a orientação (retrato ou paisagem) de acordo com o tipo de mapa que você quer produzir. [web:80][web:81]\n\n9.3.1 Definindo página e margens\n\nNa janela do Layout, selecione o item “Página” clicando na folha (ou usando o painel de “Propriedades da Página”). [web:80][web:81]\nEm “Tamanho”, selecione o formato desejado (por exemplo, A4 ou A3).\nEm “Orientação”, escolha “Retrato” (vertical) ou “Paisagem” (horizontal), conforme o formato do seu mapa (área mais larga ou mais alta). [web:81]\nOpcionalmente, defina margens internas usando guias ou a grade (ativando “Mostrar Grade” no menu “Ver”). [web:88]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 3: Propriedades da página no Layout do QGIS, com seleção de A4 na orientação paisagem e grade visível na folha para ajudar no alinhamento.]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Layout Cartográfico e Modelos de Impressão no QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo9.html#adicionando-o-mapa-principal",
+    "href": "capitulo9.html#adicionando-o-mapa-principal",
+    "title": "9  Layout Cartográfico e Modelos de Impressão no QGIS",
+    "section": "9.4 Adicionando o Mapa Principal",
+    "text": "9.4 Adicionando o Mapa Principal\nO elemento mais importante do layout é a janela de mapa, que mostra a área de interesse com a mesma visualização configurada na janela principal do QGIS. [web:80][web:81][web:84]\n\n9.4.1 Inserindo o mapa\n\nNa barra de ferramentas à esquerda da janela de layout, clique no ícone “Adicionar Mapa”.\nClique e arraste sobre a folha para desenhar um retângulo onde o mapa será exibido (por exemplo, ocupando a parte central da página). [web:80][web:81]\nAo soltar o mouse, o QGIS exibirá a visualização do mapa atual (conforme a tela principal) dentro da moldura desenhada.\nNo painel de Propriedades do Item, você pode ajustar:\n\nEscala do mapa (fixa ou aproximar/afastar com “Atualizar vista”).\nExtensão (definindo manualmente ou sincronizando com a vista atual do projeto).\nQual camada será usada como “referência” para o enquadramento (caso existam outras janelas de mapa). [web:80][web:81]\n\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 4: Layout com uma janela de mapa central mostrando o mapa de uso do solo sobre o relevo, e painel de propriedades do mapa à direita com campos de escala e extensão.]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Layout Cartográfico e Modelos de Impressão no QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo9.html#elementos-cartográficos-básicos",
+    "href": "capitulo9.html#elementos-cartográficos-básicos",
+    "title": "9  Layout Cartográfico e Modelos de Impressão no QGIS",
+    "section": "9.5 Elementos Cartográficos Básicos",
+    "text": "9.5 Elementos Cartográficos Básicos\nTodo mapa temático deve conter alguns elementos mínimos: título, legenda, escala gráfica, orientação (seta norte) e fonte. [web:80][web:84]\n\n9.5.1 Título e textos\n\nPara o título, use o botão “Adicionar Etiqueta” (Texto) na barra de ferramentas do layout.\nClique na parte superior da página e digite, por exemplo, “Mapa de Uso do Solo, Relevo, Declividade e APP”.\nNo painel de propriedades, ajuste fonte, tamanho, alinhamento e, se desejado, uma moldura ou fundo. [web:80][web:81]\nUse etiquetas menores para incluir informações como “Fonte de dados”, “Sistema de Coordenadas”, “Autor” e “Data”.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 5: Layout com um título centralizado na parte superior e textos de fonte e autor na parte inferior da página.]\n\n\n\n\n9.5.2 Legenda\n\nClique em “Adicionar Legenda” na barra de ferramentas do layout.\nClique em um espaço lateral da página (por exemplo, à direita do mapa). [web:80][web:81]\nO QGIS irá montar automaticamente uma legenda com todas as camadas visíveis do projeto.\nNo painel de propriedades da legenda, ajuste:\n\nQuais camadas devem aparecer (removendo, por exemplo, camadas de apoio como MDE bruto).\nTexto dos rótulos de legenda (renomeando “uso_solo” para “Uso do solo”, “Declividade_class” para “Declividade (%)”, etc.).\nOrganização em grupos (por exemplo, “Camadas de base”, “Camadas de análise”). [web:80][web:81]\n\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 6: Layout mostrando uma legenda organizada com grupos “Base” (imagem/hillshade) e “Temáticos” (uso do solo, declividade, APP), com textos amigáveis.]\n\n\n\n\n9.5.3 Escala gráfica e norte\n\nPara a escala gráfica, clique em “Adicionar Barra de Escala” e posicione abaixo do mapa ou próximo à legenda. [web:80][web:84]\nNo painel de propriedades, escolha o estilo (barra simples, com subdivisões), unidade (metros, km) e rótulos.\nPara a seta norte, clique em “Adicionar Imagem” e selecione um símbolo de norte do próprio QGIS ou um arquivo de imagem personalizado. [web:80][web:84]\nPosicione a seta norte em um canto do mapa, evitando sobrepor áreas importantes.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 7: Parte inferior do layout com barra de escala em quilômetros e seta norte discreta no canto superior direito do mapa.]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Layout Cartográfico e Modelos de Impressão no QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo9.html#combinação-de-diferentes-mapas-no-mesmo-layout",
+    "href": "capitulo9.html#combinação-de-diferentes-mapas-no-mesmo-layout",
+    "title": "9  Layout Cartográfico e Modelos de Impressão no QGIS",
+    "section": "9.6 Combinação de Diferentes Mapas no Mesmo Layout",
+    "text": "9.6 Combinação de Diferentes Mapas no Mesmo Layout\nEm alguns casos, é útil apresentar mais de um mapa na mesma folha, por exemplo, mapa de uso do solo ao lado de mapa de declividade ou APP. [web:80][web:86]\nIsso pode ser feito adicionando múltiplas janelas de mapa no layout e configurando cada uma com sua própria extensão e escala. [web:80][web:81]\n\n9.6.1 Adicionando um segundo mapa (ex.: declividade)\n\nCrie uma nova janela de mapa com o botão “Adicionar Mapa”, posicionando-a, por exemplo, ao lado do mapa principal (metade direita da página).\nNo painel de propriedades, altere a extensão para focar a mesma área, mas altere a camada ativa/visível no projeto (por exemplo, destacando apenas a camada de declividade). [web:80][web:81]\nSe necessário, use temas de mapa (salvos no projeto) para controlar quais camadas aparecem em cada janela de mapa. [web:86]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 8: Layout com dois mapas lado a lado: à esquerda, uso do solo; à direita, declividade, ambos com legendas específicas e mesma área geográfica.]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Layout Cartográfico e Modelos de Impressão no QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo9.html#exportando-o-layout-pdf-imagem",
+    "href": "capitulo9.html#exportando-o-layout-pdf-imagem",
+    "title": "9  Layout Cartográfico e Modelos de Impressão no QGIS",
+    "section": "9.7 Exportando o Layout (PDF, Imagem)",
+    "text": "9.7 Exportando o Layout (PDF, Imagem)\nApós ajustar todos os elementos, o layout pode ser exportado como PDF, imagem (PNG, JPEG) ou impresso diretamente. [web:80][web:84]\n\n9.7.1 Exportar para PDF\n\nNa barra superior da janela de layout, clique em “Exportar como PDF”.\nEscolha o local e o nome do arquivo, por exemplo, Mapa_ambiental.pdf.\nVerifique as opções de resolução e inclusão de metadados, se disponíveis.\nClique em Salvar e aguarde a geração do arquivo. [web:80][web:84]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 9: Janela de exportação para PDF do QGIS com nome de arquivo definido e opções padrão, ao lado da visualização de um PDF aberto com o mapa final.]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Layout Cartográfico e Modelos de Impressão no QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo9.html#modelos-de-impressão-templates-vantagens-e-como-usar",
+    "href": "capitulo9.html#modelos-de-impressão-templates-vantagens-e-como-usar",
+    "title": "9  Layout Cartográfico e Modelos de Impressão no QGIS",
+    "section": "9.8 Modelos de Impressão (Templates): Vantagens e Como Usar",
+    "text": "9.8 Modelos de Impressão (Templates): Vantagens e Como Usar\nCriar um layout do zero consome tempo, principalmente se você precisar produzir vários mapas com o mesmo padrão gráfico (título, logomarca, legenda, escala, posição do mapa). [web:82][web:85][web:88]\nPara agilizar e padronizar, o QGIS permite salvar o layout como modelo de impressão (template) e reutilizá-lo em outros projetos, mantendo a estrutura do mapa, legendas e elementos fixos. [web:82][web:85][web:88]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 10: Exemplo de um layout de mapa com logotipo institucional, título padrão e quadro de dados configurado, acompanhado de uma janela mostrando o salvamento como template.]\n\n\n\n9.8.1 Vantagens de usar modelos de layout\n\nPadronização visual: todos os mapas seguem o mesmo padrão de cores, fontes, logotipos e organização. [web:82][web:85]\nEconomia de tempo: evita redesenhar títulos, legendas, quadros e margens em cada novo projeto. [web:82][web:88]\nRedução de erros: minimiza esquecimentos (por exemplo, esquecer de incluir escala ou fonte), pois o modelo já inclui todos os elementos obrigatórios. [web:82][web:85]\nIdeal para séries de mapas: especialmente útil quando se produzem muitos mapas para diferentes áreas, propriedades ou períodos (por exemplo, usando Atlas). [web:85][web:91]\n\n\n\n9.8.2 Como salvar um modelo de impressão\n\nCom o layout já pronto e revisado, acesse o menu do layout (geralmente “Layout” ou “Compositor”, dependendo da versão do QGIS). [web:80][web:88]\nSelecione a opção “Salvar como Modelo” (Save as Template).\nEscolha um local para guardar o arquivo de modelo (por exemplo, pasta “Modelos_Layout_QGIS”) e dê um nome descritivo (ex.: modelo_mapa_ambiental_A4.qpt). [web:88]\nConfirme o salvamento.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 11: Menu do layout com a opção “Salvar como modelo” destacada, e janela de diálogo para salvar o arquivo .qpt.]\n\n\n\n\n9.8.3 Como usar um modelo de impressão em outro projeto\n\nAbrir um novo projeto QGIS com as camadas desejadas (por exemplo, mapas de outra fazenda ou de outro município).\nIr em “Projeto” &gt; “Novo Layout de Impressão” e definir um nome para o layout. [web:80][web:81]\nNa janela do layout, acessar o menu “Layout/Compositor” e escolher “Carregar itens de modelo” ou “Carregar de template”. [web:79][web:88]\nSelecionar o arquivo de modelo .qpt que você salvou anteriormente.\nA folha será preenchida automaticamente com a estrutura do modelo (posições de mapa, legenda, textos, logotipos); basta atualizar:\n\nA área exibida na(s) janela(s) de mapa (ajustar extensão/escala).\nTextos específicos como título, data, escala textual e eventuais campos de identificação (nome da propriedade, município etc.). [web:85][web:88]\n\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 12: Janela de layout inicialmente em branco sendo preenchida automaticamente após carregar um template, mostrando o novo mapa já no modelo padrão.]\n\n\nEm projetos com muitos mapas (por exemplo, um mapa por propriedade), é possível combinar o uso de modelos de layout com o Atlas do QGIS para automatizar a geração de séries de mapas, mantendo o mesmo template. [web:86][web:89][web:91]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Layout Cartográfico e Modelos de Impressão no QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10.html",
+    "href": "capitulo10.html",
+    "title": "10  QField: Coleta e Edição de Dados em Campo Integrada ao QGIS",
+    "section": "",
+    "text": "O QField é um aplicativo móvel baseado no QGIS, desenvolvido para permitir a coleta e edição de dados geográficos diretamente em campo, utilizando tablets e smartphones, mesmo em modo offline. [web:108][web:111]\nCom ele, é possível levar para o campo projetos preparados no QGIS (camadas, formulários de atributos, estilos de mapa), coletar novos pontos, linhas e polígonos, registrar fotos e observações, e depois sincronizar de volta com o projeto de escritório. [web:108][web:110][web:113]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM QF-1: Foto ou ilustração de um técnico em campo utilizando um tablet ou smartphone com QField aberto, exibindo um mapa com pontos de coleta.]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10.html#introdução",
+    "href": "capitulo10.html#introdução",
+    "title": "10  QField: Coleta e Edição de Dados em Campo Integrada ao QGIS",
+    "section": "",
+    "text": "O QField é um aplicativo móvel baseado no QGIS, desenvolvido para permitir a coleta e edição de dados geográficos diretamente em campo, utilizando tablets e smartphones, mesmo em modo offline. [web:108][web:111]\nCom ele, é possível levar para o campo projetos preparados no QGIS (camadas, formulários de atributos, estilos de mapa), coletar novos pontos, linhas e polígonos, registrar fotos e observações, e depois sincronizar de volta com o projeto de escritório. [web:108][web:110][web:113]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM QF-1: Foto ou ilustração de um técnico em campo utilizando um tablet ou smartphone com QField aberto, exibindo um mapa com pontos de coleta.]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10.html#função-do-qfield-no-fluxo-de-trabalho-com-qgis",
+    "href": "capitulo10.html#função-do-qfield-no-fluxo-de-trabalho-com-qgis",
+    "title": "10  QField: Coleta e Edição de Dados em Campo Integrada ao QGIS",
+    "section": "10.2 Função do QField no Fluxo de Trabalho com QGIS",
+    "text": "10.2 Função do QField no Fluxo de Trabalho com QGIS\nO QField funciona como uma “versão de campo” do QGIS: você prepara o projeto no computador, exporta para o dispositivo móvel, realiza as coletas ou edições em campo e, em seguida, traz as alterações de volta para o projeto original. [web:108][web:110]\nEsse fluxo reduz o uso de papel, diminui erros de digitação e permite registrar informações com precisão de GPS, fotos georreferenciadas e formulários personalizados, alinhados às necessidades de cada levantamento. [web:108][web:111]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM QF-2: Diagrama simples mostrando o fluxo: QGIS (escritório) → Exportar projeto → QField (campo) → Sincronizar de volta → QGIS (análise).]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10.html#preparando-o-projeto-no-qgis-para-uso-no-qfield",
+    "href": "capitulo10.html#preparando-o-projeto-no-qgis-para-uso-no-qfield",
+    "title": "10  QField: Coleta e Edição de Dados em Campo Integrada ao QGIS",
+    "section": "10.3 Preparando o Projeto no QGIS para uso no QField",
+    "text": "10.3 Preparando o Projeto no QGIS para uso no QField\nAntes de usar o QField, é necessário preparar um projeto no QGIS com as camadas e formulários de atributos organizados. A forma mais comum é utilizar o plugin de sincronização/exportação do QField para criar um pacote de projeto pronto para o dispositivo móvel. [web:108][web:110]\n\n10.3.1 Organização das camadas e caminhos\n\nNo QGIS, organize o projeto com as camadas que serão utilizadas em campo (por exemplo: propriedades, talhões, pontos de coleta, drenagem, APP).\nVerifique se os caminhos dos arquivos são relativos ao projeto (Menu “Projeto” &gt; “Propriedades” &gt; “Caminhos” &gt; “Salvar caminhos relativos”). [web:110]\nSe houver camadas em banco de dados (PostGIS), avalie se será necessário trabalhar com cópias offline em GeoPackage ou se usará QFieldCloud para sincronizar diretamente com o banco. [web:109][web:110]\n\n\n\n10.3.2 Configurando formulários de atributos\n\nNas propriedades de cada camada editável, configure os formulários de atributos (aba “Formulário de Atributos”), definindo ordem dos campos, tipos de widget (lista, caixa de texto, data, foto), valores padrão e listas de domínio. [web:108]\nCampos como “tipo de uso do solo”, “estado de conservação”, “classe de declividade” ou “observações” podem ser listas pré-definidas, agilizando a coleta e minimizando erros.\nTeste o preenchimento dos formulários no QGIS antes de exportar, garantindo que a interface esteja clara para o uso em campo.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM QF-3: Captura de tela do QGIS mostrando a configuração de um formulário de atributos para uma camada de pontos de coleta, com campos de texto, listas e campo de foto.]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10.html#exportando-o-projeto-para-qfield",
+    "href": "capitulo10.html#exportando-o-projeto-para-qfield",
+    "title": "10  QField: Coleta e Edição de Dados em Campo Integrada ao QGIS",
+    "section": "10.4 Exportando o Projeto para QField",
+    "text": "10.4 Exportando o Projeto para QField\nA exportação do projeto é feita, em geral, por meio de um plugin no QGIS (como o QFieldSync), que cria uma pasta ou pacote contendo o projeto e os dados necessários para uso no dispositivo móvel. [web:108][web:110]\n\n10.4.1 Passo a passo (fluxo clássico com QFieldSync)\n\nNo QGIS, instale e ative o plugin QFieldSync, se ainda não estiver instalado.\nAbra o plugin e selecione o projeto atual.\nConfigure quais camadas serão:\n\nSomente leitura (camadas base como imagens e MDE).\nEditáveis em campo (camadas vetoriais de pontos/linhas/polígonos).\nConvertidas para formato offline (GeoPackage) para evitar dependência de banco de dados remoto. [web:110]\n\nDefina a pasta de saída (por exemplo, diretório que será copiado para o dispositivo Android).\nClique em “Exportar”; o plugin criará uma cópia do projeto e dos dados preparada para o QField.\nTransfira essa pasta para o dispositivo móvel (via cabo USB, nuvem etc.).\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM QF-4: Tela do plugin QFieldSync no QGIS, com uma lista de camadas e colunas indicando se são offline, somente leitura ou editáveis.]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10.html#uso-do-qfield-em-campo",
+    "href": "capitulo10.html#uso-do-qfield-em-campo",
+    "title": "10  QField: Coleta e Edição de Dados em Campo Integrada ao QGIS",
+    "section": "10.5 Uso do QField em Campo",
+    "text": "10.5 Uso do QField em Campo\nCom o projeto exportado para o dispositivo móvel, o QField permite navegar pelo mapa, coletar novas feições, editar atributos e registrar fotos, mesmo sem conexão com a internet. [web:108][web:111][web:113]\n\n10.5.1 Abertura do projeto e navegação\n\nNo dispositivo (Android, por exemplo), abra o aplicativo QField.\nNavegue até a pasta onde o projeto foi copiado e selecione o arquivo de projeto (*.qgz ou *.qgs).\nUse zoom, pan e, se disponível, localização por GPS para posicionar o mapa na área de trabalho.\n\n\n\n10.5.2 Coleta e edição de feições\n\nSelecione a camada editável (por exemplo, “Pontos de amostragem”, “Talhões”, “Pontos de APP”).\nUse a ferramenta de adicionar feição (ponto, linha ou polígono) e posicione no mapa, preferencialmente com apoio do GPS. [web:108][web:111]\nAo criar a feição, o QField abrirá automaticamente o formulário de atributos; preencha os campos (tipo, código, observações etc.).\nSe houver campo de foto, use a câmera do dispositivo para registrar imagens vinculadas à feição.\nRepita o processo para todas as feições desejadas, salvando periodicamente as edições.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM QF-5: Tela do QField em um smartphone mostrando o mapa, um ponto recém-adicionado e o formulário de atributos aberto com campos de texto e botão de câmera.]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10.html#sincronizando-as-edições-de-volta-ao-qgis",
+    "href": "capitulo10.html#sincronizando-as-edições-de-volta-ao-qgis",
+    "title": "10  QField: Coleta e Edição de Dados em Campo Integrada ao QGIS",
+    "section": "10.6 Sincronizando as Edições de Volta ao QGIS",
+    "text": "10.6 Sincronizando as Edições de Volta ao QGIS\nApós o trabalho de campo, é necessário sincronizar as edições realizadas no QField com o projeto original no QGIS, atualizando camadas e bancos de dados. [web:109][web:110]\n\n10.6.1 Fluxo com QFieldSync (projeto local/offline)\n\nCopie de volta, para o computador, a pasta do projeto que foi utilizada no QField.\nNo QGIS, abra o projeto original (aquele que foi usado para exportar).\nAbra o plugin QFieldSync e escolha a opção de “Sincronizar de volta” com a pasta do projeto de campo. [web:110]\nO plugin aplicará as alterações (novas feições, edições de atributos) nas camadas de origem (GeoPackage ou PostGIS).\nVerifique no mapa e na tabela de atributos se as novas feições e fotos foram incorporadas corretamente.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM QF-6: Captura de tela do QGIS mostrando a janela do QFieldSync com um “job” de sincronização concluído e novos pontos aparecendo no mapa.]\n\n\n\n\n10.6.2 Fluxo com QFieldCloud (projetos com sincronização na nuvem)\nPara equipes maiores e projetos conectados a bancos de dados (como PostGIS), é possível utilizar o QFieldCloud, que gerencia pacotes de projeto, deltas de edição e aplicação de alterações diretamente no servidor. [web:107][web:109]\n\nConfigurar o projeto no QGIS para uso com QFieldCloud, criando o pacote e carregando para a nuvem.\nNo QField, baixar o projeto via QFieldCloud, editar e sincronizar as mudanças com a nuvem.\nAcompanhar os “jobs” de aplicação de deltas no painel do QFieldCloud e verificar se as edições foram aplicadas com sucesso ao banco PostGIS. [web:109]\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM QF-7: Interface web do QFieldCloud mostrando um projeto com status de sincronização verde e um job de “delta apply” concluído.]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10.html#vantagens-e-limitações-do-uso-do-qfield",
+    "href": "capitulo10.html#vantagens-e-limitações-do-uso-do-qfield",
+    "title": "10  QField: Coleta e Edição de Dados em Campo Integrada ao QGIS",
+    "section": "10.7 Vantagens e Limitações do Uso do QField",
+    "text": "10.7 Vantagens e Limitações do Uso do QField\nO QField traz diversas vantagens para projetos de geoprocessamento aplicados: reduz tempo de processamento de dados, melhora a qualidade das informações de campo e facilita o trabalho colaborativo entre equipe de campo e escritório. [web:108][web:111][web:113]\n\n10.7.1 Principais vantagens\n\nIntegração nativa com QGIS: reaproveita estilos, formulários e estrutura de projeto já montados no desktop.\nTrabalho offline: ideal para áreas rurais/remotas sem conectividade constante.\nColeta enriquecida: permite registrar fotos, notas, códigos, classes de uso e atributos detalhados. [web:108][web:111]\nEscalabilidade: com QFieldCloud, facilita trabalho simultâneo de vários coletores e sincronização com bancos centrais. [web:107][web:109]\n\n\n\n10.7.2 Cuidados e limitações\n\nPlanejamento do projeto é essencial: formulários mal configurados ou caminhos incorretos podem gerar falhas de sincronização. [web:109][web:110]\nNecessidade de testes antes do trabalho real em campo, especialmente em fluxos com PostGIS e QFieldCloud.\nAcurácia da posição depende do receptor GNSS do dispositivo (ou de receptores externos integrados).\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM QF-8: Tabela ou diagrama listando “Vantagens” de um lado e “Cuidados” do outro, com ícones ilustrativos (check e alerta).]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10.html#roteiro-prático-resumido-qgis-qfield",
+    "href": "capitulo10.html#roteiro-prático-resumido-qgis-qfield",
+    "title": "10  QField: Coleta e Edição de Dados em Campo Integrada ao QGIS",
+    "section": "10.8 Roteiro Prático Resumido – QGIS + QField",
+    "text": "10.8 Roteiro Prático Resumido – QGIS + QField\nA seguir, um roteiro resumido para integrar QGIS e QField em um fluxo de coleta de dados em campo. [web:108][web:109][web:110]\n\nPreparar o projeto no QGIS (camadas, SRC, formulários de atributos configurados).\nDefinir quais camadas serão editadas em campo e quais serão apenas base.\nUsar o plugin QFieldSync (ou fluxo QFieldCloud) para exportar o projeto para uma pasta ou para a nuvem.\nAbrir o projeto no QField, navegar com apoio de GPS e coletar/editar feições, preenchendo os formulários.\nAo retornar, sincronizar as edições com o projeto original no QGIS (pasta offline ou QFieldCloud + PostGIS).\nRevisar, ajustar simbologia, gerar mapas e relatórios com base nos dados atualizados.\n\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM QF-9: Fluxograma completo do processo QGIS ↔︎ QField, com ícones de computador, nuvem e dispositivo móvel, indicando cada uma das etapas do roteiro.]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo11.html",
+    "href": "capitulo11.html",
+    "title": "11  Agradecimentos e Referências Utilizadas",
+    "section": "",
+    "text": "Este material foi elaborado com o objetivo de apoiar estudantes, técnicos e profissionais que estão dando seus primeiros passos na área de geoprocessamento, geotecnologias e Sistemas de Informações Geográficas. [web:7][web:18][web:64]\nA construção desta apostila contou com a inspiração de diversos manuais, apostilas, documentação oficial de softwares e normas técnicas brasileiras, além da sua própria experiência prática refletida no roteiro de dicas e fórmulas utilizado como base para os capítulos de relevo e declividade. [file:46][web:8][web:20][web:80]\nFica aqui o agradecimento a todas as instituições que disponibilizam dados abertos, material didático e documentação, permitindo que o conhecimento em geoprocessamento seja disseminado de forma acessível, especialmente no contexto da gestão ambiental e do planejamento territorial no Brasil. [web:6][web:7][web:23][web:70]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Agradecimentos e Referências Utilizadas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo11.html#agradecimentos",
+    "href": "capitulo11.html#agradecimentos",
+    "title": "11  Agradecimentos e Referências Utilizadas",
+    "section": "",
+    "text": "Este material foi elaborado com o objetivo de apoiar estudantes, técnicos e profissionais que estão dando seus primeiros passos na área de geoprocessamento, geotecnologias e Sistemas de Informações Geográficas. [web:7][web:18][web:64]\nA construção desta apostila contou com a inspiração de diversos manuais, apostilas, documentação oficial de softwares e normas técnicas brasileiras, além da sua própria experiência prática refletida no roteiro de dicas e fórmulas utilizado como base para os capítulos de relevo e declividade. [file:46][web:8][web:20][web:80]\nFica aqui o agradecimento a todas as instituições que disponibilizam dados abertos, material didático e documentação, permitindo que o conhecimento em geoprocessamento seja disseminado de forma acessível, especialmente no contexto da gestão ambiental e do planejamento territorial no Brasil. [web:6][web:7][web:23][web:70]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Agradecimentos e Referências Utilizadas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo12.html",
+    "href": "capitulo12.html",
+    "title": "12  Referências (Lista Avulsa com Códigos)",
+    "section": "",
+    "text": "[ABNT geral – sem código específico]\nABNT – ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. NBR 14166: Representação de terreno com curvas de nível. Rio de Janeiro,\n\n\n\n[Lei – sem código específico]\nBRASIL. Lei n.º 12.651, de 25 de maio de 2012. Dispõe sobre a proteção da vegetação nativa. Diário Oficial da União, Brasília, DF, 28 maio 2012.\n[Embrapa geral – sem código específico]\nEMBRAPA – EMPRESA BRASILEIRA DE PESQUISA AGROPECUÁRIA. Classificação de declividades para uso agrícola. Documentos técnicos diversos, Brasília, s.d.\n[web:97]\nEMPRAPA FLORESTAS. Reserva Legal e Área de Preservação Permanente (dicas para a Região Sul): RL e APP. Colombo: Embrapa Florestas, 2014. Disponível em: &lt;https://www.infoteca.cnptia.embrapa.br/handle/doc/1003109&gt;. Acesso em: 27 mar. 2026.\n[web:103]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Manual Técnico em Geociências. Rio de Janeiro: IBGE, 2025. Disponível em: &lt;https://www.ibge.gov.br/geociencias/informacoes-ambientais/geologia/15826-manual-tecnico-em-geociencias.html&gt;. Acesso em: 27 mar. 2026.\n[web:93]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Folhas topográficas. Rio de Janeiro: IBGE, 2022. Disponível em: &lt;https://www.ibge.gov.br/geociencias/cartas-e-mapas/folhas-topograficas.html&gt;. Acesso em: 27 mar. 2026.\n[web:94]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Normas Técnicas da Cartografia Nacional – Decreto nº 89.817/1984. Rio de Janeiro: IBGE, 1984. Disponível em: &lt;https://geoftp.ibge.gov.br/metodos_e_outros_documentos_de_referencia/normas/legislacao/legisla_decreto_89817_d.pdf&gt;. Acesso em: 27 mar. 2026.\n[web:99][web:101]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Base Cartográfica Contínua do Brasil e Curvas de Nível. Rio de Janeiro: IBGE, 2016–2018. Disponível em: &lt;https://geoftp.ibge.gov.br/cartas_e_mapas/bases_cartograficas_continuas/&gt;. Acesso em: 27 mar. 2026.\n[web:96]\nANA – AGÊNCIA NACIONAL DE ÁGUAS E SANEAMENTO BÁSICO. Curvas de nível – Catálogo de Metadados da ANA. Brasília: ANA, 2016. Disponível em: &lt;https://metadados.snirh.gov.br/&gt;. Acesso em: 27 mar. 2026.\n[web:64]\nDEFESA CIVIL DO ESPÍRITO SANTO. Análise espacial com QGIS e GEObases. Vitória: CEPDEC/ES, 2024. Disponível em: &lt;https://defesacivil.es.gov.br/Media/DefesaCivil/Cursos%20CEPDEC/ANALISE%20ESPACIAL%20COM%20QGIS%20E%20GEOBASES.pdf&gt;. Acesso em: 27 mar. 2026.\n[web:70]\nEMBRAPA. Conheça quais são as Áreas de Preservação Permanente (APP). Brasília: Embrapa, 2011. Disponível em: &lt;https://www.embrapa.br/codigo-florestal/entenda-o-codigo-florestal/area-de-preservacao-permanente/detalhe-area-pp&gt;. Acesso em: 27 mar. 2026.\n[web:50]\nSÁ, Narcélio. Cálculos de declividade no QGIS: veja como fazer. 2014. Disponível em: &lt;https://narceliodesa.com/calculando-declividade-qgis/&gt;. Acesso em: 27 mar. 2026.\n[web:52][web:55]\nEMBRAPA. Classificação de Declividade – Tabela Embrapa. 1979 e atualizações posteriores. Documento técnico.\n[web:80][web:81][web:85]\nQGIS PROJECT. Documentação do QGIS – Layout de Impressão e Design de Mapas. 2014–2024. Disponível em: &lt;https://docs.qgis.org/&gt;. Acesso em: 27 mar. 2026.\n[web:62][web:72][web:106]\nQGIS PROJECT. Gentle Introduction to GIS e Training Manuals – Vector Spatial Analysis. 2014–2024. Disponível em: &lt;https://docs.qgis.org/&gt;. Acesso em: 27 mar. 2026.\n[web:91]\nQGIS PROJECT. Automating Map Creation with Print Layout Atlas (QGIS3). 2018. Disponível em: &lt;https://www.qgistutorials.com/en/docs/3/automating_map_creation.html&gt;. Acesso em: 27 mar. 2026.\n[web:104][web:100]\nGEOACADEMY. Buffer, clip and intersect vector data; Buffer operations — QGIS 3.10. 2019–2025. Disponível em: &lt;https://portal.geoacademy.eu/&gt; e &lt;https://qgis3-10-geoanalysis-un.readthedocs.io/&gt;. Acesso em: 27 mar. 2026.\n[web:78]\nUNIVERSO GIS. Modelos de Layout QGIS: Como criar mapas profissionais em 5 minutos. 2025. Disponível em: &lt;https://universogis.com.br/modelos-de-layout-qgis-download/&gt;. Acesso em: 27 mar. 2026.\n[web:88]\nTETRIX ECOLOGY. How to create a print template in QGIS. 2017. Disponível em: &lt;https://www.tetrixecology.com/single-post/how-to-create-a-print-template-in-qgis&gt;. Acesso em: 27 mar. 2026.\n[web:108][web:111][web:113]\nDIVERSOS AUTORES. Recolha de dados com QField e Mobile GIS com QGIS + QField. 2020–2026. Materiais de apresentação e divulgação sobre QField e Mobile GIS. [web:108][web:111][web:113]\n[web:109][web:110]\nQFIELD COMMUNITY. Tópicos de suporte sobre QFieldSync e QFieldCloud (edição offline e sincronização com PostGIS). 2025. Disponível em: &lt;https://community.qfield.org/&gt;. Acesso em: 27 mar.\n\n\n\n[file:46]\nAUTOR(A) DA APOSTILA. ROTEIRO – DICAS E FÓRMULAS (EXER-03): Relevo, Curvas de Nível, Declividade e APP. Documento interno, 2026. Arquivo de referência utilizado na estruturação dos capítulos de relevo, declividade, classificação de declividade e restrição ambiental.\n\n\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Referências (Lista Avulsa com Códigos)</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "13  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "EMBRAPA. 2011. “Conheça quais são as Áreas de\nPreservação Permanente (APP).”",
+    "crumbs": [
+      "References"
+    ]
+  }
+]

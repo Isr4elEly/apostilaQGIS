@@ -1,0 +1,246 @@
+
+::: {#cap7 .section}
+# Mapa de Declividade a partir do MDE
+
+::: {#introducao-cap7 .section}
+## Introdução
+
+A análise de **declividade** a partir de um Modelo Digital de Elevação
+(MDE) é uma etapa essencial em estudos de uso do solo, planejamento
+ambiental e avaliação de aptidão agrícola.
+\[file:46\]\[web:50\]\[web:57\]
+
+Neste capítulo, vamos usar o mesmo MDE preparado no capítulo de relevo
+para gerar um mapa de declividade, classificar em faixas (incluindo as
+classes da Embrapa) e montar um produto cartográfico pronto para uso em
+diagnósticos e restrições ambientais.
+\[file:46\]\[web:50\]\[web:52\]\[web:55\]
+
+::: {.callout-note}
+\[IMAGEM 1: Mapa de declividade em cores graduadas (do plano ao
+escarpado) sobre a mesma área usada no mapa de relevo, com legenda de
+classes e percentuais.\]
+:::
+:::
+
+::: {#base-mde .section}
+## Base de Dados: MDE já Reprojetado e Recortado
+
+Assumimos que você já possui um MDE reprojetado para UTM, com tamanho de
+pixel adequado e recortado pelo perímetro de estudo, conforme o capítulo
+anterior de relevo. \[file:46\]\[web:50\]
+
+Certifique-se de que este MDE seja a camada ativa e que o SRC do projeto
+esteja coerente com o sistema de coordenadas usado (por exemplo, SIRGAS
+2000 / UTM fuso local). \[file:46\]\[web:50\]
+
+::: {.callout-note}
+\[IMAGEM 2: Tela do QGIS mostrando o MDE recortado da área de estudo,
+painel de camadas com o MDE selecionado e SRC do projeto configurado
+corretamente.\]
+:::
+:::
+
+::: {#calculo-declividade .section}
+## Calculando a Declividade a partir do MDE
+
+O QGIS permite derivar um raster de declividade diretamente do MDE, em
+**graus** ou **porcentagem**, usando ferramentas de análise de terreno.
+\[file:46\]\[web:50\]\[web:54\]
+
+### Declividade via ferramenta MDE (QGIS)
+
+1.  No menu superior, vá em **"Raster"** \> **"Análise"** \> **"MDE
+    (Modelo Digital de Elevação)"** ou equivalente (dependendo da
+    versão). \[web:50\]
+2.  Selecione o MDE reprojetado como **arquivo de entrada**.
+3.  Escolha o modo **Declividade**.
+4.  Defina se a declividade será calculada em **graus** ou
+    **porcentagem** (conforme a interface da versão QGIS).
+    \[web:50\]\[web:54\]
+5.  Escolha um nome para o arquivo de saída (por exemplo,
+    *Declividade_graus.tif* ou *Declividade_percent.tif*).
+6.  Execute a ferramenta e aguarde a geração do raster de declividade.
+
+::: {.callout-note}
+\[IMAGEM 3: Janela da ferramenta "MDE (Modelo Digital de Elevação)" no
+QGIS com campos preenchidos: MDE de entrada, opção "Declividade"
+selecionada, escolha entre graus e porcentagem e nome do arquivo de
+saída.\]
+:::
+:::
+
+::: {#classes-embrapa .section}
+## Classes de Declividade (Embrapa e Outras Referências)
+
+Um modo muito utilizado de interpretar a declividade é reclassificar o
+raster em faixas, como as classes de relevo adotadas pela Embrapa
+(plano, suave ondulado, ondulado etc.). \[file:46\]\[web:52\]\[web:55\]
+
+Seu roteiro já traz essas classes tanto em **porcentagem** quanto em
+equivalentes em **graus**, além de exemplos de classificações para
+restrição ambiental por declividade. \[file:46\]\[web:52\]
+
+### Exemplo de classes Embrapa (em porcentagem)
+
+Exemplo de classificação de relevo em porcentagem (síntese baseada
+Embrapa): \[file:46\]\[web:52\]\[web:55\]
+
+  Classe   |Faixa de declividade (%)   |Descrição
+  -------- |-------------------------- |------------------------------
+  1        |0 -- 3                     |Plano
+  2        |3 -- 8                     |Suave ondulado
+  3        |8 -- 20                    |Ondulado
+  4        |20 -- 45                   |Forte ondulado
+  5        |45 -- 75                   |Montanhoso
+  6        |\> 75                      |Escarpado / forte-montanhoso
+
+### Equivalentes aproximados em graus
+
+Seu roteiro também traz faixas aproximadas em graus com pontos de
+transição importantes, como 1,1458°, 2,8624°, 5,7106°, 8,5358°, 23,5759°
+e 34,9920°, que correspondem às quebras das classes em porcentagem.
+\[file:46\]
+
+Esses valores podem ser usados para reclassificar diretamente um raster
+de declividade calculado em graus, mantendo compatibilidade com a
+classificação em porcentagem. \[file:46\]
+
+::: {.callout-note}
+\[IMAGEM 4: Gráfico ou esquema mostrando o eixo de declividade em graus
+com marcações nas quebras (1,1458°, 2,8624°, 5,7106°, etc.), indicando a
+correspondência com as classes de relevo.\]
+:::
+:::
+
+::: {#reclassificacao-raster .section}
+## Reclassificando o Raster de Declividade (QGIS -- Calculadora Raster)
+
+Uma forma simples de classificar a declividade é usar a **Calculadora
+Raster** no QGIS, atribuindo valores inteiros (1 a 7, por exemplo) para
+cada faixa de declividade. \[file:46\]\[web:50\]\[web:57\]
+
+### Expressão exemplo -- classes em porcentagem
+
+Suponha que o raster de declividade em porcentagem se chame
+`"Declividade@1"`. Uma expressão baseada no seu roteiro seria:
+\[file:46\]
+
+```sql
+("Declividade@1" <= 2) +
+(("Declividade@1" > 2 AND "Declividade@1" <= 5) * 2) +
+(("Declividade@1" > 5 AND "Declividade@1" <= 10) * 3) +
+(("Declividade@1" > 10 AND "Declividade@1" <= 15) * 4) +
+(("Declividade@1" > 15 AND "Declividade@1" <= 45) * 5) +
+(("Declividade@1" > 45 AND "Declividade@1" <= 70) * 6) +
+(("Declividade@1" > 70) * 7)
+```
+
+O resultado será um raster com valores de 1 a 7, representando classes
+de declividade (plano até escarpado). \[file:46\]
+
+### Expressão exemplo -- classes em graus
+
+Usando os limiares em graus do roteiro: \[file:46\]
+
+```sql
+ ("Declividade@1" <= 1.1458) +
+(("Declividade@1" > 1.1458 AND "Declividade@1" <= 2.8624) * 2) +
+(("Declividade@1" > 2.8624 AND "Declividade@1" <= 5.7106) * 3) +
+(("Declividade@1" > 5.7106 AND "Declividade@1" <= 8.5358) * 4) +
+(("Declividade@1" > 8.5358 AND "Declividade@1" <= 23.5759) * 5) +
+(("Declividade@1" > 23.5759 AND "Declividade@1" <= 34.9920) * 6) +
+(("Declividade@1" > 34.9920) * 7)
+```
+
+::: {.callout-note}
+\[IMAGEM 5: Tela da Calculadora Raster no QGIS com a expressão de
+reclassificação preenchida e o raster de declividade como entrada, ao
+lado do resultado classificado em 7 cores.\]
+:::
+:::
+
+::: {#restricao-ambiental .section}
+## Declividade e Restrição Ambiental
+
+Seu roteiro também traz uma classificação simplificada para **restrição
+ambiental por declividade**, com três classes: sem restrição, uso
+restrito e preservação permanente, tanto em graus como em porcentagem.
+\[file:46\]\[web:56\]\[web:60\]
+
+### Exemplo em graus
+
+Classes de restrição (graus): \[file:46\]
+
+  Classe   |Faixa (graus)   |Descrição
+  -------- |--------------- |----------------------------------------
+  1        |0 -- 25         |Sem restrição (0--47% aproximadamente)
+  2        |25 -- 45        |Áreas de uso restrito (47--100%)
+  3        |\> 45           |Preservação permanente (\> 100%)
+
+Expressão equivalente na Calculadora Raster (graus): \[file:46\]
+
+```sql
+ ("Declividade@1" <= 25) +
+(("Declividade@1" > 25 AND "Declividade@1" <= 45) * 2) +
+(("Declividade@1" > 45) * 3)
+```
+
+::: {.callout-note}
+\[IMAGEM 6: Mapa de declividade reclassificado em três classes (verde =
+sem restrição, amarelo = uso restrito, vermelho = APP por declividade),
+com legenda clara e foco em uma microbacia.\]
+:::
+:::
+
+::: {#simbologia-legenda-decliv .section}
+## Simbologia, Mapas de Cores e Legenda
+
+Seu roteiro sugere o uso de arquivos externos de mapa de cores (por
+exemplo, *MapaCoresDeclividadeRasterGraus.txt*) para padronizar as
+representações de declividade em QGIS e facilitar a leitura dos mapas.
+\[file:46\]
+
+Também é proposta a criação de uma legenda mais detalhada com valores de
+área (ha) e porcentagem por classe, usando união com um CSV (por
+exemplo, *LEG_DECLIVE.csv*) e um campo de texto formatado. \[file:46\]
+
+::: {.callout-note}
+\[IMAGEM 7: Propriedades de simbologia da camada de declividade,
+mostrando o carregamento de um arquivo de mapa de cores, e janela de
+união com LEG_DECLIVE.csv para compor uma legenda descritiva com
+classes, hectares e porcentagem.\]
+:::
+:::
+
+::: {#roteiro-declividade .section}
+## Roteiro Prático Resumido -- Mapa de Declividade
+
+A seguir, um roteiro consolidado, alinhado ao seu arquivo de dicas, para
+produção de um mapa de declividade a partir do MDE.
+\[file:46\]\[web:50\]\[web:55\]
+
+1.  Garantir que o MDE esteja reprojetado e recortado pela área de
+    estudo.
+2.  Calcular a declividade em graus ou porcentagem usando a ferramenta
+    de MDE do QGIS.
+3.  Reclassificar o raster de declividade na Calculadora Raster, usando
+    expressões com limites de classes (Embrapa ou outras normas
+    adotadas).
+4.  Aplicar simbologia com cores padronizadas (carregar arquivo de mapa
+    de cores, se disponível).
+5.  Opcional: gerar mapa simplificado de restrição ambiental por
+    declividade (3 classes) para uso em zoneamentos.
+6.  Preparar a legenda (classes, área em ha e porcentagem) utilizando
+    uniões com tabela auxiliar e campo de texto formatado, conforme sua
+    fórmula de concatenação.
+7.  Guardar o resultado para uso em capítulo posterior de layout
+    cartográfico e relatórios.
+
+::: {.callout-note}
+\[IMAGEM 8: Composição final: mapa de declividade classificada, legenda
+detalhada com classes Embrapa e quadro com resumo de áreas (ha e %),
+pronto para ser enviado ao layout de impressão.\]
+:::
+:::
+:::

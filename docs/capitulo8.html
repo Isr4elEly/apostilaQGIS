@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios – Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./capitulo9.html" rel="next">
+<link href="./capitulo7.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c8e075446336661fae715156f8f5d951.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo8.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefácio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução e Conceitos Básicos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dados Geográficos e Estruturas de Armazenamento</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projeções Cartográficas e Sistemas de Coordenadas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introdução ao QGIS: Interface e Primeiro Projeto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Mapa de Relevo e Curvas de Nível</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mapa de Declividade a partir do MDE</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo8.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Cartográfico e Modelos de Impressão no QGIS</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agradecimentos e Referências Utilizadas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Referências (Lista Avulsa com Códigos)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="cap8">
+<section id="introducao-cap8">
+<section id="introdução" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">8.1</span> Introdução</h2>
+<p>As ferramentas de <strong>análise espacial</strong> do QGIS permitem combinar dados vetoriais e raster para gerar produtos como zonas de proteção, áreas de conflito de uso e delimitação de Áreas de Preservação Permanente (APP). [web:62][web:72]</p>
+<p>Neste capítulo, vamos trabalhar com três grupos de operações: <strong>buffers</strong> (APP por distância de rios), <strong>interseções</strong> (APP dentro de propriedades, por exemplo) e <strong>APP por declividade</strong>, usando como base os mapas de declividade e drenagem já produzidos em capítulos anteriores. [web:62][web:64][web:68][web:70][web:73]</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 1: Mapa-resumo mostrando APP por rios (faixas em azul claro ao longo da drenagem) e APP por declividade (áreas em vermelho em encostas íngremes), sobre um fundo de uso do solo.]</p>
+</div>
+</div>
+</section>
+</section>
+<section id="pre-requisitos">
+<section id="pré-requisitos-de-dados" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="pré-requisitos-de-dados"><span class="header-section-number">8.2</span> Pré-requisitos de Dados</h2>
+<p>Para seguir os roteiros deste capítulo, é importante já ter disponíveis, no QGIS: [web:64]</p>
+<ul>
+<li>Camada vetorial de <strong>drenagem</strong> (rios e córregos) da área de estudo.</li>
+<li>Camada raster de <strong>declividade</strong> (em graus ou porcentagem), derivada do MDE conforme capítulo anterior.</li>
+<li>Camada vetorial de <strong>perímetro ou propriedades</strong> (opcional, para cruzar APP com imóveis ou talhões).</li>
+<li>Projeto configurado com SRC adequado (por exemplo, SIRGAS 2000 / UTM local).</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 2: Tela do QGIS com três camadas carregadas: drenagem (linhas azuis), perímetro/propriedades (polígonos) e declividade (raster em tons de cor).]</p>
+</div>
+</div>
+</section>
+</section>
+<section id="buffer-basico">
+<section id="buffer-conceito-e-uso-básico" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="buffer-conceito-e-uso-básico"><span class="header-section-number">8.3</span> Buffer: Conceito e Uso Básico</h2>
+<p>O <strong>buffer</strong> (ou “borda”/zona de influência) cria uma área ao redor de feições pontuais, lineares ou poligonais, a uma distância definida em unidades do SRC (por exemplo, metros). [web:62][web:68][web:71]</p>
+<p>No contexto ambiental, o buffer é amplamente usado para delimitar APP ao longo de cursos d’água, ao redor de nascentes e em torno de outros alvos que exigem faixa de proteção. [web:62][web:70]</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 3: Exemplo simples de buffer: linha de rio ao centro e faixa contínua ao redor (polígono) representando uma APP de 30 m para cada lado.]</p>
+</div>
+</div>
+</section>
+</section>
+<section id="app-rios-fixa">
+<section id="app-por-distância-de-rios-largura-fixa" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="app-por-distância-de-rios-largura-fixa"><span class="header-section-number">8.4</span> APP por Distância de Rios (Largura Fixa)</h2>
+<p>O Código Florestal brasileiro estabelece faixas mínimas de APP ao longo de cursos d’água, que podem ser representadas por buffers de largura fixa ou variável conforme a largura do rio. [web:70][web:73]</p>
+<section id="exemplo-simplificado-faixa-fixa-de-30-m" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="exemplo-simplificado-faixa-fixa-de-30-m"><span class="header-section-number">8.4.1</span> Exemplo simplificado: faixa fixa de 30 m</h3>
+<p>Para fins didáticos, vamos considerar uma APP de 30 metros para cursos d’água pequenos (por exemplo, rios com largura até 10 m). [web:70]</p>
+<ol type="1">
+<li>No menu <strong>“Vetores”</strong> &gt; <strong>“Ferramentas de Geoprocessamento”</strong> &gt; <strong>“Buffer”</strong> (ou via Caixa de Processamento). [web:62]</li>
+<li>Selecione a camada de drenagem como <strong>camada de entrada</strong>.</li>
+<li>Defina a <strong>distância do buffer</strong> como 30 (unidades em metros, se o SRC estiver em UTM).</li>
+<li>Marque a opção <strong>“Dissolver resultado”</strong> para unir buffers de segmentos conectados em um único polígono de APP, evitando sobreposições internas. [web:62][web:71]</li>
+<li>Escolha um nome para a camada de saída (por exemplo, <em>APP_rio_30m.gpkg</em>).</li>
+<li>Clique em <strong>“Executar”</strong>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 4: Janela da ferramenta “Buffer” no QGIS configurada com camada de drenagem, distância 30 m, opção “dissolver” marcada e resultado mostrando uma faixa contínua ao longo dos rios.]</p>
+</div>
+</div>
+</section>
+<section id="tabela-de-faixas-de-app-por-largura-do-curso-dágua-referência-legal" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="tabela-de-faixas-de-app-por-largura-do-curso-dágua-referência-legal"><span class="header-section-number">8.4.2</span> Tabela de faixas de APP por largura do curso d’água (referência legal)</h3>
+<p>De forma simplificada (Lei 12.651/2012), as faixas mínimas de APP ao longo de rios variam conforme a largura do curso d’água: [web:70][web:73]</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Largura do curso d’água (m)</th>
+<th>Faixa mínima de APP (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Até 10</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>10 – 50</td>
+<td>50</td>
+</tr>
+<tr class="odd">
+<td>50 – 200</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>200 – 600</td>
+<td>200</td>
+</tr>
+<tr class="odd">
+<td>&gt; 600</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<p>Em projetos reais, essa tabela pode ser incorporada em um campo da tabela de atributos (por exemplo, “app_largura”) para gerar <strong>buffers de largura variável</strong>, mas isso será mencionado apenas como extensão, já que o foco aqui é o fluxo básico. [web:68][web:71]</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 5: Esquema ilustrando rios com diferentes larguras e faixas de APP proporcionais, com valores de 30, 50, 100 m etc.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="intersecao-app-propriedades">
+<section id="interseção-app-dentro-de-propriedades-ou-talhões" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="interseção-app-dentro-de-propriedades-ou-talhões"><span class="header-section-number">8.5</span> Interseção: APP dentro de Propriedades ou Talhões</h2>
+<p>Depois de gerar as áreas de APP por buffer, é comum cruzá-las com camadas de propriedades ou talhões para quantificar quanto de cada imóvel está em área de preservação. [web:62][web:66]</p>
+<p>Para isso, usamos operações de <strong>overlay vetorial</strong>, em especial a <strong>Interseção</strong>, que recorta as áreas onde duas camadas se sobrepõem. [web:62]</p>
+<section id="passo-a-passo-da-interseção" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="passo-a-passo-da-interseção"><span class="header-section-number">8.5.1</span> Passo a passo da interseção</h3>
+<ol type="1">
+<li>No menu <strong>“Vetores”</strong> &gt; <strong>“Ferramentas de Geoprocessamento”</strong> &gt; <strong>“Interseção”</strong>.</li>
+<li>Escolher como <strong>Camada de entrada</strong> a camada de propriedades (ou talhões).</li>
+<li>Escolher como <strong>Camada de sobreposição</strong> a camada de APP de rios (buffer gerado anteriormente).</li>
+<li>Definir o nome do arquivo de saída (por exemplo, <em>Propriedades_APP_rio.gpkg</em>).</li>
+<li>Executar a ferramenta. O resultado conterá apenas as áreas de propriedades que caem dentro da APP de rios. [web:62]</li>
+<li>Caso deseje, calcular a área (em ha) dessas interseções usando um campo novo com a expressão <code>area($geometry)/10000</code>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 6: Mapa mostrando propriedades rurais e a camada de APP de rios; ao lado, camada resultante da interseção, destacando apenas as partes das propriedades que estão dentro da APP.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="app-declividade">
+<section id="app-por-declividade-encostas-45" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="app-por-declividade-encostas-45"><span class="header-section-number">8.6</span> APP por Declividade (Encostas &gt; 45°)</h2>
+<p>O Código Florestal considera como APP as encostas ou partes destas com declividade superior a 45°, equivalente a 100% na linha de maior declive, o que pode ser derivado diretamente do mapa de declividade em graus. [web:67][web:70][web:73]</p>
+<p>A partir do raster de declividade em graus (gerado no Capítulo 7), é possível identificar e mapear as áreas com declividade acima de 45° e, em seguida, converter essas áreas em vetores para integrar às demais camadas de APP. [file:46][web:64][web:73]</p>
+<section id="selecionando-áreas-com-declividade-45" class="level3" data-number="8.6.1">
+<h3 data-number="8.6.1" class="anchored" data-anchor-id="selecionando-áreas-com-declividade-45"><span class="header-section-number">8.6.1</span> Selecionando áreas com declividade &gt; 45°</h3>
+<ol type="1">
+<li>Abra a <strong>Calculadora Raster</strong> no QGIS.</li>
+<li>Considere o raster de declividade em graus como <code>"Declividade@1"</code>.</li>
+<li>Use uma expressão binária para criar um raster onde 1 = APP por declividade e 0 = demais áreas, por exemplo:<br>
+<code>("Declividade@1" &gt; 45)</code>. [file:46][web:50]</li>
+<li>Defina o nome do raster de saída, por exemplo, <em>APP_declividade_bin.tif</em>.</li>
+<li>Execute a operação.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 7: Tela da Calculadora Raster com expressão ("Declividade@1" &gt; 45) e mapa resultante em duas cores (1 = APP por declividade, 0 = não APP).]</p>
+</div>
+</div>
+</section>
+<section id="converter-raster-em-vetor-e-recortar-pelo-perímetro" class="level3" data-number="8.6.2">
+<h3 data-number="8.6.2" class="anchored" data-anchor-id="converter-raster-em-vetor-e-recortar-pelo-perímetro"><span class="header-section-number">8.6.2</span> Converter raster em vetor e recortar pelo perímetro</h3>
+<ol type="1">
+<li>Usar a ferramenta de conversão raster–vetor (por exemplo, <strong>“Raster para Vetor (polígono)”</strong>):
+<ul>
+<li>Raster de entrada: <em>APP_declividade_bin.tif</em>.</li>
+<li>Selecionar a opção de usar os valores do raster como categorias, para separar o valor 1 em polígonos distintos. [file:46]</li>
+</ul></li>
+<li>Após gerar o vetor, utilizar “Selecionar por expressão” para manter apenas os polígonos com valor = 1 (APP por declividade) e salvar como nova camada. [file:46]</li>
+<li>Opcionalmente, recortar essa camada de APP por declividade pelo perímetro da área de estudo usando a ferramenta <strong>“Recortar”</strong> em Vetores. [file:46][web:64]</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 8: Mapa mostrando polígonos de APP por declividade (&gt;45°) derivados do raster, recortados pelo perímetro de estudo.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="combinar-apps">
+<section id="combinando-app-de-rios-e-app-por-declividade" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="combinando-app-de-rios-e-app-por-declividade"><span class="header-section-number">8.7</span> Combinando APP de Rios e APP por Declividade</h2>
+<p>Uma etapa importante é combinar diferentes tipos de APP (rios, declividade, nascentes, topo de morro) em uma camada integrada, para facilitar o diagnóstico e o cálculo de áreas totais de preservação. [web:67][web:73][web:76]</p>
+<p>Aqui, vamos ilustrar a combinação de APP de rios (buffer) com APP por declividade (&gt;45°) usando operações de união ou fusão de camadas. [web:62][web:64]</p>
+<section id="união-e-dissolução" class="level3" data-number="8.7.1">
+<h3 data-number="8.7.1" class="anchored" data-anchor-id="união-e-dissolução"><span class="header-section-number">8.7.1</span> União e dissolução</h3>
+<ol type="1">
+<li>Garantir que APP de rios e APP por declividade estejam em formato vetorial (polígonos), preferencialmente com um campo indicando o tipo (por exemplo, “tipo_app” = “rio” ou “decliv”).</li>
+<li>Usar a ferramenta <strong>“Mesclar camadas vetoriais”</strong> ou “União”:
+<ul>
+<li>Entrada: APP de rios e APP por declividade.</li>
+<li>Saída: camada única com todos os polígonos de APP. [web:62]</li>
+</ul></li>
+<li>Aplicar “Dissolver” sobre o campo “tipo_app” ou sem campo, conforme interesse (unir todas as APP em um único polígono ou manter diferentes tipos separados). [web:62]</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 9: Mapa com camada integrada de APP, onde áreas de rios e encostas íngremes aparecem em cores diferentes, com sobreposição dissolvida.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="roteiro-final-cap8">
+<section id="roteiro-prático-resumido-app-por-distância-e-declividade" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="roteiro-prático-resumido-app-por-distância-e-declividade"><span class="header-section-number">8.8</span> Roteiro Prático Resumido – APP por Distância e Declividade</h2>
+<p>Abaixo, um roteiro consolidado para gerar produtos de buffer, interseção e APP por declividade/distância de rios usando o QGIS. [web:62][web:64][web:68][web:71][web:73]</p>
+<ol type="1">
+<li>Preparar dados: MDE, declividade, drenagem e propriedades/talhões em SRC projetado.</li>
+<li>Gerar APP de rios por buffer (largura fixa ou variável) a partir da camada de drenagem, usando distâncias conforme o Código Florestal.</li>
+<li>Cruzar APP de rios com propriedades por meio da ferramenta de Interseção, obtendo áreas de APP dentro de cada imóvel.</li>
+<li>A partir do raster de declividade em graus, selecionar áreas com declividade &gt; 45° (APP por encosta), gerar raster binário e converter para vetor.</li>
+<li>Recortar APP por declividade pelo perímetro da área de estudo, se necessário.</li>
+<li>Mesclar APP de rios e APP por declividade em uma camada integrada, usando Uniões e Dissolver.</li>
+<li>Calcular áreas (ha) e percentuais por tipo de APP, preparando dados para relatórios e mapas temáticos.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 10: Composição final com mapa de APPs integradas (rios + declividade), propriedades rurais, legenda com tipos de APP e quadro de áreas por classe, pronto para ser enviado ao layout de impressão.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="./capitulo7.html" class="pagination-link" aria-label="Mapa de Declividade a partir do MDE">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mapa de Declividade a partir do MDE</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./capitulo9.html" class="pagination-link" aria-label="Layout Cartográfico e Modelos de Impressão no QGIS">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Cartográfico e Modelos de Impressão no QGIS</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

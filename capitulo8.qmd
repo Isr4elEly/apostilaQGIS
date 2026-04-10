@@ -1,0 +1,263 @@
+
+::: {#cap8 .section}
+# Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios
+
+::: {#introducao-cap8 .section}
+## Introdução
+
+As ferramentas de **análise espacial** do QGIS permitem combinar dados
+vetoriais e raster para gerar produtos como zonas de proteção, áreas de
+conflito de uso e delimitação de Áreas de Preservação Permanente (APP).
+\[web:62\]\[web:72\]
+
+Neste capítulo, vamos trabalhar com três grupos de operações:
+**buffers** (APP por distância de rios), **interseções** (APP dentro de
+propriedades, por exemplo) e **APP por declividade**, usando como base
+os mapas de declividade e drenagem já produzidos em capítulos
+anteriores. \[web:62\]\[web:64\]\[web:68\]\[web:70\]\[web:73\]
+
+::: {.callout-note}
+\[IMAGEM 1: Mapa-resumo mostrando APP por rios (faixas em azul claro ao
+longo da drenagem) e APP por declividade (áreas em vermelho em encostas
+íngremes), sobre um fundo de uso do solo.\]
+:::
+:::
+
+::: {#pre-requisitos .section}
+## Pré-requisitos de Dados
+
+Para seguir os roteiros deste capítulo, é importante já ter disponíveis,
+no QGIS: \[web:64\]
+
+-   Camada vetorial de **drenagem** (rios e córregos) da área de estudo.
+-   Camada raster de **declividade** (em graus ou porcentagem), derivada
+    do MDE conforme capítulo anterior.
+-   Camada vetorial de **perímetro ou propriedades** (opcional, para
+    cruzar APP com imóveis ou talhões).
+-   Projeto configurado com SRC adequado (por exemplo, SIRGAS 2000 / UTM
+    local).
+
+::: {.callout-note}
+\[IMAGEM 2: Tela do QGIS com três camadas carregadas: drenagem (linhas
+azuis), perímetro/propriedades (polígonos) e declividade (raster em tons
+de cor).\]
+:::
+:::
+
+::: {#buffer-basico .section}
+## Buffer: Conceito e Uso Básico
+
+O **buffer** (ou "borda"/zona de influência) cria uma área ao redor de
+feições pontuais, lineares ou poligonais, a uma distância definida em
+unidades do SRC (por exemplo, metros). \[web:62\]\[web:68\]\[web:71\]
+
+No contexto ambiental, o buffer é amplamente usado para delimitar APP ao
+longo de cursos d'água, ao redor de nascentes e em torno de outros alvos
+que exigem faixa de proteção. \[web:62\]\[web:70\]
+
+::: {.callout-note}
+\[IMAGEM 3: Exemplo simples de buffer: linha de rio ao centro e faixa
+contínua ao redor (polígono) representando uma APP de 30 m para cada
+lado.\]
+:::
+:::
+
+::: {#app-rios-fixa .section}
+## APP por Distância de Rios (Largura Fixa)
+
+O Código Florestal brasileiro estabelece faixas mínimas de APP ao longo
+de cursos d'água, que podem ser representadas por buffers de largura
+fixa ou variável conforme a largura do rio. \[web:70\]\[web:73\]
+
+### Exemplo simplificado: faixa fixa de 30 m
+
+Para fins didáticos, vamos considerar uma APP de 30 metros para cursos
+d'água pequenos (por exemplo, rios com largura até 10 m). \[web:70\]
+
+1.  No menu **"Vetores"** \> **"Ferramentas de Geoprocessamento"** \>
+    **"Buffer"** (ou via Caixa de Processamento). \[web:62\]
+2.  Selecione a camada de drenagem como **camada de entrada**.
+3.  Defina a **distância do buffer** como 30 (unidades em metros, se o
+    SRC estiver em UTM).
+4.  Marque a opção **"Dissolver resultado"** para unir buffers de
+    segmentos conectados em um único polígono de APP, evitando
+    sobreposições internas. \[web:62\]\[web:71\]
+5.  Escolha um nome para a camada de saída (por exemplo,
+    *APP_rio_30m.gpkg*).
+6.  Clique em **"Executar"**.
+
+::: {.callout-note}
+\[IMAGEM 4: Janela da ferramenta "Buffer" no QGIS configurada com camada
+de drenagem, distância 30 m, opção "dissolver" marcada e resultado
+mostrando uma faixa contínua ao longo dos rios.\]
+:::
+
+### Tabela de faixas de APP por largura do curso d'água (referência legal)
+
+De forma simplificada (Lei 12.651/2012), as faixas mínimas de APP ao
+longo de rios variam conforme a largura do curso d'água:
+\[web:70\]\[web:73\]
+
+  Largura do curso d'água (m)   |Faixa mínima de APP (m)
+  ----------------------------- |-------------------------
+  Até 10                        |30
+  10 -- 50                      |50
+  50 -- 200                     |100
+  200 -- 600                    |200
+  \> 600                        |500
+
+Em projetos reais, essa tabela pode ser incorporada em um campo da
+tabela de atributos (por exemplo, "app_largura") para gerar **buffers de
+largura variável**, mas isso será mencionado apenas como extensão, já
+que o foco aqui é o fluxo básico. \[web:68\]\[web:71\]
+
+::: {.callout-note}
+\[IMAGEM 5: Esquema ilustrando rios com diferentes larguras e faixas de
+APP proporcionais, com valores de 30, 50, 100 m etc.\]
+:::
+:::
+
+::: {#intersecao-app-propriedades .section}
+## Interseção: APP dentro de Propriedades ou Talhões
+
+Depois de gerar as áreas de APP por buffer, é comum cruzá-las com
+camadas de propriedades ou talhões para quantificar quanto de cada
+imóvel está em área de preservação. \[web:62\]\[web:66\]
+
+Para isso, usamos operações de **overlay vetorial**, em especial a
+**Interseção**, que recorta as áreas onde duas camadas se sobrepõem.
+\[web:62\]
+
+### Passo a passo da interseção
+
+1.  No menu **"Vetores"** \> **"Ferramentas de Geoprocessamento"** \>
+    **"Interseção"**.
+2.  Escolher como **Camada de entrada** a camada de propriedades (ou
+    talhões).
+3.  Escolher como **Camada de sobreposição** a camada de APP de rios
+    (buffer gerado anteriormente).
+4.  Definir o nome do arquivo de saída (por exemplo,
+    *Propriedades_APP_rio.gpkg*).
+5.  Executar a ferramenta. O resultado conterá apenas as áreas de
+    propriedades que caem dentro da APP de rios. \[web:62\]
+6.  Caso deseje, calcular a área (em ha) dessas interseções usando um
+    campo novo com a expressão `area($geometry)/10000`.
+
+::: {.callout-note}
+\[IMAGEM 6: Mapa mostrando propriedades rurais e a camada de APP de
+rios; ao lado, camada resultante da interseção, destacando apenas as
+partes das propriedades que estão dentro da APP.\]
+:::
+:::
+
+::: {#app-declividade .section}
+## APP por Declividade (Encostas \> 45°)
+
+O Código Florestal considera como APP as encostas ou partes destas com
+declividade superior a 45°, equivalente a 100% na linha de maior
+declive, o que pode ser derivado diretamente do mapa de declividade em
+graus. \[web:67\]\[web:70\]\[web:73\]
+
+A partir do raster de declividade em graus (gerado no Capítulo 7), é
+possível identificar e mapear as áreas com declividade acima de 45° e,
+em seguida, converter essas áreas em vetores para integrar às demais
+camadas de APP. \[file:46\]\[web:64\]\[web:73\]
+
+### Selecionando áreas com declividade \> 45°
+
+1.  Abra a **Calculadora Raster** no QGIS.
+2.  Considere o raster de declividade em graus como `"Declividade@1"`.
+3.  Use uma expressão binária para criar um raster onde 1 = APP por
+    declividade e 0 = demais áreas, por exemplo:\
+    `("Declividade@1" > 45)`. \[file:46\]\[web:50\]
+4.  Defina o nome do raster de saída, por exemplo,
+    *APP_declividade_bin.tif*.
+5.  Execute a operação.
+
+::: {.callout-note}
+\[IMAGEM 7: Tela da Calculadora Raster com expressão (\"Declividade@1\"
+\> 45) e mapa resultante em duas cores (1 = APP por declividade, 0 = não
+APP).\]
+:::
+
+### Converter raster em vetor e recortar pelo perímetro
+
+1.  Usar a ferramenta de conversão raster--vetor (por exemplo, **"Raster
+    para Vetor (polígono)"**):
+    -   Raster de entrada: *APP_declividade_bin.tif*.
+    -   Selecionar a opção de usar os valores do raster como categorias,
+        para separar o valor 1 em polígonos distintos. \[file:46\]
+2.  Após gerar o vetor, utilizar "Selecionar por expressão" para manter
+    apenas os polígonos com valor = 1 (APP por declividade) e salvar
+    como nova camada. \[file:46\]
+3.  Opcionalmente, recortar essa camada de APP por declividade pelo
+    perímetro da área de estudo usando a ferramenta **"Recortar"** em
+    Vetores. \[file:46\]\[web:64\]
+
+::: {.callout-note}
+\[IMAGEM 8: Mapa mostrando polígonos de APP por declividade (\>45°)
+derivados do raster, recortados pelo perímetro de estudo.\]
+:::
+:::
+
+::: {#combinar-apps .section}
+## Combinando APP de Rios e APP por Declividade
+
+Uma etapa importante é combinar diferentes tipos de APP (rios,
+declividade, nascentes, topo de morro) em uma camada integrada, para
+facilitar o diagnóstico e o cálculo de áreas totais de preservação.
+\[web:67\]\[web:73\]\[web:76\]
+
+Aqui, vamos ilustrar a combinação de APP de rios (buffer) com APP por
+declividade (\>45°) usando operações de união ou fusão de camadas.
+\[web:62\]\[web:64\]
+
+### União e dissolução
+
+1.  Garantir que APP de rios e APP por declividade estejam em formato
+    vetorial (polígonos), preferencialmente com um campo indicando o
+    tipo (por exemplo, "tipo_app" = "rio" ou "decliv").
+2.  Usar a ferramenta **"Mesclar camadas vetoriais"** ou "União":
+    -   Entrada: APP de rios e APP por declividade.
+    -   Saída: camada única com todos os polígonos de APP. \[web:62\]
+3.  Aplicar "Dissolver" sobre o campo "tipo_app" ou sem campo, conforme
+    interesse (unir todas as APP em um único polígono ou manter
+    diferentes tipos separados). \[web:62\]
+
+::: {.callout-note}
+\[IMAGEM 9: Mapa com camada integrada de APP, onde áreas de rios e
+encostas íngremes aparecem em cores diferentes, com sobreposição
+dissolvida.\]
+:::
+:::
+
+::: {#roteiro-final-cap8 .section}
+## Roteiro Prático Resumido -- APP por Distância e Declividade
+
+Abaixo, um roteiro consolidado para gerar produtos de buffer, interseção
+e APP por declividade/distância de rios usando o QGIS.
+\[web:62\]\[web:64\]\[web:68\]\[web:71\]\[web:73\]
+
+1.  Preparar dados: MDE, declividade, drenagem e propriedades/talhões em
+    SRC projetado.
+2.  Gerar APP de rios por buffer (largura fixa ou variável) a partir da
+    camada de drenagem, usando distâncias conforme o Código Florestal.
+3.  Cruzar APP de rios com propriedades por meio da ferramenta de
+    Interseção, obtendo áreas de APP dentro de cada imóvel.
+4.  A partir do raster de declividade em graus, selecionar áreas com
+    declividade \> 45° (APP por encosta), gerar raster binário e
+    converter para vetor.
+5.  Recortar APP por declividade pelo perímetro da área de estudo, se
+    necessário.
+6.  Mesclar APP de rios e APP por declividade em uma camada integrada,
+    usando Uniões e Dissolver.
+7.  Calcular áreas (ha) e percentuais por tipo de APP, preparando dados
+    para relatórios e mapas temáticos.
+
+::: {.callout-note}
+\[IMAGEM 10: Composição final com mapa de APPs integradas (rios +
+declividade), propriedades rurais, legenda com tipos de APP e quadro de
+áreas por classe, pronto para ser enviado ao layout de impressão.\]
+:::
+:::
+:::

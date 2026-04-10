@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; QField: Coleta e Edição de Dados em Campo Integrada ao QGIS – Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./capitulo11.html" rel="next">
+<link href="./capitulo9.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c8e075446336661fae715156f8f5d951.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo10.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefácio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução e Conceitos Básicos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dados Geográficos e Estruturas de Armazenamento</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projeções Cartográficas e Sistemas de Coordenadas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introdução ao QGIS: Interface e Primeiro Projeto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Mapa de Relevo e Curvas de Nível</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mapa de Declividade a partir do MDE</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Cartográfico e Modelos de Impressão no QGIS</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo10.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agradecimentos e Referências Utilizadas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Referências (Lista Avulsa com Códigos)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="cap10">
+<section id="introducao-qfield">
+<section id="introdução" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">10.1</span> Introdução</h2>
+<p>O <strong>QField</strong> é um aplicativo móvel baseado no QGIS, desenvolvido para permitir a coleta e edição de dados geográficos diretamente em campo, utilizando tablets e smartphones, mesmo em modo offline. [web:108][web:111]</p>
+<p>Com ele, é possível levar para o campo projetos preparados no QGIS (camadas, formulários de atributos, estilos de mapa), coletar novos pontos, linhas e polígonos, registrar fotos e observações, e depois sincronizar de volta com o projeto de escritório. [web:108][web:110][web:113]</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM QF-1: Foto ou ilustração de um técnico em campo utilizando um tablet ou smartphone com QField aberto, exibindo um mapa com pontos de coleta.]</p>
+</div>
+</div>
+</section>
+</section>
+<section id="qfield-funcao">
+<section id="função-do-qfield-no-fluxo-de-trabalho-com-qgis" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="função-do-qfield-no-fluxo-de-trabalho-com-qgis"><span class="header-section-number">10.2</span> Função do QField no Fluxo de Trabalho com QGIS</h2>
+<p>O QField funciona como uma “versão de campo” do QGIS: você prepara o projeto no computador, exporta para o dispositivo móvel, realiza as coletas ou edições em campo e, em seguida, traz as alterações de volta para o projeto original. [web:108][web:110]</p>
+<p>Esse fluxo reduz o uso de papel, diminui erros de digitação e permite registrar informações com precisão de GPS, fotos georreferenciadas e formulários personalizados, alinhados às necessidades de cada levantamento. [web:108][web:111]</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM QF-2: Diagrama simples mostrando o fluxo: QGIS (escritório) → Exportar projeto → QField (campo) → Sincronizar de volta → QGIS (análise).]</p>
+</div>
+</div>
+</section>
+</section>
+<section id="qfield-preparacao-qgis">
+<section id="preparando-o-projeto-no-qgis-para-uso-no-qfield" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="preparando-o-projeto-no-qgis-para-uso-no-qfield"><span class="header-section-number">10.3</span> Preparando o Projeto no QGIS para uso no QField</h2>
+<p>Antes de usar o QField, é necessário preparar um projeto no QGIS com as camadas e formulários de atributos organizados. A forma mais comum é utilizar o plugin de sincronização/exportação do QField para criar um pacote de projeto pronto para o dispositivo móvel. [web:108][web:110]</p>
+<section id="organização-das-camadas-e-caminhos" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="organização-das-camadas-e-caminhos"><span class="header-section-number">10.3.1</span> Organização das camadas e caminhos</h3>
+<ol type="1">
+<li>No QGIS, organize o projeto com as camadas que serão utilizadas em campo (por exemplo: propriedades, talhões, pontos de coleta, drenagem, APP).</li>
+<li>Verifique se os caminhos dos arquivos são <strong>relativos</strong> ao projeto (Menu “Projeto” &gt; “Propriedades” &gt; “Caminhos” &gt; “Salvar caminhos relativos”). [web:110]</li>
+<li>Se houver camadas em banco de dados (PostGIS), avalie se será necessário trabalhar com cópias offline em GeoPackage ou se usará QFieldCloud para sincronizar diretamente com o banco. [web:109][web:110]</li>
+</ol>
+</section>
+<section id="configurando-formulários-de-atributos" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="configurando-formulários-de-atributos"><span class="header-section-number">10.3.2</span> Configurando formulários de atributos</h3>
+<ol type="1">
+<li>Nas propriedades de cada camada editável, configure os <strong>formulários de atributos</strong> (aba “Formulário de Atributos”), definindo ordem dos campos, tipos de widget (lista, caixa de texto, data, foto), valores padrão e listas de domínio. [web:108]</li>
+<li>Campos como “tipo de uso do solo”, “estado de conservação”, “classe de declividade” ou “observações” podem ser listas pré-definidas, agilizando a coleta e minimizando erros.</li>
+<li>Teste o preenchimento dos formulários no QGIS antes de exportar, garantindo que a interface esteja clara para o uso em campo.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM QF-3: Captura de tela do QGIS mostrando a configuração de um formulário de atributos para uma camada de pontos de coleta, com campos de texto, listas e campo de foto.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="qfield-exportacao">
+<section id="exportando-o-projeto-para-qfield" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="exportando-o-projeto-para-qfield"><span class="header-section-number">10.4</span> Exportando o Projeto para QField</h2>
+<p>A exportação do projeto é feita, em geral, por meio de um plugin no QGIS (como o QFieldSync), que cria uma pasta ou pacote contendo o projeto e os dados necessários para uso no dispositivo móvel. [web:108][web:110]</p>
+<section id="passo-a-passo-fluxo-clássico-com-qfieldsync" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="passo-a-passo-fluxo-clássico-com-qfieldsync"><span class="header-section-number">10.4.1</span> Passo a passo (fluxo clássico com QFieldSync)</h3>
+<ol type="1">
+<li>No QGIS, instale e ative o plugin <strong>QFieldSync</strong>, se ainda não estiver instalado.</li>
+<li>Abra o plugin e selecione o projeto atual.</li>
+<li>Configure quais camadas serão:
+<ul>
+<li>Somente leitura (camadas base como imagens e MDE).</li>
+<li>Editáveis em campo (camadas vetoriais de pontos/linhas/polígonos).</li>
+<li>Convertidas para formato <strong>offline</strong> (GeoPackage) para evitar dependência de banco de dados remoto. [web:110]</li>
+</ul></li>
+<li>Defina a pasta de saída (por exemplo, diretório que será copiado para o dispositivo Android).</li>
+<li>Clique em <strong>“Exportar”</strong>; o plugin criará uma cópia do projeto e dos dados preparada para o QField.</li>
+<li>Transfira essa pasta para o dispositivo móvel (via cabo USB, nuvem etc.).</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM QF-4: Tela do plugin QFieldSync no QGIS, com uma lista de camadas e colunas indicando se são offline, somente leitura ou editáveis.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="qfield-uso-campo">
+<section id="uso-do-qfield-em-campo" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="uso-do-qfield-em-campo"><span class="header-section-number">10.5</span> Uso do QField em Campo</h2>
+<p>Com o projeto exportado para o dispositivo móvel, o QField permite navegar pelo mapa, coletar novas feições, editar atributos e registrar fotos, mesmo sem conexão com a internet. [web:108][web:111][web:113]</p>
+<section id="abertura-do-projeto-e-navegação" class="level3" data-number="10.5.1">
+<h3 data-number="10.5.1" class="anchored" data-anchor-id="abertura-do-projeto-e-navegação"><span class="header-section-number">10.5.1</span> Abertura do projeto e navegação</h3>
+<ol type="1">
+<li>No dispositivo (Android, por exemplo), abra o aplicativo <strong>QField</strong>.</li>
+<li>Navegue até a pasta onde o projeto foi copiado e selecione o arquivo de projeto (*.qgz ou *.qgs).</li>
+<li>Use zoom, pan e, se disponível, localização por GPS para posicionar o mapa na área de trabalho.</li>
+</ol>
+</section>
+<section id="coleta-e-edição-de-feições" class="level3" data-number="10.5.2">
+<h3 data-number="10.5.2" class="anchored" data-anchor-id="coleta-e-edição-de-feições"><span class="header-section-number">10.5.2</span> Coleta e edição de feições</h3>
+<ol type="1">
+<li>Selecione a camada editável (por exemplo, “Pontos de amostragem”, “Talhões”, “Pontos de APP”).</li>
+<li>Use a ferramenta de adicionar feição (ponto, linha ou polígono) e posicione no mapa, preferencialmente com apoio do GPS. [web:108][web:111]</li>
+<li>Ao criar a feição, o QField abrirá automaticamente o formulário de atributos; preencha os campos (tipo, código, observações etc.).</li>
+<li>Se houver campo de foto, use a câmera do dispositivo para registrar imagens vinculadas à feição.</li>
+<li>Repita o processo para todas as feições desejadas, salvando periodicamente as edições.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM QF-5: Tela do QField em um smartphone mostrando o mapa, um ponto recém-adicionado e o formulário de atributos aberto com campos de texto e botão de câmera.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="qfield-sincronizacao">
+<section id="sincronizando-as-edições-de-volta-ao-qgis" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="sincronizando-as-edições-de-volta-ao-qgis"><span class="header-section-number">10.6</span> Sincronizando as Edições de Volta ao QGIS</h2>
+<p>Após o trabalho de campo, é necessário sincronizar as edições realizadas no QField com o projeto original no QGIS, atualizando camadas e bancos de dados. [web:109][web:110]</p>
+<section id="fluxo-com-qfieldsync-projeto-localoffline" class="level3" data-number="10.6.1">
+<h3 data-number="10.6.1" class="anchored" data-anchor-id="fluxo-com-qfieldsync-projeto-localoffline"><span class="header-section-number">10.6.1</span> Fluxo com QFieldSync (projeto local/offline)</h3>
+<ol type="1">
+<li>Copie de volta, para o computador, a pasta do projeto que foi utilizada no QField.</li>
+<li>No QGIS, abra o projeto original (aquele que foi usado para exportar).</li>
+<li>Abra o plugin <strong>QFieldSync</strong> e escolha a opção de <strong>“Sincronizar de volta”</strong> com a pasta do projeto de campo. [web:110]</li>
+<li>O plugin aplicará as alterações (novas feições, edições de atributos) nas camadas de origem (GeoPackage ou PostGIS).</li>
+<li>Verifique no mapa e na tabela de atributos se as novas feições e fotos foram incorporadas corretamente.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM QF-6: Captura de tela do QGIS mostrando a janela do QFieldSync com um “job” de sincronização concluído e novos pontos aparecendo no mapa.]</p>
+</div>
+</div>
+</section>
+<section id="fluxo-com-qfieldcloud-projetos-com-sincronização-na-nuvem" class="level3" data-number="10.6.2">
+<h3 data-number="10.6.2" class="anchored" data-anchor-id="fluxo-com-qfieldcloud-projetos-com-sincronização-na-nuvem"><span class="header-section-number">10.6.2</span> Fluxo com QFieldCloud (projetos com sincronização na nuvem)</h3>
+<p>Para equipes maiores e projetos conectados a bancos de dados (como PostGIS), é possível utilizar o <strong>QFieldCloud</strong>, que gerencia pacotes de projeto, deltas de edição e aplicação de alterações diretamente no servidor. [web:107][web:109]</p>
+<ol type="1">
+<li>Configurar o projeto no QGIS para uso com QFieldCloud, criando o pacote e carregando para a nuvem.</li>
+<li>No QField, baixar o projeto via QFieldCloud, editar e sincronizar as mudanças com a nuvem.</li>
+<li>Acompanhar os “jobs” de aplicação de deltas no painel do QFieldCloud e verificar se as edições foram aplicadas com sucesso ao banco PostGIS. [web:109]</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM QF-7: Interface web do QFieldCloud mostrando um projeto com status de sincronização verde e um job de “delta apply” concluído.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="qfield-vantagens-limites">
+<section id="vantagens-e-limitações-do-uso-do-qfield" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="vantagens-e-limitações-do-uso-do-qfield"><span class="header-section-number">10.7</span> Vantagens e Limitações do Uso do QField</h2>
+<p>O QField traz diversas vantagens para projetos de geoprocessamento aplicados: reduz tempo de processamento de dados, melhora a qualidade das informações de campo e facilita o trabalho colaborativo entre equipe de campo e escritório. [web:108][web:111][web:113]</p>
+<section id="principais-vantagens" class="level3" data-number="10.7.1">
+<h3 data-number="10.7.1" class="anchored" data-anchor-id="principais-vantagens"><span class="header-section-number">10.7.1</span> Principais vantagens</h3>
+<ul>
+<li><strong>Integração nativa com QGIS</strong>: reaproveita estilos, formulários e estrutura de projeto já montados no desktop.</li>
+<li><strong>Trabalho offline</strong>: ideal para áreas rurais/remotas sem conectividade constante.</li>
+<li><strong>Coleta enriquecida</strong>: permite registrar fotos, notas, códigos, classes de uso e atributos detalhados. [web:108][web:111]</li>
+<li><strong>Escalabilidade</strong>: com QFieldCloud, facilita trabalho simultâneo de vários coletores e sincronização com bancos centrais. [web:107][web:109]</li>
+</ul>
+</section>
+<section id="cuidados-e-limitações" class="level3" data-number="10.7.2">
+<h3 data-number="10.7.2" class="anchored" data-anchor-id="cuidados-e-limitações"><span class="header-section-number">10.7.2</span> Cuidados e limitações</h3>
+<ul>
+<li>Planejamento do projeto é essencial: formulários mal configurados ou caminhos incorretos podem gerar falhas de sincronização. [web:109][web:110]</li>
+<li>Necessidade de testes antes do trabalho real em campo, especialmente em fluxos com PostGIS e QFieldCloud.</li>
+<li>Acurácia da posição depende do receptor GNSS do dispositivo (ou de receptores externos integrados).</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM QF-8: Tabela ou diagrama listando “Vantagens” de um lado e “Cuidados” do outro, com ícones ilustrativos (check e alerta).]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="qfield-roteiro">
+<section id="roteiro-prático-resumido-qgis-qfield" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="roteiro-prático-resumido-qgis-qfield"><span class="header-section-number">10.8</span> Roteiro Prático Resumido – QGIS + QField</h2>
+<p>A seguir, um roteiro resumido para integrar QGIS e QField em um fluxo de coleta de dados em campo. [web:108][web:109][web:110]</p>
+<ol type="1">
+<li>Preparar o projeto no QGIS (camadas, SRC, formulários de atributos configurados).</li>
+<li>Definir quais camadas serão editadas em campo e quais serão apenas base.</li>
+<li>Usar o plugin QFieldSync (ou fluxo QFieldCloud) para exportar o projeto para uma pasta ou para a nuvem.</li>
+<li>Abrir o projeto no QField, navegar com apoio de GPS e coletar/editar feições, preenchendo os formulários.</li>
+<li>Ao retornar, sincronizar as edições com o projeto original no QGIS (pasta offline ou QFieldCloud + PostGIS).</li>
+<li>Revisar, ajustar simbologia, gerar mapas e relatórios com base nos dados atualizados.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM QF-9: Fluxograma completo do processo QGIS ↔︎ QField, com ícones de computador, nuvem e dispositivo móvel, indicando cada uma das etapas do roteiro.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="./capitulo9.html" class="pagination-link" aria-label="Layout Cartográfico e Modelos de Impressão no QGIS">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Cartográfico e Modelos de Impressão no QGIS</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./capitulo11.html" class="pagination-link" aria-label="Agradecimentos e Referências Utilizadas">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agradecimentos e Referências Utilizadas</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

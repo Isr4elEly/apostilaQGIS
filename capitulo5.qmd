@@ -1,0 +1,203 @@
+
+::: {#cap5 .section}
+# Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo
+
+::: {#introducao-cap5 .section}
+## Introdução
+
+Depois de aprender a criar camadas vetoriais a partir de arquivos, um
+próximo passo importante é **criar e editar seus próprios dados
+vetoriais** no QGIS. \[web:36\]\[web:44\]
+
+Neste capítulo, usaremos um exemplo prático: a criação de um **mapa de
+uso e ocupação do solo** de uma área de estudo, desenhando polígonos
+(talhões) e preenchendo uma tabela de atributos com o tipo de uso (por
+exemplo, "PAS" -- Pastagem, "LAV" -- Lavoura, "MATA" -- Mata ciliar).
+\[web:33\]\[web:36\]\[web:38\]
+
+::: {.callout-note}
+\[IMAGEM 1: Captura de tela do QGIS com uma imagem de satélite ao fundo
+e alguns polígonos sendo desenhados sobre ela, representando diferentes
+usos do solo (pasto, lavoura, mata, área urbana).\]
+:::
+:::
+
+::: {#preparacao-projeto .section}
+## Preparando o Projeto
+
+Antes de começar a desenhar, é importante ter um projeto pronto com
+fundo de imagem (raster) e SRC adequado à área de estudo.
+\[web:36\]\[web:37\]
+
+### Passo a passo
+
+1.  Abrir um projeto existente ou criar um novo.
+2.  Carregar uma camada raster de fundo (imagem de satélite ou MDE)
+    conforme o Capítulo 4.
+3.  Verificar e ajustar o SRC do projeto, se necessário, para o sistema
+    apropriado ao seu estado/município (por exemplo, SIRGAS 2000 / UTM).
+    \[web:37\]\[web:39\]
+
+::: {.callout-note}
+\[IMAGEM 2: Projeto no QGIS com imagem de satélite no fundo, painel de
+camadas mostrando a camada raster, e o SRC configurado em um sistema UTM
+SIRGAS 2000.\]
+:::
+:::
+
+::: {#criar-camada-vetorial .section}
+## Criando uma Nova Camada Vetorial (Polígono)
+
+Para registrar o uso do solo, criaremos uma camada vetorial do tipo
+**polígono**, que permitirá desenhar áreas de diferentes usos.
+\[web:37\]\[web:44\]
+
+### Criando a camada de uso do solo
+
+1.  No menu superior, vá em **"Camada"** \> **"Criar Camada"** \>
+    **"Camada Shapefile Novo\..."**. \[web:44\]
+2.  Na janela que abrir:
+    -   Defina **nome** (ex.: *uso_solo.shp*).
+    -   Selecione **tipo de geometria** como "Polígono".
+    -   Verifique se o SRC está correto (normalmente "Usar SRC do
+        projeto" já deve selecionar o SRC definido anteriormente).
+        \[web:37\]
+3.  Na seção de **atributos**, clique em "Adicionar Campo" e crie pelo
+    menos dois campos:
+    -   **id** (tipo inteiro).
+    -   **uso** (tipo texto/string).
+4.  Clique em **"OK"** e salve o arquivo em uma pasta de seu projeto.
+
+::: {.callout-note}
+\[IMAGEM 3: Janela "Shapefile Novo" no QGIS, com "Geom. Tipo: Polígono",
+SRC corretamente carregado e dois campos na tabela de atributos: "id" e
+"uso".\]
+:::
+:::
+
+::: {#ativar-edicao .section}
+## Ativando o Modo de Edição
+
+Para desenhar os polígonos de uso do solo, é necessário ativar o modo de
+edição da camada vetorial. \[web:37\]\[web:44\]
+
+### Passo a passo
+
+1.  No painel de camadas, clique sobre a camada recém-criada
+    (*uso_solo*).
+2.  Clique no ícone de **alternar edição** na barra de ferramentas
+    (ícone de lápis) ou vá em **"Camada"** \> **"Alternar Edição"**.
+    \[web:37\]\[web:44\]
+3.  Ao final dos trabalhos de edição, lembre-se de salvar as mudanças e
+    desativar o modo de edição.
+
+::: {.callout-note}
+\[IMAGEM 4: Barra de ferramentas do QGIS com o ícone de lápis destacado,
+indicando o modo de edição ativo.\]
+:::
+:::
+
+::: {#desenho-poligonos .section}
+## Desenhando Polígonos de Uso do Solo
+
+Agora que a camada está em modo de edição, você pode desenhar os
+polígonos que representam diferentes usos do solo na área de estudo.
+\[web:37\]\[web:38\]
+
+### Passo a passo para desenhar um polígono
+
+1.  Na barra de ferramentas de edição, clique na ferramenta **"Adicionar
+    feição de polígono"** (ícone de polígono).
+2.  Clique, no mapa, sobre o fundo de imagem, definindo os vértices do
+    polígono ao longo dos limites de cada talhão/uso.
+    \[web:37\]\[web:38\]
+3.  Encerre o desenho:
+    -   Volte ao primeiro vértice e clique nele, ou
+    -   Use o botão direito do mouse para fechar o polígono.
+4.  Uma janela de atributos abrirá automaticamente.
+5.  No campo **uso**, digite o tipo de uso (ex.: "PAS", "LAV", "MATA",
+    "URB").
+6.  Clique em **"OK"** para salvar a feição.
+7.  Repita o processo para outros polígonos, cobrindo toda a área de
+    interesse.
+
+::: {.callout-note}
+\[IMAGEM 5: Mapa com imagem de satélite ao fundo e vários polígonos
+sendo desenhados, com setas indicando vértices e fechamento do
+polígono.\]
+:::
+:::
+
+::: {#simbologia-uso .section}
+## Visualizando o Mapa de Uso do Solo (Simbologia Básica)
+
+Depois de criar vários polígonos com diferentes usos, o próximo passo é
+organizar a simbologia para que o mapa fique didático.
+\[web:33\]\[web:37\]
+
+### Configurando uma simbologia por categoria
+
+1.  No painel de camadas, clique com o botão direito sobre a camada
+    *uso_solo* e escolha **"Propriedades"**.
+2.  Vá até a aba **"Simbologia"**.
+3.  Mude o tipo de simbologia para **"Categoria"** e escolha o campo
+    **uso** como valor.
+4.  Clique em **"Classificar"**; o QGIS criará uma entrada para cada
+    valor distinto (PAS, LAV, MATA, etc.). \[web:37\]
+5.  Para cada categoria, escolha uma cor diferente (ex.: verde claro
+    para pastagem, verde escuro para mata, amarelo para lavoura).
+6.  Clique em **"Aplicar"** e depois em **"OK"**.
+
+::: {.callout-note}
+\[IMAGEM 6: Janela de simbologia do QGIS com o campo "uso" selecionado,
+mostrando três categorias (PAS, LAV, MATA) com cores diferentes
+definidas e o mapa ao fundo exibindo os polígonos coloridos.\]
+:::
+:::
+
+::: {#salvar-edicoes .section}
+## Salvando as Edições
+
+Toda vez que você cria ou altera feições, o QGIS precisa salvar essas
+mudanças explicitamente. \[web:37\]\[web:44\]
+
+### Passo a passo
+
+1.  Com a camada *uso_solo* ainda em modo de edição, clique no ícone de
+    **"Salvar Mudanças"** na barra de ferramentas de edição (disquete).
+2.  Após salvar, desative o modo de edição clicando novamente no ícone
+    de lápis (ou "Alternar Edição").
+3.  Salve também o projeto principal em "Projeto" \> "Salvar".
+
+::: {.callout-note}
+\[IMAGEM 7: Barra de ferramentas de edição com o ícone de disquete
+destacado, e a janela de projeto salvando o arquivo após as edições.\]
+:::
+:::
+
+::: {#roteiro-uso .section}
+## Roteiro Prático: Criando um Mapa de Uso do Solo
+
+Para ajudar na fixação, segue um roteiro claro que você pode seguir para
+criar um **mapa de uso e ocupação do solo** desde o início.
+\[web:36\]\[web:37\]\[web:38\]
+
+1.  Criar ou abrir um projeto no QGIS com SRC apropriado ao seu
+    estado/município.
+2.  Adicionar uma imagem de satélite ou MDE como camada raster de fundo.
+3.  Criar uma nova camada vetorial do tipo **polígono** chamada
+    *uso_solo*, com os campos *id* e *uso*.
+4.  Ativar o modo de edição dessa camada.
+5.  Usar a ferramenta de **polígono** para desenhar as áreas de
+    diferentes usos, preenchendo o campo *uso* em cada polígono.
+6.  Organizar a simbologia por categoria, usando cores distintas para
+    cada tipo de uso.
+7.  Salvar as edições da camada vetorial e o projeto.
+
+::: {.callout-note}
+\[IMAGEM 8: Mapa final com camada raster de fundo, polígonos de uso do
+solo coloridos, legenda simples ao lado indicando cores e usos, e painel
+de camadas organizado.\]
+:::
+:::
+:::

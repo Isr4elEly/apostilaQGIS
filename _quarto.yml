@@ -1,0 +1,67 @@
+project:
+  type: book
+  output-dir: docs
+
+jupyter: python3
+
+book:
+  sidebar:
+    search: true
+  title: "Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField"
+  language: pt
+  date: "2025-02-09"
+  date-format: full
+  cover-image: qgis.png
+  chapters:
+    - index.qmd
+    - capitulo1.qmd
+    - capitulo2.qmd
+    - capitulo3.qmd
+    - capitulo4.qmd
+    - capitulo5.qmd
+    - capitulo6.qmd
+    - capitulo7.qmd
+    - capitulo8.qmd
+    - capitulo9.qmd
+    - capitulo10.qmd
+    - capitulo11.qmd
+    - capitulo12.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: litera
+    default-image-extension: jpg
+    page-layout: full
+    grid: 
+      sidebar-width: 300px
+      body-width: 1100px
+      margin-width: 100px
+      gutter-width: 1.5rem
+    css: style.css
+    toc: false
+    fig-width: 10
+    fig-height: 8
+    fig-align: center
+
+  pdf:
+    documentclass: book
+    toc: true
+    lang: "pt-br"
+    geometry: 
+      - top=30mm
+      - left=25mm
+      - right=20mm
+    number-sections: true
+    colorlinks: true
+    papersize: "a4"
+    fontsize: 11pt
+
+lenguage:
+  leng: pt-br
+
+plugins:
+  - mkquartodocs

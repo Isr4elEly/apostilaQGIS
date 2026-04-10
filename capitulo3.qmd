@@ -1,0 +1,219 @@
+
+::: {#cap3 .section}
+# Projeções Cartográficas e Sistemas de Coordenadas
+
+::: {#introducao-cap3 .section}
+## Introdução
+
+Ao trabalhar com mapas e dados geográficos em um SIG, é fundamental
+entender como a superfície curva da Terra é representada em um plano e
+como a posição de cada ponto é descrita numericamente.
+\[web:18\]\[web:20\]\[web:30\]
+
+Neste capítulo, vamos apresentar, de forma simples, os conceitos de
+**projeções cartográficas** e **sistemas de coordenadas**, com foco nas
+aplicações mais comuns em geoprocessamento, especialmente na realidade
+brasileira. \[web:20\]\[web:21\]\[web:28\]
+
+::: {.callout-note}
+\[IMAGEM 1: Ilustração mostrando um globo terrestre ao lado de um mapa
+plano. Setas indicam que o globo está sendo "projetado" sobre o mapa,
+simbolizando o processo de projeção cartográfica.\]
+:::
+:::
+
+::: {#projecoes-conceito .section}
+## O que são Projeções Cartográficas?
+
+Uma **projeção cartográfica** é um conjunto de métodos matemáticos
+usados para "achatar" a superfície curva da Terra em um plano,
+permitindo desenhar mapas. \[web:20\]\[web:28\]
+
+Esse processo sempre provoca algum tipo de distorção, pois é impossível
+representar uma esfera ou elipsoide em um plano sem alterar **área**,
+**forma**, **distância** ou **direção**. \[web:20\]\[web:26\]
+
+::: {.callout-note}
+\[IMAGEM 2: Comparação entre o globo e três pequenos mapas com formas
+diferentes (um preservando forma, outro área e outro distâncias).
+Rótulos indicam "distorção de área", "distorção de forma", etc.\]
+:::
+
+### Tipos de Superfícies de Projeção
+
+De forma didática, costuma-se explicar as projeções cartográficas a
+partir de três tipos de superfícies geométricas: **cilíndrica**,
+**cônica** e **azimutal (plana)**. \[web:17\]\[web:20\]
+
+-   **Cilíndrica**: imagina-se um cilindro envolvendo a Terra, depois o
+    cilindro é "aberto" em um plano.
+-   **Cônica**: usa-se um cone apoiado sobre a Terra, que depois é
+    desenrolado em um plano.
+-   **Azimutal**: projeta-se a superfície da Terra diretamente em um
+    plano tangente.
+
+::: {.callout-note}
+\[IMAGEM 3: Três desenhos lado a lado: 1) um cilindro envolvendo o
+globo; 2) um cone apoiado sobre o globo; 3) um plano tocando o globo em
+um ponto. Cada desenho com rótulos "cilíndrica", "cônica" e
+"azimutal".\]
+:::
+:::
+
+::: {#sistemas-coordenadas .section}
+## Sistemas de Coordenadas: Geográficas e Projetadas
+
+Para localizar um ponto na superfície terrestre, usamos sistemas de
+coordenadas. Os dois tipos mais importantes para o usuário de SIG são:
+**coordenadas geográficas** e **coordenadas projetadas**.
+\[web:21\]\[web:24\]\[web:29\]
+
+### Coordenadas Geográficas (Latitude e Longitude)
+
+As coordenadas geográficas utilizam ângulos para definir a posição dos
+pontos: **latitude** e **longitude**. \[web:21\]\[web:24\]\[web:30\]
+
+-   **Latitude**: medida em graus ao norte ou ao sul do Equador (de 0° a
+    90° N ou S).
+-   **Longitude**: medida em graus a leste ou oeste do Meridiano de
+    Greenwich (de 0° a 180° E ou W).
+
+Esse sistema é muito usado para localização global, em GPS, Google Earth
+e serviços de mapas online, pois representa diretamente a posição sobre
+o globo. \[web:21\]\[web:24\]
+
+::: {.callout-note}
+\[IMAGEM 4: Globo com linhas de paralelos (latitudes) e meridianos
+(longitudes) bem marcadas, destacando um ponto qualquer com seus valores
+de latitude e longitude.\]
+:::
+
+### Coordenadas Projetadas (Planas)
+
+Já as coordenadas projetadas representam os pontos em um plano
+cartesiano (eixos X e Y), normalmente com unidade em metros.
+\[web:21\]\[web:24\]
+
+Essas coordenadas são geradas a partir de uma projeção cartográfica
+específica e são muito úteis para medições de distâncias e áreas em
+escalas regionais ou locais, como no sistema UTM.
+\[web:22\]\[web:25\]\[web:29\]
+
+::: {.callout-note}
+\[IMAGEM 5: Um plano cartesiano com eixos X (leste-oeste) e Y
+(norte-sul), mostrando alguns pontos com coordenadas em metros (por
+exemplo, 300000 m E, 8200000 m N).\]
+:::
+:::
+
+::: {#utm .section}
+## Sistema UTM (Universal Transversa de Mercator)
+
+O **Sistema UTM** é um sistema de coordenadas projetadas muito utilizado
+no mundo e é o padrão em grande parte dos mapas oficiais no Brasil.
+\[web:18\]\[web:20\]\[web:22\]\[web:25\]\[web:30\]
+
+Ele se baseia na projeção cilíndrica **Transversa de Mercator** e divide
+a Terra em 60 faixas verticais chamadas **fusos**, cada um com 6° de
+largura em longitude. \[web:20\]\[web:22\]\[web:25\]
+
+::: {.callout-note}
+\[IMAGEM 6: Mapa do mundo "recortado" em 60 fusos UTM numerados de 1 a
+60, com destaque visual para os fusos que cobrem o Brasil.\]
+:::
+
+### Conceitos Básicos do Sistema UTM
+
+-   A Terra é dividida em 60 fusos, numerados de 1 a 60, de oeste para
+    leste a partir do antimeridiano de Greenwich. \[web:22\]\[web:25\]
+-   Cada fuso tem um meridiano central, usado como referência para as
+    coordenadas naquele fuso. \[web:20\]\[web:25\]
+-   As coordenadas são expressas em metros (Easting e Northing),
+    facilitando o cálculo de distâncias e áreas. \[web:22\]\[web:25\]
+
+::: {.callout-note}
+\[IMAGEM 7: Detalhe ampliado de alguns fusos UTM, com setas indicando o
+meridiano central, valores de Easting (X) crescendo para leste e
+Northing (Y) crescendo para norte.\]
+:::
+
+### UTM no Brasil (visão simplificada)
+
+O território brasileiro ocupa vários fusos UTM, aproximadamente do fuso
+18 ao fuso 25, o que significa que diferentes regiões do país utilizam
+fusos distintos. \[web:20\]\[web:25\]\[web:30\]
+
+Em trabalhos de geoprocessamento, é importante configurar corretamente o
+fuso UTM e o datum adequado (por exemplo, SIRGAS 2000) para garantir que
+os dados se sobreponham corretamente. \[web:24\]\[web:29\]\[web:30\]
+
+::: {.callout-note}
+\[IMAGEM 8: Mapa do Brasil com linhas verticais indicando os fusos UTM
+que o cobrem, com rótulos dos números dos fusos e uma legenda simples.\]
+:::
+:::
+
+::: {#datum .section}
+## Datum Geodésico (Visão Introdutória)
+
+Além da projeção e do sistema de coordenadas, existe ainda o conceito de
+**datum geodésico**, que define o modelo matemático da Terra usado como
+referência (esfera ou elipsoide) e sua posição em relação ao planeta
+real. \[web:24\]\[web:26\]\[web:27\]
+
+No Brasil, um datum muito utilizado é o **SIRGAS 2000**, que substituiu
+gradualmente o datum SAD69 em muitos produtos cartográficos; isso é
+importante porque dados em datums diferentes podem não coincidir
+exatamente. \[web:24\]\[web:26\]\[web:27\]\[web:30\]
+
+::: {.callout-note}
+\[IMAGEM 9: Esquema simples mostrando dois elipsoides ligeiramente
+deslocados, um representando SAD69 e outro SIRGAS 2000, com uma seta
+indicando que há diferença de posição entre eles.\]
+:::
+:::
+
+::: {#roteiro-qgis-cap3 .section}
+## Roteiro Prático: Conferindo Projeção e Sistema de Coordenadas no QGIS
+
+A seguir, um roteiro prático para visualizar e ajustar projeções e
+sistemas de coordenadas em um projeto SIG utilizando o QGIS. \[web:29\]
+
+### Verificando o SRC do Projeto
+
+1.  Abrir o QGIS e carregar uma camada (vetorial ou raster) de sua
+    preferência.
+2.  Olhar no canto inferior direito da tela: será exibido o **Sistema de
+    Referência de Coordenadas (SRC)** do projeto.
+3.  Clicar no código do SRC (por exemplo, "EPSG:31983") para abrir a
+    janela de configuração.
+4.  Na lista, observar o nome do sistema (por exemplo, "SIRGAS 2000 /
+    UTM zone 23S").
+5.  Clicar em "OK" para confirmar ou selecionar outro SRC adequado ao
+    seu dado. \[web:39\]
+
+::: {.callout-note}
+\[IMAGEM 10: Captura de tela simulada do QGIS destacando, em círculo, o
+código EPSG no canto inferior direito e a janela de seleção de SRC
+aberta, com um exemplo de sistema UTM selecionado.\]
+:::
+
+### Definindo/Reprojetando uma Camada
+
+1.  No painel de Camadas, clique com o botão direito sobre a camada
+    desejada.
+2.  Selecione "Exportar" \> "Salvar feições como\..." (para vetores) ou
+    opção equivalente para raster.
+3.  Na janela que abrir, no campo de SRC, escolha o sistema de
+    coordenadas de destino (por exemplo, SIRGAS 2000 / UTM fuso
+    adequado).
+4.  Defina o nome e local do novo arquivo.
+5.  Clique em "OK" para criar uma nova camada já reprojetada. \[web:50\]
+
+::: {.callout-note}
+\[IMAGEM 11: Captura de tela simulada do QGIS mostrando a janela "Salvar
+feições como\...", com o campo de SRC destacado e exemplo de seleção de
+um sistema UTM SIRGAS 2000.\]
+:::
+:::
+:::

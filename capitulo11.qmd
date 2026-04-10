@@ -1,0 +1,24 @@
+
+::: {#cap11 .section}
+# Agradecimentos e Referências Utilizadas
+
+::: {#agradecimentos .section}
+## Agradecimentos
+
+Este material foi elaborado com o objetivo de apoiar estudantes,
+técnicos e profissionais que estão dando seus primeiros passos na área
+de geoprocessamento, geotecnologias e Sistemas de Informações
+Geográficas. \[web:7\]\[web:18\]\[web:64\]
+
+A construção desta apostila contou com a inspiração de diversos manuais,
+apostilas, documentação oficial de softwares e normas técnicas
+brasileiras, além da sua própria experiência prática refletida no
+roteiro de dicas e fórmulas utilizado como base para os capítulos de
+relevo e declividade. \[file:46\]\[web:8\]\[web:20\]\[web:80\]
+
+Fica aqui o agradecimento a todas as instituições que disponibilizam
+dados abertos, material didático e documentação, permitindo que o
+conhecimento em geoprocessamento seja disseminado de forma acessível,
+especialmente no contexto da gestão ambiental e do planejamento
+territorial no Brasil. \[web:6\]\[web:7\]\[web:23\]\[web:70\]
+:::

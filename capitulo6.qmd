@@ -1,0 +1,241 @@
+
+::: {#cap6 .section}
+# Mapa de Relevo e Curvas de Nível
+
+::: {#introducao-cap6 .section}
+## Introdução
+
+Mapas de relevo e curvas de nível são fundamentais para entender a forma
+do terreno, apoiar o planejamento rural, análise ambiental, obras de
+engenharia e zoneamentos diversos. \[file:46\]
+
+Neste capítulo, vamos partir de um **Modelo Digital de Elevação
+(MDE/DEM)** para gerar um mapa de relevo sombreado e curvas de nível no
+QGIS, usando um roteiro semelhante ao seu material de dicas e fórmulas.
+\[file:46\]
+
+::: {.callout-note}
+\[IMAGEM 1: Exemplo de mapa de relevo com sombreamento (hillshade) e
+curvas de nível sobrepostas, mostrando visualmente as formas do terreno
+em uma bacia hidrográfica.\]
+:::
+:::
+
+::: {#dados-fonte .section}
+## Fonte de Dados de Relevo (MDE/DEM)
+
+Existem diversas fontes gratuitas de MDE, como SRTM, Copernicus e
+produtos WorldDEM/TanDEM-X, acessíveis via serviços como o portal
+OpenTopography ou outros repositórios. \[file:46\]
+
+Em muitos fluxos de trabalho, utiliza-se o complemento **OpenTopography
+DEM** no QGIS para baixar o MDE da área de interesse, configurando o
+modelo desejado e o recorte da área. \[file:46\]
+
+::: {.callout-note}
+\[IMAGEM 2: Captura de tela simulada do QGIS com o complemento
+OpenTopography DEM aberto, mostrando a escolha do modelo
+(SRTM/Copernicus) e a área de recorte.\]
+:::
+:::
+
+::: {#preparo-dem .section}
+## Preparando o Modelo de Elevação (Reprojeção e Corte)
+
+Após o download do MDE, é recomendado reprojetar o raster para um
+sistema de coordenadas projetadas (por exemplo, SIRGAS 2000 / UTM) e
+ajustar o tamanho do pixel, para facilitar medições e geração de curvas
+de nível. \[file:46\]
+
+### Reprojetar o MDE no QGIS
+
+1.  No menu **"Raster"** \> **"Projeções"** \> "Reprojetar" (ou
+    equivalente). \[file:46\]
+2.  Escolher o MDE original como camada de entrada (por exemplo, em
+    EPSG:4326).
+3.  Definir o SRC de destino como um sistema UTM adequado (ex.:
+    EPSG:31982 -- SIRGAS 2000 / UTM fuso 22S, conforme sua região).
+    \[file:46\]
+4.  Opcionalmente, definir o tamanho de pixel (por exemplo, 5 m x 5 m)
+    para um detalhamento adequado.
+5.  Escolher um nome para o novo arquivo GeoTIFF reprojetado.
+6.  Clicar em **"Executar"**.
+
+O comando equivalente via GDAL também pode ser usado:\
+```bash
+gdalwarp -overwrite -s_srs EPSG:4326 -t_srs EPSG:31982 -tr 5.0 5.0 -r cubicspline -of GTiff
+```
+\[file:46\]
+
+::: {.callout-note}
+\[IMAGEM 3: Janela de "Reprojetar Raster" no QGIS, com MDE de entrada em
+EPSG:4326 e saída configurada para um EPSG UTM local, além de parâmetros
+de tamanho de pixel.\]
+:::
+
+### Cortando o MDE pelo Perímetro
+
+Para focar a análise apenas na área de estudo, é comum recortar o MDE
+usando um perímetro (polígono) com buffer equivalente a algumas larguras
+de pixel. \[file:46\]
+
+1.  Criar ou carregar a camada vetorial do perímetro da área de estudo.
+2.  Aplicar um **buffer** no perímetro com aproximadamente o triplo da
+    largura do pixel do MDE (por exemplo, 3 × 5 m = 15 m), para evitar
+    bordas abruptas. \[file:46\]
+3.  Em **"Raster"** \> "Extração" \> **"Recortar raster pela camada de
+    máscara"**, selecionar:
+    -   MDE reprojetado como raster de entrada;
+    -   Perímetro (com buffer) como máscara de recorte.
+4.  Executar e salvar o MDE já recortado pela área de interesse.
+
+::: {.callout-note}
+\[IMAGEM 4: Mapa mostrando o MDE antes e depois do recorte pelo
+perímetro com buffer, destacando a área de estudo delimitada.\]
+:::
+:::
+
+::: {#curvas-nivel .section}
+## Criando Curvas de Nível a partir do MDE
+
+As curvas de nível são linhas que ligam pontos de mesma altitude,
+representando a forma do relevo em planta. A escolha da
+**equidistância** entre curvas deve respeitar a escala do mapa e o
+objetivo do trabalho. \[file:46\]
+
+### Escolha da Equidistância (Exemplos)
+
+A tabela abaixo, baseada em materiais técnicos (IBGE, DSG, ABNT),
+apresenta exemplos de equidistância recomendada conforme a escala do
+mapa. \[file:46\]
+
+  Escala|Denominação|Equidistância (m)|Uso comum
+  ------|-----------|-----------------|---------------------------------
+  1:500         |Muito grande escala    |1 m                 |Projetos de engenharia, plantas urbanas
+  1:1.000       |Grande escala          |2 m                 |Levantamentos urbanos detalhados
+  1:2.000       |Grande escala          |2 ou 5 m            |Planejamento urbano, loteamentos
+  1:5.000       |Média escala           |5 ou 10 m           |Planejamento municipal, projetos rurais
+  1:10.000      |Média escala           |10 m                |Cartas topográficas municipais
+  1:25.000      |Média escala           |10 ou 20 m          |Uso agrícola, zoneamento, gestão ambiental
+  1:50.000      |Pequena escala         |20 ou 25 m          |Cartas topográficas regionais (IBGE)
+  1:100.000     |Pequena escala         |40 m                |Cartografia regional
+  1:250.000     |Muito pequena escala   |50 ou 100 m         |Mapas temáticos regionais ou nacionais
+  1:1.000.000   |Muito pequena escala   |100 a 200 m         |Visão geral de grandes regiões/países
+
+### 6.3.2. Gerando as Curvas de Nível no QGIS
+
+1.  Com o MDE recortado carregado, vá em **"Raster"** \> "Extração" \>
+    **"Curvas de nível"** (ou use o menu de processamento
+    correspondente). \[file:46\]
+2.  Escolha o MDE como raster de entrada.
+3.  Defina a **equidistância** (por exemplo, 5 m ou 10 m, conforme a
+    escala desejada).
+4.  Defina o nome do campo de atributo para as cotas (por exemplo,
+    **ELEV**).
+5.  Selecione o formato de saída (por exemplo, GeoPackage ou Shapefile).
+6.  Execute o processo para gerar a camada vetorial de curvas de nível.
+
+Em linha de comando, é equivalente ao uso de `gdal_contour`, por
+exemplo:\
+```bash
+gdal_contour -b 1 -a ELEV -i 5.0 -f "GPKG" saida_curvas.gpkg
+```
+
+::: {.callout-note}
+\[IMAGEM 5: Propriedades da ferramenta de "Curvas de nível" no QGIS
+mostrando MDE de entrada, equidistância definida e campo de atributo
+"ELEV", ao lado do mapa com as curvas geradas.\]
+:::
+:::
+
+::: {#estilo-curvas .section}
+## Estilo e Rotulagem das Curvas de Nível
+
+Para deixar o mapa mais legível, é recomendável diferenciar **linhas
+mestres** (curvas em múltiplos de, por exemplo, 25 m) das curvas
+intermediárias, bem como rotular algumas cotas. \[file:46\]
+
+### Criando linhas mestres e intermediárias
+
+1.  Abra as **Propriedades** da camada de curvas de nível.
+2.  Na aba **"Simbologia"**, escolha um estilo categorizado com base em
+    uma **expressão**. \[file:46\]
+3.  Use uma expressão baseada em módulo (resto da divisão) para separar
+    linhas mestres de intermediárias, por exemplo:\
+    `"ELEV" % 25 = 0` para destacar curvas a cada 25 m. \[file:46\]
+4.  Defina um estilo de linha mais grossa e cor mais escura para as
+    linhas mestres, e linha mais fina para as intermediárias.
+
+### Rotulando curvas selecionadas
+
+1.  Na aba **"Rótulos"**, selecione "Rotular com" e escolha o campo
+    **ELEV**.
+2.  Use "Rótulos baseados em regra" para rotular apenas algumas curvas,
+    por exemplo:\
+    Regra com filtro `"ELEV" % 50 = 0`, valor: `"ELEV" || ' m'`.
+    \[file:46\]
+3.  Ative um **buffer** nos rótulos e posicione-os "na linha", ajustando
+    a distância (por exemplo, 10 mm) para melhor leitura. \[file:46\]
+
+::: {.callout-note}
+\[IMAGEM 6: Propriedades de simbologia e rótulos da camada de curvas de
+nível, mostrando regra para linhas mestres (ELEV % 25 = 0) e rótulos
+aplicados a cada 50 m, bem distribuídos no mapa.\]
+:::
+:::
+
+::: {#relevo-sombreado .section}
+## Criando um Mapa de Relevo Sombreado (Hillshade)
+
+Para dar sensação de tridimensionalidade, é comum gerar um **hillshade**
+a partir do MDE e usar essa camada como fundo do mapa, combinando com as
+curvas de nível. \[file:46\]
+
+### Passos para gerar o hillshade
+
+1.  Com o MDE recortado, vá em **"Raster"** \> "Análise de Terreno" \>
+    **"Sombreamento (Hillshade)"** (ou ferramenta equivalente).
+2.  Selecione o MDE como entrada, mantendo valores padrão de azimute e
+    altura solar, ou ajustando conforme necessidade.
+3.  Defina o nome do arquivo de saída.
+4.  Execute para gerar a camada de relevo sombreado.
+5.  Coloque a camada de hillshade **abaixo** das curvas de nível,
+    ajustando transparência se necessário.
+
+::: {.callout-note}
+\[IMAGEM 7: Comparação lado a lado do MDE simples e do hillshade, com o
+segundo mostrando claramente encostas, vales e cristas, e curvas de
+nível sobrepostas.\]
+:::
+:::
+
+::: {#roteiro-final-cap6 .section}
+## Roteiro Prático: Mapa de Relevo e Curvas de Nível
+
+Segue um roteiro resumido para produzir um mapa de relevo com curvas de
+nível, baseado no fluxo de trabalho do seu roteiro de dicas. \[file:46\]
+
+1.  Obter o MDE (via complemento OpenTopography ou outra fonte) para a
+    área de estudo.
+2.  Reprojetar o MDE para um sistema UTM adequado, definindo tamanho de
+    pixel apropriado.
+3.  Cortar o MDE pelo perímetro (com buffer de algumas larguras de
+    pixel) usando "Recortar raster pela camada de máscara".
+4.  Gerar as curvas de nível a partir do MDE recortado, escolhendo
+    equidistância conforme a escala do mapa.
+5.  Configurar simbologia categorizada para curvas, destacando linhas
+    mestres (por exemplo, ELEV % 25 = 0) e intermediárias.
+6.  Configurar rótulos por regra (por exemplo, rotular apenas curvas em
+    múltiplos de 50 m com "ELEV \|\| \' m\'").
+7.  Criar um hillshade a partir do MDE e usá-lo como fundo, com curvas
+    de nível sobrepostas.
+8.  Salvar o projeto e preparar, em capítulo posterior, o layout de
+    impressão com legenda, escala gráfica e norte.
+
+::: {.callout-note}
+\[IMAGEM 8: Mapa final de relevo com hillshade e curvas de nível
+estilizadas, acompanhado de uma legenda simples indicando equidistância
+e unidades em metros.\]
+:::
+:::
+:::

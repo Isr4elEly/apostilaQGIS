@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Layout Cartográfico e Modelos de Impressão no QGIS – Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./capitulo10.html" rel="next">
+<link href="./capitulo8.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c8e075446336661fae715156f8f5d951.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo9.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Cartográfico e Modelos de Impressão no QGIS</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefácio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução e Conceitos Básicos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dados Geográficos e Estruturas de Armazenamento</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projeções Cartográficas e Sistemas de Coordenadas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introdução ao QGIS: Interface e Primeiro Projeto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Mapa de Relevo e Curvas de Nível</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mapa de Declividade a partir do MDE</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo9.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Cartográfico e Modelos de Impressão no QGIS</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agradecimentos e Referências Utilizadas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./capitulo12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Referências (Lista Avulsa com Códigos)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Cartográfico e Modelos de Impressão no QGIS</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="cap9">
+<section id="introducao-cap9">
+<section id="introdução" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">9.1</span> Introdução</h2>
+<p>O <strong>Layout de Impressão</strong> do QGIS é o ambiente onde você transforma seus dados geográficos em mapas prontos para relatório, impressão ou exportação em PDF. [web:80][web:81][web:84]</p>
+<p>Neste capítulo, vamos criar um layout completo usando, como exemplo, os mapas de uso do solo, relevo, declividade e APP integradas, e ao final veremos as vantagens e o uso prático de <strong>modelos de impressão</strong> (templates) para ganhar tempo e padronizar produtos. [web:80][web:81][web:85][web:88][web:91]</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 1: Janela do Layout de Impressão do QGIS com um mapa central, título, legenda, escala gráfica, norte e logo institucional montados em uma folha A4.]</p>
+</div>
+</div>
+</section>
+</section>
+<section id="abrir-layout">
+<section id="criando-um-novo-layout-de-impressão" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="criando-um-novo-layout-de-impressão"><span class="header-section-number">9.2</span> Criando um Novo Layout de Impressão</h2>
+<p>O Layout de Impressão é uma janela separada do QGIS, onde você organiza a folha (A4, A3 etc.) e adiciona elementos gráficos como mapa, legenda, barras de escala e textos. [web:80][web:81]</p>
+<section id="passo-a-passo-para-criar-o-layout" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="passo-a-passo-para-criar-o-layout"><span class="header-section-number">9.2.1</span> Passo a passo para criar o layout</h3>
+<ol type="1">
+<li>Com o projeto já configurado e os mapas prontos (uso do solo, relevo, declividade, APP), vá ao menu <strong>“Projeto”</strong> &gt; <strong>“Novo Layout de Impressão”</strong>. [web:80][web:81]</li>
+<li>Digite um nome para o layout (por exemplo, <em>Mapa_ambiental_A4</em>) e clique em <strong>OK</strong>.</li>
+<li>Será aberta a janela do Layout de Impressão, mostrando uma <strong>folha em branco</strong> (por padrão, A4 na vertical). [web:80][web:81]</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 2: Tela do QGIS com o menu “Projeto &gt; Novo Layout de Impressão” aberto e, ao lado, a nova janela de layout com uma página A4 em branco.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="config-pagina">
+<section id="configurando-tamanho-e-orientação-da-página" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="configurando-tamanho-e-orientação-da-página"><span class="header-section-number">9.3</span> Configurando Tamanho e Orientação da Página</h2>
+<p>Antes de adicionar os elementos, é importante definir o tamanho da folha e a orientação (retrato ou paisagem) de acordo com o tipo de mapa que você quer produzir. [web:80][web:81]</p>
+<section id="definindo-página-e-margens" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="definindo-página-e-margens"><span class="header-section-number">9.3.1</span> Definindo página e margens</h3>
+<ol type="1">
+<li>Na janela do Layout, selecione o item <strong>“Página”</strong> clicando na folha (ou usando o painel de “Propriedades da Página”). [web:80][web:81]</li>
+<li>Em <strong>“Tamanho”</strong>, selecione o formato desejado (por exemplo, A4 ou A3).</li>
+<li>Em <strong>“Orientação”</strong>, escolha “Retrato” (vertical) ou “Paisagem” (horizontal), conforme o formato do seu mapa (área mais larga ou mais alta). [web:81]</li>
+<li>Opcionalmente, defina margens internas usando guias ou a grade (ativando “Mostrar Grade” no menu “Ver”). [web:88]</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 3: Propriedades da página no Layout do QGIS, com seleção de A4 na orientação paisagem e grade visível na folha para ajudar no alinhamento.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="adicionar-mapa-layout">
+<section id="adicionando-o-mapa-principal" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="adicionando-o-mapa-principal"><span class="header-section-number">9.4</span> Adicionando o Mapa Principal</h2>
+<p>O elemento mais importante do layout é a <strong>janela de mapa</strong>, que mostra a área de interesse com a mesma visualização configurada na janela principal do QGIS. [web:80][web:81][web:84]</p>
+<section id="inserindo-o-mapa" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="inserindo-o-mapa"><span class="header-section-number">9.4.1</span> Inserindo o mapa</h3>
+<ol type="1">
+<li>Na barra de ferramentas à esquerda da janela de layout, clique no ícone <strong>“Adicionar Mapa”</strong>.</li>
+<li>Clique e arraste sobre a folha para desenhar um retângulo onde o mapa será exibido (por exemplo, ocupando a parte central da página). [web:80][web:81]</li>
+<li>Ao soltar o mouse, o QGIS exibirá a visualização do mapa atual (conforme a tela principal) dentro da moldura desenhada.</li>
+<li>No painel de <strong>Propriedades do Item</strong>, você pode ajustar:
+<ul>
+<li>Escala do mapa (fixa ou aproximar/afastar com “Atualizar vista”).</li>
+<li>Extensão (definindo manualmente ou sincronizando com a vista atual do projeto).</li>
+<li>Qual camada será usada como “referência” para o enquadramento (caso existam outras janelas de mapa). [web:80][web:81]</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 4: Layout com uma janela de mapa central mostrando o mapa de uso do solo sobre o relevo, e painel de propriedades do mapa à direita com campos de escala e extensão.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="elementos-basicos">
+<section id="elementos-cartográficos-básicos" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="elementos-cartográficos-básicos"><span class="header-section-number">9.5</span> Elementos Cartográficos Básicos</h2>
+<p>Todo mapa temático deve conter alguns elementos mínimos: <strong>título, legenda, escala gráfica, orientação (seta norte) e fonte</strong>. [web:80][web:84]</p>
+<section id="título-e-textos" class="level3" data-number="9.5.1">
+<h3 data-number="9.5.1" class="anchored" data-anchor-id="título-e-textos"><span class="header-section-number">9.5.1</span> Título e textos</h3>
+<ol type="1">
+<li>Para o título, use o botão <strong>“Adicionar Etiqueta” (Texto)</strong> na barra de ferramentas do layout.</li>
+<li>Clique na parte superior da página e digite, por exemplo, <em>“Mapa de Uso do Solo, Relevo, Declividade e APP”</em>.</li>
+<li>No painel de propriedades, ajuste fonte, tamanho, alinhamento e, se desejado, uma moldura ou fundo. [web:80][web:81]</li>
+<li>Use etiquetas menores para incluir informações como “Fonte de dados”, “Sistema de Coordenadas”, “Autor” e “Data”.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 5: Layout com um título centralizado na parte superior e textos de fonte e autor na parte inferior da página.]</p>
+</div>
+</div>
+</section>
+<section id="legenda" class="level3" data-number="9.5.2">
+<h3 data-number="9.5.2" class="anchored" data-anchor-id="legenda"><span class="header-section-number">9.5.2</span> Legenda</h3>
+<ol type="1">
+<li>Clique em <strong>“Adicionar Legenda”</strong> na barra de ferramentas do layout.</li>
+<li>Clique em um espaço lateral da página (por exemplo, à direita do mapa). [web:80][web:81]</li>
+<li>O QGIS irá montar automaticamente uma legenda com todas as camadas visíveis do projeto.</li>
+<li>No painel de propriedades da legenda, ajuste:
+<ul>
+<li>Quais camadas devem aparecer (removendo, por exemplo, camadas de apoio como MDE bruto).</li>
+<li>Texto dos rótulos de legenda (renomeando “uso_solo” para “Uso do solo”, “Declividade_class” para “Declividade (%)”, etc.).</li>
+<li>Organização em grupos (por exemplo, “Camadas de base”, “Camadas de análise”). [web:80][web:81]</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 6: Layout mostrando uma legenda organizada com grupos “Base” (imagem/hillshade) e “Temáticos” (uso do solo, declividade, APP), com textos amigáveis.]</p>
+</div>
+</div>
+</section>
+<section id="escala-gráfica-e-norte" class="level3" data-number="9.5.3">
+<h3 data-number="9.5.3" class="anchored" data-anchor-id="escala-gráfica-e-norte"><span class="header-section-number">9.5.3</span> Escala gráfica e norte</h3>
+<ol type="1">
+<li>Para a escala gráfica, clique em <strong>“Adicionar Barra de Escala”</strong> e posicione abaixo do mapa ou próximo à legenda. [web:80][web:84]</li>
+<li>No painel de propriedades, escolha o estilo (barra simples, com subdivisões), unidade (metros, km) e rótulos.</li>
+<li>Para a seta norte, clique em <strong>“Adicionar Imagem”</strong> e selecione um símbolo de norte do próprio QGIS ou um arquivo de imagem personalizado. [web:80][web:84]</li>
+<li>Posicione a seta norte em um canto do mapa, evitando sobrepor áreas importantes.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 7: Parte inferior do layout com barra de escala em quilômetros e seta norte discreta no canto superior direito do mapa.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="combinar-mapas-layout">
+<section id="combinação-de-diferentes-mapas-no-mesmo-layout" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="combinação-de-diferentes-mapas-no-mesmo-layout"><span class="header-section-number">9.6</span> Combinação de Diferentes Mapas no Mesmo Layout</h2>
+<p>Em alguns casos, é útil apresentar mais de um mapa na mesma folha, por exemplo, mapa de uso do solo ao lado de mapa de declividade ou APP. [web:80][web:86]</p>
+<p>Isso pode ser feito adicionando <strong>múltiplas janelas de mapa</strong> no layout e configurando cada uma com sua própria extensão e escala. [web:80][web:81]</p>
+<section id="adicionando-um-segundo-mapa-ex.-declividade" class="level3" data-number="9.6.1">
+<h3 data-number="9.6.1" class="anchored" data-anchor-id="adicionando-um-segundo-mapa-ex.-declividade"><span class="header-section-number">9.6.1</span> Adicionando um segundo mapa (ex.: declividade)</h3>
+<ol type="1">
+<li>Crie uma nova janela de mapa com o botão “Adicionar Mapa”, posicionando-a, por exemplo, ao lado do mapa principal (metade direita da página).</li>
+<li>No painel de propriedades, altere a <strong>extensão</strong> para focar a mesma área, mas altere a <strong>camada ativa/visível</strong> no projeto (por exemplo, destacando apenas a camada de declividade). [web:80][web:81]</li>
+<li>Se necessário, use temas de mapa (salvos no projeto) para controlar quais camadas aparecem em cada janela de mapa. [web:86]</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 8: Layout com dois mapas lado a lado: à esquerda, uso do solo; à direita, declividade, ambos com legendas específicas e mesma área geográfica.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="exportar">
+<section id="exportando-o-layout-pdf-imagem" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="exportando-o-layout-pdf-imagem"><span class="header-section-number">9.7</span> Exportando o Layout (PDF, Imagem)</h2>
+<p>Após ajustar todos os elementos, o layout pode ser exportado como PDF, imagem (PNG, JPEG) ou impresso diretamente. [web:80][web:84]</p>
+<section id="exportar-para-pdf" class="level3" data-number="9.7.1">
+<h3 data-number="9.7.1" class="anchored" data-anchor-id="exportar-para-pdf"><span class="header-section-number">9.7.1</span> Exportar para PDF</h3>
+<ol type="1">
+<li>Na barra superior da janela de layout, clique em <strong>“Exportar como PDF”</strong>.</li>
+<li>Escolha o local e o nome do arquivo, por exemplo, <em>Mapa_ambiental.pdf</em>.</li>
+<li>Verifique as opções de resolução e inclusão de metadados, se disponíveis.</li>
+<li>Clique em <strong>Salvar</strong> e aguarde a geração do arquivo. [web:80][web:84]</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 9: Janela de exportação para PDF do QGIS com nome de arquivo definido e opções padrão, ao lado da visualização de um PDF aberto com o mapa final.]</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="modelos-layout">
+<section id="modelos-de-impressão-templates-vantagens-e-como-usar" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="modelos-de-impressão-templates-vantagens-e-como-usar"><span class="header-section-number">9.8</span> Modelos de Impressão (Templates): Vantagens e Como Usar</h2>
+<p>Criar um layout do zero consome tempo, principalmente se você precisar produzir vários mapas com o mesmo padrão gráfico (título, logomarca, legenda, escala, posição do mapa). [web:82][web:85][web:88]</p>
+<p>Para agilizar e padronizar, o QGIS permite salvar o layout como <strong>modelo de impressão (template)</strong> e reutilizá-lo em outros projetos, mantendo a estrutura do mapa, legendas e elementos fixos. [web:82][web:85][web:88]</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 10: Exemplo de um layout de mapa com logotipo institucional, título padrão e quadro de dados configurado, acompanhado de uma janela mostrando o salvamento como template.]</p>
+</div>
+</div>
+<section id="vantagens-de-usar-modelos-de-layout" class="level3" data-number="9.8.1">
+<h3 data-number="9.8.1" class="anchored" data-anchor-id="vantagens-de-usar-modelos-de-layout"><span class="header-section-number">9.8.1</span> Vantagens de usar modelos de layout</h3>
+<ul>
+<li><strong>Padronização visual</strong>: todos os mapas seguem o mesmo padrão de cores, fontes, logotipos e organização. [web:82][web:85]</li>
+<li><strong>Economia de tempo</strong>: evita redesenhar títulos, legendas, quadros e margens em cada novo projeto. [web:82][web:88]</li>
+<li><strong>Redução de erros</strong>: minimiza esquecimentos (por exemplo, esquecer de incluir escala ou fonte), pois o modelo já inclui todos os elementos obrigatórios. [web:82][web:85]</li>
+<li><strong>Ideal para séries de mapas</strong>: especialmente útil quando se produzem muitos mapas para diferentes áreas, propriedades ou períodos (por exemplo, usando Atlas). [web:85][web:91]</li>
+</ul>
+</section>
+<section id="como-salvar-um-modelo-de-impressão" class="level3" data-number="9.8.2">
+<h3 data-number="9.8.2" class="anchored" data-anchor-id="como-salvar-um-modelo-de-impressão"><span class="header-section-number">9.8.2</span> Como salvar um modelo de impressão</h3>
+<ol type="1">
+<li>Com o layout já pronto e revisado, acesse o menu do layout (geralmente “Layout” ou “Compositor”, dependendo da versão do QGIS). [web:80][web:88]</li>
+<li>Selecione a opção <strong>“Salvar como Modelo”</strong> (Save as Template).</li>
+<li>Escolha um local para guardar o arquivo de modelo (por exemplo, pasta “Modelos_Layout_QGIS”) e dê um nome descritivo (ex.: <em>modelo_mapa_ambiental_A4.qpt</em>). [web:88]</li>
+<li>Confirme o salvamento.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 11: Menu do layout com a opção “Salvar como modelo” destacada, e janela de diálogo para salvar o arquivo .qpt.]</p>
+</div>
+</div>
+</section>
+<section id="como-usar-um-modelo-de-impressão-em-outro-projeto" class="level3" data-number="9.8.3">
+<h3 data-number="9.8.3" class="anchored" data-anchor-id="como-usar-um-modelo-de-impressão-em-outro-projeto"><span class="header-section-number">9.8.3</span> Como usar um modelo de impressão em outro projeto</h3>
+<ol type="1">
+<li>Abrir um novo projeto QGIS com as camadas desejadas (por exemplo, mapas de outra fazenda ou de outro município).</li>
+<li>Ir em <strong>“Projeto”</strong> &gt; <strong>“Novo Layout de Impressão”</strong> e definir um nome para o layout. [web:80][web:81]</li>
+<li>Na janela do layout, acessar o menu <strong>“Layout/Compositor”</strong> e escolher <strong>“Carregar itens de modelo”</strong> ou “Carregar de template”. [web:79][web:88]</li>
+<li>Selecionar o arquivo de modelo <em>.qpt</em> que você salvou anteriormente.</li>
+<li>A folha será preenchida automaticamente com a estrutura do modelo (posições de mapa, legenda, textos, logotipos); basta atualizar:
+<ul>
+<li>A área exibida na(s) janela(s) de mapa (ajustar extensão/escala).</li>
+<li>Textos específicos como título, data, escala textual e eventuais campos de identificação (nome da propriedade, município etc.). [web:85][web:88]</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>[IMAGEM 12: Janela de layout inicialmente em branco sendo preenchida automaticamente após carregar um template, mostrando o novo mapa já no modelo padrão.]</p>
+</div>
+</div>
+<p>Em projetos com muitos mapas (por exemplo, um mapa por propriedade), é possível combinar o uso de modelos de layout com o <strong>Atlas</strong> do QGIS para automatizar a geração de séries de mapas, mantendo o mesmo template. [web:86][web:89][web:91]</p>
+</section>
+</section>
+</section>
+</section>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="./capitulo8.html" class="pagination-link" aria-label="Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./capitulo10.html" class="pagination-link" aria-label="QField: Coleta e Edição de Dados em Campo Integrada ao QGIS">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
