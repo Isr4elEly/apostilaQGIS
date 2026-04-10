@@ -202,6 +202,6 @@ de camadas organizado.\]
 :::
 :::
 
-::: {.callout-important}
+**Exemplo de elaboração de mapa de uso do solo**
+
 {{< video https://www.youtube.com/watch?v=QC3xLG7g2FM&pp=0gcJCdoKAYcqIYzv >}}
-:::

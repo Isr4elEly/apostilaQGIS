@@ -274,7 +274,7 @@
     "href": "capitulo5.html",
     "title": "5  Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo",
     "section": "",
-    "text": "Depois de aprender a criar camadas vetoriais a partir de arquivos, um próximo passo importante é criar e editar seus próprios dados vetoriais no QGIS. [web:36][web:44]\nNeste capítulo, usaremos um exemplo prático: a criação de um mapa de uso e ocupação do solo de uma área de estudo, desenhando polígonos (talhões) e preenchendo uma tabela de atributos com o tipo de uso (por exemplo, “PAS” – Pastagem, “LAV” – Lavoura, “MATA” – Mata ciliar). [web:33][web:36][web:38]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Captura de tela do QGIS com uma imagem de satélite ao fundo e alguns polígonos sendo desenhados sobre ela, representando diferentes usos do solo (pasto, lavoura, mata, área urbana).]",
+    "text": "Depois de aprender a criar camadas vetoriais a partir de arquivos, um próximo passo importante é criar e editar seus próprios dados vetoriais no QGIS. [web:36][web:44]\nNeste capítulo, usaremos um exemplo prático: a criação de um mapa de uso e ocupação do solo de uma área de estudo, desenhando polígonos (talhões) e preenchendo uma tabela de atributos com o tipo de uso (por exemplo, “PAS” – Pastagem, “LAV” – Lavoura, “MATA” – Mata ciliar). [web:33][web:36][web:38]\n\n\n\n\n\n\nNote\n\n\n\n[IMAGEM 1: Captura de tela do QGIS com uma imagem de satélite ao fundo e alguns polígonos sendo desenhados sobre ela, representando diferentes usos do solo (pasto, lavoura, mata, área urbana).]\nExemplo de elaboração de mapa de uso do solo",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span>"
     ]
