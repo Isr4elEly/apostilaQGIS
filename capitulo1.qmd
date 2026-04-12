@@ -78,6 +78,7 @@ geoprocessamento, com diferentes cores representando tipos de vegetação,
 áreas urbanas e hidrografia. A legenda à direita ajuda o leitor a
 entender a simbologia utilizada.\]
 :::
+![mapa-tematico](image/mapa-de-uso.png)
 :::
 
 ::: {#sig .section}
@@ -110,6 +111,7 @@ pode:
 vetores de rios, limites e áreas agrícolas -- e uma janela de atributos
 aberta.\]
 :::
+![tela-sig](image/tela-sig.png)
 
 ::: {.callout-warning}
 

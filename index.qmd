@@ -1,5 +1,5 @@
 # Prefácio {.unnumbered}
 
-This is a Quarto book.
+Este material de estudo serve como guia para um curso de elaboração de mapas temáticos utilizando-se o software QGIS com objetivo de criar as peças técnicas que compêm os estudos necessários aos procedimentos do Instituto Nacional de Colonização e Reforma Agrária (INCRA).
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Os procedimentos apresentados baseam-se em divérsos materiais técnicos e no manual do [QGIS 3.44](https://docs.qgis.org/3.44/pt_BR/docs/index.html).

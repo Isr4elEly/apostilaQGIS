@@ -13,29 +13,31 @@ Neste capítulo, vamos conhecer a interface básica do QGIS e realizar um
 primeiro projeto simples: criar um projeto, adicionar camadas vetoriais
 e raster e salvar o trabalho. \[web:32\]\[web:33\]\[web:36\]
 
-::: {.callout-note}
+<!-- ::: {.callout-note}
 \[IMAGEM 1: Captura de tela geral da interface do QGIS aberta, com
 destaque visual para as principais áreas: barras de menus, barras de
 ferramentas, painel de camadas e área de mapa.\]
-:::
+::: -->
 :::
 
 ::: {#interface-basica .section}
-## Conhecendo a Interface do QGIS
+## Conhecendo a [Interface do QGIS](https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/qgis_gui.html#qgis-gui) 
 
 Ao abrir o QGIS, a tela inicial é composta por diferentes partes, cada
 uma com uma função específica. \[web:32\]\[web:33\]
 
--   **Barra de menus** (topo): onde ficam os menus "Projeto", "Camada",
+![interface-qgis](image/interface-qgis.png)
+
+-   **1-Barra de menus** (topo): onde ficam os menus "Projeto", "Camada",
     "Configurações", "Plugins", etc.
--   **Barras de ferramentas**: conjuntos de ícones que permitem acesso
+-   **2-Barras de ferramentas**: conjuntos de ícones que permitem acesso
     rápido às principais funções (zoom, seleção, adicionar camada,
     etc.).
--   **Painel de camadas** (geralmente à esquerda): lista todas as
+-   **3-Painel de camadas** (geralmente à esquerda): lista todas as
     camadas do projeto, permitindo ligá-las, desligá-las e organizar a
     ordem.
--   **Área de mapa**: onde os dados geográficos são visualizados.
--   **Barra de status** (parte inferior): mostra informações como o SRC
+-   **4-Área de mapa**: onde os dados geográficos são visualizados.
+-   **5-Barra de status** (parte inferior): mostra informações como o SRC
     do projeto e a coordenada do ponteiro do mouse. \[web:33\]
 
 ::: {.callout-note}
