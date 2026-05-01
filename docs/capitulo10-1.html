@@ -239,8 +239,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="introducao-qfield">
 <section id="introdução" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">11.1</span> Introdução</h2>
-<p>Foi disponibilizado um projeto padrão para coleta de preços de imóveis rurais destinados a elaboração de estudos de mercados de terras e avaliação de imoveis rurais. O formulário de coleta está baseado no manual de obtenção do INCRA e na Instruções normativa que regula a elaboração dos estudos de mercado de terras.</p>
-<p>O projeto, copatível com o QFIELD e com o QGIS(3.x).</p>
+<p>Foi disponibilizado um projeto padrão para coleta de preços de imóveis rurais destinados a elaboração de estudos de mercados de terras e avaliação de imoveis rurais. O formulário de coleta está baseado no manual de obtenção do INCRA e na Instrução normativa que regula a elaboração dos estudos de mercado de terras.</p>
+<p>O projeto é compatível com o QFIELD e com o QGIS(3.x).</p>
 <p><img src="image/qfield-open-in-qgis/img0a.jpeg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -271,11 +271,11 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><code>pasta</code> com os estilos (formatação) do projeto (cores, textos, etc)</li>
+<li>pasta com os <code>estilos</code> (formatação) do projeto (cores, textos, etc)</li>
 <li><code>ìncra_ppr_apoio_v101.gpkg</code>: arquivo GeoPackage com as camadas vetoriais de apoio (solos, hidrografia, localidades, etc);</li>
 <li><code>incra-ppr-Gurupi-v1-0-0.qgz</code>: arquivo de projeto do QGIS com as configurações gerais e formatação dos formulários;</li>
 <li><code>ppr_apoio_v101.qgz</code>: arquivo GeoPackage com as camadas vetoriais principais da coleta (elementos e tabelas);</li>
-<li><code>mapbiomas2024.tif</code>: arquivos raster com o uso do solo (MapBiomas 2024) para auxiliar na coleta de informações sobre o uso do solo.</li>
+<li><code>mapbiomas2024.tif</code>: arquivo raster com o uso do solo (MapBiomas 2024) para auxiliar na coleta de informações sobre o uso do solo.</li>
 </ol>
 </div>
 </div>
@@ -284,9 +284,9 @@ Note
 <section id="qfield-abrindo">
 <section id="abrindo-o-projeto-no-qgis" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="abrindo-o-projeto-no-qgis"><span class="header-section-number">11.2</span> Abrindo o projeto no QGIS</h2>
-<p>Antes de inciar o trabalho de campo devemos abrir o projeto no QGIS para verificar a ocorrencia de erros ou adicionar mas camadas que irão auxiliar na coleta dos dados, tais quais, imóveis certificados, CAR, etc.</p>
+<p>Antes de inciar o trabalho de campo devemos abrir o projeto no QGIS para verificar a ocorrência de erros ou adicionar mais camadas que irão auxiliar na coleta dos dados, tais quais, imóveis certificados, CAR, etc. Tais camadas não foram incialmente adicionadas por serem muito dinâmicas, oferecendo melhor contexto próximo às datas de coleta.</p>
+<p>Utilizando o <a href="https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/browser.html#the-browser-panel"><code>Painel do Navegador</code></a> (janela do QGIS que mostra a árvore de diretórios e arquivos do seu sistema operacional), navegue até o local onde salvou os projetos do seu estado e carregue o arquivo do projeto com um duplo clique.</p>
 <p><img src="image/qfield-open-in-qgis/img1.jpeg" class="img-fluid"></p>
-<p>Utilizando o <a href="https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/browser.html#the-browser-panel"><code>Painel do Navegador</code></a> (janela do QGIS que mostra a árvores de diretórios e arquivos do seu sistema operacional), navegue até o local onde salvou os projetos do seu estado e carregue o arquivo do projeto com um duplo clique.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -308,7 +308,7 @@ Note
 <section id="qfield-erro-caminho">
 <section id="erro-de-caminho-nas-camadas" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="erro-de-caminho-nas-camadas"><span class="header-section-number">11.3</span> Erro de caminho nas camadas</h2>
-<p>Para o caso de aparecer uma mensagem de erro de caminho das camadas do projeto, proceder conforme abaixo descrito. Esse erro decorre da modificação do projetos entre computadores e pastas distintsa, porém é facilmente resolvido.</p>
+<p>Para o caso de aparecer uma mensagem de erro de caminho das camadas do projeto, proceder conforme abaixo descrito. Esse erro decorre da modificação do projeto entre computadores e pastas distintas, porém é facilmente resolvido.</p>
 <p><img src="image/qfield-open-in-qgis/img2.jpeg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -340,15 +340,15 @@ Note
 <ol type="1">
 <li><a href="https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/general_tools.html#layers-panel"><code>painel de camadas</code></a>.</li>
 <li>Símbolo de erro de caminho da camada <code>elementos</code>.</li>
-<li>Símbolo de erro de caminho da camada <code>bf_localidades_2022</code>.</li>
+<li>Símbolo de erro de caminho da camada <code>br_localidades_2022</code>.</li>
 </ol>
 </div>
 </div>
 </section>
 </section>
 <section id="qfield-corrigir-caminho">
-<section id="corrigindo-os-caminho-do-projeto." class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="corrigindo-os-caminho-do-projeto."><span class="header-section-number">11.4</span> Corrigindo os caminho do projeto.</h2>
+<section id="corrigindo-os-caminhos-do-projeto." class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="corrigindo-os-caminhos-do-projeto."><span class="header-section-number">11.4</span> Corrigindo os caminhos do projeto.</h2>
 <p>Para corrigir os caminho das camadas, clique sobre o símbolo que aparece ao lado direito de cada uma. Na janela que aparecer, devemos apontar para o local correto onde cada camada foi salva.</p>
 <p><img src="image/qfield-open-in-qgis/img4.jpeg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">

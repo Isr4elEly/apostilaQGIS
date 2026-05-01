@@ -5,9 +5,9 @@
 ::: {#introducao-qfield .section}
 ## Introdução
 
-Foi disponibilizado um projeto padrão para coleta de preços de imóveis rurais destinados a elaboração de estudos de mercados de terras e avaliação de imoveis rurais. O formulário de coleta está baseado no manual de obtenção do INCRA e na Instruções normativa que regula a elaboração dos estudos de mercado de terras.
+Foi disponibilizado um projeto padrão para coleta de preços de imóveis rurais destinados a elaboração de estudos de mercados de terras e avaliação de imoveis rurais. O formulário de coleta está baseado no manual de obtenção do INCRA e na Instrução normativa que regula a elaboração dos estudos de mercado de terras.
 
-O projeto, copatível com o QFIELD e com o QGIS(3.x).
+O projeto é compatível com o QFIELD e com o QGIS(3.x).
 
 ![](image/qfield-open-in-qgis/img0a.jpeg)
 
@@ -21,22 +21,22 @@ Cada pasta é composta dos seguintes arquivos:
 ![](image/qfield-open-in-qgis/img0b.jpeg)
 
 ::: {.callout-note}
-1. `pasta` com os estilos (formatação) do projeto (cores, textos, etc)
+1.  pasta com os `estilos` (formatação) do projeto (cores, textos, etc)
 2. `ìncra_ppr_apoio_v101.gpkg`: arquivo GeoPackage com as camadas vetoriais de apoio (solos, hidrografia, localidades, etc);
 3. `incra-ppr-Gurupi-v1-0-0.qgz`: arquivo de projeto do QGIS com as configurações gerais e formatação dos formulários;
 4. `ppr_apoio_v101.qgz`: arquivo GeoPackage com as camadas vetoriais principais da coleta (elementos e tabelas); 
-5. `mapbiomas2024.tif`: arquivos raster com o uso do solo (MapBiomas 2024) para auxiliar na coleta de informações sobre o uso do solo.
+5. `mapbiomas2024.tif`: arquivo raster com o uso do solo (MapBiomas 2024) para auxiliar na coleta de informações sobre o uso do solo.
 :::
 :::
 
 ::: {#qfield-abrindo .section}
 ## Abrindo o projeto no QGIS
 
-Antes de inciar o trabalho de campo devemos abrir o projeto no QGIS para verificar a ocorrencia de erros ou adicionar mas camadas que irão auxiliar na coleta dos dados, tais quais, imóveis certificados, CAR, etc.
+Antes de inciar o trabalho de campo devemos abrir o projeto no QGIS para verificar a ocorrência de erros ou adicionar mais camadas que irão auxiliar na coleta dos dados, tais quais, imóveis certificados, CAR, etc. Tais camadas não foram incialmente adicionadas por serem muito dinâmicas, oferecendo melhor contexto próximo às datas de coleta.
+
+Utilizando o [`Painel do Navegador`](https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/browser.html#the-browser-panel) (janela do QGIS que mostra a árvore de diretórios e arquivos do seu sistema operacional), navegue até o local onde salvou os projetos do seu estado e carregue o arquivo do projeto com um duplo clique.
 
 ![](image/qfield-open-in-qgis/img1.jpeg)
-
-Utilizando o [`Painel do Navegador`](https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/browser.html#the-browser-panel) (janela do QGIS que mostra a árvores de diretórios e arquivos do seu sistema operacional), navegue até o local onde salvou os projetos do seu estado e carregue o arquivo do projeto com um duplo clique.
 
 ::: {.callout-note}
 1. Painel do navegador.
@@ -47,7 +47,7 @@ Utilizando o [`Painel do Navegador`](https://docs.qgis.org/3.44/pt_BR/docs/user_
 ::: {#qfield-erro-caminho .section}
 ## Erro de caminho nas camadas
 
-Para o caso de aparecer uma mensagem de erro de caminho das camadas do projeto, proceder conforme abaixo descrito. Esse erro decorre da modificação do projetos entre computadores e pastas distintsa, porém é facilmente resolvido.
+Para o caso de aparecer uma mensagem de erro de caminho das camadas do projeto, proceder conforme abaixo descrito. Esse erro decorre da modificação do projeto entre computadores e pastas distintas, porém é facilmente resolvido.
 
 ![](image/qfield-open-in-qgis/img2.jpeg)
 
@@ -62,12 +62,12 @@ O projeto será aberto com as camadas originais com um símbolo no lado direito.
 ::: {.callout-note}
 1. [`painel de camadas`](https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/general_tools.html#layers-panel).
 2. Símbolo de erro de caminho da camada `elementos`.
-3. Símbolo de erro de caminho da camada `bf_localidades_2022`.
+3. Símbolo de erro de caminho da camada `br_localidades_2022`.
 :::
 :::
 
 ::: {#qfield-corrigir-caminho .section}
-## Corrigindo os caminho do projeto.
+## Corrigindo os caminhos do projeto.
 
 Para corrigir os caminho das camadas, clique sobre o símbolo que aparece ao lado direito de cada uma. Na janela que aparecer, devemos apontar para o local correto onde cada camada foi salva.
 
