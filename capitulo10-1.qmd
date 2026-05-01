@@ -7,7 +7,7 @@
 
 Foi disponibilizado um projeto padrão para coleta de preços de imóveis rurais destinados a elaboração de estudos de mercados de terras e avaliação de imoveis rurais. O formulário de coleta está baseado no manual de obtenção do INCRA e na Instruções normativa que regula a elaboração dos estudos de mercado de terras.
 
-O projeto, copatível com o QFIELD e com o QGIS(3.x) sendo coposto dos seguindo componentes:
+O projeto, copatível com o QFIELD e com o QGIS(3.x).
 
 ![](image/qfield-open-in-qgis/img0a.jpeg)
 
