@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo – Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField</title>
+<title>11&nbsp; QField: Projeto de coleta de preços de imóveis rurais. – Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./capitulo6.html" rel="next">
-<link href="./capitulo4.html" rel="prev">
+<link href="./capitulo11.html" rel="next">
+<link href="./capitulo10.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo10-1.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">QField: Projeto de coleta de preços de imóveis rurais.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -143,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./capitulo5.html" class="sidebar-item-text sidebar-link active">
+  <a href="./capitulo5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span></span></a>
   </div>
 </li>
@@ -179,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./capitulo10-1.html" class="sidebar-item-text sidebar-link">
+  <a href="./capitulo10-1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">QField: Projeto de coleta de preços de imóveis rurais.</span></span></a>
   </div>
 </li>
@@ -218,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Edição de Dados Vetoriais e Criação de um Mapa de Uso do Solo</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">QField: Projeto de coleta de preços de imóveis rurais.</span></h1>
 </div>
 
 
@@ -235,12 +235,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="cap5">
-<section id="introducao-cap5">
-<section id="introdução" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">5.1</span> Introdução</h2>
-<p>Depois de aprender a criar camadas vetoriais a partir de arquivos, um próximo passo importante é <strong>criar e editar seus próprios dados vetoriais</strong> no QGIS. [web:36][web:44]</p>
-<p>Neste capítulo, usaremos um exemplo prático: a criação de um <strong>mapa de uso e ocupação do solo</strong> de uma área de estudo, desenhando polígonos (talhões) e preenchendo uma tabela de atributos com o tipo de uso (por exemplo, “PAS” – Pastagem, “LAV” – Lavoura, “MATA” – Mata ciliar). [web:33][web:36][web:38]</p>
+<section id="cap10-1">
+<section id="introducao-qfield">
+<section id="introdução" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">11.1</span> Introdução</h2>
+<p>Foi disponibilizado um projeto padrão para coleta de preços de imóveis rurais destinados a elaboração de estudos de mercados de terras e avaliação de imoveis rurais. O formulário de coleta está baseado no manual de obtenção do INCRA e na Instruções normativa que regula a elaboração dos estudos de mercado de terras.</p>
+<p>O projeto, copatível com o QFIELD e com o QGIS(3.x) sendo coposto dos seguindo componentes:</p>
+<p><img src="image/qfield-open-in-qgis/img0a.jpeg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -251,22 +252,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 1: Captura de tela do QGIS com uma imagem de satélite ao fundo e alguns polígonos sendo desenhados sobre ela, representando diferentes usos do solo (pasto, lavoura, mata, área urbana).]</p>
-</div>
-</div>
-</section>
-</section>
-<section id="preparacao-projeto">
-<section id="preparando-o-projeto" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="preparando-o-projeto"><span class="header-section-number">5.2</span> Preparando o Projeto</h2>
-<p>Antes de começar a desenhar, é importante ter um projeto pronto com fundo de imagem (raster) e SRC adequado à área de estudo. [web:36][web:37]</p>
-<section id="passo-a-passo" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="passo-a-passo"><span class="header-section-number">5.2.1</span> Passo a passo</h3>
 <ol type="1">
-<li>Abrir um projeto existente ou criar um novo.</li>
-<li>Carregar uma camada raster de fundo (imagem de satélite ou MDE) conforme o Capítulo 4.</li>
-<li>Verificar e ajustar o SRC do projeto, se necessário, para o sistema apropriado ao seu estado/município (por exemplo, SIRGAS 2000 / UTM). [web:37][web:39]</li>
+<li>pasta do estado contendo todos os projetos daquela unidade da federação;</li>
+<li>pasta das regiões intermediárias do estado.</li>
 </ol>
+</div>
+</div>
+<p>Cada pasta é composta dos seguintes arquivos:</p>
+<p><img src="image/qfield-open-in-qgis/img0b.jpeg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -277,33 +270,23 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 2: Projeto no QGIS com imagem de satélite no fundo, painel de camadas mostrando a camada raster, e o SRC configurado em um sistema UTM SIRGAS 2000.]</p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="criar-camada-vetorial">
-<section id="criando-uma-nova-camada-vetorial-polígono" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="criando-uma-nova-camada-vetorial-polígono"><span class="header-section-number">5.3</span> Criando uma Nova Camada Vetorial (Polígono)</h2>
-<p>Para registrar o uso do solo, criaremos uma camada vetorial do tipo <strong>polígono</strong>, que permitirá desenhar áreas de diferentes usos. [web:37][web:44]</p>
-<section id="criando-a-camada-de-uso-do-solo" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="criando-a-camada-de-uso-do-solo"><span class="header-section-number">5.3.1</span> Criando a camada de uso do solo</h3>
 <ol type="1">
-<li>No menu superior, vá em <strong>“Camada”</strong> &gt; <strong>“Criar Camada”</strong> &gt; <strong>“Camada Shapefile Novo...”</strong>. [web:44]</li>
-<li>Na janela que abrir:
-<ul>
-<li>Defina <strong>nome</strong> (ex.: <em>uso_solo.shp</em>).</li>
-<li>Selecione <strong>tipo de geometria</strong> como “Polígono”.</li>
-<li>Verifique se o SRC está correto (normalmente “Usar SRC do projeto” já deve selecionar o SRC definido anteriormente). [web:37]</li>
-</ul></li>
-<li>Na seção de <strong>atributos</strong>, clique em “Adicionar Campo” e crie pelo menos dois campos:
-<ul>
-<li><strong>id</strong> (tipo inteiro).</li>
-<li><strong>uso</strong> (tipo texto/string).</li>
-</ul></li>
-<li>Clique em <strong>“OK”</strong> e salve o arquivo em uma pasta de seu projeto.</li>
+<li><code>pasta</code> com os estilos (formatação) do projeto (cores, textos, etc)</li>
+<li><code>ìncra_ppr_apoio_v101.gpkg</code>: arquivo GeoPackage com as camadas vetoriais de apoio (solos, hidrografia, localidades, etc);</li>
+<li><code>incra-ppr-Gurupi-v1-0-0.qgz</code>: arquivo de projeto do QGIS com as configurações gerais e formatação dos formulários;</li>
+<li><code>ppr_apoio_v101.qgz</code>: arquivo GeoPackage com as camadas vetoriais principais da coleta (elementos e tabelas);</li>
+<li><code>mapbiomas2024.tif</code>: arquivos raster com o uso do solo (MapBiomas 2024) para auxiliar na coleta de informações sobre o uso do solo.</li>
 </ol>
+</div>
+</div>
+</section>
+</section>
+<section id="qfield-abrindo">
+<section id="abrindo-o-projeto-no-qgis" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="abrindo-o-projeto-no-qgis"><span class="header-section-number">11.2</span> Abrindo o projeto no QGIS</h2>
+<p>Antes de inciar o trabalho de campo devemos abrir o projeto no QGIS para verificar a ocorrencia de erros ou adicionar mas camadas que irão auxiliar na coleta dos dados, tais quais, imóveis certificados, CAR, etc.</p>
+<p><img src="image/qfield-open-in-qgis/img1.jpeg" class="img-fluid"></p>
+<p>Utilizando o <a href="https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/browser.html#the-browser-panel"><code>Painel do Navegador</code></a> (janela do QGIS que mostra a árvores de diretórios e arquivos do seu sistema operacional), navegue até o local onde salvou os projetos do seu estado e carregue o arquivo do projeto com um duplo clique.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -314,23 +297,19 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 3: Janela “Shapefile Novo” no QGIS, com “Geom. Tipo: Polígono”, SRC corretamente carregado e dois campos na tabela de atributos: “id” e “uso”.]</p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="ativar-edicao">
-<section id="ativando-o-modo-de-edição" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="ativando-o-modo-de-edição"><span class="header-section-number">5.4</span> Ativando o Modo de Edição</h2>
-<p>Para desenhar os polígonos de uso do solo, é necessário ativar o modo de edição da camada vetorial. [web:37][web:44]</p>
-<section id="passo-a-passo-1" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="passo-a-passo-1"><span class="header-section-number">5.4.1</span> Passo a passo</h3>
 <ol type="1">
-<li>No painel de camadas, clique sobre a camada recém-criada (<em>uso_solo</em>).</li>
-<li>Clique no ícone de <strong>alternar edição</strong> na barra de ferramentas (ícone de lápis) ou vá em <strong>“Camada”</strong> &gt; <strong>“Alternar Edição”</strong>. [web:37][web:44]</li>
-<li>Ao final dos trabalhos de edição, lembre-se de salvar as mudanças e desativar o modo de edição.</li>
+<li>Painel do navegador.</li>
+<li>projeto do QGIS dentro da pasta do projeto.</li>
 </ol>
+</div>
+</div>
+</section>
+</section>
+<section id="qfield-erro-caminho">
+<section id="erro-de-caminho-nas-camadas" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="erro-de-caminho-nas-camadas"><span class="header-section-number">11.3</span> Erro de caminho nas camadas</h2>
+<p>Para o caso de aparecer uma mensagem de erro de caminho das camadas do projeto, proceder conforme abaixo descrito. Esse erro decorre da modificação do projetos entre computadores e pastas distintsa, porém é facilmente resolvido.</p>
+<p><img src="image/qfield-open-in-qgis/img2.jpeg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -341,31 +320,13 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 4: Barra de ferramentas do QGIS com o ícone de lápis destacado, indicando o modo de edição ativo.]</p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="desenho-poligonos">
-<section id="desenhando-polígonos-de-uso-do-solo" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="desenhando-polígonos-de-uso-do-solo"><span class="header-section-number">5.5</span> Desenhando Polígonos de Uso do Solo</h2>
-<p>Agora que a camada está em modo de edição, você pode desenhar os polígonos que representam diferentes usos do solo na área de estudo. [web:37][web:38]</p>
-<section id="passo-a-passo-para-desenhar-um-polígono" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="passo-a-passo-para-desenhar-um-polígono"><span class="header-section-number">5.5.1</span> Passo a passo para desenhar um polígono</h3>
 <ol type="1">
-<li>Na barra de ferramentas de edição, clique na ferramenta <strong>“Adicionar feição de polígono”</strong> (ícone de polígono).</li>
-<li>Clique, no mapa, sobre o fundo de imagem, definindo os vértices do polígono ao longo dos limites de cada talhão/uso. [web:37][web:38]</li>
-<li>Encerre o desenho:
-<ul>
-<li>Volte ao primeiro vértice e clique nele, ou</li>
-<li>Use o botão direito do mouse para fechar o polígono.</li>
-</ul></li>
-<li>Uma janela de atributos abrirá automaticamente.</li>
-<li>No campo <strong>uso</strong>, digite o tipo de uso (ex.: “PAS”, “LAV”, “MATA”, “URB”).</li>
-<li>Clique em <strong>“OK”</strong> para salvar a feição.</li>
-<li>Repita o processo para outros polígonos, cobrindo toda a área de interesse.</li>
+<li>Clique no botão, Manter camadas indisponíveis.</li>
 </ol>
+</div>
+</div>
+<p>O projeto será aberto com as camadas originais com um símbolo no lado direito.</p>
+<p><img src="image/qfield-open-in-qgis/img3.jpeg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -376,26 +337,20 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 5: Mapa com imagem de satélite ao fundo e vários polígonos sendo desenhados, com setas indicando vértices e fechamento do polígono.]</p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="simbologia-uso">
-<section id="visualizando-o-mapa-de-uso-do-solo-simbologia-básica" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="visualizando-o-mapa-de-uso-do-solo-simbologia-básica"><span class="header-section-number">5.6</span> Visualizando o Mapa de Uso do Solo (Simbologia Básica)</h2>
-<p>Depois de criar vários polígonos com diferentes usos, o próximo passo é organizar a simbologia para que o mapa fique didático. [web:33][web:37]</p>
-<section id="configurando-uma-simbologia-por-categoria" class="level3" data-number="5.6.1">
-<h3 data-number="5.6.1" class="anchored" data-anchor-id="configurando-uma-simbologia-por-categoria"><span class="header-section-number">5.6.1</span> Configurando uma simbologia por categoria</h3>
 <ol type="1">
-<li>No painel de camadas, clique com o botão direito sobre a camada <em>uso_solo</em> e escolha <strong>“Propriedades”</strong>.</li>
-<li>Vá até a aba <strong>“Simbologia”</strong>.</li>
-<li>Mude o tipo de simbologia para <strong>“Categoria”</strong> e escolha o campo <strong>uso</strong> como valor.</li>
-<li>Clique em <strong>“Classificar”</strong>; o QGIS criará uma entrada para cada valor distinto (PAS, LAV, MATA, etc.). [web:37]</li>
-<li>Para cada categoria, escolha uma cor diferente (ex.: verde claro para pastagem, verde escuro para mata, amarelo para lavoura).</li>
-<li>Clique em <strong>“Aplicar”</strong> e depois em <strong>“OK”</strong>.</li>
+<li><a href="https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/general_tools.html#layers-panel"><code>painel de camadas</code></a>.</li>
+<li>Símbolo de erro de caminho da camada <code>elementos</code>.</li>
+<li>Símbolo de erro de caminho da camada <code>bf_localidades_2022</code>.</li>
 </ol>
+</div>
+</div>
+</section>
+</section>
+<section id="qfield-corrigir-caminho">
+<section id="corrigindo-os-caminho-do-projeto." class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="corrigindo-os-caminho-do-projeto."><span class="header-section-number">11.4</span> Corrigindo os caminho do projeto.</h2>
+<p>Para corrigir os caminho das camadas, clique sobre o símbolo que aparece ao lado direito de cada uma. Na janela que aparecer, devemos apontar para o local correto onde cada camada foi salva.</p>
+<p><img src="image/qfield-open-in-qgis/img4.jpeg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -406,23 +361,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 6: Janela de simbologia do QGIS com o campo “uso” selecionado, mostrando três categorias (PAS, LAV, MATA) com cores diferentes definidas e o mapa ao fundo exibindo os polígonos coloridos.]</p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="salvar-edicoes">
-<section id="salvando-as-edições" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="salvando-as-edições"><span class="header-section-number">5.7</span> Salvando as Edições</h2>
-<p>Toda vez que você cria ou altera feições, o QGIS precisa salvar essas mudanças explicitamente. [web:37][web:44]</p>
-<section id="passo-a-passo-2" class="level3" data-number="5.7.1">
-<h3 data-number="5.7.1" class="anchored" data-anchor-id="passo-a-passo-2"><span class="header-section-number">5.7.1</span> Passo a passo</h3>
 <ol type="1">
-<li>Com a camada <em>uso_solo</em> ainda em modo de edição, clique no ícone de <strong>“Salvar Mudanças”</strong> na barra de ferramentas de edição (disquete).</li>
-<li>Após salvar, desative o modo de edição clicando novamente no ícone de lápis (ou “Alternar Edição”).</li>
-<li>Salve também o projeto principal em “Projeto” &gt; “Salvar”.</li>
+<li><a href="https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/browser.html#project-home"><code>Casa do Projeto</code></a>: local que aponta para a pasta onde o projeto está salvo.</li>
+<li><code>incra_ppr_v101.gpkg</code>: local onde a camada está salva.</li>
+<li><code>elementos</code>: camada a ser corrigida. As demais camadas que estão no mesmo arquivo GeoPackage serão corrigidas automaticamente.</li>
 </ol>
+</div>
+</div>
+<p><img src="image/qfield-open-in-qgis/img5.jpeg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -433,25 +379,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 7: Barra de ferramentas de edição com o ícone de disquete destacado, e a janela de projeto salvando o arquivo após as edições.]</p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="roteiro-uso">
-<section id="roteiro-prático-criando-um-mapa-de-uso-do-solo" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="roteiro-prático-criando-um-mapa-de-uso-do-solo"><span class="header-section-number">5.8</span> Roteiro Prático: Criando um Mapa de Uso do Solo</h2>
-<p>Para ajudar na fixação, segue um roteiro claro que você pode seguir para criar um <strong>mapa de uso e ocupação do solo</strong> desde o início. [web:36][web:37][web:38]</p>
 <ol type="1">
-<li>Criar ou abrir um projeto no QGIS com SRC apropriado ao seu estado/município.</li>
-<li>Adicionar uma imagem de satélite ou MDE como camada raster de fundo.</li>
-<li>Criar uma nova camada vetorial do tipo <strong>polígono</strong> chamada <em>uso_solo</em>, com os campos <em>id</em> e <em>uso</em>.</li>
-<li>Ativar o modo de edição dessa camada.</li>
-<li>Usar a ferramenta de <strong>polígono</strong> para desenhar as áreas de diferentes usos, preenchendo o campo <em>uso</em> em cada polígono.</li>
-<li>Organizar a simbologia por categoria, usando cores distintas para cada tipo de uso.</li>
-<li>Salvar as edições da camada vetorial e o projeto.</li>
+<li><a href="https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/browser.html#project-home"><code>Casa do Projeto</code></a>: local que aponta para a pasta onde o projeto está salvo.</li>
+<li><code>incra_ppr_apoio_v101.gpkg</code>: local onde a camada está salva.</li>
+<li><code>br_localidades_2022</code>: camada a ser corrigida. As demais camadas que estão no mesmo arquivo GeoPackage serão corrigidas automaticamente.</li>
 </ol>
+</div>
+</div>
+<p><img src="image/qfield-open-in-qgis/img6.jpeg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -462,14 +397,17 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 8: Mapa final com camada raster de fundo, polígonos de uso do solo coloridos, legenda simples ao lado indicando cores e usos, e painel de camadas organizado.]</p>
+<ol type="1">
+<li><a href="https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/browser.html#project-home"><code>Casa do Projeto</code></a>: local que aponta para a pasta onde o projeto está salvo.</li>
+<li><code>mapbiomas2024.tif</code>: camada a ser corrigida.</li>
+</ol>
 </div>
 </div>
+<p>Concluíndo-se as etapas de correção dos caminhos, o projeto estará pronto para ser utilizado no QGIS e posteriormente exportado para o QFIELD.</p>
+<p><img src="image/qfield-open-in-qgis/img7.jpeg" class="img-fluid"></p>
 </section>
 </section>
 </section>
-<p><strong>Exemplo de elaboração de mapa de uso do solo</strong></p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/QC3xLG7g2FM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
 
@@ -881,13 +819,13 @@ Note
   </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./capitulo4.html" class="pagination-link" aria-label="Introdução ao QGIS: Interface e Primeiro Projeto">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introdução ao QGIS: Interface e Primeiro Projeto</span></span>
+      <a href="./capitulo10.html" class="pagination-link" aria-label="QField: Coleta e Edição de Dados em Campo Integrada ao QGIS">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">QField: Coleta e Edição de Dados em Campo Integrada ao QGIS</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./capitulo6.html" class="pagination-link" aria-label="Mapa de Relevo e Curvas de Nível">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Mapa de Relevo e Curvas de Nível</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./capitulo11.html" class="pagination-link" aria-label="Agradecimentos e Referências Utilizadas">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Agradecimentos e Referências Utilizadas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

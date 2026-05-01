@@ -800,43 +800,93 @@
     ]
   },
   {
+    "objectID": "capitulo10-1.html",
+    "href": "capitulo10-1.html",
+    "title": "11  QField: Projeto de coleta de preços de imóveis rurais.",
+    "section": "",
+    "text": "Foi disponibilizado um projeto padrão para coleta de preços de imóveis rurais destinados a elaboração de estudos de mercados de terras e avaliação de imoveis rurais. O formulário de coleta está baseado no manual de obtenção do INCRA e na Instruções normativa que regula a elaboração dos estudos de mercado de terras.\nO projeto, copatível com o QFIELD e com o QGIS(3.x) sendo coposto dos seguindo componentes:\n\n\n\n\n\n\n\nNote\n\n\n\n\npasta do estado contendo todos os projetos daquela unidade da federação;\npasta das regiões intermediárias do estado.\n\n\n\nCada pasta é composta dos seguintes arquivos:\n\n\n\n\n\n\n\nNote\n\n\n\n\npasta com os estilos (formatação) do projeto (cores, textos, etc)\nìncra_ppr_apoio_v101.gpkg: arquivo GeoPackage com as camadas vetoriais de apoio (solos, hidrografia, localidades, etc);\nincra-ppr-Gurupi-v1-0-0.qgz: arquivo de projeto do QGIS com as configurações gerais e formatação dos formulários;\nppr_apoio_v101.qgz: arquivo GeoPackage com as camadas vetoriais principais da coleta (elementos e tabelas);\nmapbiomas2024.tif: arquivos raster com o uso do solo (MapBiomas 2024) para auxiliar na coleta de informações sobre o uso do solo.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>QField: Projeto de coleta de preços de imóveis rurais.</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10-1.html#introdução",
+    "href": "capitulo10-1.html#introdução",
+    "title": "11  QField: Projeto de coleta de preços de imóveis rurais.",
+    "section": "",
+    "text": "Foi disponibilizado um projeto padrão para coleta de preços de imóveis rurais destinados a elaboração de estudos de mercados de terras e avaliação de imoveis rurais. O formulário de coleta está baseado no manual de obtenção do INCRA e na Instruções normativa que regula a elaboração dos estudos de mercado de terras.\nO projeto, copatível com o QFIELD e com o QGIS(3.x) sendo coposto dos seguindo componentes:\n\n\n\n\n\n\n\nNote\n\n\n\n\npasta do estado contendo todos os projetos daquela unidade da federação;\npasta das regiões intermediárias do estado.\n\n\n\nCada pasta é composta dos seguintes arquivos:\n\n\n\n\n\n\n\nNote\n\n\n\n\npasta com os estilos (formatação) do projeto (cores, textos, etc)\nìncra_ppr_apoio_v101.gpkg: arquivo GeoPackage com as camadas vetoriais de apoio (solos, hidrografia, localidades, etc);\nincra-ppr-Gurupi-v1-0-0.qgz: arquivo de projeto do QGIS com as configurações gerais e formatação dos formulários;\nppr_apoio_v101.qgz: arquivo GeoPackage com as camadas vetoriais principais da coleta (elementos e tabelas);\nmapbiomas2024.tif: arquivos raster com o uso do solo (MapBiomas 2024) para auxiliar na coleta de informações sobre o uso do solo.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>QField: Projeto de coleta de preços de imóveis rurais.</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10-1.html#abrindo-o-projeto-no-qgis",
+    "href": "capitulo10-1.html#abrindo-o-projeto-no-qgis",
+    "title": "11  QField: Projeto de coleta de preços de imóveis rurais.",
+    "section": "11.2 Abrindo o projeto no QGIS",
+    "text": "11.2 Abrindo o projeto no QGIS\nAntes de inciar o trabalho de campo devemos abrir o projeto no QGIS para verificar a ocorrencia de erros ou adicionar mas camadas que irão auxiliar na coleta dos dados, tais quais, imóveis certificados, CAR, etc.\n\nUtilizando o Painel do Navegador (janela do QGIS que mostra a árvores de diretórios e arquivos do seu sistema operacional), navegue até o local onde salvou os projetos do seu estado e carregue o arquivo do projeto com um duplo clique.\n\n\n\n\n\n\nNote\n\n\n\n\nPainel do navegador.\nprojeto do QGIS dentro da pasta do projeto.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>QField: Projeto de coleta de preços de imóveis rurais.</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10-1.html#erro-de-caminho-nas-camadas",
+    "href": "capitulo10-1.html#erro-de-caminho-nas-camadas",
+    "title": "11  QField: Projeto de coleta de preços de imóveis rurais.",
+    "section": "11.3 Erro de caminho nas camadas",
+    "text": "11.3 Erro de caminho nas camadas\nPara o caso de aparecer uma mensagem de erro de caminho das camadas do projeto, proceder conforme abaixo descrito. Esse erro decorre da modificação do projetos entre computadores e pastas distintsa, porém é facilmente resolvido.\n\n\n\n\n\n\n\nNote\n\n\n\n\nClique no botão, Manter camadas indisponíveis.\n\n\n\nO projeto será aberto com as camadas originais com um símbolo no lado direito.\n\n\n\n\n\n\n\nNote\n\n\n\n\npainel de camadas.\nSímbolo de erro de caminho da camada elementos.\nSímbolo de erro de caminho da camada bf_localidades_2022.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>QField: Projeto de coleta de preços de imóveis rurais.</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo10-1.html#corrigindo-os-caminho-do-projeto.",
+    "href": "capitulo10-1.html#corrigindo-os-caminho-do-projeto.",
+    "title": "11  QField: Projeto de coleta de preços de imóveis rurais.",
+    "section": "11.4 Corrigindo os caminho do projeto.",
+    "text": "11.4 Corrigindo os caminho do projeto.\nPara corrigir os caminho das camadas, clique sobre o símbolo que aparece ao lado direito de cada uma. Na janela que aparecer, devemos apontar para o local correto onde cada camada foi salva.\n\n\n\n\n\n\n\nNote\n\n\n\n\nCasa do Projeto: local que aponta para a pasta onde o projeto está salvo.\nincra_ppr_v101.gpkg: local onde a camada está salva.\nelementos: camada a ser corrigida. As demais camadas que estão no mesmo arquivo GeoPackage serão corrigidas automaticamente.\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nCasa do Projeto: local que aponta para a pasta onde o projeto está salvo.\nincra_ppr_apoio_v101.gpkg: local onde a camada está salva.\nbr_localidades_2022: camada a ser corrigida. As demais camadas que estão no mesmo arquivo GeoPackage serão corrigidas automaticamente.\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nCasa do Projeto: local que aponta para a pasta onde o projeto está salvo.\nmapbiomas2024.tif: camada a ser corrigida.\n\n\n\nConcluíndo-se as etapas de correção dos caminhos, o projeto estará pronto para ser utilizado no QGIS e posteriormente exportado para o QFIELD.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>QField: Projeto de coleta de preços de imóveis rurais.</span>"
+    ]
+  },
+  {
     "objectID": "capitulo11.html",
     "href": "capitulo11.html",
-    "title": "11  Agradecimentos e Referências Utilizadas",
+    "title": "12  Agradecimentos e Referências Utilizadas",
     "section": "",
     "text": "Este material foi elaborado com o objetivo de apoiar estudantes, técnicos e profissionais que estão dando seus primeiros passos na área de geoprocessamento, geotecnologias e Sistemas de Informações Geográficas. [web:7][web:18][web:64]\nA construção desta apostila contou com a inspiração de diversos manuais, apostilas, documentação oficial de softwares e normas técnicas brasileiras, além da sua própria experiência prática refletida no roteiro de dicas e fórmulas utilizado como base para os capítulos de relevo e declividade. [file:46][web:8][web:20][web:80]\nFica aqui o agradecimento a todas as instituições que disponibilizam dados abertos, material didático e documentação, permitindo que o conhecimento em geoprocessamento seja disseminado de forma acessível, especialmente no contexto da gestão ambiental e do planejamento territorial no Brasil. [web:6][web:7][web:23][web:70]",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Agradecimentos e Referências Utilizadas</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Agradecimentos e Referências Utilizadas</span>"
     ]
   },
   {
     "objectID": "capitulo11.html#agradecimentos",
     "href": "capitulo11.html#agradecimentos",
-    "title": "11  Agradecimentos e Referências Utilizadas",
+    "title": "12  Agradecimentos e Referências Utilizadas",
     "section": "",
     "text": "Este material foi elaborado com o objetivo de apoiar estudantes, técnicos e profissionais que estão dando seus primeiros passos na área de geoprocessamento, geotecnologias e Sistemas de Informações Geográficas. [web:7][web:18][web:64]\nA construção desta apostila contou com a inspiração de diversos manuais, apostilas, documentação oficial de softwares e normas técnicas brasileiras, além da sua própria experiência prática refletida no roteiro de dicas e fórmulas utilizado como base para os capítulos de relevo e declividade. [file:46][web:8][web:20][web:80]\nFica aqui o agradecimento a todas as instituições que disponibilizam dados abertos, material didático e documentação, permitindo que o conhecimento em geoprocessamento seja disseminado de forma acessível, especialmente no contexto da gestão ambiental e do planejamento territorial no Brasil. [web:6][web:7][web:23][web:70]",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Agradecimentos e Referências Utilizadas</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Agradecimentos e Referências Utilizadas</span>"
     ]
   },
   {
     "objectID": "capitulo12.html",
     "href": "capitulo12.html",
-    "title": "12  Referências (Lista Avulsa com Códigos)",
+    "title": "13  Referências (Lista Avulsa com Códigos)",
     "section": "",
     "text": "[ABNT geral – sem código específico]\nABNT – ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. NBR 14166: Representação de terreno com curvas de nível. Rio de Janeiro,\n\n\n\n[Lei – sem código específico]\nBRASIL. Lei n.º 12.651, de 25 de maio de 2012. Dispõe sobre a proteção da vegetação nativa. Diário Oficial da União, Brasília, DF, 28 maio 2012.\n[Embrapa geral – sem código específico]\nEMBRAPA – EMPRESA BRASILEIRA DE PESQUISA AGROPECUÁRIA. Classificação de declividades para uso agrícola. Documentos técnicos diversos, Brasília, s.d.\n[web:97]\nEMPRAPA FLORESTAS. Reserva Legal e Área de Preservação Permanente (dicas para a Região Sul): RL e APP. Colombo: Embrapa Florestas, 2014. Disponível em: &lt;https://www.infoteca.cnptia.embrapa.br/handle/doc/1003109&gt;. Acesso em: 27 mar. 2026.\n[web:103]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Manual Técnico em Geociências. Rio de Janeiro: IBGE, 2025. Disponível em: &lt;https://www.ibge.gov.br/geociencias/informacoes-ambientais/geologia/15826-manual-tecnico-em-geociencias.html&gt;. Acesso em: 27 mar. 2026.\n[web:93]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Folhas topográficas. Rio de Janeiro: IBGE, 2022. Disponível em: &lt;https://www.ibge.gov.br/geociencias/cartas-e-mapas/folhas-topograficas.html&gt;. Acesso em: 27 mar. 2026.\n[web:94]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Normas Técnicas da Cartografia Nacional – Decreto nº 89.817/1984. Rio de Janeiro: IBGE, 1984. Disponível em: &lt;https://geoftp.ibge.gov.br/metodos_e_outros_documentos_de_referencia/normas/legislacao/legisla_decreto_89817_d.pdf&gt;. Acesso em: 27 mar. 2026.\n[web:99][web:101]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Base Cartográfica Contínua do Brasil e Curvas de Nível. Rio de Janeiro: IBGE, 2016–2018. Disponível em: &lt;https://geoftp.ibge.gov.br/cartas_e_mapas/bases_cartograficas_continuas/&gt;. Acesso em: 27 mar. 2026.\n[web:96]\nANA – AGÊNCIA NACIONAL DE ÁGUAS E SANEAMENTO BÁSICO. Curvas de nível – Catálogo de Metadados da ANA. Brasília: ANA, 2016. Disponível em: &lt;https://metadados.snirh.gov.br/&gt;. Acesso em: 27 mar. 2026.\n[web:64]\nDEFESA CIVIL DO ESPÍRITO SANTO. Análise espacial com QGIS e GEObases. Vitória: CEPDEC/ES, 2024. Disponível em: &lt;https://defesacivil.es.gov.br/Media/DefesaCivil/Cursos%20CEPDEC/ANALISE%20ESPACIAL%20COM%20QGIS%20E%20GEOBASES.pdf&gt;. Acesso em: 27 mar. 2026.\n[web:70]\nEMBRAPA. Conheça quais são as Áreas de Preservação Permanente (APP). Brasília: Embrapa, 2011. Disponível em: &lt;https://www.embrapa.br/codigo-florestal/entenda-o-codigo-florestal/area-de-preservacao-permanente/detalhe-area-pp&gt;. Acesso em: 27 mar. 2026.\n[web:50]\nSÁ, Narcélio. Cálculos de declividade no QGIS: veja como fazer. 2014. Disponível em: &lt;https://narceliodesa.com/calculando-declividade-qgis/&gt;. Acesso em: 27 mar. 2026.\n[web:52][web:55]\nEMBRAPA. Classificação de Declividade – Tabela Embrapa. 1979 e atualizações posteriores. Documento técnico.\n[web:80][web:81][web:85]\nQGIS PROJECT. Documentação do QGIS – Layout de Impressão e Design de Mapas. 2014–2024. Disponível em: &lt;https://docs.qgis.org/&gt;. Acesso em: 27 mar. 2026.\n[web:62][web:72][web:106]\nQGIS PROJECT. Gentle Introduction to GIS e Training Manuals – Vector Spatial Analysis. 2014–2024. Disponível em: &lt;https://docs.qgis.org/&gt;. Acesso em: 27 mar. 2026.\n[web:91]\nQGIS PROJECT. Automating Map Creation with Print Layout Atlas (QGIS3). 2018. Disponível em: &lt;https://www.qgistutorials.com/en/docs/3/automating_map_creation.html&gt;. Acesso em: 27 mar. 2026.\n[web:104][web:100]\nGEOACADEMY. Buffer, clip and intersect vector data; Buffer operations — QGIS 3.10. 2019–2025. Disponível em: &lt;https://portal.geoacademy.eu/&gt; e &lt;https://qgis3-10-geoanalysis-un.readthedocs.io/&gt;. Acesso em: 27 mar. 2026.\n[web:78]\nUNIVERSO GIS. Modelos de Layout QGIS: Como criar mapas profissionais em 5 minutos. 2025. Disponível em: &lt;https://universogis.com.br/modelos-de-layout-qgis-download/&gt;. Acesso em: 27 mar. 2026.\n[web:88]\nTETRIX ECOLOGY. How to create a print template in QGIS. 2017. Disponível em: &lt;https://www.tetrixecology.com/single-post/how-to-create-a-print-template-in-qgis&gt;. Acesso em: 27 mar. 2026.\n[web:108][web:111][web:113]\nDIVERSOS AUTORES. Recolha de dados com QField e Mobile GIS com QGIS + QField. 2020–2026. Materiais de apresentação e divulgação sobre QField e Mobile GIS. [web:108][web:111][web:113]\n[web:109][web:110]\nQFIELD COMMUNITY. Tópicos de suporte sobre QFieldSync e QFieldCloud (edição offline e sincronização com PostGIS). 2025. Disponível em: &lt;https://community.qfield.org/&gt;. Acesso em: 27 mar.\n\n\n\n[file:46]\nAUTOR(A) DA APOSTILA. ROTEIRO – DICAS E FÓRMULAS (EXER-03): Relevo, Curvas de Nível, Declividade e APP. Documento interno, 2026. Arquivo de referência utilizado na estruturação dos capítulos de relevo, declividade, classificação de declividade e restrição ambiental.\n\n\n:::",
     "crumbs": [
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Referências (Lista Avulsa com Códigos)</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Referências (Lista Avulsa com Códigos)</span>"
     ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "13  Summary",
+    "title": "14  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.",
     "crumbs": [
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Summary</span>"
     ]
   },
   {

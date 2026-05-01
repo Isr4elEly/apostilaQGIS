@@ -24,6 +24,7 @@ book:
     - capitulo8.qmd
     - capitulo9.qmd
     - capitulo10.qmd
+    - capitulo10-1.qmd
     - capitulo11.qmd
     - capitulo12.qmd
     - summary.qmd
@@ -36,6 +37,7 @@ format:
     theme: litera
     default-image-extension: jpg
     page-layout: full
+    link-external-newwindow: true
     grid: 
       sidebar-width: 300px
       body-width: 1100px
