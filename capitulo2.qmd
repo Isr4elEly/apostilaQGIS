@@ -15,6 +15,7 @@ Esses dados combinam duas partes principais: a informação sobre **onde**
 algo está (componente espacial) e a informação sobre **o que** é esse
 algo (componente descritiva ou temática, normalmente armazenada em
 tabelas de atributos). \[web:7\]
+:::
 
 ::: {.callout-note}
 \[IMAGEM 1: Esquema mostrando um mapa com pontos representando cidades e

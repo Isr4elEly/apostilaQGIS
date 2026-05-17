@@ -14,19 +14,28 @@ book:
   cover-image: qgis.png
   chapters:
     - index.qmd
-    - capitulo1.qmd
-    - capitulo2.qmd
-    - capitulo3.qmd
-    - capitulo4.qmd
-    - capitulo5.qmd
-    - capitulo6.qmd
-    - capitulo7.qmd
-    - capitulo8.qmd
-    - capitulo9.qmd
-    - capitulo10.qmd
-    - capitulo10-1.qmd
-    - capitulo11.qmd
-    - capitulo12.qmd
+    - part: "Noções de Cartografia"
+      chapters: 
+      - capitulo1.qmd
+      - capitulo2.qmd
+      - capitulo3.qmd
+    - part: "QGIS"
+      chapters:
+      - capitulo4.qmd
+      - capitulo5.qmd
+      - capitulo6.qmd
+      - capitulo7.qmd
+      - capitulo8.qmd
+      - capitulo9.qmd
+    - part: "QFIELD"
+      chapters:
+      - capitulo10.qmd
+    - part: "Pesquisa de Preços de Terras Rurais"
+      chapters:
+      - capitulo11.qmd
+      - capitulo11a.qmd
+    - agradecimentos.qmd
+    - referencias.qmd
     - summary.qmd
     - references.qmd
 
