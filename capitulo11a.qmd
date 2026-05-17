@@ -1,13 +1,20 @@
 
-::: {#cap10-2 .section}
-# QField: Planejamento de coleta de dados em campor.
+::: {#cap11a .section}
+# QField: Planejamento de coleta de dados em campo.
 
 ::: {#introducao .section}
 ## Introdução
+A coleta de dados de preços em campo é uma parte crucial do trabalho do Perito Federal Territorial. A preparação do roteiro de coleta com distâncias e cidades a serem visitadas ajuda no planeamento, dimensionamento dos custos e na organização do trabalho.  
+A etapa pre-campo compõe-se de planejamento do roteiro, levantamento de período e custos da viagem e preparação do projeto de coleta de dados no QGIS para ser utilizado no QFIELD.  
+:::
 
-A coleta de dados de preços em campo é uma parte crucial do trabalho do Perito Federal Territorial. A preparação do roteiro de coleta com distâncias e cidades a serem visitadas ajuda no planeamento, dimensionamento dos custos e na organização do trabalho.
+::: {#roteiro .section}
+## Área de coleta de dados
 
-A etapa pre-campo compõe-se de planejamento do roteiro, levantamento de período e custos da viagem e preparação do projeto de coleta de dados no QGIS para ser utilizado no QFIELD.
+## Roteiro de coleta de dados
+
+## Levantamento de custos
+
 :::
 
 ::: 
