@@ -292,6 +292,19 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="cap4">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Este manual possui citações e partes baseadas do <a href="https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/getting_started.html">Manual do QGIS</a> e de tutoriais oficiais do QGIS, adaptados para um formato de apostila.</p>
+</div>
+</div>
 <section id="introducao-cap4">
 <section id="introdução" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">4.1</span> Introdução</h2>
@@ -314,13 +327,6 @@ ferramentas, painel de camadas e área de mapa.\]
 <figcaption>interface-qgis</figcaption>
 </figure>
 </div>
-<ul>
-<li><strong>1-Barra de menus</strong> (topo): onde ficam os menus “Projeto”, “Camada”, “Configurações”, “Plugins”, etc.</li>
-<li><strong>2-Barras de ferramentas</strong>: conjuntos de ícones que permitem acesso rápido às principais funções (zoom, seleção, adicionar camada, etc.).</li>
-<li><strong>3-Painel de camadas</strong> (geralmente à esquerda): lista todas as camadas do projeto, permitindo ligá-las, desligá-las e organizar a ordem.</li>
-<li><strong>4-Área de mapa</strong>: onde os dados geográficos são visualizados.</li>
-<li><strong>5-Barra de status</strong> (parte inferior): mostra informações como o SRC do projeto e a coordenada do ponteiro do mouse. [web:33]</li>
-</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -331,7 +337,13 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 2: Versão anotada da interface do QGIS, com caixas e setas nomeando “Barra de menus”, “Barras de ferramentas”, “Painel de camadas”, “Área de mapa” e “Barra de status”.]</p>
+<ul>
+<li><strong>1-Barra de menus</strong> (topo): onde ficam os menus “Projeto”, “Camada”, “Configurações”, “Plugins”, etc.</li>
+<li><strong>2-Barras de ferramentas</strong>: conjuntos de ícones que permitem acesso rápido às principais funções (zoom, seleção, adicionar camada, etc.).</li>
+<li><strong>3-Painel de camadas</strong> (geralmente à esquerda): lista todas as camadas do projeto, permitindo ligá-las, desligá-las e organizar a ordem.</li>
+<li><strong>4-Área de mapa</strong>: onde os dados geográficos são visualizados.</li>
+<li><strong>5-Barra de status</strong> (parte inferior): mostra informações como o SRC do projeto e a coordenada do ponteiro do mouse. [web:33]</li>
+</ul>
 </div>
 </div>
 </section>
@@ -342,12 +354,6 @@ Note
 <p>O primeiro passo para trabalhar no QGIS é criar um projeto, que irá guardar a organização de camadas, SRC e configurações de visualização. [web:35][web:36]</p>
 <section id="passo-a-passo" class="level3" data-number="4.3.1">
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="passo-a-passo"><span class="header-section-number">4.3.1</span> Passo a passo</h3>
-<ol type="1">
-<li>Abrir o QGIS.</li>
-<li>No menu superior, clicar em <strong>“Projeto”</strong> &gt; <strong>“Novo”</strong> para iniciar um projeto em branco. [web:36]</li>
-<li>Opcionalmente, salvar o projeto logo no início: em “Projeto” &gt; “Salvar Como...”, escolher uma pasta e um nome (por exemplo, <em>projeto_introducao.qgz</em>).</li>
-<li>Verificar, na barra de status (canto inferior direito), qual é o SRC atual do projeto (por exemplo, “EPSG:4326”).</li>
-</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -358,7 +364,12 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 3: Captura de tela mostrando o menu “Projeto” aberto e a opção “Novo” destacada, além da barra de status com o SRC indicado no canto inferior direito.]</p>
+<ol type="1">
+<li>Abrir o QGIS.</li>
+<li>No menu superior, clicar em <strong>“Projeto”</strong> &gt; <strong>“Novo”</strong> para iniciar um projeto em branco. [web:36]</li>
+<li>Opcionalmente, salvar o projeto logo no início: em “Projeto” &gt; “Salvar Como...”, escolher uma pasta e um nome (por exemplo, <em>projeto_introducao.qgz</em>).</li>
+<li>Verificar, na barra de status (canto inferior direito), qual é o SRC atual do projeto (por exemplo, “EPSG:4326”).</li>
+</ol>
 </div>
 </div>
 </section>
@@ -370,12 +381,6 @@ Note
 <p>Configurar corretamente o SRC do projeto é essencial para que as camadas sejam exibidas na posição correta. [web:37][web:39]</p>
 <section id="definindo-o-src-do-projeto" class="level3" data-number="4.4.1">
 <h3 data-number="4.4.1" class="anchored" data-anchor-id="definindo-o-src-do-projeto"><span class="header-section-number">4.4.1</span> Definindo o SRC do Projeto</h3>
-<ol type="1">
-<li>Na barra de status, clique sobre o código EPSG exibido (por exemplo, “EPSG:4326”). [web:39]</li>
-<li>Será aberta a janela de configurações do SRC do projeto.</li>
-<li>Na lista, procurar e selecionar o sistema desejado (por exemplo, “SIRGAS 2000 / UTM zone 23S – EPSG:31983”, se apropriado à área de estudo). [web:37][web:41]</li>
-<li>Clicar em <strong>“OK”</strong> para aplicar a configuração.</li>
-</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -386,7 +391,12 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 4: Captura de tela simulada da janela de configuração de SRC do projeto, com um sistema UTM SIRGAS 2000 selecionado e o código EPSG destacado.]</p>
+<ol type="1">
+<li>Na barra de status, clique sobre o código EPSG exibido (por exemplo, “EPSG:4326”). [web:39]</li>
+<li>Será aberta a janela de configurações do SRC do projeto.</li>
+<li>Na lista, procurar e selecionar o sistema desejado (por exemplo, “SIRGAS 2000 / UTM zone 23S – EPSG:31983”, se apropriado à área de estudo). [web:37][web:41]</li>
+<li>Clicar em <strong>“OK”</strong> para aplicar a configuração.</li>
+</ol>
 </div>
 </div>
 </section>
@@ -398,13 +408,6 @@ Note
 <p>Uma das tarefas mais comuns no QGIS é carregar arquivos vetoriais (como shapefiles ou geopackages) para visualização e análise. [web:36][web:38][web:44]</p>
 <section id="passo-a-passo-para-adicionar-vetores" class="level3" data-number="4.5.1">
 <h3 data-number="4.5.1" class="anchored" data-anchor-id="passo-a-passo-para-adicionar-vetores"><span class="header-section-number">4.5.1</span> Passo a passo para adicionar vetores</h3>
-<ol type="1">
-<li>Com o projeto aberto, acessar o menu <strong>“Camada”</strong> &gt; <strong>“Adicionar Camada”</strong> &gt; <strong>“Adicionar Camada Vetorial...”</strong>. [web:36][web:44]</li>
-<li>Na janela que abrir, clicar em <strong>“Explorar”</strong> ou “Procurar” para localizar o arquivo (por exemplo, um shapefile de limites municipais).</li>
-<li>Selecionar o arquivo desejado (ex.: <em>municipios.shp</em>) e clicar em <strong>“Abrir”</strong>.</li>
-<li>Conferir o SRC da camada (caso o QGIS pergunte) e confirmar.</li>
-<li>Clicar em <strong>“Adicionar”</strong>. A camada aparecerá no painel de camadas e será exibida na área de mapa. [web:36]</li>
-</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -415,7 +418,13 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 5: Captura de tela da janela “Adicionar Camada Vetorial” no QGIS, mostrando a seleção de um arquivo shapefile e o painel de camadas com a nova camada listada.]</p>
+<ol type="1">
+<li>Com o projeto aberto, acessar o menu <strong>“Camada”</strong> &gt; <strong>“Adicionar Camada”</strong> &gt; <strong>“Adicionar Camada Vetorial...”</strong>. [web:36][web:44]</li>
+<li>Na janela que abrir, clicar em <strong>“Explorar”</strong> ou “Procurar” para localizar o arquivo (por exemplo, um shapefile de limites municipais).</li>
+<li>Selecionar o arquivo desejado (ex.: <em>municipios.shp</em>) e clicar em <strong>“Abrir”</strong>.</li>
+<li>Conferir o SRC da camada (caso o QGIS pergunte) e confirmar.</li>
+<li>Clicar em <strong>“Adicionar”</strong>. A camada aparecerá no painel de camadas e será exibida na área de mapa. [web:36]</li>
+</ol>
 </div>
 </div>
 </section>
@@ -427,13 +436,6 @@ Note
 <p>Além de vetores, o QGIS permite carregar facilmente dados raster, como imagens de satélite ou modelos de elevação. [web:36][web:38][web:45]</p>
 <section id="passo-a-passo-para-adicionar-raster" class="level3" data-number="4.6.1">
 <h3 data-number="4.6.1" class="anchored" data-anchor-id="passo-a-passo-para-adicionar-raster"><span class="header-section-number">4.6.1</span> 4.5.1. Passo a passo para adicionar raster</h3>
-<ol type="1">
-<li>No menu superior, clicar em <strong>“Camada”</strong> &gt; <strong>“Adicionar Camada”</strong> &gt; <strong>“Adicionar Camada Raster...”</strong>. [web:36]</li>
-<li>Clicar em <strong>“Explorar”</strong> para localizar o arquivo raster (por exemplo, um GeoTIFF de relevo).</li>
-<li>Selecionar o arquivo desejado e clicar em <strong>“Abrir”</strong>.</li>
-<li>Conferir as informações do SRC, se solicitado, e confirmar.</li>
-<li>Clicar em <strong>“Adicionar”</strong>. A camada raster será exibida no mapa, geralmente abaixo das camadas vetoriais. [web:36][web:38]</li>
-</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -444,7 +446,13 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 6: Captura de tela da janela “Adicionar Camada Raster” no QGIS, e a área de mapa mostrando uma imagem de relevo colorida com uma camada vetorial sobreposta.]</p>
+<ol type="1">
+<li>No menu superior, clicar em <strong>“Camada”</strong> &gt; <strong>“Adicionar Camada”</strong> &gt; <strong>“Adicionar Camada Raster...”</strong>. [web:36]</li>
+<li>Clicar em <strong>“Explorar”</strong> para localizar o arquivo raster (por exemplo, um GeoTIFF de relevo).</li>
+<li>Selecionar o arquivo desejado e clicar em <strong>“Abrir”</strong>.</li>
+<li>Conferir as informações do SRC, se solicitado, e confirmar.</li>
+<li>Clicar em <strong>“Adicionar”</strong>. A camada raster será exibida no mapa, geralmente abaixo das camadas vetoriais. [web:36][web:38]</li>
+</ol>
 </div>
 </div>
 </section>
@@ -454,12 +462,6 @@ Note
 <section id="navegação-e-visualização-básica" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="navegação-e-visualização-básica"><span class="header-section-number">4.7</span> Navegação e Visualização Básica</h2>
 <p>Depois de adicionar as camadas, é importante saber navegar pelo mapa e ajustar o modo de visualização. [web:32][web:33]</p>
-<ul>
-<li><strong>Zoom in / Zoom out</strong>: usar a roda do mouse ou os ícones de lupa na barra de ferramentas.</li>
-<li><strong>Deslocar mapa (pan)</strong>: usar a ferramenta de “mão” para arrastar o mapa.</li>
-<li><strong>Zoom para a extensão da camada</strong>: clicar com o botão direito na camada no painel de camadas e escolher “Zoom para a camada”.</li>
-<li><strong>Ligar/desligar camadas</strong>: marcar ou desmarcar a caixa ao lado do nome da camada no painel de camadas.</li>
-</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -470,7 +472,12 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 7: Interface do QGIS com ícones de zoom e pan destacados, e o painel de camadas mostrando a alternância de visibilidade em algumas camadas.]</p>
+<ul>
+<li><strong>Zoom in / Zoom out</strong>: usar a roda do mouse ou os ícones de lupa na barra de ferramentas.</li>
+<li><strong>Deslocar mapa (pan)</strong>: usar a ferramenta de “mão” para arrastar o mapa.</li>
+<li><strong>Zoom para a extensão da camada</strong>: clicar com o botão direito na camada no painel de camadas e escolher “Zoom para a camada”.</li>
+<li><strong>Ligar/desligar camadas</strong>: marcar ou desmarcar a caixa ao lado do nome da camada no painel de camadas.</li>
+</ul>
 </div>
 </div>
 </section>
@@ -481,12 +488,6 @@ Note
 <p>O projeto QGIS guarda apenas as referências às camadas (caminho dos arquivos, SRC, estilo de visualização), e não uma cópia dos dados. Por isso, é importante organizar seus arquivos em pastas e salvar o projeto regularmente. [web:35]</p>
 <section id="passo-a-passo-para-salvar" class="level3" data-number="4.8.1">
 <h3 data-number="4.8.1" class="anchored" data-anchor-id="passo-a-passo-para-salvar"><span class="header-section-number">4.8.1</span> Passo a passo para salvar</h3>
-<ol type="1">
-<li>No menu superior, clicar em <strong>“Projeto”</strong> &gt; <strong>“Salvar”</strong> ou “Salvar Como...”.</li>
-<li>Escolher uma pasta organizada para seu trabalho (por exemplo, uma pasta com subpastas “vetor”, “raster”, “projeto”).</li>
-<li>Definir um nome significativo para o arquivo de projeto (ex.: <em>exemplo_cap4.qgz</em>).</li>
-<li>Clicar em <strong>“Salvar”</strong>.</li>
-</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -497,7 +498,12 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 8: Janela de salvar arquivo do sistema operacional, mostrando um nome de projeto QGIS e uma estrutura de pastas organizada (“dados_vetoriais”, “dados_raster”, “projetos”).]</p>
+<ol type="1">
+<li>No menu superior, clicar em <strong>“Projeto”</strong> &gt; <strong>“Salvar”</strong> ou “Salvar Como...”.</li>
+<li>Escolher uma pasta organizada para seu trabalho (por exemplo, uma pasta com subpastas “vetor”, “raster”, “projeto”).</li>
+<li>Definir um nome significativo para o arquivo de projeto (ex.: <em>exemplo_cap4.qgz</em>).</li>
+<li>Clicar em <strong>“Salvar”</strong>.</li>
+</ol>
 </div>
 </div>
 </section>
@@ -507,14 +513,6 @@ Note
 <section id="roteiro-resumido-primeiro-projeto-no-qgis" class="level2" data-number="4.9">
 <h2 data-number="4.9" class="anchored" data-anchor-id="roteiro-resumido-primeiro-projeto-no-qgis"><span class="header-section-number">4.9</span> Roteiro Resumido: Primeiro Projeto no QGIS</h2>
 <p>Para recapitular, veja um roteiro simples que pode ser seguido por um iniciante para criar seu primeiro projeto no QGIS. [web:36][web:38]</p>
-<ol type="1">
-<li>Abrir o QGIS e criar um novo projeto.</li>
-<li>Ajustar o SRC do projeto conforme a área de estudo (por exemplo, SIRGAS 2000 / UTM fuso adequado).</li>
-<li>Adicionar uma camada vetorial (shapefile ou geopackage) com os limites da área de estudo.</li>
-<li>Adicionar uma camada raster (imagem de satélite ou MDE) para servir de base visual.</li>
-<li>Ajustar a ordem das camadas e praticar zoom, pan e visualização.</li>
-<li>Salvar o projeto em uma pasta organizada.</li>
-</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -525,7 +523,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 9: Tela do QGIS com um exemplo de projeto simples: camada raster de fundo, camada vetorial de limites por cima, painel de camadas organizado e o projeto já salvo.]</p>
+<ol type="1">
+<li>Abrir o QGIS e criar um novo projeto.</li>
+<li>Ajustar o SRC do projeto conforme a área de estudo (por exemplo, SIRGAS 2000 / UTM fuso adequado).</li>
+<li>Adicionar uma camada vetorial (shapefile ou geopackage) com os limites da área de estudo.</li>
+<li>Adicionar uma camada raster (imagem de satélite ou MDE) para servir de base visual.</li>
+<li>Ajustar a ordem das camadas e praticar zoom, pan e visualização.</li>
+<li>Salvar o projeto em uma pasta organizada.</li>
+</ol>
 </div>
 </div>
 </section>

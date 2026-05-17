@@ -5,11 +5,32 @@
 ::: {#introducao-qfield .section}
 ## Introdução
 
-Foi disponibilizado um projeto padrão para coleta de preços de imóveis rurais destinados a elaboração de estudos de mercados de terras e avaliação de imoveis rurais. O formulário de coleta está baseado no manual de obtenção do INCRA e na Instrução normativa que regula a elaboração dos estudos de mercado de terras.
+Foi disponibilizado um projeto padrão para coleta de preços de imóveis rurais destinados a elaboração de estudos de mercados de terras e avaliação de imoveis rurais. O formulário de coleta está baseado no manual de obtenção do INCRA e na Instrução normativa que regula a elaboração dos estudos de mercado de terras.  
+O projeto é compatível com o QFIELD e com o QGIS(3.x).  
 
-O projeto é compatível com o QFIELD e com o QGIS(3.x).
+**Distribuição espacial do projeto**
 
-![](image/qfield-open-in-qgis/img0a.jpeg)
+::: {layout-ncol=2}
+![Brasil](image/qfield-open-in-qgis/brasil.jpeg)
+
+![Estado](image/qfield-open-in-qgis/bahia.jpeg)
+
+![Região intermediária](image/qfield-open-in-qgis/rgint.jpeg)
+
+![Região imediata](image/qfield-open-in-qgis/rgi.jpeg)
+:::
+
+
+**Estrutura de pastas e arquivos**
+
+::: {layout="[[1,1]]"}
+![Unidades da Federação](image/qfield-open-in-qgis/pastas_uf_projeto.jpeg)
+
+![Regiões Intermediárias de um Estado](image/qfield-open-in-qgis/img0a.jpeg)
+
+:::
+
+
 
 ::: {.callout-note}
 1. pasta do estado contendo todos os projetos daquela unidade da federação;

@@ -35,6 +35,7 @@ book:
       - capitulo11.qmd
       - capitulo11a.qmd
       - capitulo11b.qmd
+      - capitulo11c.qmd
     - agradecimentos.qmd
     - referencias.qmd
     - summary.qmd

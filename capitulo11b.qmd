@@ -10,43 +10,404 @@ O projeto de coleta traz as informações básicas para coletas de preços de im
 ::: {#preços .section}
 ## Camada de `elementos`
 
-## Informar coordenada de localização de elementos de preços
+Vamos coletar um ponto que representa um elementos de preços de terras e preencher o formulário de atributos.
 
-### Editando a localização de um ponto da camada `elementos`
+### Colocando em modo de edição.
 
-### Usando o plugin [`Lat Lon Tools`](https://github.com/hamiltoncj/qgis-latlontools-plugin/#readme)
+::: {layout-ncol="2"}
 
-O ***Lat Lon Tools*** facilita a captura, o zoom para coordenadas, a conversão de coordenadas em campos de texto para novas camadas de pontos, a exportação da geometria de pontos para campos de texto e a interação com outras ferramentas de mapeamento online. Ele adiciona suporte a coordenadas MGRS, UTM padrão, UPS, Geohash, GEOREF, Plus Code (Open Location Code), WKT, EWKT, JSON e ECEF ao QGIS. Ao trabalhar com o **Google Earth**, **Google Maps** ou outras ferramentas de mapeamento online, as coordenadas são especificadas na ordem 'Latitude, Longitude'. Por padrão, o ***Lat Lon Tools*** usa o formato padrão do Google Maps, mas é muito flexível e pode usar praticamente qualquer projeção e formato de coordenadas para entrada e saída. As seguintes ferramentas estão disponíveis no ***Lat Lon Tools***.
+![Editando Elementos](image/cap11/editando-elementos-1.jpeg)
 
-![](image/qgis-latlontools-plugin-main/doc/menu.jpg)
+![Em edição](image/cap11/elementos-em-edicao.jpeg){#fig-elementos-em-edição}
 
-Aqui estão os itens expandidos do menu ***Copiar extensão para a área de transferência***.
-
-![](image/qgis-latlontools-plugin-main/doc/menu2.jpg)
-
-Algumas funções podem ser acessadas na barra de ferramentas ***Ferramentas de Latitude e Longitude***. Se, por algum motivo, a barra de ferramentas estiver ausente, selecione o item de menu ***Exibir -> Barras de Ferramentas*** e certifique-se de que a ***Barra de Ferramentas de Latitude e Longitude*** esteja habilitada. Os algoritmos de conversão podem ser executados na Caixa de Ferramentas de Processamento do QGIS.
-
-![](image/qgis-latlontools-plugin-main/doc/toolbar.jpg)
-
-Diversas conversões podem ser acessadas como funções da calculadora de campo. Na ***Calculadora de Campo***, encontre e expanda o menu ***Ferramentas de Latitude e Longitude***. Clicar em cada entrada exibirá uma descrição da função com exemplos de uso.
-
-![](image/qgis-latlontools-plugin-main/doc/calculator.jpg)
-
-* ![](image/qgis-latlontools-plugin-main/images/copyicon.svg) ***Copiar/Exibir Coordenada*** - Esta opção captura as coordenadas para a área de transferência quando o usuário clica no mapa, usando o formato padrão do Google Maps ou um formato especificado em ***Configurações***. Se o usuário especificar um separador de **Tabulação**, a coordenada poderá ser colada em uma planilha em colunas separadas. Enquanto esta ferramenta estiver selecionada, a coordenada sobre a qual o cursor está posicionado é exibida no canto inferior esquerdo em **graus decimais**, **DMS**, **Graus e Minutos**, **MGRS**, **UTM padrão**, **UPS**, **GEOREF**, **Códigos Plus (Código de Localização Aberto)**, **Geohash**, **H3** (se a biblioteca H3 versão 4.xx estiver instalada), **Localizador de Grade Maidenhead**, **PONTO WKT** ou **GeoJSON**, dependendo das **Configurações**. Por padrão, o sistema utiliza a latitude e longitude geográficas para capturar a coordenada, mas isso pode ser configurado em **Configurações** para usar o SRC do projeto ou qualquer outra projeção desejada. Consulte a seção **Configurações** para obter mais detalhes sobre todas as possibilidades. Um prefixo ou sufixo adicional pode ser adicionado à coordenada e é configurado em **Configurações**. Se o recurso de captura automática estiver habilitado no menu ***Projeto->Opções de Captura Automática...*** do QGIS, a opção *Copiar/Exibir Coordenada* se ajustará a quaisquer vértices vetoriais próximos, de acordo com os parâmetros definidos nas opções de captura automática.
-  
-* ![](image/qgis-latlontools-plugin-main/images/mapicon.png) ***Mostrar em Mapa Externo*** - Com esta ferramenta, o usuário pode clicar no mapa do QGIS, o que abre um navegador externo e exibe a localização em um mapa externo. Os botões esquerdo e direito do mouse podem ser configurados para exibir mapas diferentes. Atualmente, OpenStreetMap, Google Maps, Google Earth Web, MapQuest, Mapillary, OpenStreetMap iD Editor e Bing Maps são suportados, juntamente com o Google Earth, se instalado no sistema. O mapa desejado para exibição pode ser configurado em ***Configurações***, juntamente com serviços de mapa adicionais adicionados pelo usuário. Um marcador temporário pode ser exibido no mapa no local clicado. Para ativar essa função, acesse **Configurações**. Se o recurso de alinhamento estiver ativado, o local clicado se alinhará a quaisquer vértices vetoriais próximos, de acordo com os parâmetros definidos nas opções de alinhamento.
-
-* ![](image/qgis-latlontools-plugin-main/images/zoomicon.svg) ***Zoom para Coordenada*** - Com esta ferramenta, digite ou cole uma coordenada na área de texto e pressione **Enter**. O QGIS centraliza o mapa na coordenada, destaca e cria um marcador temporário no local. Para formatos que representam uma região em vez de um ponto, como **Geohash**, **H3**, **Maindenhead** e **Códigos Plus (Open Location Code)**, a área da região é exibida juntamente com o ponto central. Se o sistema de coordenadas padrão **WGS 84** (EPSG:4326 - latitude/longitude) for especificado, ***Zoom para Coordenada*** pode interpretar coordenadas em **graus decimais**, **DMS**, **WKT POINT**, **UTM padrão**, **UPS**, **MGRS**, **GEOREF**, **Códigos Plus (Open Location Code)** ou **GeoJSON**. Também é possível ampliar para coordenadas **Geohash**, coordenadas de grade **Maidenhead** de rádio amador, coordenadas **H3** Geohash (se a biblioteca H3 versão 4.xx estiver instalada) ou qualquer outra projeção, quando configurada em **Configurações** ou pelo botão **Selecionar Modo CRS**. A ***Ordem das Coordenadas*** em ***Configurações*** ou o botão **Alternar Ordem das Coordenadas** abaixo define se a ordem é latitude seguida de longitude (Y,X) ou longitude seguida de latitude (X,Y). As seguintes ações também podem ser realizadas na caixa de diálogo ***Ampliar para***:
-    * ![](image/qgis-latlontools-plugin-main/doc/zoomtool.jpg) Ao pressionar este botão, o QGIS amplia a visualização para o local.
-    * ![](image/qgis-latlontools-plugin-main/doc/pastecoord.jpg) Isso cola o conteúdo da área de transferência na área de texto.
-    * ![](image/qgis-latlontools-plugin-main/doc/cleartool.jpg) O marcador é removido com este botão.
-    * ![](image/qgis-latlontools-plugin-main/doc/xyzoom.jpg) Isso alterna a ordem das coordenadas sem precisar acessar as **Configurações**.
-    * ![](image/qgis-latlontools-plugin-main/doc/zoomcrs.jpg) Isso especifica o tipo de coordenada que deve ser interpretada sem precisar acessar as **Configurações**.
-    * ![](image/qgis-latlontools-plugin-main/doc/settings.png) O comportamento e os tipos de coordenadas interpretados podem ser configurados pressionando o botão **Configurações**.  
-![](image/qgis-latlontools-plugin-main/doc/zoomto.jpg)
-    
-::: {.callout-important}
-As explicações acima foram traduzidas da página do desenvolvedor do plugin [Lat Lon Tools](https://github.com/hamiltoncj/qgis-latlontools-plugin/tree/main) o [Sr. Calvin Hamilton](https://github.com/hamiltoncj)
 :::
+
+::: {.callout-note}
+
+1. Selecione a camada `elementos`;
+2. e clique no botão **Alternar Edição** para habilitar a edição da camada;
+:::
+
+Verifique que aparecerá um lápis sobre o símbolo da camada, indicando que a mesma está em modo de edição, @fig-elementos-em-edição. 
+
+### Criando um novo ponto.
+
+![Criando um novo ponto](image/cap11/add-ponto.jpeg)
+
+::: {.callout-note}
+
+1. Com a feição `elementos` selecionada na aba de camadas, clique no botão **Adicionar Feição** para criar um novo ponto;
+2. navegue no mapa até o local e clique para criar um ponto, logo em seguida, o formulário de atributos será aberto.
+:::
+
+![Formulário de atributos](image/cap11/form-1.jpeg)
+
+O formulário está dividido em abas, seções e campos.
+
+::: {.callout-note}
+
+1. Abas de seção do formulário;
+2. Seção do formulário;
+3. Campos do formulário. (*campos em amarelo são de preenchimento obrigatório, devem ser preenchidos antes do envio dos dados*).
+:::
+
+### Aba: Dados Principais
+
+**Localização**
+
+![Dados principais](image/cap11/form-principal-localizacao.jpeg)
+
+::: {.callout-note}
+
+1. *Nome do Município*: preenchimento automático;
+2. *UF*: preenchimento automático;
+3. *Coordenada*: preenchimento automático;
+4. *Precisão da Coordenada*: Selecione uma das opções, se a coordenada marcada está:
+   1. `No imóvel` -> dentro do imóvel;
+   2. `Na Região` -> localização aproximada, mas dentro da região de localização do imóvel;
+   3. `No município` -> localização apenas do muniípio onde o imóvel está localizado podendo-se utilizar a sede ou o centróide do município;
+
+:::
+
+**Informação da Transação**
+
+![Datas](image/cap11/info-transacao-data.jpeg){#fig-datas}
+
+::: {.callout-note title=@fig-datas}
+
+1. *Data da Pesquisa*: preenchido automaticamente com a data do dia, mas pode ser editado;
+2. *Data do Negócio*: data na qual o elemento foi transacionado. Para ofertas, preencher com a data da aquisição da oferta.
+:::
+
+**Orígem do elemento**
+
+![Origem do elemento](image/cap11/origem-elemento.jpeg)
+
+::: {layout-ncol="2"}
+
+![Fonte do Elemento](image/cap11/origem-fonte.jpeg){#fig-origem-fonte}
+
+![Origem do elemento](image/cap11/origem-informacao.jpeg){#fig-origem-informacao}  
+::: 
+
+::: {layout-ncol="2"}
+
+::: {.callout-note title=@fig-origem-fonte}
+
+Indica a orígem do elementos pesquisado, ou seja, a fonte de onde a informação foi coletada. 
+:::
+
+::: {.callout-note title=@fig-origem-informacao}
+
+Indica a orígem da inforação dos atributos. 
+:::
+
+:::
+
+
+**Nome do Imóvel**
+
+![Nome do imóvel](image/cap11/nome-imovel.jpeg)
+
+*Nome do Imóvel*: digite um nome para o elemento;
+
+::: {layout-ncol="2"}
+
+![Tipo de Dado](image/cap11/tipo-dado.jpeg){#fig-tipo-dado}
+
+![Qualidade do Acesso](image/cap11/qualidade-acesso.jpeg){#fig-qualidade-acesso}
+
+::: {.callout-note title=@fig-tipo-dado}
+
+*Negócio Relizado*: indica que o elemento é um negócio já realizado, ou seja, um imóvel que já foi transacionado.
+*Oferta de venda*: indica que o elemento é uma oferta, ou seja, um imóvel que está disponível para transação;
+*Opinião Fundamentada*: tipo de elemento citado na [NE 112 INCRA](https://www.gov.br/incra/pt-br/centrais-de-conteudos/legislacao/ne_112_2014.pdf){target="_blank"} mas ainda não implementado;
+:::
+
+::: {.callout-note title=@fig-qualidade-acesso}
+
+- *Negócio Relizado*: indica que o elemento é um negócio já realizado, ou seja, um imóvel que já foi transacionado;  
+- *Oferta de venda*: indica que o elemento é uma oferta, ou seja, um imóvel que está disponível para transação;  
+- *Opinião Fundamentada*: tipo de elemento citado na [NE 112 INCRA](https://www.gov.br/incra/pt-br/centrais-de-conteudos/legislacao/ne_112_2014.pdf){target="_blank"} mas ainda não implementado;  
+:::
+
+:::
+
+![Área e Documentação](image/cap11/area-situacao-juridica.jpeg){#fig-area-situacao-juridica}
+
+::: {.callout-note title=@fig-area-situacao-juridica}
+
+*Área (ha)*: informe a área do imóvel em hectares;  
+*Documentação*: informe se o elementos está registrado ou é uma posse, caso não disponha da informação, selecione a opção `Não Informado`.  
+
+:::
+
+**Tipologias do Imóvel**
+
+![Tipologias do imóvel](image/cap11/tipologia.jpeg)
+
+::: {.callout-tip title="Agricultura"}
+
+Este nível categórico compreende o cultivo de plantas de ciclo vegetativo de curta duração e de plantas perenes.
+
+
+Tipologia | Descrição
+--- | ---
+Agricultura - Temporaria|Engloba todos os plantios de ciclo curto classificados como temporário, exceto olerícolas
+Agricultura - Perene|Engloba todos os plantios de ciclo longo classificados como permanente e semi-perene (cana). Exemplo: Fruticultura.
+Agricultura - Olerícola|Engloba todos os plantios de ciclo curto classificados como olerícolas.
+Agricultura - Diversos |Engloba todos os plantios não enquadrados nos itens anteriores ou agricultura com alta diversidade de espécies de ciclo curto e longo de relevância econômica.
+
+:::
+
+::: {.callout-tip title="Exploração Mista"}
+
+Este nível categórico compreende os imóveis nos quais ocorrem ao longo do ciclo de produção diferentes sistemas de cultivo e/ou de criação conduzidos de forma isolada, bem como interagindo espacialmente (sucessão e integração) e que possuem retorno econômico relevante como atividade produtiva . Os casos de sistemas mistos nos quais a atividade agrícola seja destinada à alimentação animal são caracterizados como pecuária. Imóveis com atividades produtivas diversas nos quais somente a atividade principal possui relevância econômica significativa não devem ser enquadrados nesta tipologia. Nesta tipologia enquadram se as atividade diversas familiares de criação e cultivo para alimentação familiar podendo haver  ou não a venda da pouca produção excedente.
+
+Tipologia | Descrição
+--- | ---
+Exploração Mista - Agricultura + Pecuária|Exploração em projetos de integração lavoura pecuária, exploração na qual as atividades econômicas principais são a agricultura e pecuária. A definição da atividade de maior relevância do imóvel  trocando a ordem das atividades de exploração mista  não deve ser feita. Ex.: Se pecuária tem maior relevância econômica que agricultura, o nome da tipologia não deve ser alterada para Exploração Mista - Pecuária + Agricultura.
+Exploração Mista - Diversos|Quando o imóvel possuir mais de 2 atividades econômicas principais que não permitem classificar em “Exploração Mista - Agricultura + Pecuária” e nem em “Exploração Mista - Sistemas Agroflorestais (SAFs)”.
+Exploração Mista - Sistemas Agroflorestais (SAFs) + Pecuária|Exploração que integra árvores nativas e/ou exóticas com cultivos agrícolas, ou criações de animais na mesma área simulando processos naturais de uma floresta.
+Exploração Mista - Subsistência|Exploração em sistemas de baixa a média tecnologia visando a alimentação familiar e produção de pouco excedente.
+
+:::
+
+::: {.callout-tip title="Pecuária"}
+
+Este nível categórico compreende a criação e a produção animais em sistemas extensivos, semi-intensivos e intensivos.
+
+Tipologia | Descrição
+--- | ---
+Pecuária Baixa Tecnologia|baixo nível tecnológico - criação extensiva sem emprego de manejo, adubação, reserva estratégica ou qualquer método para melhoria da produção.
+Pecuária Média Tecnologia|médio nível tecnológico - criação extensiva com emprego de manejo mínimo, adubação esporádica, e reserva estratégica para melhoria da produção.
+Pecuária Alta Tecnologia|alto nível tecnológico - criação intensiva com emprego de manejo  alimentar e sanitário, adubação  e melhoria das pastagens, e reserva estratégica como feno ou silagem  e controle do rebanho com anotação de índices zootécnicos.
+Pecuária - Suínos/Aves (granjeiros)|Pecuária desenvolvida em estruturas de granjas focado na produção animal.
+Pecuária - Aquicultura|Pecuária baseada em aquicultura, geralmente peixes e crustáceos, em sistema similar ao de granjas.
+Pecuária - Diversos |Criação de animais não enquadrados nos itens anteriores. Ex.: Agricultura Familiar
+
+:::
+
+::: {.callout-tip title="Florestamento"}
+
+Este nível categórico compreende o cultivo de Floretas Plantadas em áreas com restrição para agricultura.
+
+Tipologia | Descrição
+--- | ---
+Florestamento - Monocultivo|Florestamento de monocultivos como eucalipto, seringueira, etc.
+Florestamento - Outros|Cultivos de floresta plantada não contemplado na opção anterior.
+
+:::
+
+::: {.callout-tip title="Conservação Ambiental"}
+
+Imóvel constituído de floresta primária ou secundária que não apresenta resultado econômico resultante de exploração agrícola, pecuária e florestal (silvicultura), com potencial para ser utilizados como ativo ambiental com finalidades de preservação da fauna e da flora, regularização ambiental de outras propriedades, crédito de carbono e ecoturismo. Áreas consideradas como classe de Capacidade de Uso nível VIII. ATENÇÃO: Áreas com vegetação nativa com ou sem restrição ambiental que possuem aptidão para exploração econômica e valores de mercado próximos a de áreas de produção não se encaixam nesta tipologia.
+
+Tipologia | Descrição
+--- | ---
+Conservação Ambiental - Servidão Ambiental|Floresta primária - sendo uma remanescente das florestas originais de uma região. Floresta não alterada pela ação do homem. Floresta secundária - em processo de regeneração natural após ter sofrido derrubada ou alteração pela ação do homem ou de fatores naturais, tais como ciclones, incêndios, erupções vulcânicas. Vegetação com restrição ambiental, passível ou não de Autorização de Supressão de Vegetação – ASV cuja a aptidão principar é a consevação ambiental.
+Conservação Ambiental - Extrativismo|Florestas nativas, manejadas ou não, que possuem atividade extrativista de produtos de valor comercial tais como: dendê, babaçú, etc. O manejo florestal está incluído nesta tipologia.
+
+:::
+
+::: {.callout-tip title="Não Rural"}
+
+Este nível categórico compreende os imóveis que encontram-se em fase de transição de uma destinação agropecuária e/ou de produção florestal para a implantação de empreendimentos como: energia (parques éolicos, e fotovoltaicos), mineração, agroindústria, turismo, urbanização e recreação (loteamentos em zonas de expansão da área municipal e/ou loteamentos de chácaras de lazer). Na maioria das vezes os valores desta tipologia superam consideravelmenteo o uso econômico para fins agropecuários.
+
+Tipologia | Descrição
+--- | ---
+Não Rural – Urbanização, Recreativo ou Turístico|Imóveis destinados para moradia (loteamentos), recreação ou turismo.
+Não Rural - Agroindustria, Energia ou Mineração|Imóveis cujo o uso destinado seja para empreendimentos de agroindústria, produção de energia ou para mineração.
+Não Rural - Outros|Qualquer outro uso do imóvel não contemplado nas opções anteriores. 
+
+:::
+
+![Complemento e Nível de Tencologia](image/cap11/complemento-novel-tecnologia.jpeg){#fig-complemento-nivel-tecnologia}
+
+::: {.callout-note title=@fig-complemento-nivel-tecnologia}
+
+*Complemento da Tipologia*: campo de texto para complementar a descrição da tipologia do imóvel em nível regional;  
+*Nível de Tecnologia Utilizado*: indica o nível de tecnologia utilizado nas atividades produtivas do imóvel. As opções de resposta são:  
+    - `Não se aplica`  
+    - `Baixo`  
+    - `Médio`  
+    - `Alto`  
+
+:::
+
+**Roteiro de Acesso e Benfeitorias**
+
+![Roteiro de acesso e benfeitorias](image/cap11/roteiro-benfeitoria.jpeg){#fig-roteiro-benfeitoria}
+
+::: {.callout-note title=@fig-roteiro-benfeitoria}
+
+*Roteiro de Acesso*: campo de texto para descrever o roteiro de acesso ao imóvel;  
+*Benfeitorias Não Reprodutivas*: obras, melhorias ou construções aderidas ao solo que não geram renda direta (receita agrícola/pecuária). Elas adicionam valor ao imóvel rústico ou urbano pela funcionalidade, como moradias, galpões, estradas, cercas, sistemas de drenagem e irrigação.  
+*Benfeitorias Reprodutivas*: melhorias aplicadas a um imóvel rural que geram renda e possuem valor econômico direto. Exemplos comuns incluem culturas agrícolas (temporárias e perenes), pastagens cultivadas ou nativas melhoradas, e florestas plantadas.
+:::
+
+**Forma de Pagamento**
+
+![Forma de pagamento](image/cap11/pgto.jpeg){#fig-pgto}
+
+::: {.callout-note title=@fig-pgto}
+
+*Forma de Pagamento*:  
+- `À vista`: pagamento integral no momento da transação;  
+- `À Prazo`: pagamento dividido em parcelas ao longo do tempo;  
+*Qt. de Parcelas*: para o caso de pagamento à prazo, informe a quantidade de parcelas;  
+*Tx. de juros*: taxa de juros a ser aplicada para cálculo do valor presente líquido (VPL) para o caso de pagamento à prazo.  
+:::
+
+**Valores do Elemento**
+
+![Valores do elemento](image/cap11/valores.jpeg){#fig-valores}
+
+::: {.callout-note title=@fig-valores}
+
+*VTI (R\$)*: Valor Total do Imóvel, ou seja, o valor total da transação ou oferta;  
+*Valor das Benfeitorias*: valor total das benfeitorias do imóvel;  
+*Elasticidade*: para ofertas representa o percentual do preço ofertado pelo qual, provavelmente, o negócio será fechado. O campo aceita valores entre 0 e 1;  
+*VTI com Elasticidade*: valor total do imóvel considerando a elasticidade;  
+*VTN (R\$)*: Valor da Terra Nua, ou seja, o valor do imóvel sem as benfeitorias;  
+*% de Benfeitorias*: percentual das benfeitorias em relação ao VTI;  
+*VTI/ha*: valor total do imóvel por hectare;  
+*VTN/ha*: valor da terra nua por hectare.  
+:::
+
+### Aba: Pessoas
+
+![Pessoas](image/cap11/aba-pessoas.jpeg){#fig-pessoas}
+
+Nessa aba se concentra os contatos das pessoas envolvidas na pesquisa ou na transação.  
+
+::: {.callout-note title=@fig-pessoas}
+
+**Pesquisador**  
+
+- *Pesquisador*: técnico responsável pela coleta do elemento;
+- *Pesquisador e-mail*: e-mail do técnico responsável pela coleta do elemento;
+
+**Informante**
+
+- *Informante*: nome da pessoa que forneceu as informações do elemento;
+- *Informante (cel)*: celular da pessoa que forneceu as informações do elemento;
+- *Informante e-mail*: e-mail da pessoa que forneceu as informações do elemento;
+- *Informante endereço*: endereço da pessoa que forneceu as informações do elemento;  
+
+**Vendedor**
+
+- *Vendedor*: nome da pessoa que vendeu;
+- *Vendedor (cel)*: celular da pessoa que vendeu;
+- *Vendedor e-mail*: e-mail da pessoa que vendeu;
+- *Vendedor endereço*: endereço da pessoa que vendeu;
+
+**Comprador**
+
+- *Comprador*: nome da pessoa que comprou;
+- *Comprador (cel)*: celular da pessoa que comprou;
+- *Comprador e-mail*: e-mail da pessoa que comprou;
+- *Comprador endereço*: endereço da pessoa que comprou;
+
+:::
+
+![Observações](image/cap11/obs.jpeg){#fig-observacoes}
+
+::: {.callout-note title=@fig-observacoes}
+
+Campo de texto que pode ser utilizado livremente para descrever qualquer característica do elementos que não foi contempladas pelo campor do formulário.
+
+:::
+
+### Aba: Dados complementares
+
+![Dados complementares](image/cap11/aba-dados-complementares.jpeg){#fig-dados-complementares}
+
+::: {.callout-note title=@fig-dados-complementares}
+
+*% de área aberta*: quanto do imóvel já foi desmatado ou aberto para agricultura e/ou pecuária;  
+*% de área mecanizável*: quanto do imóvel é mecanizável devido a limitações como o relevo, a presença de corpos d'água, etc; 
+*Cód. Certificação*: caso o imóvel seja certificado, informe o código SIGEF ou SNCI;  
+*Código SNCR*: informar o código no Sistema Nacional de Cadastro Rural (SNCR);  
+*Cód. CAR*: informar o código do imóvel no Cadastro Ambiental Rural (CAR);
+*CIB (Receita Federal)*: informar o código do imóvel no Cadastro Imobiliario Brasileiro (CIB) da Receita Federal;  
+*Celular ou internet*: marque a ceixa caso haja um desses dois itens;
+*Nota Agronômica*: caso calcule a nota agronômica do elemento, informe o valor aqui;
+
+:::
+
+::: {layout-ncol="2"}
+
+![Energia](image/cap11/energia.jpeg){#fig-energia}
+
+![Disponibilidade Hídrica](image/cap11/disp-hidrica.jpeg){#fig-disp-hidrica}
+
+::: {.callout-note title=@fig-energia}
+
+Informe se o imóvel possui energia elétrica:   
+- `Não informado`
+- `Indisponível`: imóvel sem energia elétrica;
+- `Mono ou Bifásica`: imóvel com energia elétrica disponível, mas com limitação de carga;  
+- `Trifásica`: imóvel com energia elétrica disponível sem limitação de carga.
+
+:::
+
+::: {.callout-note title=@fig-disp-hidrica}
+
+Informe quanto a disponibilidade de recursos hídricos no imóvel.  
+- `Não informado`  
+- `Dessedentação Animal-humana`: o imóvel possui água, porém sem podetncial de irrigação;  
+- `Potencial de irrigação`: recursos que viabilizam a implantação de sistema de irrigação.
+
+:::
+:::
+
+![Classes de Relevo](image/cap11/relevo.jpeg){#fig-relevo}
+
+Informe as classes de relevo do imóvel de acordo com a tabela do Manual de Obtenção de Terras do INCRA.
+
+![Tebela de Classes de Relevo](image/cap11/tabela-relevo.jpeg)
+
+::: {.callout-warning title="Aviso"}
+
+O formulário ainda não possui validador da soma das classes, por isso, confira os dados digitados.
+:::
+
+![Classes de Capacidade de Uso do Solo](image/cap11/classe-uso.jpeg){#fig-uso}
+
+Informe as classes de capacidade de uso do solo do imóvel de acordo com a tabela do Manual de Obtenção de Terras do INCRA.
+
+![Tebela de Classes de Capacidade de uso do Solo](image/cap11/tabela-classes-uso.jpeg)
+
+::: {.callout-warning title="Aviso"}
+
+O formulário ainda não possui validador da soma das classes, por isso, confira os dados digitados.
+:::
+
+## Finalizando e salvando
+
+Após finalizar o preenchimento das informações sobre o elementos pesquisado, clique no botão **ok** do formulário.
+
+::: {layout-ncol="2"}
+
+![Salvando](image/cap11/elemento-1.jpeg){#fig-salvando}
+
+![Elemento Coletado](image/cap11/elemento2.jpeg){#fig-elemento}
+
+::: {.callout-note title=@fig-salvando}
+
+1. Elemento criado;  
+2. Botão de salvar camada;  
+3. DEsabilite a edição da camada caso não haja mais elementos a serem informados.
+:::
+
+::: {.callout-note title=@fig-elemento}
+
+1. Camada salva e com a edição desabilitada;     
+2. elemento inserido;
+:::
+
+:::
+
 
 :::

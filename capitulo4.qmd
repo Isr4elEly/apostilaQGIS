@@ -2,6 +2,9 @@
 ::: {#cap4 .section}
 # Introdução ao QGIS: Interface e Primeiro Projeto
 
+::: {.callout-important}
+Este manual possui citações e partes baseadas do [Manual do QGIS](https://docs.qgis.org/3.44/pt_BR/docs/user_manual/introduction/getting_started.html) e de tutoriais oficiais do QGIS, adaptados para um formato de apostila. 
+:::
 ::: {#introducao-cap4 .section}
 ## Introdução
 
@@ -28,7 +31,8 @@ uma com uma função específica. \[web:32\]\[web:33\]
 
 ![interface-qgis](image/interface-qgis.png)
 
--   **1-Barra de menus** (topo): onde ficam os menus "Projeto", "Camada",
+::: {.callout-note}
+-  **1-Barra de menus** (topo): onde ficam os menus "Projeto", "Camada",
     "Configurações", "Plugins", etc.
 -   **2-Barras de ferramentas**: conjuntos de ícones que permitem acesso
     rápido às principais funções (zoom, seleção, adicionar camada,
@@ -39,11 +43,6 @@ uma com uma função específica. \[web:32\]\[web:33\]
 -   **4-Área de mapa**: onde os dados geográficos são visualizados.
 -   **5-Barra de status** (parte inferior): mostra informações como o SRC
     do projeto e a coordenada do ponteiro do mouse. \[web:33\]
-
-::: {.callout-note}
-\[IMAGEM 2: Versão anotada da interface do QGIS, com caixas e setas
-nomeando "Barra de menus", "Barras de ferramentas", "Painel de camadas",
-"Área de mapa" e "Barra de status".\]
 :::
 :::
 
@@ -56,6 +55,9 @@ guardar a organização de camadas, SRC e configurações de visualização.
 
 ### Passo a passo
 
+
+
+::: {.callout-note}
 1.  Abrir o QGIS.
 2.  No menu superior, clicar em **"Projeto"** \> **"Novo"** para iniciar
     um projeto em branco. \[web:36\]
@@ -64,11 +66,6 @@ guardar a organização de camadas, SRC e configurações de visualização.
     *projeto_introducao.qgz*).
 4.  Verificar, na barra de status (canto inferior direito), qual é o SRC
     atual do projeto (por exemplo, "EPSG:4326").
-
-::: {.callout-note}
-\[IMAGEM 3: Captura de tela mostrando o menu "Projeto" aberto e a opção
-"Novo" destacada, além da barra de status com o SRC indicado no canto
-inferior direito.\]
 :::
 :::
 
@@ -80,6 +77,7 @@ sejam exibidas na posição correta. \[web:37\]\[web:39\]
 
 ### Definindo o SRC do Projeto
 
+::: {.callout-note}
 1.  Na barra de status, clique sobre o código EPSG exibido (por exemplo,
     "EPSG:4326"). \[web:39\]
 2.  Será aberta a janela de configurações do SRC do projeto.
@@ -87,11 +85,6 @@ sejam exibidas na posição correta. \[web:37\]\[web:39\]
     "SIRGAS 2000 / UTM zone 23S -- EPSG:31983", se apropriado à área de
     estudo). \[web:37\]\[web:41\]
 4.  Clicar em **"OK"** para aplicar a configuração.
-
-::: {.callout-note}
-\[IMAGEM 4: Captura de tela simulada da janela de configuração de SRC do
-projeto, com um sistema UTM SIRGAS 2000 selecionado e o código EPSG
-destacado.\]
 :::
 :::
 
@@ -104,6 +97,7 @@ shapefiles ou geopackages) para visualização e análise.
 
 ### Passo a passo para adicionar vetores
 
+::: {.callout-note}
 1.  Com o projeto aberto, acessar o menu **"Camada"** \> **"Adicionar
     Camada"** \> **"Adicionar Camada Vetorial\..."**.
     \[web:36\]\[web:44\]
@@ -115,11 +109,6 @@ shapefiles ou geopackages) para visualização e análise.
 4.  Conferir o SRC da camada (caso o QGIS pergunte) e confirmar.
 5.  Clicar em **"Adicionar"**. A camada aparecerá no painel de camadas e
     será exibida na área de mapa. \[web:36\]
-
-::: {.callout-note}
-\[IMAGEM 5: Captura de tela da janela "Adicionar Camada Vetorial" no
-QGIS, mostrando a seleção de um arquivo shapefile e o painel de camadas
-com a nova camada listada.\]
 :::
 :::
 
@@ -132,6 +121,7 @@ imagens de satélite ou modelos de elevação.
 
 ### 4.5.1. Passo a passo para adicionar raster
 
+::: {.callout-note}
 1.  No menu superior, clicar em **"Camada"** \> **"Adicionar Camada"**
     \> **"Adicionar Camada Raster\..."**. \[web:36\]
 2.  Clicar em **"Explorar"** para localizar o arquivo raster (por
@@ -140,11 +130,6 @@ imagens de satélite ou modelos de elevação.
 4.  Conferir as informações do SRC, se solicitado, e confirmar.
 5.  Clicar em **"Adicionar"**. A camada raster será exibida no mapa,
     geralmente abaixo das camadas vetoriais. \[web:36\]\[web:38\]
-
-::: {.callout-note}
-\[IMAGEM 6: Captura de tela da janela "Adicionar Camada Raster" no QGIS,
-e a área de mapa mostrando uma imagem de relevo colorida com uma camada
-vetorial sobreposta.\]
 :::
 :::
 
@@ -154,6 +139,7 @@ vetorial sobreposta.\]
 Depois de adicionar as camadas, é importante saber navegar pelo mapa e
 ajustar o modo de visualização. \[web:32\]\[web:33\]
 
+::: {.callout-note}
 -   **Zoom in / Zoom out**: usar a roda do mouse ou os ícones de lupa na
     barra de ferramentas.
 -   **Deslocar mapa (pan)**: usar a ferramenta de "mão" para arrastar o
@@ -162,11 +148,6 @@ ajustar o modo de visualização. \[web:32\]\[web:33\]
     camada no painel de camadas e escolher "Zoom para a camada".
 -   **Ligar/desligar camadas**: marcar ou desmarcar a caixa ao lado do
     nome da camada no painel de camadas.
-
-::: {.callout-note}
-\[IMAGEM 7: Interface do QGIS com ícones de zoom e pan destacados, e o
-painel de camadas mostrando a alternância de visibilidade em algumas
-camadas.\]
 :::
 :::
 
@@ -180,6 +161,7 @@ regularmente. \[web:35\]
 
 ### Passo a passo para salvar
 
+::: {.callout-note}
 1.  No menu superior, clicar em **"Projeto"** \> **"Salvar"** ou "Salvar
     Como\...".
 2.  Escolher uma pasta organizada para seu trabalho (por exemplo, uma
@@ -187,11 +169,6 @@ regularmente. \[web:35\]
 3.  Definir um nome significativo para o arquivo de projeto (ex.:
     *exemplo_cap4.qgz*).
 4.  Clicar em **"Salvar"**.
-
-::: {.callout-note}
-\[IMAGEM 8: Janela de salvar arquivo do sistema operacional, mostrando
-um nome de projeto QGIS e uma estrutura de pastas organizada
-("dados_vetoriais", "dados_raster", "projetos").\]
 :::
 :::
 
@@ -201,6 +178,7 @@ um nome de projeto QGIS e uma estrutura de pastas organizada
 Para recapitular, veja um roteiro simples que pode ser seguido por um
 iniciante para criar seu primeiro projeto no QGIS. \[web:36\]\[web:38\]
 
+::: {.callout-note}
 1.  Abrir o QGIS e criar um novo projeto.
 2.  Ajustar o SRC do projeto conforme a área de estudo (por exemplo,
     SIRGAS 2000 / UTM fuso adequado).
@@ -210,11 +188,6 @@ iniciante para criar seu primeiro projeto no QGIS. \[web:36\]\[web:38\]
     de base visual.
 5.  Ajustar a ordem das camadas e praticar zoom, pan e visualização.
 6.  Salvar o projeto em uma pasta organizada.
-
-::: {.callout-note}
-\[IMAGEM 9: Tela do QGIS com um exemplo de projeto simples: camada
-raster de fundo, camada vetorial de limites por cima, painel de camadas
-organizado e o projeto já salvo.\]
 :::
 :::
 :::
