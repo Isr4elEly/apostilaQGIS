@@ -1022,54 +1022,87 @@
     ]
   },
   {
-    "objectID": "capitulo11b.html#informar-coordenada-de-localização-de-elementos-de-preços",
-    "href": "capitulo11b.html#informar-coordenada-de-localização-de-elementos-de-preços",
+    "objectID": "capitulo11b.html#finalizando-e-salvando",
+    "href": "capitulo11b.html#finalizando-e-salvando",
     "title": "13  QGIS: Coleta de preços no software QGIS.",
-    "section": "13.4 Informar coordenada de localização de elementos de preços",
-    "text": "13.4 Informar coordenada de localização de elementos de preços\nMuitas vezes precisamos digitar as coordenadas de localização de um elemento pesquisado no QGIS, para isso, podemos utilizar um dos métodos descritos abaixo:\n\n13.4.1 Editando a localização de um ponto da camada elementos\n\n\n13.4.2 Usando o plugin Lat Lon Tools\nInstalação do plugin\n\n\n\n\n\n\nGerenciar e Instalar Complementos\n\n\n\n\n\n\n\nInstalando o plugin\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\nNoteGerenciar e Instalar Complementos\n\n\n\n\nAcesse o menu Complementos\nSelecione Gerenciar e Instalar Complementos\n\n\n\n\n\n\n\n\n\nNoteInstalando o plugin\n\n\n\n\nClique em Todos para acessar a lista completa de plugins disponíveis;\nDigite Lat Lon Tools na barra de pesquisa para encontrar o plugin;\nSelecione o plugin Lat Lon Tools na lista de resultados;\nClique em Instalar Complemento para instalar o plugin.\n\n\n\n\n\nO Lat Lon Tools facilita a captura, o zoom para coordenadas, a conversão de coordenadas em campos de texto para novas camadas de pontos, a exportação da geometria de pontos para campos de texto e a interação com outras ferramentas de mapeamento online. Ele adiciona suporte a coordenadas MGRS, UTM padrão, UPS, Geohash, GEOREF, Plus Code (Open Location Code), WKT, EWKT, JSON e ECEF ao QGIS. Ao trabalhar com o Google Earth, Google Maps ou outras ferramentas de mapeamento online, as coordenadas são especificadas na ordem ‘Latitude, Longitude’. Por padrão, o Lat Lon Tools usa o formato padrão do Google Maps, mas é muito flexível e pode usar praticamente qualquer projeção e formato de coordenadas para entrada e saída. As seguintes ferramentas estão disponíveis no Lat Lon Tools.\n\n\n Zoom para Coordenada - Com esta ferramenta, digite ou cole uma coordenada na área de texto e pressione Enter. O QGIS centraliza o mapa na coordenada, destaca e cria um marcador temporário no local. Para formatos que representam uma região em vez de um ponto, como Geohash, H3, Maindenhead e Códigos Plus (Open Location Code), a área da região é exibida juntamente com o ponto central. Se o sistema de coordenadas padrão WGS 84 (EPSG:4326 - latitude/longitude) for especificado, Zoom para Coordenada pode interpretar coordenadas em graus decimais, DMS, WKT POINT, UTM padrão, UPS, MGRS, GEOREF, Códigos Plus (Open Location Code) ou GeoJSON. Também é possível ampliar para coordenadas Geohash, coordenadas de grade Maidenhead de rádio amador, coordenadas H3 Geohash (se a biblioteca H3 versão 4.xx estiver instalada) ou qualquer outra projeção, quando configurada em Configurações ou pelo botão Selecionar Modo CRS. A Ordem das Coordenadas em Configurações ou o botão Alternar Ordem das Coordenadas abaixo define se a ordem é latitude seguida de longitude (Y,X) ou longitude seguida de latitude (X,Y). As seguintes ações também podem ser realizadas na caixa de diálogo Ampliar para:\n\n Ao pressionar este botão, o QGIS amplia a visualização para o local.\n Isso cola o conteúdo da área de transferência na área de texto.\n O marcador é removido com este botão.\n Isso alterna a ordem das coordenadas sem precisar acessar as Configurações.\n Isso especifica o tipo de coordenada que deve ser interpretada sem precisar acessar as Configurações.\n O comportamento e os tipos de coordenadas interpretados podem ser configurados pressionando o botão Configurações.\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nAs explicações acima foram traduzidas da página do desenvolvedor do plugin Lat Lon Tools o Sr. Calvin Hamilton",
+    "section": "13.3 Finalizando e salvando",
+    "text": "13.3 Finalizando e salvando\nApós finalizar o preenchimento das informações sobre o elementos pesquisado, clique no botão ok do formulário.\n\n\n\n\n\n\n\n\n\nFigure 13.19: Salvando\n\n\n\n\n\n\n\n\n\n\n\nFigure 13.20: Elemento Coletado\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteFigure 13.19\n\n\n\n\nElemento criado;\n\nBotão de salvar camada;\n\nDEsabilite a edição da camada caso não haja mais elementos a serem informados.\n\n\n\n\n\n\n\n\n\n\n\nNoteFigure 13.20\n\n\n\n\nCamada salva e com a edição desabilitada;\n\nelemento inserido;",
     "crumbs": [
       "Pesquisa de Preços de Terras Rurais",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>QGIS: Coleta de preços no software QGIS.</span>"
     ]
   },
   {
+    "objectID": "capitulo11c.html",
+    "href": "capitulo11c.html",
+    "title": "14  QGIS: Informar coordenada de localização de elementos de preços manualmente.",
+    "section": "",
+    "text": "Muitas vezes precisamos digitar as coordenadas de localização de um elemento pesquisado no QGIS, para isso, podemos utilizar um dos métodos descritos abaixo:",
+    "crumbs": [
+      "Pesquisa de Preços de Terras Rurais",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>QGIS: Informar coordenada de localização de elementos de preços manualmente.</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo11c.html#editando-a-localização-de-um-ponto-da-camada-elementos",
+    "href": "capitulo11c.html#editando-a-localização-de-um-ponto-da-camada-elementos",
+    "title": "14  QGIS: Informar coordenada de localização de elementos de preços manualmente.",
+    "section": "14.1 Editando a localização de um ponto da camada elementos",
+    "text": "14.1 Editando a localização de um ponto da camada elementos",
+    "crumbs": [
+      "Pesquisa de Preços de Terras Rurais",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>QGIS: Informar coordenada de localização de elementos de preços manualmente.</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo11c.html#usando-o-plugin-lat-lon-tools",
+    "href": "capitulo11c.html#usando-o-plugin-lat-lon-tools",
+    "title": "14  QGIS: Informar coordenada de localização de elementos de preços manualmente.",
+    "section": "14.2 Usando o plugin Lat Lon Tools",
+    "text": "14.2 Usando o plugin Lat Lon Tools\nInstalação do plugin\n\n\n\n\n\n\nGerenciar e Instalar Complementos\n\n\n\n\n\n\n\nInstalando o plugin\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\nNoteGerenciar e Instalar Complementos\n\n\n\n\nAcesse o menu Complementos\nSelecione Gerenciar e Instalar Complementos\n\n\n\n\n\n\n\n\n\nNoteInstalando o plugin\n\n\n\n\nClique em Todos para acessar a lista completa de plugins disponíveis;\nDigite Lat Lon Tools na barra de pesquisa para encontrar o plugin;\nSelecione o plugin Lat Lon Tools na lista de resultados;\nClique em Instalar Complemento para instalar o plugin.\n\n\n\n\n\nO Lat Lon Tools facilita a captura, o zoom para coordenadas, a conversão de coordenadas em campos de texto para novas camadas de pontos, a exportação da geometria de pontos para campos de texto e a interação com outras ferramentas de mapeamento online. Ele adiciona suporte a coordenadas MGRS, UTM padrão, UPS, Geohash, GEOREF, Plus Code (Open Location Code), WKT, EWKT, JSON e ECEF ao QGIS. Ao trabalhar com o Google Earth, Google Maps ou outras ferramentas de mapeamento online, as coordenadas são especificadas na ordem ‘Latitude, Longitude’. Por padrão, o Lat Lon Tools usa o formato padrão do Google Maps, mas é muito flexível e pode usar praticamente qualquer projeção e formato de coordenadas para entrada e saída. As seguintes ferramentas estão disponíveis no Lat Lon Tools.\n\n\n Zoom para Coordenada - Com esta ferramenta, digite ou cole uma coordenada na área de texto e pressione Enter. O QGIS centraliza o mapa na coordenada, destaca e cria um marcador temporário no local. Para formatos que representam uma região em vez de um ponto, como Geohash, H3, Maindenhead e Códigos Plus (Open Location Code), a área da região é exibida juntamente com o ponto central. Se o sistema de coordenadas padrão WGS 84 (EPSG:4326 - latitude/longitude) for especificado, Zoom para Coordenada pode interpretar coordenadas em graus decimais, DMS, WKT POINT, UTM padrão, UPS, MGRS, GEOREF, Códigos Plus (Open Location Code) ou GeoJSON. Também é possível ampliar para coordenadas Geohash, coordenadas de grade Maidenhead de rádio amador, coordenadas H3 Geohash (se a biblioteca H3 versão 4.xx estiver instalada) ou qualquer outra projeção, quando configurada em Configurações ou pelo botão Selecionar Modo CRS. A Ordem das Coordenadas em Configurações ou o botão Alternar Ordem das Coordenadas abaixo define se a ordem é latitude seguida de longitude (Y,X) ou longitude seguida de latitude (X,Y). As seguintes ações também podem ser realizadas na caixa de diálogo Ampliar para:\n\n Ao pressionar este botão, o QGIS amplia a visualização para o local.\n Isso cola o conteúdo da área de transferência na área de texto.\n O marcador é removido com este botão.\n Isso alterna a ordem das coordenadas sem precisar acessar as Configurações.\n Isso especifica o tipo de coordenada que deve ser interpretada sem precisar acessar as Configurações.\n O comportamento e os tipos de coordenadas interpretados podem ser configurados pressionando o botão Configurações.\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nAs explicações acima foram traduzidas da página do desenvolvedor do plugin Lat Lon Tools o Sr. Calvin Hamilton",
+    "crumbs": [
+      "Pesquisa de Preços de Terras Rurais",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>QGIS: Informar coordenada de localização de elementos de preços manualmente.</span>"
+    ]
+  },
+  {
     "objectID": "agradecimentos.html",
     "href": "agradecimentos.html",
-    "title": "14  Agradecimentos e Referências Utilizadas",
+    "title": "15  Agradecimentos e Referências Utilizadas",
     "section": "",
     "text": "Este material foi elaborado com o objetivo de apoiar estudantes, técnicos e profissionais que estão dando seus primeiros passos na área de geoprocessamento, geotecnologias e Sistemas de Informações Geográficas. [web:7][web:18][web:64]\nA construção desta apostila contou com a inspiração de diversos manuais, apostilas, documentação oficial de softwares e normas técnicas brasileiras, além da sua própria experiência prática refletida no roteiro de dicas e fórmulas utilizado como base para os capítulos de relevo e declividade. [file:46][web:8][web:20][web:80]\nFica aqui o agradecimento a todas as instituições que disponibilizam dados abertos, material didático e documentação, permitindo que o conhecimento em geoprocessamento seja disseminado de forma acessível, especialmente no contexto da gestão ambiental e do planejamento territorial no Brasil. [web:6][web:7][web:23][web:70]",
     "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Agradecimentos e Referências Utilizadas</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Agradecimentos e Referências Utilizadas</span>"
     ]
   },
   {
     "objectID": "agradecimentos.html#agradecimentos",
     "href": "agradecimentos.html#agradecimentos",
-    "title": "14  Agradecimentos e Referências Utilizadas",
+    "title": "15  Agradecimentos e Referências Utilizadas",
     "section": "",
     "text": "Este material foi elaborado com o objetivo de apoiar estudantes, técnicos e profissionais que estão dando seus primeiros passos na área de geoprocessamento, geotecnologias e Sistemas de Informações Geográficas. [web:7][web:18][web:64]\nA construção desta apostila contou com a inspiração de diversos manuais, apostilas, documentação oficial de softwares e normas técnicas brasileiras, além da sua própria experiência prática refletida no roteiro de dicas e fórmulas utilizado como base para os capítulos de relevo e declividade. [file:46][web:8][web:20][web:80]\nFica aqui o agradecimento a todas as instituições que disponibilizam dados abertos, material didático e documentação, permitindo que o conhecimento em geoprocessamento seja disseminado de forma acessível, especialmente no contexto da gestão ambiental e do planejamento territorial no Brasil. [web:6][web:7][web:23][web:70]",
     "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Agradecimentos e Referências Utilizadas</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Agradecimentos e Referências Utilizadas</span>"
     ]
   },
   {
     "objectID": "referencias.html",
     "href": "referencias.html",
-    "title": "15  Referências (Lista Avulsa com Códigos)",
+    "title": "16  Referências (Lista Avulsa com Códigos)",
     "section": "",
     "text": "[ABNT geral – sem código específico]\nABNT – ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. NBR 14166: Representação de terreno com curvas de nível. Rio de Janeiro,\n\n\n\n[Lei – sem código específico]\nBRASIL. Lei n.º 12.651, de 25 de maio de 2012. Dispõe sobre a proteção da vegetação nativa. Diário Oficial da União, Brasília, DF, 28 maio 2012.\n[Embrapa geral – sem código específico]\nEMBRAPA – EMPRESA BRASILEIRA DE PESQUISA AGROPECUÁRIA. Classificação de declividades para uso agrícola. Documentos técnicos diversos, Brasília, s.d.\n[web:97]\nEMPRAPA FLORESTAS. Reserva Legal e Área de Preservação Permanente (dicas para a Região Sul): RL e APP. Colombo: Embrapa Florestas, 2014. Disponível em: &lt;https://www.infoteca.cnptia.embrapa.br/handle/doc/1003109&gt;. Acesso em: 27 mar. 2026.\n[web:103]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Manual Técnico em Geociências. Rio de Janeiro: IBGE, 2025. Disponível em: &lt;https://www.ibge.gov.br/geociencias/informacoes-ambientais/geologia/15826-manual-tecnico-em-geociencias.html&gt;. Acesso em: 27 mar. 2026.\n[web:93]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Folhas topográficas. Rio de Janeiro: IBGE, 2022. Disponível em: &lt;https://www.ibge.gov.br/geociencias/cartas-e-mapas/folhas-topograficas.html&gt;. Acesso em: 27 mar. 2026.\n[web:94]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Normas Técnicas da Cartografia Nacional – Decreto nº 89.817/1984. Rio de Janeiro: IBGE, 1984. Disponível em: &lt;https://geoftp.ibge.gov.br/metodos_e_outros_documentos_de_referencia/normas/legislacao/legisla_decreto_89817_d.pdf&gt;. Acesso em: 27 mar. 2026.\n[web:99][web:101]\nIBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Base Cartográfica Contínua do Brasil e Curvas de Nível. Rio de Janeiro: IBGE, 2016–2018. Disponível em: &lt;https://geoftp.ibge.gov.br/cartas_e_mapas/bases_cartograficas_continuas/&gt;. Acesso em: 27 mar. 2026.\n[web:96]\nANA – AGÊNCIA NACIONAL DE ÁGUAS E SANEAMENTO BÁSICO. Curvas de nível – Catálogo de Metadados da ANA. Brasília: ANA, 2016. Disponível em: &lt;https://metadados.snirh.gov.br/&gt;. Acesso em: 27 mar. 2026.\n[web:64]\nDEFESA CIVIL DO ESPÍRITO SANTO. Análise espacial com QGIS e GEObases. Vitória: CEPDEC/ES, 2024. Disponível em: &lt;https://defesacivil.es.gov.br/Media/DefesaCivil/Cursos%20CEPDEC/ANALISE%20ESPACIAL%20COM%20QGIS%20E%20GEOBASES.pdf&gt;. Acesso em: 27 mar. 2026.\n[web:70]\nEMBRAPA. Conheça quais são as Áreas de Preservação Permanente (APP). Brasília: Embrapa, 2011. Disponível em: &lt;https://www.embrapa.br/codigo-florestal/entenda-o-codigo-florestal/area-de-preservacao-permanente/detalhe-area-pp&gt;. Acesso em: 27 mar. 2026.\n[web:50]\nSÁ, Narcélio. Cálculos de declividade no QGIS: veja como fazer. 2014. Disponível em: &lt;https://narceliodesa.com/calculando-declividade-qgis/&gt;. Acesso em: 27 mar. 2026.\n[web:52][web:55]\nEMBRAPA. Classificação de Declividade – Tabela Embrapa. 1979 e atualizações posteriores. Documento técnico.\n[web:80][web:81][web:85]\nQGIS PROJECT. Documentação do QGIS – Layout de Impressão e Design de Mapas. 2014–2024. Disponível em: &lt;https://docs.qgis.org/&gt;. Acesso em: 27 mar. 2026.\n[web:62][web:72][web:106]\nQGIS PROJECT. Gentle Introduction to GIS e Training Manuals – Vector Spatial Analysis. 2014–2024. Disponível em: &lt;https://docs.qgis.org/&gt;. Acesso em: 27 mar. 2026.\n[web:91]\nQGIS PROJECT. Automating Map Creation with Print Layout Atlas (QGIS3). 2018. Disponível em: &lt;https://www.qgistutorials.com/en/docs/3/automating_map_creation.html&gt;. Acesso em: 27 mar. 2026.\n[web:104][web:100]\nGEOACADEMY. Buffer, clip and intersect vector data; Buffer operations — QGIS 3.10. 2019–2025. Disponível em: &lt;https://portal.geoacademy.eu/&gt; e &lt;https://qgis3-10-geoanalysis-un.readthedocs.io/&gt;. Acesso em: 27 mar. 2026.\n[web:78]\nUNIVERSO GIS. Modelos de Layout QGIS: Como criar mapas profissionais em 5 minutos. 2025. Disponível em: &lt;https://universogis.com.br/modelos-de-layout-qgis-download/&gt;. Acesso em: 27 mar. 2026.\n[web:88]\nTETRIX ECOLOGY. How to create a print template in QGIS. 2017. Disponível em: &lt;https://www.tetrixecology.com/single-post/how-to-create-a-print-template-in-qgis&gt;. Acesso em: 27 mar. 2026.\n[web:108][web:111][web:113]\nDIVERSOS AUTORES. Recolha de dados com QField e Mobile GIS com QGIS + QField. 2020–2026. Materiais de apresentação e divulgação sobre QField e Mobile GIS. [web:108][web:111][web:113]\n[web:109][web:110]\nQFIELD COMMUNITY. Tópicos de suporte sobre QFieldSync e QFieldCloud (edição offline e sincronização com PostGIS). 2025. Disponível em: &lt;https://community.qfield.org/&gt;. Acesso em: 27 mar.\n\n\n\n[file:46]\nAUTOR(A) DA APOSTILA. ROTEIRO – DICAS E FÓRMULAS (EXER-03): Relevo, Curvas de Nível, Declividade e APP. Documento interno, 2026. Arquivo de referência utilizado na estruturação dos capítulos de relevo, declividade, classificação de declividade e restrição ambiental.",
     "crumbs": [
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Referências (Lista Avulsa com Códigos)</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Referências (Lista Avulsa com Códigos)</span>"
     ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "16  Summary",
+    "title": "17  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.",
     "crumbs": [
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Summary</span>"
     ]
   },
   {
@@ -1080,17 +1113,6 @@
     "text": "EMBRAPA. 2011. “Conheça quais são as Áreas de\nPreservação Permanente (APP).”",
     "crumbs": [
       "References"
-    ]
-  },
-  {
-    "objectID": "capitulo11b.html#finalizando-e-salvando",
-    "href": "capitulo11b.html#finalizando-e-salvando",
-    "title": "13  QGIS: Coleta de preços no software QGIS.",
-    "section": "13.3 Finalizando e salvando",
-    "text": "13.3 Finalizando e salvando\nApós finalizar o preenchimento das informações sobre o elementos pesquisado, clique no botão ok do formulário.\n\n\n\n\n\n\n\n\n\nFigure 13.19: Salvando\n\n\n\n\n\n\n\n\n\n\n\nFigure 13.20: Elemento Coletado\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteFigure 13.19\n\n\n\n\nElemento criado;\n\nBotão de salvar camada;\n\nDEsabilite a edição da camada caso não haja mais elementos a serem informados.\n\n\n\n\n\n\n\n\n\n\n\nNoteFigure 13.20\n\n\n\n\nCamada salva e com a edição desabilitada;\n\nelemento inserido;",
-    "crumbs": [
-      "Pesquisa de Preços de Terras Rurais",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>QGIS: Coleta de preços no software QGIS.</span>"
     ]
   }
 ]

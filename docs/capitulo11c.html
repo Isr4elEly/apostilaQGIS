@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios – Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField</title>
+<title>14&nbsp; QGIS: Informar coordenada de localização de elementos de preços manualmente. – Apostila de Geoprocessamento – Introdução ao SIG, QGIS e QField</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./capitulo9.html" rel="next">
-<link href="./capitulo7.html" rel="prev">
+<link href="./agradecimentos.html" rel="next">
+<link href="./capitulo11b.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo4.html">QGIS</a></li><li class="breadcrumb-item"><a href="./capitulo8.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo11.html">Pesquisa de Preços de Terras Rurais</a></li><li class="breadcrumb-item"><a href="./capitulo11c.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">QGIS: Informar coordenada de localização de elementos de preços manualmente.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -181,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./capitulo8.html" class="sidebar-item-text sidebar-link active">
+  <a href="./capitulo8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span></span></a>
   </div>
 </li>
@@ -239,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./capitulo11c.html" class="sidebar-item-text sidebar-link">
+  <a href="./capitulo11c.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">QGIS: Informar coordenada de localização de elementos de preços manualmente.</span></span></a>
   </div>
 </li>
@@ -278,9 +278,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content column-page-right" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo4.html">QGIS</a></li><li class="breadcrumb-item"><a href="./capitulo8.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo11.html">Pesquisa de Preços de Terras Rurais</a></li><li class="breadcrumb-item"><a href="./capitulo11c.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">QGIS: Informar coordenada de localização de elementos de preços manualmente.</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Análises Espaciais: Buffer, Interseção e APP por Declividade e Distância de Rios</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">QGIS: Informar coordenada de localização de elementos de preços manualmente.</span></h1>
 </div>
 
 
@@ -297,12 +297,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="cap8">
-<section id="introducao-cap8">
-<section id="introdução" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">8.1</span> Introdução</h2>
-<p>As ferramentas de <strong>análise espacial</strong> do QGIS permitem combinar dados vetoriais e raster para gerar produtos como zonas de proteção, áreas de conflito de uso e delimitação de Áreas de Preservação Permanente (APP). [web:62][web:72]</p>
-<p>Neste capítulo, vamos trabalhar com três grupos de operações: <strong>buffers</strong> (APP por distância de rios), <strong>interseções</strong> (APP dentro de propriedades, por exemplo) e <strong>APP por declividade</strong>, usando como base os mapas de declividade e drenagem já produzidos em capítulos anteriores. [web:62][web:64][web:68][web:70][web:73]</p>
+<section id="cap11b">
+<p>Muitas vezes precisamos digitar as coordenadas de localização de um elemento pesquisado no QGIS, para isso, podemos utilizar um dos métodos descritos abaixo:</p>
+<section id="editando-a-localização-de-um-ponto-da-camada-elementos" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="editando-a-localização-de-um-ponto-da-camada-elementos"><span class="header-section-number">14.1</span> Editando a localização de um ponto da camada <code>elementos</code></h2>
+</section>
+<section id="usando-o-plugin-lat-lon-tools" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="usando-o-plugin-lat-lon-tools"><span class="header-section-number">14.2</span> Usando o plugin <a href="https://github.com/hamiltoncj/qgis-latlontools-plugin/#readme"><code>Lat Lon Tools</code></a></h2>
+<p><strong>Instalação do plugin</strong></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/qgis-latlontools-plugin-main/complementos-instalar.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Gerenciar e Instalar Complementos</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/qgis-latlontools-plugin-main/instalando-plugin-latlontools.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Instalando o plugin</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -313,285 +335,73 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 1: Mapa-resumo mostrando APP por rios (faixas em azul claro ao longo da drenagem) e APP por declividade (áreas em vermelho em encostas íngremes), sobre um fundo de uso do solo.]</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Gerenciar e Instalar Complementos">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Gerenciar e Instalar Complementos
 </div>
 </div>
-</section>
-</section>
-<section id="pre-requisitos">
-<section id="pré-requisitos-de-dados" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="pré-requisitos-de-dados"><span class="header-section-number">8.2</span> Pré-requisitos de Dados</h2>
-<p>Para seguir os roteiros deste capítulo, é importante já ter disponíveis, no QGIS: [web:64]</p>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Acesse o menu <strong>Complementos</strong></li>
+<li>Selecione <strong>Gerenciar e Instalar Complementos</strong></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Instalando o plugin">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Instalando o plugin
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Clique em <strong>Todos</strong> para acessar a lista completa de plugins disponíveis;</li>
+<li>Digite <strong>Lat Lon Tools</strong> na barra de pesquisa para encontrar o plugin;</li>
+<li>Selecione o plugin <strong>Lat Lon Tools</strong> na lista de resultados;</li>
+<li>Clique em <strong>Instalar Complemento</strong> para instalar o plugin.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p>O <strong><em>Lat Lon Tools</em></strong> facilita a captura, o zoom para coordenadas, a conversão de coordenadas em campos de texto para novas camadas de pontos, a exportação da geometria de pontos para campos de texto e a interação com outras ferramentas de mapeamento online. Ele adiciona suporte a coordenadas MGRS, UTM padrão, UPS, Geohash, GEOREF, Plus Code (Open Location Code), WKT, EWKT, JSON e ECEF ao QGIS. Ao trabalhar com o <strong>Google Earth</strong>, <strong>Google Maps</strong> ou outras ferramentas de mapeamento online, as coordenadas são especificadas na ordem ‘Latitude, Longitude’. Por padrão, o <strong><em>Lat Lon Tools</em></strong> usa o formato padrão do Google Maps, mas é muito flexível e pode usar praticamente qualquer projeção e formato de coordenadas para entrada e saída. As seguintes ferramentas estão disponíveis no <strong><em>Lat Lon Tools</em></strong>.</p>
+<p><img src="image/qgis-latlontools-plugin-main/doc/menu.jpg" class="img-fluid"></p>
 <ul>
-<li>Camada vetorial de <strong>drenagem</strong> (rios e córregos) da área de estudo.</li>
-<li>Camada raster de <strong>declividade</strong> (em graus ou porcentagem), derivada do MDE conforme capítulo anterior.</li>
-<li>Camada vetorial de <strong>perímetro ou propriedades</strong> (opcional, para cruzar APP com imóveis ou talhões).</li>
-<li>Projeto configurado com SRC adequado (por exemplo, SIRGAS 2000 / UTM local).</li>
+<li><img src="image/qgis-latlontools-plugin-main/images/zoomicon.svg" class="img-fluid"> <strong><em>Zoom para Coordenada</em></strong> - Com esta ferramenta, digite ou cole uma coordenada na área de texto e pressione <strong>Enter</strong>. O QGIS centraliza o mapa na coordenada, destaca e cria um marcador temporário no local. Para formatos que representam uma região em vez de um ponto, como <strong>Geohash</strong>, <strong>H3</strong>, <strong>Maindenhead</strong> e <strong>Códigos Plus (Open Location Code)</strong>, a área da região é exibida juntamente com o ponto central. Se o sistema de coordenadas padrão <strong>WGS 84</strong> (EPSG:4326 - latitude/longitude) for especificado, <strong><em>Zoom para Coordenada</em></strong> pode interpretar coordenadas em <strong>graus decimais</strong>, <strong>DMS</strong>, <strong>WKT POINT</strong>, <strong>UTM padrão</strong>, <strong>UPS</strong>, <strong>MGRS</strong>, <strong>GEOREF</strong>, <strong>Códigos Plus (Open Location Code)</strong> ou <strong>GeoJSON</strong>. Também é possível ampliar para coordenadas <strong>Geohash</strong>, coordenadas de grade <strong>Maidenhead</strong> de rádio amador, coordenadas <strong>H3</strong> Geohash (se a biblioteca H3 versão 4.xx estiver instalada) ou qualquer outra projeção, quando configurada em <strong>Configurações</strong> ou pelo botão <strong>Selecionar Modo CRS</strong>. A <strong><em>Ordem das Coordenadas</em></strong> em <strong><em>Configurações</em></strong> ou o botão <strong>Alternar Ordem das Coordenadas</strong> abaixo define se a ordem é latitude seguida de longitude (Y,X) ou longitude seguida de latitude (X,Y). As seguintes ações também podem ser realizadas na caixa de diálogo <strong><em>Ampliar para</em></strong>:
+<ul>
+<li><img src="image/qgis-latlontools-plugin-main/doc/zoomtool.jpg" class="img-fluid"> Ao pressionar este botão, o QGIS amplia a visualização para o local.</li>
+<li><img src="image/qgis-latlontools-plugin-main/doc/pastecoord.jpg" class="img-fluid"> Isso cola o conteúdo da área de transferência na área de texto.</li>
+<li><img src="image/qgis-latlontools-plugin-main/doc/cleartool.jpg" class="img-fluid"> O marcador é removido com este botão.</li>
+<li><img src="image/qgis-latlontools-plugin-main/doc/xyzoom.jpg" class="img-fluid"> Isso alterna a ordem das coordenadas sem precisar acessar as <strong>Configurações</strong>.</li>
+<li><img src="image/qgis-latlontools-plugin-main/doc/zoomcrs.jpg" class="img-fluid"> Isso especifica o tipo de coordenada que deve ser interpretada sem precisar acessar as <strong>Configurações</strong>.</li>
+<li><img src="image/qgis-latlontools-plugin-main/doc/settings.png" class="img-fluid"> O comportamento e os tipos de coordenadas interpretados podem ser configurados pressionando o botão <strong>Configurações</strong>.<br>
+<img src="image/qgis-latlontools-plugin-main/doc/zoomto.jpg" class="img-fluid"></li>
+</ul></li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[IMAGEM 2: Tela do QGIS com três camadas carregadas: drenagem (linhas azuis), perímetro/propriedades (polígonos) e declividade (raster em tons de cor).]</p>
+<p>As explicações acima foram traduzidas da página do desenvolvedor do plugin <a href="https://github.com/hamiltoncj/qgis-latlontools-plugin/tree/main">Lat Lon Tools</a> o <a href="https://github.com/hamiltoncj">Sr.&nbsp;Calvin Hamilton</a></p>
 </div>
 </div>
-</section>
-</section>
-<section id="buffer-basico">
-<section id="buffer-conceito-e-uso-básico" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="buffer-conceito-e-uso-básico"><span class="header-section-number">8.3</span> Buffer: Conceito e Uso Básico</h2>
-<p>O <strong>buffer</strong> (ou “borda”/zona de influência) cria uma área ao redor de feições pontuais, lineares ou poligonais, a uma distância definida em unidades do SRC (por exemplo, metros). [web:62][web:68][web:71]</p>
-<p>No contexto ambiental, o buffer é amplamente usado para delimitar APP ao longo de cursos d’água, ao redor de nascentes e em torno de outros alvos que exigem faixa de proteção. [web:62][web:70]</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>[IMAGEM 3: Exemplo simples de buffer: linha de rio ao centro e faixa contínua ao redor (polígono) representando uma APP de 30 m para cada lado.]</p>
-</div>
-</div>
-</section>
-</section>
-<section id="app-rios-fixa">
-<section id="app-por-distância-de-rios-largura-fixa" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="app-por-distância-de-rios-largura-fixa"><span class="header-section-number">8.4</span> APP por Distância de Rios (Largura Fixa)</h2>
-<p>O Código Florestal brasileiro estabelece faixas mínimas de APP ao longo de cursos d’água, que podem ser representadas por buffers de largura fixa ou variável conforme a largura do rio. [web:70][web:73]</p>
-<section id="exemplo-simplificado-faixa-fixa-de-30-m" class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="exemplo-simplificado-faixa-fixa-de-30-m"><span class="header-section-number">8.4.1</span> Exemplo simplificado: faixa fixa de 30 m</h3>
-<p>Para fins didáticos, vamos considerar uma APP de 30 metros para cursos d’água pequenos (por exemplo, rios com largura até 10 m). [web:70]</p>
-<ol type="1">
-<li>No menu <strong>“Vetores”</strong> &gt; <strong>“Ferramentas de Geoprocessamento”</strong> &gt; <strong>“Buffer”</strong> (ou via Caixa de Processamento). [web:62]</li>
-<li>Selecione a camada de drenagem como <strong>camada de entrada</strong>.</li>
-<li>Defina a <strong>distância do buffer</strong> como 30 (unidades em metros, se o SRC estiver em UTM).</li>
-<li>Marque a opção <strong>“Dissolver resultado”</strong> para unir buffers de segmentos conectados em um único polígono de APP, evitando sobreposições internas. [web:62][web:71]</li>
-<li>Escolha um nome para a camada de saída (por exemplo, <em>APP_rio_30m.gpkg</em>).</li>
-<li>Clique em <strong>“Executar”</strong>.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>[IMAGEM 4: Janela da ferramenta “Buffer” no QGIS configurada com camada de drenagem, distância 30 m, opção “dissolver” marcada e resultado mostrando uma faixa contínua ao longo dos rios.]</p>
-</div>
-</div>
-</section>
-<section id="tabela-de-faixas-de-app-por-largura-do-curso-dágua-referência-legal" class="level3" data-number="8.4.2">
-<h3 data-number="8.4.2" class="anchored" data-anchor-id="tabela-de-faixas-de-app-por-largura-do-curso-dágua-referência-legal"><span class="header-section-number">8.4.2</span> Tabela de faixas de APP por largura do curso d’água (referência legal)</h3>
-<p>De forma simplificada (Lei 12.651/2012), as faixas mínimas de APP ao longo de rios variam conforme a largura do curso d’água: [web:70][web:73]</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Largura do curso d’água (m)</th>
-<th>Faixa mínima de APP (m)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Até 10</td>
-<td>30</td>
-</tr>
-<tr class="even">
-<td>10 – 50</td>
-<td>50</td>
-</tr>
-<tr class="odd">
-<td>50 – 200</td>
-<td>100</td>
-</tr>
-<tr class="even">
-<td>200 – 600</td>
-<td>200</td>
-</tr>
-<tr class="odd">
-<td>&gt; 600</td>
-<td>500</td>
-</tr>
-</tbody>
-</table>
-<p>Em projetos reais, essa tabela pode ser incorporada em um campo da tabela de atributos (por exemplo, “app_largura”) para gerar <strong>buffers de largura variável</strong>, mas isso será mencionado apenas como extensão, já que o foco aqui é o fluxo básico. [web:68][web:71]</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>[IMAGEM 5: Esquema ilustrando rios com diferentes larguras e faixas de APP proporcionais, com valores de 30, 50, 100 m etc.]</p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="intersecao-app-propriedades">
-<section id="interseção-app-dentro-de-propriedades-ou-talhões" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="interseção-app-dentro-de-propriedades-ou-talhões"><span class="header-section-number">8.5</span> Interseção: APP dentro de Propriedades ou Talhões</h2>
-<p>Depois de gerar as áreas de APP por buffer, é comum cruzá-las com camadas de propriedades ou talhões para quantificar quanto de cada imóvel está em área de preservação. [web:62][web:66]</p>
-<p>Para isso, usamos operações de <strong>overlay vetorial</strong>, em especial a <strong>Interseção</strong>, que recorta as áreas onde duas camadas se sobrepõem. [web:62]</p>
-<section id="passo-a-passo-da-interseção" class="level3" data-number="8.5.1">
-<h3 data-number="8.5.1" class="anchored" data-anchor-id="passo-a-passo-da-interseção"><span class="header-section-number">8.5.1</span> Passo a passo da interseção</h3>
-<ol type="1">
-<li>No menu <strong>“Vetores”</strong> &gt; <strong>“Ferramentas de Geoprocessamento”</strong> &gt; <strong>“Interseção”</strong>.</li>
-<li>Escolher como <strong>Camada de entrada</strong> a camada de propriedades (ou talhões).</li>
-<li>Escolher como <strong>Camada de sobreposição</strong> a camada de APP de rios (buffer gerado anteriormente).</li>
-<li>Definir o nome do arquivo de saída (por exemplo, <em>Propriedades_APP_rio.gpkg</em>).</li>
-<li>Executar a ferramenta. O resultado conterá apenas as áreas de propriedades que caem dentro da APP de rios. [web:62]</li>
-<li>Caso deseje, calcular a área (em ha) dessas interseções usando um campo novo com a expressão <code>area($geometry)/10000</code>.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>[IMAGEM 6: Mapa mostrando propriedades rurais e a camada de APP de rios; ao lado, camada resultante da interseção, destacando apenas as partes das propriedades que estão dentro da APP.]</p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="app-declividade">
-<section id="app-por-declividade-encostas-45" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="app-por-declividade-encostas-45"><span class="header-section-number">8.6</span> APP por Declividade (Encostas &gt; 45°)</h2>
-<p>O Código Florestal considera como APP as encostas ou partes destas com declividade superior a 45°, equivalente a 100% na linha de maior declive, o que pode ser derivado diretamente do mapa de declividade em graus. [web:67][web:70][web:73]</p>
-<p>A partir do raster de declividade em graus (gerado no Capítulo 7), é possível identificar e mapear as áreas com declividade acima de 45° e, em seguida, converter essas áreas em vetores para integrar às demais camadas de APP. [file:46][web:64][web:73]</p>
-<section id="selecionando-áreas-com-declividade-45" class="level3" data-number="8.6.1">
-<h3 data-number="8.6.1" class="anchored" data-anchor-id="selecionando-áreas-com-declividade-45"><span class="header-section-number">8.6.1</span> Selecionando áreas com declividade &gt; 45°</h3>
-<ol type="1">
-<li>Abra a <strong>Calculadora Raster</strong> no QGIS.</li>
-<li>Considere o raster de declividade em graus como <code>"Declividade@1"</code>.</li>
-<li>Use uma expressão binária para criar um raster onde 1 = APP por declividade e 0 = demais áreas, por exemplo:<br>
-<code>("Declividade@1" &gt; 45)</code>. [file:46][web:50]</li>
-<li>Defina o nome do raster de saída, por exemplo, <em>APP_declividade_bin.tif</em>.</li>
-<li>Execute a operação.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>[IMAGEM 7: Tela da Calculadora Raster com expressão ("Declividade@1" &gt; 45) e mapa resultante em duas cores (1 = APP por declividade, 0 = não APP).]</p>
-</div>
-</div>
-</section>
-<section id="converter-raster-em-vetor-e-recortar-pelo-perímetro" class="level3" data-number="8.6.2">
-<h3 data-number="8.6.2" class="anchored" data-anchor-id="converter-raster-em-vetor-e-recortar-pelo-perímetro"><span class="header-section-number">8.6.2</span> Converter raster em vetor e recortar pelo perímetro</h3>
-<ol type="1">
-<li>Usar a ferramenta de conversão raster–vetor (por exemplo, <strong>“Raster para Vetor (polígono)”</strong>):
-<ul>
-<li>Raster de entrada: <em>APP_declividade_bin.tif</em>.</li>
-<li>Selecionar a opção de usar os valores do raster como categorias, para separar o valor 1 em polígonos distintos. [file:46]</li>
-</ul></li>
-<li>Após gerar o vetor, utilizar “Selecionar por expressão” para manter apenas os polígonos com valor = 1 (APP por declividade) e salvar como nova camada. [file:46]</li>
-<li>Opcionalmente, recortar essa camada de APP por declividade pelo perímetro da área de estudo usando a ferramenta <strong>“Recortar”</strong> em Vetores. [file:46][web:64]</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>[IMAGEM 8: Mapa mostrando polígonos de APP por declividade (&gt;45°) derivados do raster, recortados pelo perímetro de estudo.]</p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="combinar-apps">
-<section id="combinando-app-de-rios-e-app-por-declividade" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="combinando-app-de-rios-e-app-por-declividade"><span class="header-section-number">8.7</span> Combinando APP de Rios e APP por Declividade</h2>
-<p>Uma etapa importante é combinar diferentes tipos de APP (rios, declividade, nascentes, topo de morro) em uma camada integrada, para facilitar o diagnóstico e o cálculo de áreas totais de preservação. [web:67][web:73][web:76]</p>
-<p>Aqui, vamos ilustrar a combinação de APP de rios (buffer) com APP por declividade (&gt;45°) usando operações de união ou fusão de camadas. [web:62][web:64]</p>
-<section id="união-e-dissolução" class="level3" data-number="8.7.1">
-<h3 data-number="8.7.1" class="anchored" data-anchor-id="união-e-dissolução"><span class="header-section-number">8.7.1</span> União e dissolução</h3>
-<ol type="1">
-<li>Garantir que APP de rios e APP por declividade estejam em formato vetorial (polígonos), preferencialmente com um campo indicando o tipo (por exemplo, “tipo_app” = “rio” ou “decliv”).</li>
-<li>Usar a ferramenta <strong>“Mesclar camadas vetoriais”</strong> ou “União”:
-<ul>
-<li>Entrada: APP de rios e APP por declividade.</li>
-<li>Saída: camada única com todos os polígonos de APP. [web:62]</li>
-</ul></li>
-<li>Aplicar “Dissolver” sobre o campo “tipo_app” ou sem campo, conforme interesse (unir todas as APP em um único polígono ou manter diferentes tipos separados). [web:62]</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>[IMAGEM 9: Mapa com camada integrada de APP, onde áreas de rios e encostas íngremes aparecem em cores diferentes, com sobreposição dissolvida.]</p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="roteiro-final-cap8">
-<section id="roteiro-prático-resumido-app-por-distância-e-declividade" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="roteiro-prático-resumido-app-por-distância-e-declividade"><span class="header-section-number">8.8</span> Roteiro Prático Resumido – APP por Distância e Declividade</h2>
-<p>Abaixo, um roteiro consolidado para gerar produtos de buffer, interseção e APP por declividade/distância de rios usando o QGIS. [web:62][web:64][web:68][web:71][web:73]</p>
-<ol type="1">
-<li>Preparar dados: MDE, declividade, drenagem e propriedades/talhões em SRC projetado.</li>
-<li>Gerar APP de rios por buffer (largura fixa ou variável) a partir da camada de drenagem, usando distâncias conforme o Código Florestal.</li>
-<li>Cruzar APP de rios com propriedades por meio da ferramenta de Interseção, obtendo áreas de APP dentro de cada imóvel.</li>
-<li>A partir do raster de declividade em graus, selecionar áreas com declividade &gt; 45° (APP por encosta), gerar raster binário e converter para vetor.</li>
-<li>Recortar APP por declividade pelo perímetro da área de estudo, se necessário.</li>
-<li>Mesclar APP de rios e APP por declividade em uma camada integrada, usando Uniões e Dissolver.</li>
-<li>Calcular áreas (ha) e percentuais por tipo de APP, preparando dados para relatórios e mapas temáticos.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>[IMAGEM 10: Composição final com mapa de APPs integradas (rios + declividade), propriedades rurais, legenda com tipos de APP e quadro de áreas por classe, pronto para ser enviado ao layout de impressão.]</p>
-</div>
-</div>
-</section>
-</section>
-</section>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1001,13 +811,13 @@ Note
   </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./capitulo7.html" class="pagination-link" aria-label="Mapa de Declividade a partir do MDE">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mapa de Declividade a partir do MDE</span></span>
+      <a href="./capitulo11b.html" class="pagination-link" aria-label="QGIS: Coleta de preços no software QGIS.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">QGIS: Coleta de preços no software QGIS.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./capitulo9.html" class="pagination-link" aria-label="Layout Cartográfico e Modelos de Impressão no QGIS">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Cartográfico e Modelos de Impressão no QGIS</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./agradecimentos.html" class="pagination-link" aria-label="Agradecimentos e Referências Utilizadas">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Agradecimentos e Referências Utilizadas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
