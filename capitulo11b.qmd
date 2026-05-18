@@ -16,13 +16,13 @@ Vamos coletar um ponto que representa um elementos de preços de terras e preenc
 
 ::: {layout-ncol="2"}
 
-![Editando Elementos](image/cap11/editando-elementos-1.jpeg)
+![Editando Elementos](image/cap11/editando-elementos-1.jpeg){#fig-editando-elementos}
 
 ![Em edição](image/cap11/elementos-em-edicao.jpeg){#fig-elementos-em-edição}
 
 :::
 
-::: {.callout-note}
+::: {.callout-note title=@fig-editando-elementos}
 
 1. Selecione a camada `elementos`;
 2. e clique no botão **Alternar Edição** para habilitar a edição da camada;
@@ -32,19 +32,19 @@ Verifique que aparecerá um lápis sobre o símbolo da camada, indicando que a m
 
 ### Criando um novo ponto.
 
-![Criando um novo ponto](image/cap11/add-ponto.jpeg)
+![Criando um novo ponto](image/cap11/add-ponto.jpeg){#fig-add-ponto}
 
-::: {.callout-note}
+::: {.callout-note title=@fig-add-ponto}
 
 1. Com a feição `elementos` selecionada na aba de camadas, clique no botão **Adicionar Feição** para criar um novo ponto;
 2. navegue no mapa até o local e clique para criar um ponto, logo em seguida, o formulário de atributos será aberto.
 :::
 
-![Formulário de atributos](image/cap11/form-1.jpeg)
+![Formulário de atributos](image/cap11/form-1.jpeg){#fig-form1}
 
 O formulário está dividido em abas, seções e campos.
 
-::: {.callout-note}
+::: {.callout-note title=@fig-form1}
 
 1. Abas de seção do formulário;
 2. Seção do formulário;
@@ -55,9 +55,9 @@ O formulário está dividido em abas, seções e campos.
 
 **Localização**
 
-![Dados principais](image/cap11/form-principal-localizacao.jpeg)
+![Dados principais](image/cap11/form-principal-localizacao.jpeg){#fig-form-principal-localizacao}
 
-::: {.callout-note}
+::: {.callout-note title=@fig-form-principal-localizacao}
 
 1. *Nome do Município*: preenchimento automático;
 2. *UF*: preenchimento automático;
@@ -87,7 +87,7 @@ O formulário está dividido em abas, seções e campos.
 
 ![Fonte do Elemento](image/cap11/origem-fonte.jpeg){#fig-origem-fonte}
 
-![Origem do elemento](image/cap11/origem-informacao.jpeg){#fig-origem-informacao}  
+![Origem da informação](image/cap11/origem-informacao.jpeg){#fig-origem-informacao}  
 ::: 
 
 ::: {layout-ncol="2"}
@@ -325,14 +325,14 @@ Campo de texto que pode ser utilizado livremente para descrever qualquer caracte
 
 ::: {.callout-note title=@fig-dados-complementares}
 
-*% de área aberta*: quanto do imóvel já foi desmatado ou aberto para agricultura e/ou pecuária;  
-*% de área mecanizável*: quanto do imóvel é mecanizável devido a limitações como o relevo, a presença de corpos d'água, etc; 
-*Cód. Certificação*: caso o imóvel seja certificado, informe o código SIGEF ou SNCI;  
-*Código SNCR*: informar o código no Sistema Nacional de Cadastro Rural (SNCR);  
-*Cód. CAR*: informar o código do imóvel no Cadastro Ambiental Rural (CAR);
-*CIB (Receita Federal)*: informar o código do imóvel no Cadastro Imobiliario Brasileiro (CIB) da Receita Federal;  
-*Celular ou internet*: marque a ceixa caso haja um desses dois itens;
-*Nota Agronômica*: caso calcule a nota agronômica do elemento, informe o valor aqui;
+- *% de área aberta*: quanto do imóvel já foi desmatado ou aberto para agricultura e/ou pecuária;
+- *% de área mecanizável*: quanto do imóvel é mecanizável devido a limitações como o relevo, a presença de corpos d'água, etc;
+- *Cód. Certificação*: caso o imóvel seja certificado, informe o código SIGEF ou SNCI;
+- *Código SNCR*: informar o código no Sistema Nacional de Cadastro Rural (SNCR);
+- *Cód. CAR*: informar o código do imóvel no Cadastro Ambiental Rural (CAR);
+- *CIB (Receita Federal)*: informar o código do imóvel no Cadastro Imobiliario Brasileiro (CIB) da Receita Federal;
+- *Celular ou internet*: marque a ceixa caso haja um desses dois itens;
+- *Nota Agronômica*: caso calcule a nota agronômica do elemento, informe o valor aqui;
 
 :::
 
@@ -345,10 +345,10 @@ Campo de texto que pode ser utilizado livremente para descrever qualquer caracte
 ::: {.callout-note title=@fig-energia}
 
 Informe se o imóvel possui energia elétrica:   
-- `Não informado`
-- `Indisponível`: imóvel sem energia elétrica;
+- `Não informado`  
+- `Indisponível`: imóvel sem energia elétrica;  
 - `Mono ou Bifásica`: imóvel com energia elétrica disponível, mas com limitação de carga;  
-- `Trifásica`: imóvel com energia elétrica disponível sem limitação de carga.
+- `Trifásica`: imóvel com energia elétrica disponível sem limitação de carga.  
 
 :::
 
@@ -398,7 +398,7 @@ Após finalizar o preenchimento das informações sobre o elementos pesquisado, 
 
 1. Elemento criado;  
 2. Botão de salvar camada;  
-3. DEsabilite a edição da camada caso não haja mais elementos a serem informados.
+3. Desabilite a edição da camada caso não haja mais elementos a serem informados.
 :::
 
 ::: {.callout-note title=@fig-elemento}
